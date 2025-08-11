@@ -1,0 +1,567 @@
+﻿id,skill_id,position_id,skill_name,position_name
+1,1,23,Python Programming,Chief Technology Manager
+2,1,31,Python Programming,Data Manager
+3,1,32,Python Programming,Junior Data Scientist
+4,1,33,Python Programming,Mid Data Scientist
+5,1,34,Python Programming,Senior Data Scientist
+6,1,35,Python Programming,Team Lead Data Scientist
+7,1,24,Python Programming,Junior Data Consultant
+8,1,25,Python Programming,Mid Data Consultant
+9,1,26,Python Programming,Senior Data Consultant
+10,1,27,Python Programming,Junior Data Engineer
+11,1,28,Python Programming,Mid Data Engineer
+12,1,29,Python Programming,Senior Data Engineer
+13,1,30,Python Programming,Team Lead Data Engineer
+14,2,23,ETL Tools,Chief Technology Manager
+15,2,31,ETL Tools,Data Manager
+16,2,32,ETL Tools,Junior Data Scientist
+17,2,33,ETL Tools,Mid Data Scientist
+18,2,34,ETL Tools,Senior Data Scientist
+19,2,35,ETL Tools,Team Lead Data Scientist
+20,2,27,ETL Tools,Junior Data Engineer
+21,2,28,ETL Tools,Mid Data Engineer
+22,2,29,ETL Tools,Senior Data Engineer
+23,2,30,ETL Tools,Team Lead Data Engineer
+24,3,23,R Programming,Chief Technology Manager
+25,3,31,R Programming,Data Manager
+26,3,32,R Programming,Junior Data Scientist
+27,3,33,R Programming,Mid Data Scientist
+28,3,34,R Programming,Senior Data Scientist
+29,3,35,R Programming,Team Lead Data Scientist
+30,3,24,R Programming,Junior Data Consultant
+31,3,25,R Programming,Mid Data Consultant
+32,3,26,R Programming,Senior Data Consultant
+33,4,36,JavaScript Programming,Junior Software Developer
+34,4,37,JavaScript Programming,Mid Software Developer
+35,4,38,JavaScript Programming,Senior Software Developer
+36,5,36,C++ Programming,Junior Software Developer
+37,5,37,C++ Programming,Mid Software Developer
+38,5,38,C++ Programming,Senior Software Developer
+39,6,23,Machine Learning,Chief Technology Manager
+40,6,31,Machine Learning,Data Manager
+41,6,32,Machine Learning,Junior Data Scientist
+42,6,33,Machine Learning,Mid Data Scientist
+43,6,34,Machine Learning,Senior Data Scientist
+44,6,35,Machine Learning,Team Lead Data Scientist
+45,7,23,Data Analytics,Chief Technology Manager
+46,7,31,Data Analytics,Data Manager
+47,7,32,Data Analytics,Junior Data Scientist
+48,7,33,Data Analytics,Mid Data Scientist
+49,7,34,Data Analytics,Senior Data Scientist
+50,7,35,Data Analytics,Team Lead Data Scientist
+51,8,23,Data Visualization,Chief Technology Manager
+52,8,31,Data Visualization,Data Manager
+53,8,32,Data Visualization,Junior Data Scientist
+54,8,33,Data Visualization,Mid Data Scientist
+55,8,34,Data Visualization,Senior Data Scientist
+56,8,35,Data Visualization,Team Lead Data Scientist
+57,8,24,Data Visualization,Junior Data Consultant
+58,8,25,Data Visualization,Mid Data Consultant
+59,8,26,Data Visualization,Senior Data Consultant
+60,9,23,Statistics,Chief Technology Manager
+61,9,31,Statistics,Data Manager
+62,9,32,Statistics,Junior Data Scientist
+63,9,33,Statistics,Mid Data Scientist
+64,9,34,Statistics,Senior Data Scientist
+65,9,35,Statistics,Team Lead Data Scientist
+66,10,23,Cloud Computing (AWS),Chief Technology Manager
+67,10,31,Cloud Computing (AWS),Data Manager
+68,10,32,Cloud Computing (AWS),Junior Data Scientist
+69,10,33,Cloud Computing (AWS),Mid Data Scientist
+70,10,34,Cloud Computing (AWS),Senior Data Scientist
+71,10,35,Cloud Computing (AWS),Team Lead Data Scientist
+72,10,27,Cloud Computing (AWS),Junior Data Engineer
+73,10,28,Cloud Computing (AWS),Mid Data Engineer
+74,10,29,Cloud Computing (AWS),Senior Data Engineer
+75,10,30,Cloud Computing (AWS),Team Lead Data Engineer
+76,11,23,SQL Programming,Chief Technology Manager
+77,11,31,SQL Programming,Data Manager
+78,11,32,SQL Programming,Junior Data Scientist
+79,11,33,SQL Programming,Mid Data Scientist
+80,11,34,SQL Programming,Senior Data Scientist
+81,11,35,SQL Programming,Team Lead Data Scientist
+82,11,27,SQL Programming,Junior Data Engineer
+83,11,28,SQL Programming,Mid Data Engineer
+84,11,29,SQL Programming,Senior Data Engineer
+85,11,30,SQL Programming,Team Lead Data Engineer
+86,12,23,Experiment Design,Chief Technology Manager
+87,12,31,Experiment Design,Data Manager
+88,12,32,Experiment Design,Junior Data Scientist
+89,12,33,Experiment Design,Mid Data Scientist
+90,12,34,Experiment Design,Senior Data Scientist
+91,12,35,Experiment Design,Team Lead Data Scientist
+92,13,23,Big Data,Chief Technology Manager
+93,13,31,Big Data,Data Manager
+94,13,32,Big Data,Junior Data Scientist
+95,13,33,Big Data,Mid Data Scientist
+96,13,34,Big Data,Senior Data Scientist
+97,13,35,Big Data,Team Lead Data Scientist
+98,13,27,Big Data,Junior Data Engineer
+99,13,28,Big Data,Mid Data Engineer
+100,13,29,Big Data,Senior Data Engineer
+101,13,30,Big Data,Team Lead Data Engineer
+102,14,27,Schema Design,Junior Data Engineer
+103,14,28,Schema Design,Mid Data Engineer
+104,14,29,Schema Design,Senior Data Engineer
+105,14,30,Schema Design,Team Lead Data Engineer
+106,15,23,Git Version Control,Chief Technology Manager
+107,15,31,Git Version Control,Data Manager
+108,15,32,Git Version Control,Junior Data Scientist
+109,15,33,Git Version Control,Mid Data Scientist
+110,15,34,Git Version Control,Senior Data Scientist
+111,15,35,Git Version Control,Team Lead Data Scientist
+112,15,27,Git Version Control,Junior Data Engineer
+113,15,28,Git Version Control,Mid Data Engineer
+114,15,29,Git Version Control,Senior Data Engineer
+115,15,30,Git Version Control,Team Lead Data Engineer
+116,15,36,Git Version Control,Junior Software Developer
+117,15,37,Git Version Control,Mid Software Developer
+118,15,38,Git Version Control,Senior Software Developer
+119,16,23,Data Pipeline,Chief Technology Manager
+120,16,31,Data Pipeline,Data Manager
+121,16,32,Data Pipeline,Junior Data Scientist
+122,16,33,Data Pipeline,Mid Data Scientist
+123,16,34,Data Pipeline,Senior Data Scientist
+124,16,35,Data Pipeline,Team Lead Data Scientist
+125,16,27,Data Pipeline,Junior Data Engineer
+126,16,28,Data Pipeline,Mid Data Engineer
+127,16,29,Data Pipeline,Senior Data Engineer
+128,16,30,Data Pipeline,Team Lead Data Engineer
+129,17,23,Business Intelligent,Chief Technology Manager
+130,17,31,Business Intelligent,Data Manager
+131,17,32,Business Intelligent,Junior Data Scientist
+132,17,33,Business Intelligent,Mid Data Scientist
+133,17,34,Business Intelligent,Senior Data Scientist
+134,17,35,Business Intelligent,Team Lead Data Scientist
+135,17,24,Business Intelligent,Junior Data Consultant
+136,17,25,Business Intelligent,Mid Data Consultant
+137,17,26,Business Intelligent,Senior Data Consultant
+138,17,1,Business Intelligent,Junior Business Development
+139,17,2,Business Intelligent,Mid Business Development
+140,17,3,Business Intelligent,Senior Business Development
+141,17,4,Business Intelligent,Business Manager
+142,17,5,Business Intelligent,Chief Business Manager
+143,17,6,Business Intelligent,Junior Marketing
+144,17,7,Business Intelligent,Mid Marketing
+145,17,8,Business Intelligent,Senior Marketing
+146,18,31,Code Review,Data Manager
+147,18,34,Code Review,Senior Data Scientist
+148,18,35,Code Review,Team Lead Data Scientist
+149,18,29,Code Review,Senior Data Engineer
+150,18,30,Code Review,Team Lead Data Engineer
+151,18,38,Code Review,Senior Software Developer
+152,19,23,Docker,Chief Technology Manager
+153,19,31,Docker,Data Manager
+154,19,32,Docker,Junior Data Scientist
+155,19,33,Docker,Mid Data Scientist
+156,19,34,Docker,Senior Data Scientist
+157,19,35,Docker,Team Lead Data Scientist
+158,19,27,Docker,Junior Data Engineer
+159,19,28,Docker,Mid Data Engineer
+160,19,29,Docker,Senior Data Engineer
+161,19,30,Docker,Team Lead Data Engineer
+162,19,36,Docker,Junior Software Developer
+163,19,37,Docker,Mid Software Developer
+164,19,38,Docker,Senior Software Developer
+165,20,36,RESTful services,Junior Software Developer
+166,20,37,RESTful services,Mid Software Developer
+167,20,38,RESTful services,Senior Software Developer
+168,26,1,Microsoft Excel / Sheets,Junior Business Development
+169,26,2,Microsoft Excel / Sheets,Mid Business Development
+170,26,3,Microsoft Excel / Sheets,Senior Business Development
+171,26,4,Microsoft Excel / Sheets,Business Manager
+172,26,5,Microsoft Excel / Sheets,Chief Business Manager
+173,26,24,Microsoft Excel / Sheets,Junior Data Consultant
+174,26,25,Microsoft Excel / Sheets,Mid Data Consultant
+175,26,26,Microsoft Excel / Sheets,Senior Data Consultant
+176,26,19,Microsoft Excel / Sheets,Junior Accounting
+177,26,20,Microsoft Excel / Sheets,Mid Accounting
+178,26,21,Microsoft Excel / Sheets,Senior Accounting
+179,26,22,Microsoft Excel / Sheets,Manager Accounting
+180,27,23,Database Management,Chief Technology Manager
+181,27,31,Database Management,Data Manager
+182,27,32,Database Management,Junior Data Scientist
+183,27,33,Database Management,Mid Data Scientist
+184,27,34,Database Management,Senior Data Scientist
+185,27,35,Database Management,Team Lead Data Scientist
+186,27,24,Database Management,Junior Data Consultant
+187,27,25,Database Management,Mid Data Consultant
+188,27,26,Database Management,Senior Data Consultant
+189,27,27,Database Management,Junior Data Engineer
+190,27,28,Database Management,Mid Data Engineer
+191,27,29,Database Management,Senior Data Engineer
+192,27,30,Database Management,Team Lead Data Engineer
+193,28,9,Presentation,Junior Sales
+194,28,10,Presentation,Mid Sales
+195,28,11,Presentation,Senior Sales
+196,28,1,Presentation,Junior Business Development
+197,28,2,Presentation,Mid Business Development
+198,28,3,Presentation,Senior Business Development
+199,28,4,Presentation,Business Manager
+200,28,5,Presentation,Chief Business Manager
+201,28,24,Presentation,Junior Data Consultant
+202,28,25,Presentation,Mid Data Consultant
+203,28,26,Presentation,Senior Data Consultant
+204,28,15,Presentation,Junior PM
+205,28,16,Presentation,Mid PM
+206,28,17,Presentation,Senior PM
+207,28,18,Presentation,PM Manager
+208,29,9,Stakeholder management,Junior Sales
+209,29,10,Stakeholder management,Mid Sales
+210,29,11,Stakeholder management,Senior Sales
+211,29,1,Stakeholder management,Junior Business Development
+212,29,2,Stakeholder management,Mid Business Development
+213,29,3,Stakeholder management,Senior Business Development
+214,29,4,Stakeholder management,Business Manager
+215,29,5,Stakeholder management,Chief Business Manager
+216,29,24,Stakeholder management,Junior Data Consultant
+217,29,25,Stakeholder management,Mid Data Consultant
+218,29,26,Stakeholder management,Senior Data Consultant
+219,29,15,Stakeholder management,Junior PM
+220,29,16,Stakeholder management,Mid PM
+221,29,17,Stakeholder management,Senior PM
+222,29,18,Stakeholder management,PM Manager
+223,30,9,Business Understanding,Junior Sales
+224,30,10,Business Understanding,Mid Sales
+225,30,11,Business Understanding,Senior Sales
+226,30,1,Business Understanding,Junior Business Development
+227,30,2,Business Understanding,Mid Business Development
+228,30,3,Business Understanding,Senior Business Development
+229,30,4,Business Understanding,Business Manager
+230,30,5,Business Understanding,Chief Business Manager
+231,30,24,Business Understanding,Junior Data Consultant
+232,30,25,Business Understanding,Mid Data Consultant
+233,30,26,Business Understanding,Senior Data Consultant
+234,31,1,Market Research,Junior Business Development
+235,31,2,Market Research,Mid Business Development
+236,31,3,Market Research,Senior Business Development
+237,31,4,Market Research,Business Manager
+238,31,5,Market Research,Chief Business Manager
+239,31,24,Market Research,Junior Data Consultant
+240,31,25,Market Research,Mid Data Consultant
+241,31,26,Market Research,Senior Data Consultant
+242,32,9,Document Management,Junior Sales
+243,32,10,Document Management,Mid Sales
+244,32,11,Document Management,Senior Sales
+245,32,1,Document Management,Junior Business Development
+246,32,2,Document Management,Mid Business Development
+247,32,3,Document Management,Senior Business Development
+248,32,4,Document Management,Business Manager
+249,32,5,Document Management,Chief Business Manager
+250,32,39,Document Management,Junior HR
+251,32,40,Document Management,Mid HR
+252,32,41,Document Management,Senior HR
+253,32,42,Document Management,HR Manager
+254,32,15,Document Management,Junior PM
+255,32,16,Document Management,Mid PM
+256,32,17,Document Management,Senior PM
+257,32,18,Document Management,PM Manager
+258,32,43,Document Management,Junior Legal
+259,32,44,Document Management,Mid Legal
+260,32,45,Document Management,Senior Legal
+261,32,46,Document Management,Legal Manager
+262,32,19,Document Management,Junior Accounting
+263,32,20,Document Management,Mid Accounting
+264,32,21,Document Management,Senior Accounting
+265,32,22,Document Management,Manager Accounting
+266,33,9,Negotiation,Junior Sales
+267,33,10,Negotiation,Mid Sales
+268,33,11,Negotiation,Senior Sales
+269,33,1,Negotiation,Junior Business Development
+270,33,2,Negotiation,Mid Business Development
+271,33,3,Negotiation,Senior Business Development
+272,33,4,Negotiation,Business Manager
+273,33,5,Negotiation,Chief Business Manager
+274,33,24,Negotiation,Junior Data Consultant
+275,33,25,Negotiation,Mid Data Consultant
+276,33,26,Negotiation,Senior Data Consultant
+277,33,39,Negotiation,Junior HR
+278,33,40,Negotiation,Mid HR
+279,33,41,Negotiation,Senior HR
+280,33,42,Negotiation,HR Manager
+281,33,15,Negotiation,Junior PM
+282,33,16,Negotiation,Mid PM
+283,33,17,Negotiation,Senior PM
+284,33,18,Negotiation,PM Manager
+285,34,1,Proposal Creation,Junior Business Development
+286,34,2,Proposal Creation,Mid Business Development
+287,34,3,Proposal Creation,Senior Business Development
+288,34,4,Proposal Creation,Business Manager
+289,34,5,Proposal Creation,Chief Business Manager
+290,34,24,Proposal Creation,Junior Data Consultant
+291,34,25,Proposal Creation,Mid Data Consultant
+292,34,26,Proposal Creation,Senior Data Consultant
+293,35,9,PowerPoint / Slides,Junior Sales
+294,35,10,PowerPoint / Slides,Mid Sales
+295,35,11,PowerPoint / Slides,Senior Sales
+296,35,1,PowerPoint / Slides,Junior Business Development
+297,35,2,PowerPoint / Slides,Mid Business Development
+298,35,3,PowerPoint / Slides,Senior Business Development
+299,35,4,PowerPoint / Slides,Business Manager
+300,35,5,PowerPoint / Slides,Chief Business Manager
+301,35,24,PowerPoint / Slides,Junior Data Consultant
+302,35,25,PowerPoint / Slides,Mid Data Consultant
+303,35,26,PowerPoint / Slides,Senior Data Consultant
+304,35,6,PowerPoint / Slides,Junior Marketing
+305,35,7,PowerPoint / Slides,Mid Marketing
+306,35,8,PowerPoint / Slides,Senior Marketing
+307,35,15,PowerPoint / Slides,Junior PM
+308,35,16,PowerPoint / Slides,Mid PM
+309,35,17,PowerPoint / Slides,Senior PM
+310,35,18,PowerPoint / Slides,PM Manager
+311,36,9,Microsoft Word / Docs,Junior Sales
+312,36,10,Microsoft Word / Docs,Mid Sales
+313,36,11,Microsoft Word / Docs,Senior Sales
+314,36,1,Microsoft Word / Docs,Junior Business Development
+315,36,2,Microsoft Word / Docs,Mid Business Development
+316,36,3,Microsoft Word / Docs,Senior Business Development
+317,36,4,Microsoft Word / Docs,Business Manager
+318,36,5,Microsoft Word / Docs,Chief Business Manager
+319,36,24,Microsoft Word / Docs,Junior Data Consultant
+320,36,25,Microsoft Word / Docs,Mid Data Consultant
+321,36,26,Microsoft Word / Docs,Senior Data Consultant
+322,36,15,Microsoft Word / Docs,Junior PM
+323,36,16,Microsoft Word / Docs,Mid PM
+324,36,17,Microsoft Word / Docs,Senior PM
+325,36,18,Microsoft Word / Docs,PM Manager
+326,37,9,CRM systems,Junior Sales
+327,37,10,CRM systems,Mid Sales
+328,37,11,CRM systems,Senior Sales
+329,37,1,CRM systems,Junior Business Development
+330,37,2,CRM systems,Mid Business Development
+331,37,3,CRM systems,Senior Business Development
+332,37,4,CRM systems,Business Manager
+333,37,5,CRM systems,Chief Business Manager
+334,37,24,CRM systems,Junior Data Consultant
+335,37,25,CRM systems,Mid Data Consultant
+336,37,26,CRM systems,Senior Data Consultant
+337,38,9,Product Understanding,Junior Sales
+338,38,10,Product Understanding,Mid Sales
+339,38,11,Product Understanding,Senior Sales
+340,38,1,Product Understanding,Junior Business Development
+341,38,2,Product Understanding,Mid Business Development
+342,38,3,Product Understanding,Senior Business Development
+343,38,4,Product Understanding,Business Manager
+344,38,5,Product Understanding,Chief Business Manager
+345,38,24,Product Understanding,Junior Data Consultant
+346,38,25,Product Understanding,Mid Data Consultant
+347,38,26,Product Understanding,Senior Data Consultant
+348,38,15,Product Understanding,Junior PM
+349,38,16,Product Understanding,Mid PM
+350,38,17,Product Understanding,Senior PM
+351,38,18,Product Understanding,PM Manager
+352,39,6,Search Engine Optimization,Junior Marketing
+353,39,7,Search Engine Optimization,Mid Marketing
+354,39,8,Search Engine Optimization,Senior Marketing
+355,40,6,Content Creation,Junior Marketing
+356,40,7,Content Creation,Mid Marketing
+357,40,8,Content Creation,Senior Marketing
+358,41,6,Social Media Management,Junior Marketing
+359,41,7,Social Media Management,Mid Marketing
+360,41,8,Social Media Management,Senior Marketing
+361,42,1,Creativity,Junior Business Development
+362,42,2,Creativity,Mid Business Development
+363,42,3,Creativity,Senior Business Development
+364,42,4,Creativity,Business Manager
+365,42,5,Creativity,Chief Business Manager
+366,42,6,Creativity,Junior Marketing
+367,42,7,Creativity,Mid Marketing
+368,42,8,Creativity,Senior Marketing
+369,43,6,A/B Testing,Junior Marketing
+370,43,7,A/B Testing,Mid Marketing
+371,43,8,A/B Testing,Senior Marketing
+372,44,39,Basics Law,Junior HR
+373,44,40,Basics Law,Mid HR
+374,44,41,Basics Law,Senior HR
+375,44,42,Basics Law,HR Manager
+376,44,43,Basics Law,Junior Legal
+377,44,44,Basics Law,Mid Legal
+378,44,45,Basics Law,Senior Legal
+379,44,46,Basics Law,Legal Manager
+380,45,39,Performance Management,Junior HR
+381,45,40,Performance Management,Mid HR
+382,45,41,Performance Management,Senior HR
+383,45,42,Performance Management,HR Manager
+384,45,15,Performance Management,Junior PM
+385,45,16,Performance Management,Mid PM
+386,45,17,Performance Management,Senior PM
+387,45,18,Performance Management,PM Manager
+388,46,39,Recruitment,Junior HR
+389,46,40,Recruitment,Mid HR
+390,46,41,Recruitment,Senior HR
+391,46,42,Recruitment,HR Manager
+392,47,39,Emotional Intelligence,Junior HR
+393,47,40,Emotional Intelligence,Mid HR
+394,47,41,Emotional Intelligence,Senior HR
+395,47,42,Emotional Intelligence,HR Manager
+396,47,15,Emotional Intelligence,Junior PM
+397,47,16,Emotional Intelligence,Mid PM
+398,47,17,Emotional Intelligence,Senior PM
+399,47,18,Emotional Intelligence,PM Manager
+400,48,39,Organizational Management,Junior HR
+401,48,40,Organizational Management,Mid HR
+402,48,41,Organizational Management,Senior HR
+403,48,42,Organizational Management,HR Manager
+404,49,15,Project Management,Junior PM
+405,49,16,Project Management,Mid PM
+406,49,17,Project Management,Senior PM
+407,49,18,Project Management,PM Manager
+408,51,23,Agile Methodologies,Chief Technology Manager
+409,51,31,Agile Methodologies,Data Manager
+410,51,32,Agile Methodologies,Junior Data Scientist
+411,51,33,Agile Methodologies,Mid Data Scientist
+412,51,34,Agile Methodologies,Senior Data Scientist
+413,51,35,Agile Methodologies,Team Lead Data Scientist
+414,51,15,Agile Methodologies,Junior PM
+415,51,16,Agile Methodologies,Mid PM
+416,51,17,Agile Methodologies,Senior PM
+417,51,18,Agile Methodologies,PM Manager
+418,51,27,Agile Methodologies,Junior Data Engineer
+419,51,28,Agile Methodologies,Mid Data Engineer
+420,51,29,Agile Methodologies,Senior Data Engineer
+421,51,30,Agile Methodologies,Team Lead Data Engineer
+422,51,36,Agile Methodologies,Junior Software Developer
+423,51,37,Agile Methodologies,Mid Software Developer
+424,51,38,Agile Methodologies,Senior Software Developer
+425,52,15,Risk Management,Junior PM
+426,52,16,Risk Management,Mid PM
+427,52,17,Risk Management,Senior PM
+428,52,18,Risk Management,PM Manager
+429,52,43,Risk Management,Junior Legal
+430,52,44,Risk Management,Mid Legal
+431,52,45,Risk Management,Senior Legal
+432,52,46,Risk Management,Legal Manager
+433,52,30,Risk Management,Team Lead Data Engineer
+434,52,35,Risk Management,Team Lead Data Scientist
+435,52,31,Risk Management,Data Manager
+436,52,23,Risk Management,Chief Technology Manager
+437,52,5,Risk Management,Chief Business Manager
+438,53,15,Budget Tracking,Junior PM
+439,53,16,Budget Tracking,Mid PM
+440,53,17,Budget Tracking,Senior PM
+441,53,18,Budget Tracking,PM Manager
+442,53,19,Budget Tracking,Junior Accounting
+443,53,20,Budget Tracking,Mid Accounting
+444,53,21,Budget Tracking,Senior Accounting
+445,53,22,Budget Tracking,Manager Accounting
+446,54,15,Strategic Planning,Junior PM
+447,54,16,Strategic Planning,Mid PM
+448,54,17,Strategic Planning,Senior PM
+449,54,18,Strategic Planning,PM Manager
+450,54,30,Strategic Planning,Team Lead Data Engineer
+451,54,35,Strategic Planning,Team Lead Data Scientist
+452,54,31,Strategic Planning,Data Manager
+453,54,23,Strategic Planning,Chief Technology Manager
+454,54,5,Strategic Planning,Chief Business Manager
+455,55,43,Contract Review & Drafting,Junior Legal
+456,55,44,Contract Review & Drafting,Mid Legal
+457,55,45,Contract Review & Drafting,Senior Legal
+458,55,46,Contract Review & Drafting,Legal Manager
+459,56,43,Laws,Junior Legal
+460,56,44,Laws,Mid Legal
+461,56,45,Laws,Senior Legal
+462,56,46,Laws,Legal Manager
+463,57,43,Compliance Frameworks,Junior Legal
+464,57,44,Compliance Frameworks,Mid Legal
+465,57,45,Compliance Frameworks,Senior Legal
+466,57,46,Compliance Frameworks,Legal Manager
+467,58,9,Attention to Detail,Junior Sales
+468,58,10,Attention to Detail,Mid Sales
+469,58,11,Attention to Detail,Senior Sales
+470,58,1,Attention to Detail,Junior Business Development
+471,58,2,Attention to Detail,Mid Business Development
+472,58,3,Attention to Detail,Senior Business Development
+473,58,4,Attention to Detail,Business Manager
+474,58,5,Attention to Detail,Chief Business Manager
+475,58,15,Attention to Detail,Junior PM
+476,58,16,Attention to Detail,Mid PM
+477,58,17,Attention to Detail,Senior PM
+478,58,18,Attention to Detail,PM Manager
+479,58,43,Attention to Detail,Junior Legal
+480,58,44,Attention to Detail,Mid Legal
+481,58,45,Attention to Detail,Senior Legal
+482,58,46,Attention to Detail,Legal Manager
+483,58,39,Attention to Detail,Junior HR
+484,58,40,Attention to Detail,Mid HR
+485,58,41,Attention to Detail,Senior HR
+486,58,42,Attention to Detail,HR Manager
+487,58,19,Attention to Detail,Junior Accounting
+488,58,20,Attention to Detail,Mid Accounting
+489,58,21,Attention to Detail,Senior Accounting
+490,58,22,Attention to Detail,Manager Accounting
+491,59,9,Concise Writing,Junior Sales
+492,59,10,Concise Writing,Mid Sales
+493,59,11,Concise Writing,Senior Sales
+494,59,1,Concise Writing,Junior Business Development
+495,59,2,Concise Writing,Mid Business Development
+496,59,3,Concise Writing,Senior Business Development
+497,59,4,Concise Writing,Business Manager
+498,59,5,Concise Writing,Chief Business Manager
+499,59,24,Concise Writing,Junior Data Consultant
+500,59,25,Concise Writing,Mid Data Consultant
+501,59,26,Concise Writing,Senior Data Consultant
+502,59,15,Concise Writing,Junior PM
+503,59,16,Concise Writing,Mid PM
+504,59,17,Concise Writing,Senior PM
+505,59,18,Concise Writing,PM Manager
+506,59,43,Concise Writing,Junior Legal
+507,59,44,Concise Writing,Mid Legal
+508,59,45,Concise Writing,Senior Legal
+509,59,46,Concise Writing,Legal Manager
+510,60,19,Financial Report,Junior Accounting
+511,60,20,Financial Report,Mid Accounting
+512,60,21,Financial Report,Senior Accounting
+513,60,22,Financial Report,Manager Accounting
+514,61,19,Tax Compliance & Auditing,Junior Accounting
+515,61,20,Tax Compliance & Auditing,Mid Accounting
+516,61,21,Tax Compliance & Auditing,Senior Accounting
+517,61,22,Tax Compliance & Auditing,Manager Accounting
+518,62,24,Prototyping,Junior Data Consultant
+519,62,25,Prototyping,Mid Data Consultant
+520,62,26,Prototyping,Senior Data Consultant
+521,17,13,Business Intelligent,Mid Operations
+522,21,13,Analytical thinking,Mid Operations
+523,22,13,Communication,Mid Operations
+524,23,13,Teamwork,Mid Operations
+525,24,13,Time Management,Mid Operations
+526,25,13,Problem Solving,Mid Operations
+527,28,13,Presentation,Mid Operations
+528,30,13,Business Understanding,Mid Operations
+529,32,13,Document Management,Mid Operations
+530,34,13,Proposal Creation,Mid Operations
+531,35,13,PowerPoint / Slides,Mid Operations
+532,36,13,Microsoft Word / Docs,Mid Operations
+533,47,13,Emotional Intelligence,Mid Operations
+534,48,13,Organizational Management,Mid Operations
+535,49,13,Project Management,Mid Operations
+536,58,13,Attention to Detail,Mid Operations
+537,59,13,Concise Writing,Mid Operations
+538,17,47,Business Intelligent,MKT Manager
+539,35,47,PowerPoint / Slides,MKT Manager
+540,39,47,Search Engine Optimization,MKT Manager
+541,40,47,Content Creation,MKT Manager
+542,41,47,Social Media Management,MKT Manager
+543,42,47,Creativity,MKT Manager
+544,43,47,A/B Testing,MKT Manager
+545,21,47,Analytical thinking,MKT Manager
+546,22,47,Communication,MKT Manager
+547,23,47,Teamwork,MKT Manager
+548,24,47,Time Management,MKT Manager
+549,25,47,Problem Solving,MKT Manager
+550,17,12,Business Intelligent,Junior Operations
+551,21,12,Analytical thinking,Junior Operations
+552,22,12,Communication,Junior Operations
+553,23,12,Teamwork,Junior Operations
+554,24,12,Time Management,Junior Operations
+555,25,12,Problem Solving,Junior Operations
+556,28,12,Presentation,Junior Operations
+557,30,12,Business Understanding,Junior Operations
+558,32,12,Document Management,Junior Operations
+559,34,12,Proposal Creation,Junior Operations
+560,35,12,PowerPoint / Slides,Junior Operations
+561,36,12,Microsoft Word / Docs,Junior Operations
+562,47,12,Emotional Intelligence,Junior Operations
+563,48,12,Organizational Management,Junior Operations
+564,49,12,Project Management,Junior Operations
+565,58,12,Attention to Detail,Junior Operations
+566,59,12,Concise Writing,Junior Operations

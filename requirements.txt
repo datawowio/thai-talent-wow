@@ -1,0 +1,15 @@
+catboost==1.2.7
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.5.2
+shap==0.46.0
+tqdm==4.66.1
+optuna==4.3.0
+geopy==2.4.1
+sentence-transformers==2.6.1
+fastparquet==2024.5.0
+pyarrow==18.0.0
+openpyxl==3.1.5
+streamlit==1.40.0
+seaborn==0.13.2
+shap==0.46.0

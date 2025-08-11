@@ -1,0 +1,47 @@
+﻿id,employee_id,position_id,created_at,position_name
+1,990001,3,2020-05-18,Senior Business Development
+2,990002,34,2020-05-18,Senior Data Scientist
+3,990003,33,2021-02-25,Mid Data Scientist
+4,990004,13,2021-06-06,Mid Operations
+5,990005,28,2021-11-09,Mid Data Engineer
+6,990006,37,2021-11-09,Mid Software Developer
+7,990009,32,2021-12-19,Junior Data Scientist
+8,990010,27,2021-12-19,Junior Data Engineer
+9,990001,4,2022-01-01,Business Manager
+10,990002,31,2022-01-01,Data Manager
+11,990003,34,2022-01-01,Senior Data Scientist
+12,990006,38,2022-02-01,Senior Software Developer
+13,990007,10,2022-02-18,Mid Sales
+14,990008,8,2022-02-18,Senior Marketing
+15,990014,11,2022-07-01,Senior Sales
+16,990011,27,2022-11-01,Junior Data Engineer
+17,990012,32,2022-11-01,Junior Data Scientist
+18,990013,37,2022-12-09,Mid Software Developer
+19,990005,29,2023-01-01,Senior Data Engineer
+20,990015,15,2023-03-09,Junior PM
+21,990016,16,2023-03-09,Mid PM
+22,990014,4,2023-04-01,Business Manager
+23,990017,24,2023-05-01,Junior Data Consultant
+24,990003,35,2024-01-01,Team Lead Data Scientist
+25,990018,6,2024-02-28,Junior Marketing
+26,990019,1,2024-02-28,Junior Business Development
+27,990008,47,2024-03-01,MKT Manager
+28,990006,31,2024-04-01,Data Manager
+29,990009,34,2024-04-01,Senior Data Scientist
+30,990015,16,2024-05-01,Mid PM
+31,990020,16,2024-06-18,Mid PM
+32,990021,13,2024-06-18,Mid Operations
+33,990022,12,2024-06-18,Junior Operations
+34,990023,12,2024-06-18,Junior Operations
+35,990024,9,2024-06-18,Junior Sales
+36,990025,25,2024-06-18,Mid Data Consultant
+37,990026,40,2024-06-18,Mid HR
+38,990002,23,2024-07-01,Chief Technology Manager
+39,990027,38,2024-08-01,Senior Software Developer
+40,990016,17,2024-10-01,Senior PM
+41,990001,5,2025-02-01,Chief Business Manager
+42,990005,30,2025-02-01,Team Lead Data Engineer
+43,990011,28,2025-04-01,Mid Data Engineer
+44,990019,2,2025-05-01,Mid Business Development
+45,990028,7,2025-05-17,Mid Marketing
+46,990022,16,2025-07-01,Mid PM

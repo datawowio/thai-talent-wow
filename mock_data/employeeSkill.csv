@@ -1,0 +1,353 @@
+﻿id,employee_id,skill_id,score,created_at,employee_position_id,employee_position_name,skill_name
+1,990001,17,3,2020-05-18,5,Chief Business Manager,Business Intelligent
+2,990001,26,4,2020-05-18,5,Chief Business Manager,Microsoft Excel / Sheets
+3,990001,28,2,2020-05-18,5,Chief Business Manager,Presentation
+4,990001,29,2,2020-05-18,5,Chief Business Manager,Stakeholder management
+5,990001,30,3,2020-05-18,5,Chief Business Manager,Business Understanding
+6,990001,31,4,2020-05-18,5,Chief Business Manager,Market Research
+7,990001,32,4,2020-05-18,5,Chief Business Manager,Document Management
+8,990001,33,3,2020-05-18,5,Chief Business Manager,Negotiation
+9,990001,34,3,2020-05-18,5,Chief Business Manager,Proposal Creation
+10,990001,35,3,2020-05-18,5,Chief Business Manager,PowerPoint / Slides
+11,990001,36,4,2020-05-18,5,Chief Business Manager,Microsoft Word / Docs
+12,990001,37,2,2020-05-18,5,Chief Business Manager,CRM systems
+13,990001,38,4,2020-05-18,5,Chief Business Manager,Product Understanding
+14,990001,42,4,2020-05-18,5,Chief Business Manager,Creativity
+15,990001,52,4,2020-05-18,5,Chief Business Manager,Risk Management
+16,990001,54,3,2020-05-18,5,Chief Business Manager,Strategic Planning
+17,990001,58,3,2020-05-18,5,Chief Business Manager,Attention to Detail
+18,990001,59,4,2020-05-18,5,Chief Business Manager,Concise Writing
+19,990002,1,4,2020-05-18,23,Chief Technology Manager,Python Programming
+20,990002,2,3,2020-05-18,23,Chief Technology Manager,ETL Tools
+21,990002,3,2,2020-05-18,23,Chief Technology Manager,R Programming
+22,990002,6,3,2020-05-18,23,Chief Technology Manager,Machine Learning
+23,990002,7,4,2020-05-18,23,Chief Technology Manager,Data Analytics
+24,990002,8,2,2020-05-18,23,Chief Technology Manager,Data Visualization
+25,990002,9,4,2020-05-18,23,Chief Technology Manager,Statistics
+26,990002,10,4,2020-05-18,23,Chief Technology Manager,Cloud Computing (AWS)
+27,990002,11,4,2020-05-18,23,Chief Technology Manager,SQL Programming
+28,990002,12,3,2020-05-18,23,Chief Technology Manager,Experiment Design
+29,990002,13,3,2020-05-18,23,Chief Technology Manager,Big Data
+30,990002,15,4,2020-05-18,23,Chief Technology Manager,Git Version Control
+31,990002,16,3,2020-05-18,23,Chief Technology Manager,Data Pipeline
+32,990002,17,2,2020-05-18,23,Chief Technology Manager,Business Intelligent
+33,990002,19,3,2020-05-18,23,Chief Technology Manager,Docker
+34,990002,27,3,2020-05-18,23,Chief Technology Manager,Database Management
+35,990002,51,2,2020-05-18,23,Chief Technology Manager,Agile Methodologies
+36,990002,52,3,2020-05-18,23,Chief Technology Manager,Risk Management
+37,990002,54,3,2020-05-18,23,Chief Technology Manager,Strategic Planning
+38,990003,1,2,2021-02-25,35,Team Lead Data Scientist,Python Programming
+39,990003,2,2,2021-02-25,35,Team Lead Data Scientist,ETL Tools
+40,990003,3,2,2021-02-25,35,Team Lead Data Scientist,R Programming
+41,990003,6,2,2021-02-25,35,Team Lead Data Scientist,Machine Learning
+42,990003,7,3,2021-02-25,35,Team Lead Data Scientist,Data Analytics
+43,990003,8,4,2021-02-25,35,Team Lead Data Scientist,Data Visualization
+44,990003,9,2,2021-02-25,35,Team Lead Data Scientist,Statistics
+45,990003,10,3,2021-02-25,35,Team Lead Data Scientist,Cloud Computing (AWS)
+46,990003,11,3,2021-02-25,35,Team Lead Data Scientist,SQL Programming
+47,990003,12,4,2021-02-25,35,Team Lead Data Scientist,Experiment Design
+48,990003,13,3,2021-02-25,35,Team Lead Data Scientist,Big Data
+49,990003,15,2,2021-02-25,35,Team Lead Data Scientist,Git Version Control
+50,990003,16,4,2021-02-25,35,Team Lead Data Scientist,Data Pipeline
+51,990003,17,4,2021-02-25,35,Team Lead Data Scientist,Business Intelligent
+52,990003,18,4,2021-02-25,35,Team Lead Data Scientist,Code Review
+53,990003,19,4,2021-02-25,35,Team Lead Data Scientist,Docker
+54,990003,27,3,2021-02-25,35,Team Lead Data Scientist,Database Management
+55,990003,51,2,2021-02-25,35,Team Lead Data Scientist,Agile Methodologies
+56,990003,52,4,2021-02-25,35,Team Lead Data Scientist,Risk Management
+57,990003,54,4,2021-02-25,35,Team Lead Data Scientist,Strategic Planning
+58,990005,1,3,2021-11-09,30,Team Lead Data Engineer,Python Programming
+59,990005,2,4,2021-11-09,30,Team Lead Data Engineer,ETL Tools
+60,990005,10,3,2021-11-09,30,Team Lead Data Engineer,Cloud Computing (AWS)
+61,990005,11,3,2021-11-09,30,Team Lead Data Engineer,SQL Programming
+62,990005,13,4,2021-11-09,30,Team Lead Data Engineer,Big Data
+63,990005,14,2,2021-11-09,30,Team Lead Data Engineer,Schema Design
+64,990005,15,2,2021-11-09,30,Team Lead Data Engineer,Git Version Control
+65,990005,16,3,2021-11-09,30,Team Lead Data Engineer,Data Pipeline
+66,990005,18,4,2021-11-09,30,Team Lead Data Engineer,Code Review
+67,990005,19,2,2021-11-09,30,Team Lead Data Engineer,Docker
+68,990005,27,3,2021-11-09,30,Team Lead Data Engineer,Database Management
+69,990005,51,3,2021-11-09,30,Team Lead Data Engineer,Agile Methodologies
+70,990005,52,2,2021-11-09,30,Team Lead Data Engineer,Risk Management
+71,990005,54,2,2021-11-09,30,Team Lead Data Engineer,Strategic Planning
+72,990006,1,3,2021-11-09,31,Data Manager,Python Programming
+73,990006,2,4,2021-11-09,31,Data Manager,ETL Tools
+74,990006,3,4,2021-11-09,31,Data Manager,R Programming
+75,990006,6,4,2021-11-09,31,Data Manager,Machine Learning
+76,990006,7,3,2021-11-09,31,Data Manager,Data Analytics
+77,990006,8,3,2021-11-09,31,Data Manager,Data Visualization
+78,990006,9,2,2021-11-09,31,Data Manager,Statistics
+79,990006,10,3,2021-11-09,31,Data Manager,Cloud Computing (AWS)
+80,990006,11,2,2021-11-09,31,Data Manager,SQL Programming
+81,990006,12,3,2021-11-09,31,Data Manager,Experiment Design
+82,990006,13,2,2021-11-09,31,Data Manager,Big Data
+83,990006,15,4,2021-11-09,31,Data Manager,Git Version Control
+84,990006,16,2,2021-11-09,31,Data Manager,Data Pipeline
+85,990006,17,4,2021-11-09,31,Data Manager,Business Intelligent
+86,990006,18,3,2021-11-09,31,Data Manager,Code Review
+87,990006,19,3,2021-11-09,31,Data Manager,Docker
+88,990006,27,3,2021-11-09,31,Data Manager,Database Management
+89,990006,51,2,2021-11-09,31,Data Manager,Agile Methodologies
+90,990006,52,3,2021-11-09,31,Data Manager,Risk Management
+91,990006,54,2,2021-11-09,31,Data Manager,Strategic Planning
+92,990007,29,2,2022-02-18,10,Mid Sales,Stakeholder management
+93,990007,33,3,2022-02-18,10,Mid Sales,Negotiation
+94,990007,35,3,2022-02-18,10,Mid Sales,PowerPoint / Slides
+95,990007,36,2,2022-02-18,10,Mid Sales,Microsoft Word / Docs
+96,990007,37,3,2022-02-18,10,Mid Sales,CRM systems
+97,990007,38,4,2022-02-18,10,Mid Sales,Product Understanding
+98,990009,1,3,2021-12-19,34,Senior Data Scientist,Python Programming
+99,990009,2,4,2021-12-19,34,Senior Data Scientist,ETL Tools
+100,990009,6,3,2021-12-19,34,Senior Data Scientist,Machine Learning
+101,990009,7,2,2021-12-19,34,Senior Data Scientist,Data Analytics
+102,990009,8,2,2021-12-19,34,Senior Data Scientist,Data Visualization
+103,990009,9,3,2021-12-19,34,Senior Data Scientist,Statistics
+104,990009,10,2,2021-12-19,34,Senior Data Scientist,Cloud Computing (AWS)
+105,990009,11,2,2021-12-19,34,Senior Data Scientist,SQL Programming
+106,990009,13,4,2021-12-19,34,Senior Data Scientist,Big Data
+107,990009,15,2,2021-12-19,34,Senior Data Scientist,Git Version Control
+108,990009,16,3,2021-12-19,34,Senior Data Scientist,Data Pipeline
+109,990009,17,4,2021-12-19,34,Senior Data Scientist,Business Intelligent
+110,990009,18,2,2021-12-19,34,Senior Data Scientist,Code Review
+111,990009,19,3,2021-12-19,34,Senior Data Scientist,Docker
+112,990009,27,2,2021-12-19,34,Senior Data Scientist,Database Management
+113,990009,51,3,2021-12-19,34,Senior Data Scientist,Agile Methodologies
+114,990010,1,4,2021-12-19,27,Junior Data Engineer,Python Programming
+115,990010,2,3,2021-12-19,27,Junior Data Engineer,ETL Tools
+116,990010,10,3,2021-12-19,27,Junior Data Engineer,Cloud Computing (AWS)
+117,990010,11,4,2021-12-19,27,Junior Data Engineer,SQL Programming
+118,990010,13,4,2021-12-19,27,Junior Data Engineer,Big Data
+119,990010,15,4,2021-12-19,27,Junior Data Engineer,Git Version Control
+120,990010,16,3,2021-12-19,27,Junior Data Engineer,Data Pipeline
+121,990010,19,2,2021-12-19,27,Junior Data Engineer,Docker
+122,990010,27,3,2021-12-19,27,Junior Data Engineer,Database Management
+123,990010,51,3,2021-12-19,27,Junior Data Engineer,Agile Methodologies
+124,990011,1,3,2022-11-01,28,Mid Data Engineer,Python Programming
+125,990011,2,2,2022-11-01,28,Mid Data Engineer,ETL Tools
+126,990011,10,4,2022-11-01,28,Mid Data Engineer,Cloud Computing (AWS)
+127,990011,11,2,2022-11-01,28,Mid Data Engineer,SQL Programming
+128,990011,13,4,2022-11-01,28,Mid Data Engineer,Big Data
+129,990011,14,4,2022-11-01,28,Mid Data Engineer,Schema Design
+130,990011,15,3,2022-11-01,28,Mid Data Engineer,Git Version Control
+131,990011,16,3,2022-11-01,28,Mid Data Engineer,Data Pipeline
+132,990011,19,4,2022-11-01,28,Mid Data Engineer,Docker
+133,990011,27,3,2022-11-01,28,Mid Data Engineer,Database Management
+134,990011,51,2,2022-11-01,28,Mid Data Engineer,Agile Methodologies
+135,990012,1,2,2022-11-01,32,Junior Data Scientist,Python Programming
+136,990012,2,2,2022-11-01,32,Junior Data Scientist,ETL Tools
+137,990012,6,3,2022-11-01,32,Junior Data Scientist,Machine Learning
+138,990012,7,3,2022-11-01,32,Junior Data Scientist,Data Analytics
+139,990012,8,3,2022-11-01,32,Junior Data Scientist,Data Visualization
+140,990012,9,3,2022-11-01,32,Junior Data Scientist,Statistics
+141,990012,10,2,2022-11-01,32,Junior Data Scientist,Cloud Computing (AWS)
+142,990012,11,4,2022-11-01,32,Junior Data Scientist,SQL Programming
+143,990012,13,4,2022-11-01,32,Junior Data Scientist,Big Data
+144,990012,15,3,2022-11-01,32,Junior Data Scientist,Git Version Control
+145,990012,16,2,2022-11-01,32,Junior Data Scientist,Data Pipeline
+146,990012,19,4,2022-11-01,32,Junior Data Scientist,Docker
+147,990012,27,2,2022-11-01,32,Junior Data Scientist,Database Management
+148,990012,51,3,2022-11-01,32,Junior Data Scientist,Agile Methodologies
+149,990013,4,3,2022-12-09,37,Mid Software Developer,JavaScript Programming
+150,990013,5,2,2022-12-09,37,Mid Software Developer,C++ Programming
+151,990013,15,3,2022-12-09,37,Mid Software Developer,Git Version Control
+152,990013,19,3,2022-12-09,37,Mid Software Developer,Docker
+153,990013,20,2,2022-12-09,37,Mid Software Developer,RESTful services
+154,990013,51,2,2022-12-09,37,Mid Software Developer,Agile Methodologies
+155,990014,17,3,2022-07-01,4,Business Manager,Business Intelligent
+156,990014,28,4,2022-07-01,4,Business Manager,Presentation
+157,990014,29,2,2022-07-01,4,Business Manager,Stakeholder management
+158,990014,30,2,2022-07-01,4,Business Manager,Business Understanding
+159,990014,31,2,2022-07-01,4,Business Manager,Market Research
+160,990014,32,2,2022-07-01,4,Business Manager,Document Management
+161,990014,35,2,2022-07-01,4,Business Manager,PowerPoint / Slides
+162,990014,37,4,2022-07-01,4,Business Manager,CRM systems
+163,990014,38,4,2022-07-01,4,Business Manager,Product Understanding
+164,990014,42,3,2022-07-01,4,Business Manager,Creativity
+165,990015,28,3,2023-03-09,16,Mid PM,Presentation
+166,990015,29,4,2023-03-09,16,Mid PM,Stakeholder management
+167,990015,32,4,2023-03-09,16,Mid PM,Document Management
+168,990015,33,3,2023-03-09,16,Mid PM,Negotiation
+169,990015,35,2,2023-03-09,16,Mid PM,PowerPoint / Slides
+170,990015,36,3,2023-03-09,16,Mid PM,Microsoft Word / Docs
+171,990015,38,3,2023-03-09,16,Mid PM,Product Understanding
+172,990015,45,3,2023-03-09,16,Mid PM,Performance Management
+173,990015,47,3,2023-03-09,16,Mid PM,Emotional Intelligence
+174,990015,49,4,2023-03-09,16,Mid PM,Project Management
+175,990015,51,2,2023-03-09,16,Mid PM,Agile Methodologies
+176,990015,52,2,2023-03-09,16,Mid PM,Risk Management
+177,990015,53,2,2023-03-09,16,Mid PM,Budget Tracking
+178,990015,54,2,2023-03-09,16,Mid PM,Strategic Planning
+179,990015,58,4,2023-03-09,16,Mid PM,Attention to Detail
+180,990015,59,4,2023-03-09,16,Mid PM,Concise Writing
+181,990016,28,4,2023-03-09,17,Senior PM,Presentation
+182,990016,29,3,2023-03-09,17,Senior PM,Stakeholder management
+183,990016,32,3,2023-03-09,17,Senior PM,Document Management
+184,990016,33,4,2023-03-09,17,Senior PM,Negotiation
+185,990016,35,4,2023-03-09,17,Senior PM,PowerPoint / Slides
+186,990016,36,3,2023-03-09,17,Senior PM,Microsoft Word / Docs
+187,990016,38,3,2023-03-09,17,Senior PM,Product Understanding
+188,990016,45,3,2023-03-09,17,Senior PM,Performance Management
+189,990016,47,3,2023-03-09,17,Senior PM,Emotional Intelligence
+190,990016,49,2,2023-03-09,17,Senior PM,Project Management
+191,990016,51,4,2023-03-09,17,Senior PM,Agile Methodologies
+192,990016,52,2,2023-03-09,17,Senior PM,Risk Management
+193,990016,53,2,2023-03-09,17,Senior PM,Budget Tracking
+194,990016,54,2,2023-03-09,17,Senior PM,Strategic Planning
+195,990016,58,3,2023-03-09,17,Senior PM,Attention to Detail
+196,990016,59,4,2023-03-09,17,Senior PM,Concise Writing
+197,990017,1,3,2023-05-01,24,Junior Data Consultant,Python Programming
+198,990017,3,2,2023-05-01,24,Junior Data Consultant,R Programming
+199,990017,8,2,2023-05-01,24,Junior Data Consultant,Data Visualization
+200,990017,17,2,2023-05-01,24,Junior Data Consultant,Business Intelligent
+201,990017,26,2,2023-05-01,24,Junior Data Consultant,Microsoft Excel / Sheets
+202,990017,27,4,2023-05-01,24,Junior Data Consultant,Database Management
+203,990017,28,3,2023-05-01,24,Junior Data Consultant,Presentation
+204,990017,29,2,2023-05-01,24,Junior Data Consultant,Stakeholder management
+205,990017,30,3,2023-05-01,24,Junior Data Consultant,Business Understanding
+206,990017,31,3,2023-05-01,24,Junior Data Consultant,Market Research
+207,990017,33,3,2023-05-01,24,Junior Data Consultant,Negotiation
+208,990017,34,2,2023-05-01,24,Junior Data Consultant,Proposal Creation
+209,990017,35,3,2023-05-01,24,Junior Data Consultant,PowerPoint / Slides
+210,990017,36,4,2023-05-01,24,Junior Data Consultant,Microsoft Word / Docs
+211,990017,37,4,2023-05-01,24,Junior Data Consultant,CRM systems
+212,990017,38,2,2023-05-01,24,Junior Data Consultant,Product Understanding
+213,990017,59,3,2023-05-01,24,Junior Data Consultant,Concise Writing
+214,990017,62,4,2023-05-01,24,Junior Data Consultant,Prototyping
+215,990018,17,2,2024-02-28,6,Junior Marketing,Business Intelligent
+216,990018,35,2,2024-02-28,6,Junior Marketing,PowerPoint / Slides
+217,990018,39,3,2024-02-28,6,Junior Marketing,Search Engine Optimization
+218,990018,40,3,2024-02-28,6,Junior Marketing,Content Creation
+219,990018,41,2,2024-02-28,6,Junior Marketing,Social Media Management
+220,990018,42,3,2024-02-28,6,Junior Marketing,Creativity
+221,990018,43,4,2024-02-28,6,Junior Marketing,A/B Testing
+222,990019,17,2,2024-02-28,1,Junior Business Development,Business Intelligent
+223,990019,26,2,2024-02-28,1,Junior Business Development,Microsoft Excel / Sheets
+224,990019,28,4,2024-02-28,1,Junior Business Development,Presentation
+225,990019,29,4,2024-02-28,1,Junior Business Development,Stakeholder management
+226,990019,30,4,2024-02-28,1,Junior Business Development,Business Understanding
+227,990019,31,3,2024-02-28,1,Junior Business Development,Market Research
+228,990019,32,4,2024-02-28,1,Junior Business Development,Document Management
+229,990019,33,3,2024-02-28,1,Junior Business Development,Negotiation
+230,990019,34,2,2024-02-28,1,Junior Business Development,Proposal Creation
+231,990019,35,2,2024-02-28,1,Junior Business Development,PowerPoint / Slides
+232,990019,36,2,2024-02-28,1,Junior Business Development,Microsoft Word / Docs
+233,990019,37,3,2024-02-28,1,Junior Business Development,CRM systems
+234,990019,38,4,2024-02-28,1,Junior Business Development,Product Understanding
+235,990019,42,2,2024-02-28,1,Junior Business Development,Creativity
+236,990019,58,3,2024-02-28,1,Junior Business Development,Attention to Detail
+237,990019,59,4,2024-02-28,1,Junior Business Development,Concise Writing
+238,990020,28,3,2024-06-18,16,Mid PM,Presentation
+239,990020,32,2,2024-06-18,16,Mid PM,Document Management
+240,990020,35,3,2024-06-18,16,Mid PM,PowerPoint / Slides
+241,990020,36,4,2024-06-18,16,Mid PM,Microsoft Word / Docs
+242,990020,38,2,2024-06-18,16,Mid PM,Product Understanding
+243,990020,47,2,2024-06-18,16,Mid PM,Emotional Intelligence
+244,990020,49,2,2024-06-18,16,Mid PM,Project Management
+245,990020,51,4,2024-06-18,16,Mid PM,Agile Methodologies
+246,990020,52,4,2024-06-18,16,Mid PM,Risk Management
+247,990020,53,2,2024-06-18,16,Mid PM,Budget Tracking
+248,990024,28,3,2024-06-18,9,Junior Sales,Presentation
+249,990024,29,2,2024-06-18,9,Junior Sales,Stakeholder management
+250,990024,30,2,2024-06-18,9,Junior Sales,Business Understanding
+251,990024,32,3,2024-06-18,9,Junior Sales,Document Management
+252,990024,33,4,2024-06-18,9,Junior Sales,Negotiation
+253,990024,35,3,2024-06-18,9,Junior Sales,PowerPoint / Slides
+254,990024,36,4,2024-06-18,9,Junior Sales,Microsoft Word / Docs
+255,990024,37,3,2024-06-18,9,Junior Sales,CRM systems
+256,990024,38,2,2024-06-18,9,Junior Sales,Product Understanding
+257,990024,58,2,2024-06-18,9,Junior Sales,Attention to Detail
+258,990024,59,4,2024-06-18,9,Junior Sales,Concise Writing
+259,990025,1,4,2024-06-18,25,Mid Data Consultant,Python Programming
+260,990025,3,2,2024-06-18,25,Mid Data Consultant,R Programming
+261,990025,8,2,2024-06-18,25,Mid Data Consultant,Data Visualization
+262,990025,17,3,2024-06-18,25,Mid Data Consultant,Business Intelligent
+263,990025,26,2,2024-06-18,25,Mid Data Consultant,Microsoft Excel / Sheets
+264,990025,27,3,2024-06-18,25,Mid Data Consultant,Database Management
+265,990025,28,4,2024-06-18,25,Mid Data Consultant,Presentation
+266,990025,29,4,2024-06-18,25,Mid Data Consultant,Stakeholder management
+267,990025,30,4,2024-06-18,25,Mid Data Consultant,Business Understanding
+268,990025,31,4,2024-06-18,25,Mid Data Consultant,Market Research
+269,990025,33,2,2024-06-18,25,Mid Data Consultant,Negotiation
+270,990025,34,3,2024-06-18,25,Mid Data Consultant,Proposal Creation
+271,990025,35,4,2024-06-18,25,Mid Data Consultant,PowerPoint / Slides
+272,990025,36,4,2024-06-18,25,Mid Data Consultant,Microsoft Word / Docs
+273,990025,37,2,2024-06-18,25,Mid Data Consultant,CRM systems
+274,990025,38,2,2024-06-18,25,Mid Data Consultant,Product Understanding
+275,990025,59,3,2024-06-18,25,Mid Data Consultant,Concise Writing
+276,990025,62,3,2024-06-18,25,Mid Data Consultant,Prototyping
+277,990026,32,4,2024-06-18,40,Mid HR,Document Management
+278,990026,33,3,2024-06-18,40,Mid HR,Negotiation
+279,990026,44,4,2024-06-18,40,Mid HR,Basics Law
+280,990026,45,3,2024-06-18,40,Mid HR,Performance Management
+281,990026,46,4,2024-06-18,40,Mid HR,Recruitment
+282,990026,47,3,2024-06-18,40,Mid HR,Emotional Intelligence
+283,990026,48,2,2024-06-18,40,Mid HR,Organizational Management
+284,990026,58,2,2024-06-18,40,Mid HR,Attention to Detail
+285,990027,4,2,2024-08-01,38,Senior Software Developer,JavaScript Programming
+286,990027,5,4,2024-08-01,38,Senior Software Developer,C++ Programming
+287,990027,15,3,2024-08-01,38,Senior Software Developer,Git Version Control
+288,990027,18,4,2024-08-01,38,Senior Software Developer,Code Review
+289,990027,19,4,2024-08-01,38,Senior Software Developer,Docker
+290,990027,20,3,2024-08-01,38,Senior Software Developer,RESTful services
+291,990027,51,3,2024-08-01,38,Senior Software Developer,Agile Methodologies
+292,990028,17,4,2025-05-17,7,Mid Marketing,Business Intelligent
+293,990028,35,4,2025-05-17,7,Mid Marketing,PowerPoint / Slides
+294,990028,39,2,2025-05-17,7,Mid Marketing,Search Engine Optimization
+295,990028,40,4,2025-05-17,7,Mid Marketing,Content Creation
+296,990028,41,3,2025-05-17,7,Mid Marketing,Social Media Management
+297,990028,42,2,2025-05-17,7,Mid Marketing,Creativity
+298,990028,43,4,2025-05-17,7,Mid Marketing,A/B Testing
+299,990004,17,2,2021-06-06,13,Mid Operations,Business Intelligent
+300,990004,21,4,2021-06-06,13,Mid Operations,Analytical thinking
+301,990004,22,3,2021-06-06,13,Mid Operations,Communication
+302,990004,23,4,2021-06-06,13,Mid Operations,Teamwork
+303,990004,24,4,2021-06-06,13,Mid Operations,Time Management
+304,990004,25,3,2021-06-06,13,Mid Operations,Problem Solving
+305,990004,28,3,2021-06-06,13,Mid Operations,Presentation
+306,990004,30,4,2021-06-06,13,Mid Operations,Business Understanding
+307,990004,32,4,2021-06-06,13,Mid Operations,Document Management
+308,990004,35,3,2021-06-06,13,Mid Operations,PowerPoint / Slides
+309,990004,36,4,2021-06-06,13,Mid Operations,Microsoft Word / Docs
+310,990004,49,3,2021-06-06,13,Mid Operations,Project Management
+311,990004,58,2,2021-06-06,13,Mid Operations,Attention to Detail
+312,990004,59,4,2021-06-06,13,Mid Operations,Concise Writing
+313,990008,17,3,2022-02-18,47,MKT Manager,Business Intelligent
+314,990008,35,4,2022-02-18,47,MKT Manager,PowerPoint / Slides
+315,990008,39,4,2022-02-18,47,MKT Manager,Search Engine Optimization
+316,990008,40,4,2022-02-18,47,MKT Manager,Content Creation
+317,990008,41,3,2022-02-18,47,MKT Manager,Social Media Management
+318,990008,42,3,2022-02-18,47,MKT Manager,Creativity
+319,990008,43,2,2022-02-18,47,MKT Manager,A/B Testing
+320,990008,21,4,2022-02-18,47,MKT Manager,Analytical thinking
+321,990008,22,4,2022-02-18,47,MKT Manager,Communication
+322,990008,23,4,2022-02-18,47,MKT Manager,Teamwork
+323,990008,24,4,2022-02-18,47,MKT Manager,Time Management
+324,990008,25,4,2022-02-18,47,MKT Manager,Problem Solving
+325,990021,17,3,2024-06-18,13,Mid Operations,Business Intelligent
+326,990021,21,3,2024-06-18,13,Mid Operations,Analytical thinking
+327,990021,25,2,2024-06-18,13,Mid Operations,Problem Solving
+328,990021,28,4,2024-06-18,13,Mid Operations,Presentation
+329,990021,30,4,2024-06-18,13,Mid Operations,Business Understanding
+330,990021,35,3,2024-06-18,13,Mid Operations,PowerPoint / Slides
+331,990021,49,3,2024-06-18,13,Mid Operations,Project Management
+332,990021,59,3,2024-06-18,13,Mid Operations,Concise Writing
+333,990022,21,4,2024-06-18,12,Junior Operations,Analytical thinking
+334,990022,22,4,2024-06-18,12,Junior Operations,Communication
+335,990022,23,4,2024-06-18,12,Junior Operations,Teamwork
+336,990022,24,5,2024-06-18,12,Junior Operations,Time Management
+337,990022,25,3,2024-06-18,12,Junior Operations,Problem Solving
+338,990022,30,3,2024-06-18,12,Junior Operations,Business Understanding
+339,990022,32,2,2024-06-18,12,Junior Operations,Document Management
+340,990022,35,2,2024-06-18,12,Junior Operations,PowerPoint / Slides
+341,990022,36,3,2024-06-18,12,Junior Operations,Microsoft Word / Docs
+342,990022,47,5,2024-06-18,12,Junior Operations,Emotional Intelligence
+343,990022,49,5,2024-06-18,12,Junior Operations,Project Management
+344,990022,58,4,2024-06-18,12,Junior Operations,Attention to Detail
+345,990023,17,3,2024-06-18,12,Junior Operations,Business Intelligent
+346,990023,22,2,2024-06-18,12,Junior Operations,Communication
+347,990023,24,2,2024-06-18,12,Junior Operations,Time Management
+348,990023,25,3,2024-06-18,12,Junior Operations,Problem Solving
+349,990023,28,4,2024-06-18,12,Junior Operations,Presentation
+350,990023,30,4,2024-06-18,12,Junior Operations,Business Understanding
+351,990023,35,3,2024-06-18,12,Junior Operations,PowerPoint / Slides
+352,990023,49,2,2024-06-18,12,Junior Operations,Project Management

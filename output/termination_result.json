@@ -1,0 +1,319 @@
+{
+    "overall_summary": {
+        "prediction_start_date": "2025-08-31",
+        "prediction_end_date": "2025-11-29",
+        "total_employees": 18,
+        "total_employees_left": 10,
+        "employees_predicted_to_leave": 1,
+        "average_retention_probability": 0.04184148347277895
+    },
+    "termination_proportion_by_department": [
+        {
+            "department_name": "Business Development",
+            "termination_count": 4
+        },
+        {
+            "department_name": "Development",
+            "termination_count": 4
+        },
+        {
+            "department_name": "Operations",
+            "termination_count": 2
+        },
+        {
+            "department_name": "Human Resources",
+            "termination_count": 1
+        }
+    ],
+    "termination_proportion_by_job_level": [
+        {
+            "level_name": "Junior",
+            "termination_count": 6
+        },
+        {
+            "level_name": "Mid-level",
+            "termination_count": 3
+        },
+        {
+            "level_name": "Lead",
+            "termination_count": 1
+        },
+        {
+            "level_name": "Manager",
+            "termination_count": 1
+        }
+    ],
+    "top_reasons_for_quitting": [
+        {
+            "feature_name": "Total Overtime Hours in Last 3 Months",
+            "impact_value": 0.00873556642965955
+        },
+        {
+            "feature_name": "Performance Score Compared to Manager",
+            "impact_value": 0.00490139272801071
+        },
+        {
+            "feature_name": "Years with Current Manager",
+            "impact_value": 0.0041279830733319
+        },
+        {
+            "feature_name": "Number of Trainings Attended",
+            "impact_value": 0.004127449109770101
+        },
+        {
+            "feature_name": "Salary Compared to Market Rate",
+            "impact_value": 0.0040559396776477
+        }
+    ],
+    "termination_reason_by_employee": {
+        "990003": {
+            "predicted_termination_probability": 0.1841871088664749,
+            "impact_factors": [
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": 0.12560928922922854
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": 0.045812293215558644
+                },
+                {
+                    "feature_name": "Performance Score Compared to Manager",
+                    "impact_value": 0.02192107026974585
+                }
+            ]
+        }
+    },
+    "termination_reason_by_department": {
+        "Business Development": {
+            "num_emp_left": 4,
+            "num_emp_predicted_to_leave": 0,
+            "avg_termination_probability": 0.0416812929651604,
+            "impact_factors": [
+                {
+                    "feature_name": "Performance Score Compared to Manager",
+                    "impact_value": 0.022601620491803566
+                },
+                {
+                    "feature_name": "Salary Compared to Market Rate",
+                    "impact_value": 0.00972508811836341
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": 0.006488730831063117
+                },
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": -0.00828370681245541
+                }
+            ]
+        },
+        "Development": {
+            "num_emp_left": 4,
+            "num_emp_predicted_to_leave": 1,
+            "avg_termination_probability": 0.03497116873703766,
+            "impact_factors": [
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": 0.007876973381198145
+                },
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": 0.006995621098223159
+                },
+                {
+                    "feature_name": "Total Working Years Compared to Manager",
+                    "impact_value": 0.004270927478067392
+                },
+                {
+                    "feature_name": "Performance Score Compared to Job Level",
+                    "impact_value": 0.004035039874792122
+                },
+                {
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_value": 0.00260939444354752
+                },
+                {
+                    "feature_name": "Average Performance Score",
+                    "impact_value": -0.003235005205712638
+                }
+            ]
+        },
+        "Operations": {
+            "num_emp_left": 2,
+            "num_emp_predicted_to_leave": 0,
+            "avg_termination_probability": 0.05433620240320809,
+            "impact_factors": [
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": 0.025482886619937018
+                },
+                {
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_value": 0.009865023407342889
+                },
+                {
+                    "feature_name": "Total Working Years Compared to Manager",
+                    "impact_value": 0.00877460160744271
+                },
+                {
+                    "feature_name": "Salary Compared to Market Rate",
+                    "impact_value": 0.005305494555245927
+                },
+                {
+                    "feature_name": "Time Since Last Salary Adjustment",
+                    "impact_value": -0.004088858378515809
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": -0.004508797687012315
+                }
+            ]
+        }
+    },
+    "termination_reason_by_job_level": {
+        "C-Level": {
+            "num_emp_left": 0,
+            "num_emp_predicted_to_leave": 0,
+            "avg_termination_probability": 0.0313564922424184,
+            "impact_factors": [
+                {
+                    "feature_name": "Salary Compared to Market Rate",
+                    "impact_value": 0.01707844283252199
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": 0.012492280797170048
+                },
+                {
+                    "feature_name": "Performance Score Compared to Manager",
+                    "impact_value": 0.010375305399295178
+                },
+                {
+                    "feature_name": "Number of Skills Acquired",
+                    "impact_value": -0.005236403134779813
+                },
+                {
+                    "feature_name": "Time Since Last Promotion",
+                    "impact_value": -0.008499147684252166
+                },
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": -0.010020719175776944
+                }
+            ]
+        },
+        "Lead": {
+            "num_emp_left": 1,
+            "num_emp_predicted_to_leave": 1,
+            "avg_termination_probability": 0.09381731722408378,
+            "impact_factors": [
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": 0.05905208715765417
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": 0.025027532682594927
+                },
+                {
+                    "feature_name": "Performance Score Compared to Manager",
+                    "impact_value": 0.010444128718233893
+                }
+            ]
+        },
+        "Manager": {
+            "num_emp_left": 1,
+            "num_emp_predicted_to_leave": 0,
+            "avg_termination_probability": 0.05629301900316615,
+            "impact_factors": [
+                {
+                    "feature_name": "Performance Score Compared to Manager",
+                    "impact_value": 0.03401773537048961
+                },
+                {
+                    "feature_name": "Time Since Last Promotion",
+                    "impact_value": 0.01661059323900454
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_value": 0.007401362992731151
+                },
+                {
+                    "feature_name": "Distance from Home to Office",
+                    "impact_value": -0.005540760558692879
+                },
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": -0.00913005546702644
+                }
+            ]
+        },
+        "Mid-level": {
+            "num_emp_left": 3,
+            "num_emp_predicted_to_leave": 0,
+            "avg_termination_probability": 0.03412695598648559,
+            "impact_factors": [
+                {
+                    "feature_name": "Total Working Years Compared to Manager",
+                    "impact_value": 0.009673919349499977
+                },
+                {
+                    "feature_name": "Total Overtime Hours in Last 3 Months",
+                    "impact_value": 0.008248494212202577
+                },
+                {
+                    "feature_name": "Salary Compared to Market Rate",
+                    "impact_value": 0.005360384449016646
+                },
+                {
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_value": 0.0049046381866467
+                },
+                {
+                    "feature_name": "Average Performance Score",
+                    "impact_value": -0.0031018246577251126
+                },
+                {
+                    "feature_name": "Time Since Last Salary Adjustment",
+                    "impact_value": -0.0038058348429310454
+                }
+            ]
+        },
+        "Senior": {
+            "num_emp_left": 0,
+            "num_emp_predicted_to_leave": 0,
+            "avg_termination_probability": 0.027690147230771345,
+            "impact_factors": [
+                {
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_value": 0.004558857791645628
+                },
+                {
+                    "feature_name": "Salary Compared to Market Rate",
+                    "impact_value": 0.0036558519627496455
+                },
+                {
+                    "feature_name": "Performance Score Compared to Job Level",
+                    "impact_value": 0.003474317963792406
+                },
+                {
+                    "feature_name": "Average Training Times per Year",
+                    "impact_value": 0.0023375825812111503
+                },
+                {
+                    "feature_name": "Average Performance Score",
+                    "impact_value": -0.0018098229526909402
+                },
+                {
+                    "feature_name": "Distance from Home to Office",
+                    "impact_value": -0.0019555149116222558
+                },
+                {
+                    "feature_name": "Performance Score Compared to Manager",
+                    "impact_value": -0.0019792956044944023
+                }
+            ]
+        }
+    }
+}

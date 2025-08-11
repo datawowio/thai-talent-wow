@@ -7,22 +7,32 @@ This repository right now contains two main analytics modules:
 ## Requirements
 - Python 3.12+
 - Install dependencies before running:
-```pip install -r requirements.txt```
+```bash
+pip install -r requirements.txt
+```
 
 ## 1. Predictive Retention Analysis
 ### Training the Model
 To train the predictive retention analysis model, run:
-```python predictive_retention/main.py```
+```bash
+python predictive_retention/main.py
+```
 
 ### Experimental Visualizations & Results
 - You can explore result storage and plotting methods in:
-  ```predictive_retention/experimental_visualization.ipynb```
+  ```
+  predictive_retention/experimental_visualization.ipynb
+  ```
 - JSON output of the prediction results is stored at:
-  ```output/termination_result.json```
+  ```
+  output/termination_result.json
+  ```
 
 ### Interactive Overview (Streamlit)
 To view an interactive dashboard of the analysis:
-```streamlit run predictive_retention/streamlit.py```
+```bash
+streamlit run predictive_retention/streamlit.py
+```
 
 ---
 
@@ -30,9 +40,13 @@ To view an interactive dashboard of the analysis:
 ### Running the Analysis
 To run the skill gap analysis:
 
-```python skill_management/main.py```
+```bash
+python skill_management/main.py
+```
 
 ### Interactive Overview (Streamlit)
 To view the skill gap analysis dashboard:
 
-```streamlit run skill_management/streamlit.py```
+```bash
+streamlit run skill_management/streamlit.py
+```

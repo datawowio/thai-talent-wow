@@ -1,3 +1,5 @@
+import os
+import sys
 import shap
 import json
 import pickle
@@ -12,10 +14,10 @@ from sklearn.metrics import f1_score, recall_score, precision_score
 import warnings
 warnings.filterwarnings('ignore')
 
-import config
-import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import config
 
-SEED = 1
+SEED = 9
 np.random.seed(SEED)
 
 def fit_model(model, X_train, y_train, X_test, y_test, score_metric, recall_threshold=0):
@@ -201,8 +203,6 @@ def load_model():
     with open(os.path.join(model_dir, 'model_config.json')) as file:
         model_config = json.load(file)
     # convert string dates to datetime objects
-    print(model_config['training_period'])
-    print(model_config['testing_period'])
     model_config['training_period'] = [datetime.strptime(period, '%Y-%m-%d').date() for period in model_config['training_period']]
     model_config['testing_period'] = [datetime.strptime(period, '%Y-%m-%d').date() for period in model_config['testing_period']]
     return model, model_config
@@ -244,6 +244,6 @@ def save_model_result(prediction_df, feature_importance_df, model_interpretation
     # Save the prediction results, feature importance, and model interpretation
     model_result_dir = config.RESULT_DIR
     prediction_df.to_parquet(os.path.join(model_result_dir, 'model_result.parquet'), index=False)
-    feature_importance_df.to_parquet(os.path.join(model_result_dir, 'feature_importance.parquet'), index=False)
+    # feature_importance_df.to_parquet(os.path.join(model_result_dir, 'feature_importance.parquet'), index=False)
     with open(os.path.join(model_result_dir, 'model_interpretation.pkl'), 'wb') as file:
         pickle.dump(model_interpretation, file)

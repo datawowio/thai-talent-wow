@@ -1,4 +1,4 @@
-id,name
+﻿id,name
 1,Python Programming
 2,ETL Tools
 3,R Programming
@@ -64,7 +64,3 @@ id,name
 63,User Research
 64,User Flows & Journey Mapping
 65,Design Tools
-68,Data Sci
-69,Data Analysis
-70,Project Mgmt
-71,Data Scientist

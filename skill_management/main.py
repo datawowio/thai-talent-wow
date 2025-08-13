@@ -1,9 +1,11 @@
-
+import os
+import sys
 import json
 import pandas as pd
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import config
 from skill_gap_analysis import normalize_skill, analyze_current_role_gap, analyze_peer_skill_gap, analyze_next_level_gap, recommend_roles_for_skills, analyze_skill_gap_by_department
-import config
 
 def main():
     employee_analysis_result = {}

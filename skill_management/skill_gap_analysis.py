@@ -4,7 +4,6 @@ import pandas as pd
 from collections import defaultdict
 from sentence_transformers import SentenceTransformer, util
 
-# import config
 
 def normalize_skill(skill_dataframe: pd.DataFrame, threshold: float = 0.66):
     """
@@ -134,10 +133,10 @@ def analyze_next_level_gap(employee_id: int, emp_pos_df, pos_df, pos_skill_df, e
     current_pos_id = emp_pos_df.loc[emp_pos_df['employee_id'] == employee_id, 'position_id'].iloc[0]
     current_pos_details = pos_df.loc[pos_df['id'] == current_pos_id]
     current_level = current_pos_details['job_level'].iloc[0]
-    current_group = current_pos_details['title_group'].iloc[0]
-    current_name = current_pos_details['title'].iloc[0]
+    current_department_id = current_pos_details['department_id'].iloc[0]
+    current_name = current_pos_details['name'].iloc[0]
 
-    next_level_pos = pos_df[(pos_df['title_group'] == current_group) & (pos_df['job_level'] == current_level + 1)]
+    next_level_pos = pos_df[(pos_df['department_id'] == current_department_id) & (pos_df['job_level'] > current_level)].sort_values('job_level')
     
     if next_level_pos.empty:
         return {
@@ -155,7 +154,7 @@ def analyze_next_level_gap(employee_id: int, emp_pos_df, pos_df, pos_skill_df, e
 
     return {
         "current_position": f"{current_name} (L{current_level})",
-        "next_position": f"{next_level_pos['title'].iloc[0]} (L{next_level_pos['job_level'].iloc[0]})",
+        "next_position": f"{next_level_pos['name'].iloc[0]} (L{next_level_pos['job_level'].iloc[0]})",
         "skills_to_acquire": sorted([id_map[sid] for sid in promotion_gap_ids if sid in id_map])
     }
 
@@ -177,7 +176,7 @@ def recommend_roles_for_skills(employee_id: int, missing_skill_names: list, emp_
 
     for _, row in merged_df.iterrows():
         role_info = {
-            'name': f"{row['title']} (L{row['job_level']})",
+            'name': f"{row['name']} (L{row['job_level']})",
             'level': row['job_level']
         }
         if role_info not in skill_to_roles_map[row['canonical_skill_id']]:
@@ -231,6 +230,8 @@ def analyze_skill_gap_by_department(department_id, pos_df, emp_pos_df, emp_skill
         skill_groups = existing_skills_df.groupby('canonical_skill_id')
         
         for sid, group in skill_groups:
+            skill_name = id_map.get(sid, f"Unknown Skill ID {sid}")
+            
             # Check for low average score
             average_score = group['score'].mean()
             if average_score < 2.5:
@@ -244,7 +245,6 @@ def analyze_skill_gap_by_department(department_id, pos_df, emp_pos_df, emp_skill
                 scores = group['score']
                 stats = scores.describe()
                 
-                skill_name = id_map.get(sid, f"Unknown Skill ID {sid}")
                 common_existing_skills[skill_name] = {
                     'emp_percentage': f"{frequency:.0%}",
                     'stats': {

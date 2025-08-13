@@ -1,29 +1,20 @@
+import os
+import sys
+import json
+import pandas as pd
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import config
 from  feature_engineering import feature_engineering
 from model import train_model, save_model, predict_result, save_model_result
+from termination_visualization import generate_termination_visualizations
+from config import config
 
 def main():
-    file_paths = [
-        config.EMPLOYEE_DATA,
-        config.MANAGER_LOG_DATA,
-        config.EMPLOYEE_SKILL_DATA,
-        config.EMPLOYEE_POSITION_DATA,
-        # config.SKILL_DATA,
-        config.POSITION_DATA,
-        # config.DEPARTMENT_DATA,
-        config.POSITION_SKILL_DATA,
-        config.SALARY_DATA,
-        config.EMPLOYEE_MOVEMENT_DATA,
-        config.ENGAGEMENT_DATA,
-        config.LEAVE_DATA,
-        config.EVALUATION_RECORD_DATA,
-        config.CLOCK_IN_OUT_DATA
-    ]
-
     # 1. Feature Engineering
     print("Starting feature engineering...")
-    feature_engineered_df = feature_engineering(file_paths)
+    feature_engineered_df = feature_engineering()
+    # feature_engineered_df = pd.read_csv(config.FEATURE_ENGINEERED_PATH)
+    # feature_engineered_df['execution_date'] = pd.to_datetime(feature_engineered_df['execution_date'])
 
     # 2. Train Model
     print("Starting model training...")
@@ -41,5 +32,11 @@ def main():
     print("Saving prediction results...")
     save_model_result(prediction_df, feature_importance_df, model_interpretation)
 
+    # 6. Generate and Save Visualization JSON
+    print("Generating JSON result...")
+    visualization_json = generate_termination_visualizations(model_config, model_interpretation, prediction_df)
+    with open(config.TERMINATION_ANALYSIS_OUTPUT, 'w') as f:
+        json.dump(visualization_json, f, indent=4)
+    
 if __name__ == "__main__":
     main()

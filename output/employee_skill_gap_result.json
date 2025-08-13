@@ -77,7 +77,7 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Chief Business Manager (L7)",
+            "current_position": "Chief Business Development (L7)",
             "next_position": "No next level position available",
             "skills_to_acquire": []
         }
@@ -90,7 +90,7 @@
                     "score": 4
                 },
                 {
-                    "skill": "Data Analysis",
+                    "skill": "Data Analytics",
                     "score": 4
                 },
                 {
@@ -168,7 +168,7 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Chief Technology Manager (L7)",
+            "current_position": "Chief Data Scientist (L7)",
             "next_position": "No next level position available",
             "skills_to_acquire": []
         }
@@ -209,7 +209,7 @@
                     "score": 4
                 },
                 {
-                    "skill": "Data Analysis",
+                    "skill": "Data Analytics",
                     "score": 3
                 },
                 {
@@ -263,8 +263,8 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Team Lead Data Scientist (L3)",
-            "next_position": "Data Manager (L4)",
+            "current_position": "Lead Data Scientist (L3)",
+            "next_position": "Data Scientist Manager (L4)",
             "skills_to_acquire": []
         }
     },
@@ -334,8 +334,8 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Team Lead Data Engineer (L3)",
-            "next_position": "No next level position available",
+            "current_position": "Lead Data Engineer (L3)",
+            "next_position": "Data Engineer Manager (L4)",
             "skills_to_acquire": []
         }
     },
@@ -367,7 +367,7 @@
                     "score": 3
                 },
                 {
-                    "skill": "Data Analysis",
+                    "skill": "Data Analytics",
                     "score": 3
                 },
                 {
@@ -429,8 +429,8 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Data Manager (L4)",
-            "next_position": "No next level position available",
+            "current_position": "Data Scientist Manager (L4)",
+            "next_position": "Chief Data Engineer (L7)",
             "skills_to_acquire": []
         }
     },
@@ -474,7 +474,7 @@
                     "score": 3
                 },
                 {
-                    "skill": "Data Analysis",
+                    "skill": "Data Analytics",
                     "score": 2
                 },
                 {
@@ -512,7 +512,7 @@
         },
         "next_level_gap": {
             "current_position": "Senior Data Scientist (L2)",
-            "next_position": "Team Lead Data Scientist (L3)",
+            "next_position": "Lead Data Scientist (L3)",
             "skills_to_acquire": [
                 "Experiment Design",
                 "R Programming",
@@ -679,9 +679,17 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Business Manager (L4)",
-            "next_position": "No next level position available",
-            "skills_to_acquire": []
+            "current_position": "Business Development Manager (L4)",
+            "next_position": "Chief Business Development (L7)",
+            "skills_to_acquire": [
+                "Attention to Detail",
+                "Concise Writing",
+                "Microsoft Excel / Sheets",
+                "Negotiation",
+                "Proposal Creation",
+                "Risk Management",
+                "Strategic Planning"
+            ]
         }
     },
     "990015": {
@@ -754,8 +762,8 @@
             "missing_skills_vs_peers": {}
         },
         "next_level_gap": {
-            "current_position": "Mid PM (L1)",
-            "next_position": "Senior PM (L2)",
+            "current_position": "Mid Project Management (L1)",
+            "next_position": "Senior Project Management (L2)",
             "skills_to_acquire": []
         }
     },
@@ -829,8 +837,8 @@
             "missing_skills_vs_peers": "No peers found in this position."
         },
         "next_level_gap": {
-            "current_position": "Senior PM (L2)",
-            "next_position": "No next level position available",
+            "current_position": "Senior Project Management (L2)",
+            "next_position": "Project Management Manager (L4)",
             "skills_to_acquire": []
         }
     },
@@ -962,8 +970,8 @@
             "missing_skills_vs_peers": {}
         },
         "next_level_gap": {
-            "current_position": "Mid PM (L1)",
-            "next_position": "Senior PM (L2)",
+            "current_position": "Mid Project Management (L1)",
+            "next_position": "Senior Project Management (L2)",
             "skills_to_acquire": [
                 "Attention to Detail",
                 "Concise Writing",
@@ -1100,8 +1108,8 @@
             "missing_skills_vs_peers": {}
         },
         "next_level_gap": {
-            "current_position": "Mid PM (L1)",
-            "next_position": "Senior PM (L2)",
+            "current_position": "Mid Project Management (L1)",
+            "next_position": "Senior Project Management (L2)",
             "skills_to_acquire": [
                 "Agile Methodologies",
                 "Budget Tracking",
@@ -1242,7 +1250,7 @@
         },
         "next_level_gap": {
             "current_position": "Senior Software Developer (L2)",
-            "next_position": "No next level position available",
+            "next_position": "Lead Software Developer (L3)",
             "skills_to_acquire": []
         }
     },

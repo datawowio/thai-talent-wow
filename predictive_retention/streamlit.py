@@ -37,7 +37,7 @@ def load_data(filepath):
         return None
 
 # Load the data
-data = load_data('/Users/warisaraporn.l/Documents/TalentWow/output/termination_result.json')
+data = load_data('output/termination_result.json')
 
 if data:
     # --- Main Dashboard Title ---
@@ -99,14 +99,14 @@ if data:
     top_reasons_data = data.get("top_reasons_for_quitting", [])
     if top_reasons_data:
         df_reasons = pd.DataFrame(top_reasons_data)
-        df_reasons = df_reasons.sort_values(by="impact_value", ascending=True)
+        df_reasons = df_reasons.sort_values(by="impact_percentage", ascending=True)
         fig_reasons = px.bar(
             df_reasons,
-            x='impact_value',
+            x='impact_percentage',
             y='feature_name',
             orientation='h',
             title='Top Factors Increasing Termination Risk (Company-Wide)',
-            labels={'feature_name': 'Factor', 'impact_value': 'Average Impact on Termination Risk'}
+            labels={'feature_name': 'Factor', 'impact_percentage': 'How Much This Factor Matters (%)'}
         )
         fig_reasons.update_traces(marker_color='#FF4B4B')
         st.plotly_chart(style_chart(fig_reasons), use_container_width=True)
@@ -130,16 +130,16 @@ if data:
                     st.write(f"**Predicted Termination Probability:** {details.get('predicted_termination_probability', 0):.1%}")
                     
                     df_factors = pd.DataFrame(details.get("impact_factors", []))
-                    df_factors['color'] = df_factors['impact_value'].apply(lambda x: '#FF4B4B' if x > 0 else '#00B084')
-                    df_factors = df_factors.sort_values(by="impact_value", ascending=True)
+                    df_factors['color'] = df_factors['impact_percentage'].apply(lambda x: '#FF4B4B' if x > 0 else '#00B084')
+                    df_factors = df_factors.sort_values(by="impact_percentage", ascending=True)
                     
                     fig_emp = px.bar(
                         df_factors,
-                        x='impact_value',
+                        x='impact_percentage',
                         y='feature_name',
                         orientation='h',
                         title=f'Key Factors for Employee {emp_id}',
-                        labels={'feature_name': 'Factor', 'impact_value': 'Impact on Risk'}
+                        labels={'feature_name': 'Factor', 'impact_percentage': 'How Much This Factor Matters (%)'}
                     )
                     fig_emp.update_traces(marker_color=df_factors['color'])
                     st.plotly_chart(style_chart(fig_emp), use_container_width=True)
@@ -155,19 +155,19 @@ if data:
                     c1, c2, c3 = st.columns(3)
                     c1.metric("Employees Who Left", details.get("num_emp_left", 0))
                     c2.metric("Predicted to Leave", details.get("num_emp_predicted_to_leave", 0))
-                    c3.metric("Avg. Termination Risk", f"{details.get('avg_termination_probability', 0):.1%}")
+                    c3.metric("Avg. Termination Probability", f"{round(details.get('avg_termination_probability', 0), 2)}")
                     
                     df_factors = pd.DataFrame(details.get("impact_factors", []))
-                    df_factors['color'] = df_factors['impact_value'].apply(lambda x: '#FF4B4B' if x > 0 else '#00B084')
-                    df_factors = df_factors.sort_values(by="impact_value", ascending=True)
+                    df_factors['color'] = df_factors['impact_percentage'].apply(lambda x: '#FF4B4B' if x > 0 else '#00B084')
+                    df_factors = df_factors.sort_values(by="impact_percentage", ascending=True)
 
                     fig_dept_detail = px.bar(
                         df_factors,
-                        x='impact_value',
+                        x='impact_percentage',
                         y='feature_name',
                         orientation='h',
                         title=f'Key Factors for {dept_name} Department',
-                        labels={'feature_name': 'Factor', 'impact_value': 'Average Impact on Risk'}
+                        labels={'feature_name': 'Factor', 'impact_percentage': 'How Much This Factor Matters (%)'}
                     )
                     fig_dept_detail.update_traces(marker_color=df_factors['color'])
                     st.plotly_chart(style_chart(fig_dept_detail), use_container_width=True)
@@ -183,19 +183,19 @@ if data:
                     c1, c2, c3 = st.columns(3)
                     c1.metric("Employees Who Left", details.get("num_emp_left", 0))
                     c2.metric("Predicted to Leave", details.get("num_emp_predicted_to_leave", 0))
-                    c3.metric("Avg. Termination Risk", f"{details.get('avg_termination_probability', 0):.1%}")
+                    c3.metric("Avg. Termination Probability", f"{round(details.get('avg_termination_probability', 0), 2)}")
                     
                     df_factors = pd.DataFrame(details.get("impact_factors", []))
-                    df_factors['color'] = df_factors['impact_value'].apply(lambda x: '#FF4B4B' if x > 0 else '#00B084')
-                    df_factors = df_factors.sort_values(by="impact_value", ascending=True)
+                    df_factors['color'] = df_factors['impact_percentage'].apply(lambda x: '#FF4B4B' if x > 0 else '#00B084')
+                    df_factors = df_factors.sort_values(by="impact_percentage", ascending=True)
 
                     fig_level_detail = px.bar(
                         df_factors,
-                        x='impact_value',
+                        x='impact_percentage',
                         y='feature_name',
                         orientation='h',
                         title=f'Key Factors for {level_name} Level',
-                        labels={'feature_name': 'Factor', 'impact_value': 'Average Impact on Risk'}
+                        labels={'feature_name': 'Factor', 'impact_percentage': 'How Much This Factor Matters (%)'}
                     )
                     fig_level_detail.update_traces(marker_color=df_factors['color'])
                     st.plotly_chart(style_chart(fig_level_detail), use_container_width=True)

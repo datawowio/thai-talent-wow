@@ -1,4 +1,6 @@
 ### create features for predictive retention model
+import os
+import sys
 import pandas as pd
 from dateutil.relativedelta import relativedelta
 from geopy.geocoders import Nominatim
@@ -6,13 +8,14 @@ from geopy.distance import geodesic
 import warnings
 warnings.filterwarnings('ignore')
 
-import config
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import config
 
 def calculate_z_score(dataframe, group_column, value_column):
     return dataframe.groupby(group_column)[value_column].transform(lambda x: (x - x.mean()) / x.std()).fillna(0).tolist()
 
 
-def feature_engineering(file_paths):
+def feature_engineering():
     ### assuming that all of the data already validated the type and column_name
     emp_df = pd.read_csv(config.EMPLOYEE_DATA)
     manager_df = pd.read_csv(config.MANAGER_LOG_DATA)
@@ -20,16 +23,17 @@ def feature_engineering(file_paths):
     emp_position_df = pd.read_csv(config.EMPLOYEE_POSITION_DATA)
     position_df = pd.read_csv(config.POSITION_DATA)
     position_skill_df = pd.read_csv(config.POSITION_SKILL_DATA)
-    salary_df = pd.read_csv(config.SALARY_DATA)
     emp_movement_df = pd.read_csv(config.EMPLOYEE_MOVEMENT_DATA)
     engagement_df = pd.read_csv(config.ENGAGEMENT_DATA)
+    event_df = pd.read_csv(config.EVENT_DATA)
     leave_df = pd.read_csv(config.LEAVE_DATA)
     evaluation_record_df = pd.read_csv(config.EVALUATION_RECORD_DATA)
     clock_in_out_df = pd.read_csv(config.CLOCK_IN_OUT_DATA)
     department_df = pd.read_csv(config.DEPARTMENT_DATA)
+    engagement_df = engagement_df.merge(event_df[['id', 'event_type', 'start_date']], left_on='event_id', right_on='id', how='left')
 
     ### convert data to proper datetime format
-    for df in [emp_df, manager_df, emp_skill_df, emp_position_df, position_df, position_skill_df, salary_df, emp_movement_df, engagement_df, leave_df, evaluation_record_df, clock_in_out_df]:
+    for df in [emp_df, manager_df, emp_skill_df, emp_position_df, position_df, position_skill_df, event_df, emp_movement_df, engagement_df, leave_df, evaluation_record_df, clock_in_out_df, department_df]:
         if 'created_at' in df.columns:
             df['created_at'] = pd.to_datetime(df['created_at'], format='%Y-%m-%d')
         for col in df.columns:
@@ -53,12 +57,12 @@ def feature_engineering(file_paths):
         if coord1 and coord2:
             return geodesic(coord1, coord2).km
         return None
-    COMPANY_POSTAL_CODE = '10110'
-    COMPANY_COORDS = get_coordinates(COMPANY_POSTAL_CODE)
+    company_postal_code = config.COMPANY_POSTAL_CODE
+    company_coords = get_coordinates(company_postal_code)
 
     _distance_df = emp_df.drop_duplicates(subset=['emp_id', 'residence_postal_code'], keep='last')[['emp_id', 'residence_postal_code']].copy()
     _distance_df['residence_coordinates'] = _distance_df['residence_postal_code'].apply(get_coordinates)
-    _distance_df['distance_from_home_to_office'] = _distance_df['residence_coordinates'].apply(lambda x: calculate_distance(x, COMPANY_COORDS))
+    _distance_df['distance_from_home_to_office'] = _distance_df['residence_coordinates'].apply(lambda x: calculate_distance(x, company_coords))
     
     final_df = pd.DataFrame()
     for execution_date in date_range[1:]:
@@ -67,9 +71,8 @@ def feature_engineering(file_paths):
         execution_emp_df = execution_emp_df[(emp_df['hire_date'] <= execution_date) & (emp_df['created_at'] <= execution_date)].drop_duplicates(subset=['emp_id'], keep='last')
         execution_emp_position_df = emp_position_df[emp_position_df['created_at'] <= execution_date]
         execution_manager_df = manager_df[manager_df['created_at'] <= execution_date]
-        execution_salary_df = salary_df[salary_df['created_at'] <= execution_date]
+        execution_salary_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date][['employee_id', 'salary', 'effective_date']]
         execution_movement_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date]
-        execution_engagement_df = engagement_df[engagement_df['event_date'] <= execution_date]
         execution_emp_skill_df = emp_skill_df[emp_skill_df['created_at'] <= execution_date]
         execution_evaluation_record_df = evaluation_record_df[evaluation_record_df['evaluation_date'] <= execution_date]
 
@@ -82,12 +85,14 @@ def feature_engineering(file_paths):
         execution_emp_df = execution_emp_df.merge(position_df[['id', 'job_level', 'department_id', 'avg_salary']], left_on='position_id', right_on='id', how='left').drop(columns=['id'])
         execution_emp_df.rename(columns={'avg_salary': 'avg_market_salary'}, inplace=True)
 
-        latest_salary = execution_salary_df.sort_values(by=['employee_id', 'created_at'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
+        latest_salary = execution_salary_df.sort_values(by=['employee_id', 'effective_date'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
         execution_emp_df = execution_emp_df.merge(latest_salary[['employee_id', 'salary']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
 
         latest_manager = execution_manager_df.sort_values(by=['employee_id', 'created_at'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
         latest_manager.rename(columns={'created_at': 'start_date_with_manager'}, inplace=True)
         execution_emp_df = execution_emp_df.merge(latest_manager[['employee_id', 'manager_id', 'start_date_with_manager']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
+
+        execution_engagement_df = engagement_df[engagement_df['start_date'] <= execution_date][['employee_id', 'event_id', 'event_type', 'start_date']].copy()
 
         latest_skill_df = execution_emp_skill_df.sort_values(by=['employee_id', 'created_at'], ascending=[True, False]).drop_duplicates(subset=['employee_id', 'skill_id'], keep='first')
 
@@ -162,17 +167,18 @@ def feature_engineering(file_paths):
 
         ### Career Development Related
         career_dev_feature = execution_emp_df[['emp_id']].copy()
-        _training_count = execution_engagement_df[execution_engagement_df['event_type'] == 1].groupby('employee_id')['event_date'].count().to_frame('num_training') # event_type 1 == training
-        _activity_count = execution_engagement_df[execution_engagement_df['event_type'] == 0].groupby('employee_id')['event_date'].count().to_frame('num_activity') # event_type 0 == activity
+        _training_count = execution_engagement_df[execution_engagement_df['event_type'] == 1].groupby('employee_id')['start_date'].count().to_frame('num_training') # event_type 1 == training
+        _activity_count = execution_engagement_df[execution_engagement_df['event_type'] == 0].groupby('employee_id')['start_date'].count().to_frame('num_activity') # event_type 0 == activity
         career_dev_feature = career_dev_feature.merge(_training_count, left_on='emp_id', right_index=True, how='left')
         career_dev_feature = career_dev_feature.merge(_activity_count, left_on='emp_id', right_index=True, how='left')
 
         career_dev_feature['num_training'] = career_dev_feature['num_training'].fillna(0)
         career_dev_feature['num_activity'] = career_dev_feature['num_activity'].fillna(0)
-        career_dev_feature['avg_training_per_year'] = career_dev_feature['num_training'] / position_feature['total_working_year']
-        career_dev_feature['avg_activity_per_year'] = career_dev_feature['num_activity'] / position_feature['total_working_year']
+        # career_dev_feature['avg_training_per_year'] = career_dev_feature['num_training'] / position_feature['total_working_year']
+        # career_dev_feature['avg_activity_per_year'] = career_dev_feature['num_activity'] / position_feature['total_working_year']
 
-        career_dev_feature = career_dev_feature[['emp_id', 'num_training', 'num_activity', 'avg_training_per_year', 'avg_activity_per_year']]
+        # career_dev_feature = career_dev_feature[['emp_id', 'num_training', 'num_activity', 'avg_training_per_year', 'avg_activity_per_year']]
+        career_dev_feature = career_dev_feature[['emp_id', 'num_training', 'num_activity']]
 
 
         ### Skills Related Features
@@ -289,27 +295,3 @@ def feature_engineering(file_paths):
     final_df = final_df.drop_duplicates(subset=['emp_id', 'execution_date'], keep='last')
     final_df.to_csv(config.FEATURE_ENGINEERED_PATH, index=False, encoding='utf-8')
     return final_df
-
-################################################################################################
-# def main():
-#     file_paths = [
-#         config.EMPLOYEE_DATA,
-#         config.MANAGER_LOG_DATA,
-#         config.EMPLOYEE_SKILL_DATA,
-#         config.EMPLOYEE_POSITION_DATA,
-#         # config.SKILL_DATA,
-#         config.POSITION_DATA,
-#         # config.DEPARTMENT_DATA,
-#         config.POSITION_SKILL_DATA,
-#         config.SALARY_DATA,
-#         config.EMPLOYEE_MOVEMENT_DATA,
-#         config.ENGAGEMENT_DATA,
-#         config.LEAVE_DATA,
-#         config.EVALUATION_RECORD_DATA,
-#         config.CLOCK_IN_OUT_DATA
-#     ]
-#     # Call feature engineering function here
-#     feature_engineered_df = feature_engineering(file_paths)
-
-# if __name__ == "__main__":
-#     main()

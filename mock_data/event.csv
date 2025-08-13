@@ -1,0 +1,15 @@
+﻿id,name,description,event_type,start_date,end_date
+1,Townhall 01/2022,,0,2022-06-19,2022-06-19
+2,New Year Party,,0,2022-12-24,2022-12-24
+3,Townhall 02/2022,,0,2022-12-24,2022-12-24
+4,Valentine,,0,2023-02-14,2023-02-14
+5,Townhall 01/2023,,0,2023-07-03,2023-07-03
+6,Advanced Python Workshop,,1,2023-09-08,2023-09-08
+7,Halloweeen,,0,2023-10-30,2023-10-30
+8,Leadership Training Seminar,,1,2023-12-08,2023-12-08
+9,Townhall 01/2024,,0,2024-01-08,2024-01-08
+10,Storytelling,,1,2024-06-20,2024-06-20
+11,Project Management Certification Prep,,1,2024-08-20,2024-08-20
+12,Code Refactoring Best Practices,,1,2024-10-02,2024-10-02
+13,Outing,,0,2024-10-06,2024-10-06
+14,New Product Launch Party,,0,2025-04-08,2025-04-08

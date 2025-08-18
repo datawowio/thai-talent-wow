@@ -4,14 +4,10 @@ This repository contains a suite of analytics modules designed to provide deep i
 
 Modules Overview
 The project is composed of four main analysis modules:
-1. **Predictive Retention Analysis**
-  Utilizes a predictive model to forecast employee termination probability and identifies the key factors influencing attrition.
-2. **Skill Gap Analysis**
-  Assesses and visualizes skill gaps for individual employees and entire departments.
-3. **Department Rotation Analysis**
-  Identifies the skills an employee would need to acquire to successfully transition to a different department.
-4. **Promotion Readiness Analysis**
-  Categorizes employees based on their readiness for promotion, identifying overlooked talent and disengaged individuals.
+1. **Predictive Retention Analysis** - Utilizes a predictive model to forecast employee termination probability and identifies the key factors influencing attrition.
+2. **Skill Gap Analysis** - Assesses and visualizes skill gaps for individual employees and entire departments.
+3. **Department Rotation Analysis** - Identifies the skills an employee would need to acquire to successfully transition to a different department.
+4. **Promotion Readiness Analysis** - Categorizes employees based on their readiness for promotion, identifying overlooked talent and disengaged individuals.
 
 ---
 
@@ -55,6 +51,7 @@ python skill_promotion_management/main.py
   ```output/promotion_analysis_results.json```
 
 **Key Results**
+
 A main key of each JSON file is listed in ```json_output_key.txt``` for quick reference and understanding of the output structure.
 
 ---
@@ -68,6 +65,7 @@ streamlit run all_streamlit.py
 ---
 
 ## File Structure
+```
 ├── config/                     # Configuration files
 ├── mock_data/                  # Sample data for testing
 ├── output/                     # Output files and results
@@ -77,3 +75,4 @@ streamlit run all_streamlit.py
 ├── json_output_key.txt         # Listed main key of each JSON file
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project documentation
+```

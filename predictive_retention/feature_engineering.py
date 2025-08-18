@@ -20,7 +20,6 @@ def feature_engineering():
     emp_df = pd.read_csv(config.EMPLOYEE_DATA)
     manager_df = pd.read_csv(config.MANAGER_LOG_DATA)
     emp_skill_df = pd.read_csv(config.EMPLOYEE_SKILL_DATA)
-    emp_position_df = pd.read_csv(config.EMPLOYEE_POSITION_DATA)
     position_df = pd.read_csv(config.POSITION_DATA)
     position_skill_df = pd.read_csv(config.POSITION_SKILL_DATA)
     emp_movement_df = pd.read_csv(config.EMPLOYEE_MOVEMENT_DATA)
@@ -33,7 +32,7 @@ def feature_engineering():
     engagement_df = engagement_df.merge(event_df[['id', 'event_type', 'start_date']], left_on='event_id', right_on='id', how='left')
 
     ### convert data to proper datetime format
-    for df in [emp_df, manager_df, emp_skill_df, emp_position_df, position_df, position_skill_df, event_df, emp_movement_df, engagement_df, leave_df, evaluation_record_df, clock_in_out_df, department_df]:
+    for df in [emp_df, manager_df, emp_skill_df, position_df, position_skill_df, event_df, emp_movement_df, engagement_df, leave_df, evaluation_record_df, clock_in_out_df, department_df]:
         if 'created_at' in df.columns:
             df['created_at'] = pd.to_datetime(df['created_at'], format='%Y-%m-%d')
         for col in df.columns:
@@ -69,7 +68,6 @@ def feature_engineering():
         execution_date = pd.to_datetime(execution_date)
         execution_emp_df = emp_df[['emp_id', 'birth_date', 'education_level', 'parent', 'child', 'sibling', 'spouse', 'hire_date', 'created_at']].copy()
         execution_emp_df = execution_emp_df[(emp_df['hire_date'] <= execution_date) & (emp_df['created_at'] <= execution_date)].drop_duplicates(subset=['emp_id'], keep='last')
-        execution_emp_position_df = emp_position_df[emp_position_df['created_at'] <= execution_date]
         execution_manager_df = manager_df[manager_df['created_at'] <= execution_date]
         execution_salary_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date][['employee_id', 'salary', 'effective_date']]
         execution_movement_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date]
@@ -80,7 +78,7 @@ def feature_engineering():
         execution_emp_df = execution_emp_df[~execution_emp_df['emp_id'].isin(execution_movement_df[execution_movement_df['movement_type'].isin([1, 2])]['employee_id'])] # movement_type 1 == voluntary termination, movement_type 2 == involuntary termination
 
         ### execution_emp_df will contains [emp_id, demographic-data, position_id, job_level, department_id, avg_position_salary, emp_at_that_time_salary, emp_at_that_time_manager_id]
-        latest_position = execution_emp_position_df.sort_values(by=['employee_id', 'created_at'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
+        latest_position = execution_movement_df.sort_values(by=['employee_id', 'effective_date'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')[['employee_id', 'position_id']]
         execution_emp_df = execution_emp_df.merge(latest_position[['employee_id', 'position_id']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
         execution_emp_df = execution_emp_df.merge(position_df[['id', 'job_level', 'department_id', 'avg_salary']], left_on='position_id', right_on='id', how='left').drop(columns=['id'])
         execution_emp_df.rename(columns={'avg_salary': 'avg_market_salary'}, inplace=True)
@@ -149,16 +147,20 @@ def feature_engineering():
         salary_feature = salary_feature[['emp_id', 'salary_z_manager', 'salary_z_position', 'salary_z_job_level', 'percentage_salary_increase_since_hire', 'year_since_last_salary_adjustment', 'salary_compare_market_rate']]
 
 
-        ### Promotion Related
+        ### Promotion Related # EDIT created_at ไปใช้อย่างอื่นแทน
         promotion_feature = execution_emp_df[['emp_id', 'position_id', 'hire_date']].copy()
-        promotion_feature = promotion_feature.merge(latest_position[['employee_id', 'created_at']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
         _latest_movement = execution_movement_df[execution_movement_df['movement_type'] == 3] # movement_type 3 == promotion
         _latest_movement = _latest_movement.groupby('employee_id')['effective_date'].max().to_frame('latest_promotion_date')
+        _first_position_entry_date = execution_movement_df.groupby(['employee_id', 'position_id'])['effective_date'].min().reset_index()
+        promotion_feature['first_position_entry_date'] = promotion_feature[['emp_id', 'position_id']].apply(
+            lambda row: _first_position_entry_date[(_first_position_entry_date['employee_id'] == row['emp_id']) & (_first_position_entry_date['position_id'] == row['position_id'])]['effective_date'].values[0], axis=1
+        )
+        _latest_promotion = execution_movement_df[execution_movement_df['movement_type'] == 3].groupby('employee_id')['position_id'].count().to_frame('num_past_promotion')
         promotion_feature = promotion_feature.merge(_latest_movement, left_on='emp_id', right_index=True, how='left')
         promotion_feature['latest_promotion_date'] = promotion_feature['latest_promotion_date'].fillna(promotion_feature['hire_date']) ### fill person with no promotion with hire date
 
-        promotion_feature['year_in_current_position'] = pd.to_timedelta((execution_date.date() - promotion_feature['created_at'].dt.date)).dt.days / 365
-        promotion_feature['num_past_promotion'] = execution_emp_position_df.groupby('employee_id')['position_id'].transform('nunique')
+        promotion_feature['year_in_current_position'] = pd.to_timedelta((execution_date.date() - promotion_feature['first_position_entry_date'].dt.date)).dt.days / 365
+        promotion_feature['num_past_promotion'] = promotion_feature['emp_id'].map(_latest_promotion['num_past_promotion']).fillna(0)
         promotion_feature['time_since_last_promotion'] = pd.to_timedelta((execution_date.date() - promotion_feature['latest_promotion_date'].dt.date)).dt.days / 365
         promotion_feature['avg_time_to_promotion'] = promotion_feature.groupby('emp_id')['time_since_last_promotion'].transform('mean')
 

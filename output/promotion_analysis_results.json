@@ -1,26 +1,42 @@
-{
-    "overlooked_employees": [],
-    "disengaged_employees": [
-        990014,
-        990015,
-        990020
-    ],
-    "on_track_employees": [
-        990001,
-        990002,
-        990003,
-        990005,
-        990006,
-        990009,
-        990011,
-        990013,
-        990016,
-        990019,
-        990021,
-        990022,
-        990025,
-        990027,
-        990028
-    ],
-    "new_and_promising_employees": []
-}
+[
+    {
+        "employee_type": "Overlooked Talent",
+        "total_employee": 0,
+        "employee_ids": []
+    },
+    {
+        "employee_type": "Disengaged Employee",
+        "total_employee": 2,
+        "employee_ids": [
+            990014,
+            990020
+        ]
+    },
+    {
+        "employee_type": "New and Promising",
+        "total_employee": 0,
+        "employee_ids": []
+    },
+    {
+        "employee_type": "On Track",
+        "total_employee": 16,
+        "employee_ids": [
+            990001,
+            990002,
+            990003,
+            990005,
+            990006,
+            990009,
+            990011,
+            990013,
+            990015,
+            990016,
+            990019,
+            990021,
+            990022,
+            990025,
+            990027,
+            990028
+        ]
+    }
+]

@@ -1,0 +1,50 @@
+--- 1. TERMINATION PREDICTION RESULT & ANALYSIS ---
+{
+overall_summary
+termination_proportion_by_department
+termination_proportion_by_job_level
+termination_probability_distribution_by_department
+termination_probability_distribution_by_job_level
+top_reasons_for_quitting
+termination_reason_by_employee
+termination_reason_by_department
+termination_reason_by_job_level
+}
+
+
+--- 2. EMPLOYEE SKILL GAP RESULT ---
+{
+employee_id
+current_position
+next_position
+employee_skills
+missing_skills_vs_current_position
+missing_skills_vs_peers
+missing_skills_vs_next_level
+}
+
+
+--- 3. DEPARTMENT SKILL GAP RESULT ---
+{
+department_name
+total_employee
+common_existing_skills
+missing_skills_in_dept
+skills_with_low_score
+}
+
+
+--- 4. EMPLOYEE ROTATION SKILL GAP RESULT ---
+{
+employee_id
+target_department_name
+skills_to_acquire
+}
+
+
+--- 5. PROMOTION ANALYSIS RESULT ---
+{
+employee_type
+total_employee
+employee_ids
+}

@@ -1,1300 +1,1235 @@
-{
-    "990001": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Document Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 4
-                },
-                {
-                    "skill": "Creativity",
-                    "score": 4
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Microsoft Excel / Sheets",
-                    "score": 4
-                },
-                {
-                    "skill": "Concise Writing",
-                    "score": 4
-                },
-                {
-                    "skill": "Market Research",
-                    "score": 4
-                },
-                {
-                    "skill": "Negotiation",
-                    "score": 3
-                },
-                {
-                    "skill": "Proposal Creation",
-                    "score": 3
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 3
-                },
-                {
-                    "skill": "Attention to Detail",
-                    "score": 3
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 3
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 3
-                },
-                {
-                    "skill": "Business Understanding",
-                    "score": 3
-                },
-                {
-                    "skill": "CRM systems",
-                    "score": 2
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 2
-                },
-                {
-                    "skill": "Stakeholder management",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Chief Business Development (L7)",
-            "next_position": "No next level position available",
-            "skills_to_acquire": []
-        }
-    },
-    "990002": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Python Programming",
-                    "score": 4
-                },
-                {
-                    "skill": "Data Analytics",
-                    "score": 4
-                },
-                {
-                    "skill": "Statistics",
-                    "score": 4
-                },
-                {
-                    "skill": "Cloud Computing (AWS)",
-                    "score": 4
-                },
-                {
-                    "skill": "SQL Programming",
-                    "score": 4
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 4
-                },
-                {
-                    "skill": "ETL Tools",
-                    "score": 3
-                },
-                {
-                    "skill": "Machine Learning",
-                    "score": 3
-                },
-                {
-                    "skill": "Experiment Design",
-                    "score": 3
-                },
-                {
-                    "skill": "Big Data",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Pipeline",
-                    "score": 3
-                },
-                {
-                    "skill": "Docker",
-                    "score": 3
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 3
-                },
-                {
-                    "skill": "R Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "Data Visualization",
-                    "score": 2
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 2
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Chief Data Scientist (L7)",
-            "next_position": "No next level position available",
-            "skills_to_acquire": []
-        }
-    },
-    "990003": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Data Visualization",
-                    "score": 4
-                },
-                {
-                    "skill": "Experiment Design",
-                    "score": 4
-                },
-                {
-                    "skill": "Data Pipeline",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 4
-                },
-                {
-                    "skill": "Code Review",
-                    "score": 4
-                },
-                {
-                    "skill": "Docker",
-                    "score": 4
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 4
-                },
-                {
-                    "skill": "Data Analytics",
-                    "score": 3
-                },
-                {
-                    "skill": "Cloud Computing (AWS)",
-                    "score": 3
-                },
-                {
-                    "skill": "SQL Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Big Data",
-                    "score": 3
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Python Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "ETL Tools",
-                    "score": 2
-                },
-                {
-                    "skill": "R Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "Machine Learning",
-                    "score": 2
-                },
-                {
-                    "skill": "Statistics",
-                    "score": 2
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 2
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Lead Data Scientist (L3)",
-            "next_position": "Data Scientist Manager (L4)",
-            "skills_to_acquire": []
-        }
-    },
-    "990005": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "ETL Tools",
-                    "score": 4
-                },
-                {
-                    "skill": "Big Data",
-                    "score": 4
-                },
-                {
-                    "skill": "Code Review",
-                    "score": 4
-                },
-                {
-                    "skill": "Python Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Cloud Computing (AWS)",
-                    "score": 3
-                },
-                {
-                    "skill": "SQL Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Pipeline",
-                    "score": 3
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 3
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Schema Design",
-                    "score": 2
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 2
-                },
-                {
-                    "skill": "Docker",
-                    "score": 2
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 2
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Lead Data Engineer (L3)",
-            "next_position": "Data Engineer Manager (L4)",
-            "skills_to_acquire": []
-        }
-    },
-    "990006": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "ETL Tools",
-                    "score": 4
-                },
-                {
-                    "skill": "R Programming",
-                    "score": 4
-                },
-                {
-                    "skill": "Machine Learning",
-                    "score": 4
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 4
-                },
-                {
-                    "skill": "Python Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Analytics",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Visualization",
-                    "score": 3
-                },
-                {
-                    "skill": "Cloud Computing (AWS)",
-                    "score": 3
-                },
-                {
-                    "skill": "Experiment Design",
-                    "score": 3
-                },
-                {
-                    "skill": "Code Review",
-                    "score": 3
-                },
-                {
-                    "skill": "Docker",
-                    "score": 3
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Statistics",
-                    "score": 2
-                },
-                {
-                    "skill": "SQL Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "Big Data",
-                    "score": 2
-                },
-                {
-                    "skill": "Data Pipeline",
-                    "score": 2
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 2
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Data Scientist Manager (L4)",
-            "next_position": "Chief Data Engineer (L7)",
-            "skills_to_acquire": []
-        }
-    },
-    "990009": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "ETL Tools",
-                    "score": 4
-                },
-                {
-                    "skill": "Big Data",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 4
-                },
-                {
-                    "skill": "Python Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Machine Learning",
-                    "score": 3
-                },
-                {
-                    "skill": "Statistics",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Pipeline",
-                    "score": 3
-                },
-                {
-                    "skill": "Docker",
-                    "score": 3
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Analytics",
-                    "score": 2
-                },
-                {
-                    "skill": "Data Visualization",
-                    "score": 2
-                },
-                {
-                    "skill": "Cloud Computing (AWS)",
-                    "score": 2
-                },
-                {
-                    "skill": "SQL Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 2
-                },
-                {
-                    "skill": "Code Review",
-                    "score": 2
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 2
-                }
-            ],
-            "missing_skills": [
-                "Experiment Design",
-                "R Programming"
-            ]
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Senior Data Scientist (L2)",
-            "next_position": "Lead Data Scientist (L3)",
-            "skills_to_acquire": [
-                "Experiment Design",
-                "R Programming",
-                "Risk Management",
-                "Strategic Planning"
-            ]
-        }
-    },
-    "990011": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Cloud Computing (AWS)",
-                    "score": 4
-                },
-                {
-                    "skill": "Big Data",
-                    "score": 4
-                },
-                {
-                    "skill": "Schema Design",
-                    "score": 4
-                },
-                {
-                    "skill": "Docker",
-                    "score": 4
-                },
-                {
-                    "skill": "Python Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 3
-                },
-                {
-                    "skill": "Data Pipeline",
-                    "score": 3
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 3
-                },
-                {
-                    "skill": "ETL Tools",
-                    "score": 2
-                },
-                {
-                    "skill": "SQL Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Mid Data Engineer (L1)",
-            "next_position": "Senior Data Engineer (L2)",
-            "skills_to_acquire": [
-                "Code Review"
-            ]
-        }
-    },
-    "990013": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "JavaScript Programming",
-                    "score": 3
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 3
-                },
-                {
-                    "skill": "Docker",
-                    "score": 3
-                },
-                {
-                    "skill": "C++ Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "RESTful services",
-                    "score": 2
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Mid Software Developer (L1)",
-            "next_position": "Senior Software Developer (L2)",
-            "skills_to_acquire": [
-                "Code Review"
-            ]
-        }
-    },
-    "990014": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "CRM systems",
-                    "score": 4
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 4
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 4
-                },
-                {
-                    "skill": "Creativity",
-                    "score": 3
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 3
-                },
-                {
-                    "skill": "Document Management",
-                    "score": 2
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 2
-                },
-                {
-                    "skill": "Stakeholder management",
-                    "score": 2
-                },
-                {
-                    "skill": "Business Understanding",
-                    "score": 2
-                },
-                {
-                    "skill": "Market Research",
-                    "score": 2
-                }
-            ],
-            "missing_skills": [
-                "Attention to Detail",
-                "Concise Writing",
-                "Microsoft Excel / Sheets",
-                "Negotiation",
-                "Proposal Creation"
-            ]
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Business Development Manager (L4)",
-            "next_position": "Chief Business Development (L7)",
-            "skills_to_acquire": [
-                "Attention to Detail",
-                "Concise Writing",
-                "Microsoft Excel / Sheets",
-                "Negotiation",
-                "Proposal Creation",
-                "Risk Management",
-                "Strategic Planning"
-            ]
-        }
-    },
-    "990015": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Document Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Project Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Attention to Detail",
-                    "score": 4
-                },
-                {
-                    "skill": "Concise Writing",
-                    "score": 4
-                },
-                {
-                    "skill": "Stakeholder management",
-                    "score": 4
-                },
-                {
-                    "skill": "Negotiation",
-                    "score": 3
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 3
-                },
-                {
-                    "skill": "Performance Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Emotional Intelligence",
-                    "score": 3
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 3
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 2
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 2
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 2
-                },
-                {
-                    "skill": "Budget Tracking",
-                    "score": 2
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": {}
-        },
-        "next_level_gap": {
-            "current_position": "Mid Project Management (L1)",
-            "next_position": "Senior Project Management (L2)",
-            "skills_to_acquire": []
-        }
-    },
-    "990016": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Negotiation",
-                    "score": 4
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 4
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 4
-                },
-                {
-                    "skill": "Concise Writing",
-                    "score": 4
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 4
-                },
-                {
-                    "skill": "Document Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 3
-                },
-                {
-                    "skill": "Performance Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Emotional Intelligence",
-                    "score": 3
-                },
-                {
-                    "skill": "Attention to Detail",
-                    "score": 3
-                },
-                {
-                    "skill": "Stakeholder management",
-                    "score": 3
-                },
-                {
-                    "skill": "Project Management",
-                    "score": 2
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 2
-                },
-                {
-                    "skill": "Budget Tracking",
-                    "score": 2
-                },
-                {
-                    "skill": "Strategic Planning",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Senior Project Management (L2)",
-            "next_position": "Project Management Manager (L4)",
-            "skills_to_acquire": []
-        }
-    },
-    "990019": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Document Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 4
-                },
-                {
-                    "skill": "Concise Writing",
-                    "score": 4
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 4
-                },
-                {
-                    "skill": "Stakeholder management",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Understanding",
-                    "score": 4
-                },
-                {
-                    "skill": "Negotiation",
-                    "score": 3
-                },
-                {
-                    "skill": "Attention to Detail",
-                    "score": 3
-                },
-                {
-                    "skill": "CRM systems",
-                    "score": 3
-                },
-                {
-                    "skill": "Market Research",
-                    "score": 3
-                },
-                {
-                    "skill": "Proposal Creation",
-                    "score": 2
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 2
-                },
-                {
-                    "skill": "Creativity",
-                    "score": 2
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 2
-                },
-                {
-                    "skill": "Microsoft Excel / Sheets",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Mid Business Development (L1)",
-            "next_position": "Senior Business Development (L2)",
-            "skills_to_acquire": []
-        }
-    },
-    "990020": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Document Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 4
-                },
-                {
-                    "skill": "Risk Management",
-                    "score": 4
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 3
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 3
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 2
-                },
-                {
-                    "skill": "Emotional Intelligence",
-                    "score": 2
-                },
-                {
-                    "skill": "Project Management",
-                    "score": 2
-                },
-                {
-                    "skill": "Budget Tracking",
-                    "score": 2
-                }
-            ],
-            "missing_skills": [
-                "Attention to Detail",
-                "Concise Writing",
-                "Negotiation",
-                "Performance Management",
-                "Stakeholder management",
-                "Strategic Planning"
-            ]
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": {}
-        },
-        "next_level_gap": {
-            "current_position": "Mid Project Management (L1)",
-            "next_position": "Senior Project Management (L2)",
-            "skills_to_acquire": [
-                "Attention to Detail",
-                "Concise Writing",
-                "Negotiation",
-                "Performance Management",
-                "Stakeholder management",
-                "Strategic Planning"
-            ]
-        }
-    },
-    "990021": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Presentation",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Understanding",
-                    "score": 4
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 3
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 3
-                },
-                {
-                    "skill": "Project Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Analytical thinking",
-                    "score": 3
-                },
-                {
-                    "skill": "Concise Writing",
-                    "score": 3
-                },
-                {
-                    "skill": "Problem Solving",
-                    "score": 2
-                }
-            ],
-            "missing_skills": [
-                "Attention to Detail",
-                "Communication",
-                "Document Management",
-                "Emotional Intelligence",
-                "Organizational Management",
-                "Proposal Creation",
-                "Teamwork",
-                "Time Management"
-            ]
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": {
-                "Document Management": {
-                    "percentage": "14%",
-                    "peer_count": 2
-                }
+[
+    {
+        "employee_id": 990001,
+        "current_position": "Chief Business Development",
+        "next_position": "No next level position available",
+        "employee_skills": [
+            {
+                "skill_name": "Microsoft Excel / Sheets",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Market Research",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Creativity",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Concise Writing",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Business Understanding",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Negotiation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Proposal Creation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Attention to Detail",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Presentation",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Stakeholder management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "CRM systems",
+                "skill_score": 2
             }
-        },
-        "next_level_gap": {
-            "current_position": "Mid Operations (L1)",
-            "next_position": "Senior Operations (L2)",
-            "skills_to_acquire": []
-        }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
     },
-    "990022": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Emotional Intelligence",
-                    "score": 5
-                },
-                {
-                    "skill": "Project Management",
-                    "score": 5
-                },
-                {
-                    "skill": "Time Management",
-                    "score": 5
-                },
-                {
-                    "skill": "Analytical thinking",
-                    "score": 4
-                },
-                {
-                    "skill": "Communication",
-                    "score": 4
-                },
-                {
-                    "skill": "Teamwork",
-                    "score": 4
-                },
-                {
-                    "skill": "Attention to Detail",
-                    "score": 4
-                },
-                {
-                    "skill": "Document Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Problem Solving",
-                    "score": 3
-                },
-                {
-                    "skill": "Business Understanding",
-                    "score": 3
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 2
-                }
-            ],
-            "missing_skills": [
-                "Agile Methodologies",
-                "Budget Tracking",
-                "Concise Writing",
-                "Negotiation",
-                "Performance Management",
-                "Presentation",
-                "Product Understanding",
-                "Risk Management",
-                "Stakeholder management",
-                "Strategic Planning"
-            ]
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": {}
-        },
-        "next_level_gap": {
-            "current_position": "Mid Project Management (L1)",
-            "next_position": "Senior Project Management (L2)",
-            "skills_to_acquire": [
-                "Agile Methodologies",
-                "Budget Tracking",
-                "Concise Writing",
-                "Negotiation",
-                "Performance Management",
-                "Presentation",
-                "Product Understanding",
-                "Risk Management",
-                "Stakeholder management",
-                "Strategic Planning"
-            ]
-        }
+    {
+        "employee_id": 990002,
+        "current_position": "Chief Data Scientist",
+        "next_position": "No next level position available",
+        "employee_skills": [
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Data Analytics",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Statistics",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Cloud Computing (AWS)",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "SQL Programming",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "ETL Tools",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Machine Learning",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Experiment Design",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Big Data",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Pipeline",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "R Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Data Visualization",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
     },
-    "990025": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "Document Management",
-                    "score": 4
-                },
-                {
-                    "skill": "Python Programming",
-                    "score": 4
-                },
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 4
-                },
-                {
-                    "skill": "Presentation",
-                    "score": 4
-                },
-                {
-                    "skill": "Stakeholder management",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Understanding",
-                    "score": 4
-                },
-                {
-                    "skill": "Market Research",
-                    "score": 4
-                },
-                {
-                    "skill": "Proposal Creation",
-                    "score": 3
-                },
-                {
-                    "skill": "Concise Writing",
-                    "score": 3
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 3
-                },
-                {
-                    "skill": "Prototyping",
-                    "score": 3
-                },
-                {
-                    "skill": "Database Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Negotiation",
-                    "score": 2
-                },
-                {
-                    "skill": "R Programming",
-                    "score": 2
-                },
-                {
-                    "skill": "CRM systems",
-                    "score": 2
-                },
-                {
-                    "skill": "Product Understanding",
-                    "score": 2
-                },
-                {
-                    "skill": "Data Visualization",
-                    "score": 2
-                },
-                {
-                    "skill": "Microsoft Excel / Sheets",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Mid Data Consultant (L1)",
-            "next_position": "Senior Data Consultant (L2)",
-            "skills_to_acquire": []
-        }
+    {
+        "employee_id": 990003,
+        "current_position": "Lead Data Scientist (L3)",
+        "next_position": "Data Scientist Manager (L4)",
+        "employee_skills": [
+            {
+                "skill_name": "Data Visualization",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Experiment Design",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Data Pipeline",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Code Review",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Data Analytics",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Cloud Computing (AWS)",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "SQL Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Big Data",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "ETL Tools",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "R Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Machine Learning",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Statistics",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
     },
-    "990027": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "C++ Programming",
-                    "score": 4
-                },
-                {
-                    "skill": "Code Review",
-                    "score": 4
-                },
-                {
-                    "skill": "Docker",
-                    "score": 4
-                },
-                {
-                    "skill": "Git Version Control",
-                    "score": 3
-                },
-                {
-                    "skill": "RESTful services",
-                    "score": 3
-                },
-                {
-                    "skill": "Agile Methodologies",
-                    "score": 3
-                },
-                {
-                    "skill": "JavaScript Programming",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Senior Software Developer (L2)",
-            "next_position": "Lead Software Developer (L3)",
-            "skills_to_acquire": []
-        }
+    {
+        "employee_id": 990005,
+        "current_position": "Lead Data Engineer (L3)",
+        "next_position": "Data Engineer Manager (L4)",
+        "employee_skills": [
+            {
+                "skill_name": "ETL Tools",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Big Data",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Code Review",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Cloud Computing (AWS)",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "SQL Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Pipeline",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Schema Design",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
     },
-    "990028": {
-        "skill_gap_by_position": {
-            "employee_skills": [
-                {
-                    "skill": "PowerPoint / Slides",
-                    "score": 4
-                },
-                {
-                    "skill": "Content Creation",
-                    "score": 4
-                },
-                {
-                    "skill": "A/B Testing",
-                    "score": 4
-                },
-                {
-                    "skill": "Business Intelligent",
-                    "score": 4
-                },
-                {
-                    "skill": "Social Media Management",
-                    "score": 3
-                },
-                {
-                    "skill": "Search Engine Optimization",
-                    "score": 2
-                },
-                {
-                    "skill": "Creativity",
-                    "score": 2
-                }
-            ],
-            "missing_skills": []
-        },
-        "peer_skill_gap": {
-            "missing_skills_vs_peers": "No peers found in this position."
-        },
-        "next_level_gap": {
-            "current_position": "Mid Marketing (L1)",
-            "next_position": "Senior Marketing (L2)",
-            "skills_to_acquire": []
-        }
+    {
+        "employee_id": 990006,
+        "current_position": "Data Scientist Manager (L4)",
+        "next_position": "Chief Data Engineer (L7)",
+        "employee_skills": [
+            {
+                "skill_name": "ETL Tools",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "R Programming",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Machine Learning",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Analytics",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Visualization",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Cloud Computing (AWS)",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Experiment Design",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Code Review",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Statistics",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "SQL Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Big Data",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Data Pipeline",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990009,
+        "current_position": "Senior Data Scientist (L2)",
+        "next_position": "Lead Data Scientist (L3)",
+        "employee_skills": [
+            {
+                "skill_name": "ETL Tools",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Big Data",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Machine Learning",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Statistics",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Pipeline",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Analytics",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Data Visualization",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Cloud Computing (AWS)",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "SQL Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Code Review",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [
+            "R Programming",
+            "Experiment Design"
+        ],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": [
+            "Experiment Design",
+            "R Programming",
+            "Risk Management",
+            "Strategic Planning"
+        ]
+    },
+    {
+        "employee_id": 990011,
+        "current_position": "Mid Data Engineer (L1)",
+        "next_position": "Senior Data Engineer (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Cloud Computing (AWS)",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Big Data",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Schema Design",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Data Pipeline",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "ETL Tools",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "SQL Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": [
+            "Code Review"
+        ]
+    },
+    {
+        "employee_id": 990013,
+        "current_position": "Mid Software Developer (L1)",
+        "next_position": "Senior Software Developer (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "JavaScript Programming",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "C++ Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "RESTful services",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": [
+            "Code Review"
+        ]
+    },
+    {
+        "employee_id": 990014,
+        "current_position": "Business Development Manager (L4)",
+        "next_position": "Chief Business Development (L7)",
+        "employee_skills": [
+            {
+                "skill_name": "Presentation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "CRM systems",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Creativity",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Stakeholder management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Business Understanding",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Market Research",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [
+            "Microsoft Excel / Sheets",
+            "Negotiation",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing"
+        ],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": [
+            "Attention to Detail",
+            "Concise Writing",
+            "Microsoft Excel / Sheets",
+            "Negotiation",
+            "Proposal Creation",
+            "Risk Management",
+            "Strategic Planning"
+        ]
+    },
+    {
+        "employee_id": 990015,
+        "current_position": "Mid Project Management (L1)",
+        "next_position": "Senior Project Management (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Stakeholder management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Project Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Attention to Detail",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Concise Writing",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Presentation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Negotiation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Performance Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Emotional Intelligence",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Budget Tracking",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990016,
+        "current_position": "Senior Project Management (L2)",
+        "next_position": "Project Management Manager (L4)",
+        "employee_skills": [
+            {
+                "skill_name": "Presentation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Negotiation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Concise Writing",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Stakeholder management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Performance Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Emotional Intelligence",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Attention to Detail",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Project Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Budget Tracking",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Strategic Planning",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990019,
+        "current_position": "Mid Business Development (L1)",
+        "next_position": "Senior Business Development (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Presentation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Stakeholder management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Understanding",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Concise Writing",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Market Research",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Negotiation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "CRM systems",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Attention to Detail",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Microsoft Excel / Sheets",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Proposal Creation",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Creativity",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990020,
+        "current_position": "Mid Project Management (L1)",
+        "next_position": "Senior Project Management (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Document Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Risk Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Presentation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Emotional Intelligence",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Project Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Budget Tracking",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [
+            "Stakeholder management",
+            "Negotiation",
+            "Performance Management",
+            "Strategic Planning",
+            "Attention to Detail",
+            "Concise Writing"
+        ],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": [
+            "Attention to Detail",
+            "Concise Writing",
+            "Negotiation",
+            "Performance Management",
+            "Stakeholder management",
+            "Strategic Planning"
+        ]
+    },
+    {
+        "employee_id": 990021,
+        "current_position": "Mid Operations (L1)",
+        "next_position": "Senior Operations (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Presentation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Understanding",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Analytical thinking",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Project Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Concise Writing",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Problem Solving",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [
+            "Document Management",
+            "Proposal Creation",
+            "Emotional Intelligence",
+            "Organizational Management",
+            "Attention to Detail",
+            "Communication",
+            "Teamwork",
+            "Time Management"
+        ],
+        "missing_skills_vs_peers": [
+            {
+                "skill_name": "Document Management",
+                "percentage_of_peer": "14.29",
+                "peer_count": 2
+            }
+        ],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990022,
+        "current_position": "Mid Project Management (L1)",
+        "next_position": "Senior Project Management (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Time Management",
+                "skill_score": 5
+            },
+            {
+                "skill_name": "Emotional Intelligence",
+                "skill_score": 5
+            },
+            {
+                "skill_name": "Project Management",
+                "skill_score": 5
+            },
+            {
+                "skill_name": "Analytical thinking",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Communication",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Teamwork",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Attention to Detail",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Problem Solving",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Business Understanding",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [
+            "Presentation",
+            "Stakeholder management",
+            "Negotiation",
+            "Product Understanding",
+            "Performance Management",
+            "Agile Methodologies",
+            "Risk Management",
+            "Budget Tracking",
+            "Strategic Planning",
+            "Concise Writing"
+        ],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": [
+            "Agile Methodologies",
+            "Budget Tracking",
+            "Concise Writing",
+            "Negotiation",
+            "Performance Management",
+            "Presentation",
+            "Product Understanding",
+            "Risk Management",
+            "Stakeholder management",
+            "Strategic Planning"
+        ]
+    },
+    {
+        "employee_id": 990025,
+        "current_position": "Mid Data Consultant (L1)",
+        "next_position": "Senior Data Consultant (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Python Programming",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Presentation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Stakeholder management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Understanding",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Market Research",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Document Management",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Database Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Proposal Creation",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Concise Writing",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Prototyping",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "R Programming",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Data Visualization",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Microsoft Excel / Sheets",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Negotiation",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "CRM systems",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Product Understanding",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990027,
+        "current_position": "Senior Software Developer (L2)",
+        "next_position": "Lead Software Developer (L3)",
+        "employee_skills": [
+            {
+                "skill_name": "C++ Programming",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Code Review",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Docker",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Git Version Control",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "RESTful services",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Agile Methodologies",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "JavaScript Programming",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
+    },
+    {
+        "employee_id": 990028,
+        "current_position": "Mid Marketing (L1)",
+        "next_position": "Senior Marketing (L2)",
+        "employee_skills": [
+            {
+                "skill_name": "Business Intelligent",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Content Creation",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "A/B Testing",
+                "skill_score": 4
+            },
+            {
+                "skill_name": "Social Media Management",
+                "skill_score": 3
+            },
+            {
+                "skill_name": "Search Engine Optimization",
+                "skill_score": 2
+            },
+            {
+                "skill_name": "Creativity",
+                "skill_score": 2
+            }
+        ],
+        "missing_skills_vs_current_position": [],
+        "missing_skills_vs_peers": [],
+        "missing_skills_vs_next_level": []
     }
-}
+]

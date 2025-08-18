@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
 
-SEED = 9
+SEED = 98
 np.random.seed(SEED)
 
 def fit_model(model, X_train, y_train, X_test, y_test, score_metric, recall_threshold=0):
@@ -186,7 +186,7 @@ def find_optimal_threshold(model, X_test, y_test, score_metric='macro_f1', recal
 
 def save_model(model, model_config):
         # Save the trained model and its configuration
-        model_dir = config.RESULT_DIR
+        model_dir = config.MODEL_OUTPUT_DIR
         os.makedirs(model_dir, exist_ok=True)
         with open(os.path.join(model_dir, 'model.pkl'), 'wb') as file:
             pickle.dump(model, file)
@@ -195,7 +195,7 @@ def save_model(model, model_config):
 
 
 def load_model():
-    model_dir = config.RESULT_DIR
+    model_dir = config.MODEL_OUTPUT_DIR
     # load the model from the pickle file
     with open(os.path.join(model_dir, 'model.pkl'), 'rb') as file:
         model = pickle.load(file)
@@ -242,7 +242,7 @@ def predict_result(feature_engineered_df):
 
 def save_model_result(prediction_df, feature_importance_df, model_interpretation):
     # Save the prediction results, feature importance, and model interpretation
-    model_result_dir = config.RESULT_DIR
+    model_result_dir = config.MODEL_OUTPUT_DIR
     prediction_df.to_parquet(os.path.join(model_result_dir, 'model_result.parquet'), index=False)
     # feature_importance_df.to_parquet(os.path.join(model_result_dir, 'feature_importance.parquet'), index=False)
     with open(os.path.join(model_result_dir, 'model_interpretation.pkl'), 'wb') as file:

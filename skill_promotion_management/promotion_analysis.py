@@ -9,19 +9,19 @@ def promotion_analysis(employee_df, movement_df, evaluation_df, position_df, emp
     This function categorizes employees into four groups:
     1. Overlooked Employees: High potential but not promoted
     2. Disengaged Employees: Struggling / demotivated / not been promoted
-    3. On-track Employees: Everyone else
-    4. New & Promising Employees: Early signals of high potential
+    3. New & Promising Employees: Early signals of high potential
+    4. On-track Employees: Everyone else
+
 
     Returns:
         A dictionary with lists of employee IDs for each category.
     """
 
     # get latest data
-    latest_emp_position = employee_position_df.drop_duplicates(subset=['employee_id'], keep='last')
     latest_promotion = movement_df[movement_df['movement_type'] == 3].drop_duplicates(subset=['employee_id'], keep='last')[['employee_id', 'effective_date']] # movement_type 3 == promotion
 
     # get employee metadata from others df
-    emp_df = employee_df.merge(latest_emp_position[['employee_id', 'position_id']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id']) # position_id
+    emp_df = pd.merge(employee_df, employee_position_df[['employee_id', 'position_id']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['id', 'employee_id']) # position_id
     emp_df = emp_df.merge(position_df[['id', 'name', 'department_id', 'job_level']], left_on='position_id', right_on='id', how='left').drop(columns=['id']) # position_name, department_id, job_level
     emp_df['latest_promotion_date'] = emp_df['emp_id'].map(latest_promotion.set_index('employee_id')['effective_date']) # latest_promotion_date
     emp_df['latest_promotion_date'].fillna(emp_df['hire_date'], inplace=True) # fill person with no promotion with hire date
@@ -50,9 +50,9 @@ def promotion_analysis(employee_df, movement_df, evaluation_df, position_df, emp
     new_and_promising_employees = []
 
     # define thresholds for categorization
-    HIGH_PERFORMANCE_THRESHOLD = 3.5
+    HIGH_PERFORMANCE_THRESHOLD = 3.5  # High performer if avg score > 3.5 (out of 5)
     LOW_PERFORMANCE_THRESHOLD = 2.5
-    STALLED_MULTIPLIER = 1.5
+    STALLED_MULTIPLIER = 1.5 # Stalled if 1.5x the average time for that level
     NEW_EMPLOYEE_YEARS = 1
 
     for _, row in emp_df.iterrows():
@@ -77,9 +77,4 @@ def promotion_analysis(employee_df, movement_df, evaluation_df, position_df, emp
         else:
             on_track_employees.append(row['emp_id'])
 
-    return {
-        "overlooked_employees": overlooked_employees,
-        "disengaged_employees": disengaged_employees,
-        "on_track_employees": on_track_employees,
-        "new_and_promising_employees": new_and_promising_employees
-    }
+    return overlooked_employees, disengaged_employees, new_and_promising_employees, on_track_employees

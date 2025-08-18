@@ -9,7 +9,7 @@ from config import config
 # --- Page Configuration ---
 st.set_page_config(
     page_title="Talent Wow",
-    page_icon="👤",
+    page_icon="👥",
     layout="wide"
 )
 
@@ -39,14 +39,41 @@ def load_json_data(filepath):
         return None
     
 # --- Data Loading ---
-termination_data = load_json_data(config.TERMINATION_ANALYSIS_OUTPUT)
-promotion_data = load_json_data(config.PROMOTION_ANALYSIS_OUTPUT)
-employee_skill_data = load_json_data(config.EMPLOYEE_SKILL_GAP_ANALYSIS_OUTPUT)
-department_skill_data = load_json_data(config.DEPARTMENT_SKILL_GAP_ANALYSIS_OUTPUT)
+raw_termination_data = load_json_data(config.TERMINATION_ANALYSIS_OUTPUT)
+raw_promotion_data = load_json_data(config.PROMOTION_ANALYSIS_OUTPUT)
+raw_employee_skill_data = load_json_data(config.EMPLOYEE_SKILL_GAP_ANALYSIS_OUTPUT)
+raw_department_skill_data = load_json_data(config.DEPARTMENT_SKILL_GAP_ANALYSIS_OUTPUT)
+rotation_data = load_json_data(config.ROTATION_SKILL_GAP_ANALYSIS_OUTPUT)
+
+termination_data = {}
+if raw_termination_data:
+    termination_data = raw_termination_data
+    if 'termination_reason_by_employee' in termination_data and isinstance(termination_data['termination_reason_by_employee'], list):
+        termination_data['termination_reason_by_employee'] = {str(item['employee_id']): item for item in termination_data['termination_reason_by_employee']}
+    if 'termination_reason_by_department' in termination_data and isinstance(termination_data['termination_reason_by_department'], list):
+        termination_data['termination_reason_by_department'] = {item['department_name']: item for item in termination_data['termination_reason_by_department']}
+
+promotion_data = {}
+if raw_promotion_data:
+    promotion_data = {item['employee_type']: item.get('employee_ids', []) for item in raw_promotion_data}
+    # For UI display, create a list of dicts for overlooked/disengaged employees
+    # Note: This version only has IDs. We'll look up names from the skill data if available.
+    promotion_data["overlooked_employees"] = [{'employee_id': eid} for eid in promotion_data.get("Overlooked Talent", [])]
+    promotion_data["disengaged_employees"] = [{'employee_id': eid} for eid in promotion_data.get("Disengaged Employee", [])]
+    promotion_data["new_and_promising_employees"] = [{'employee_id': eid} for eid in promotion_data.get("New and Promising", [])]
+
+employee_skill_data = {}
+if raw_employee_skill_data:
+    employee_skill_data = {str(emp['employee_id']): emp for emp in raw_employee_skill_data}
+
+department_skill_data = {}
+if raw_department_skill_data:
+    department_skill_data = {dept['department_name']: dept for dept in raw_department_skill_data}
+
 
 # --- Sidebar Navigation ---
-st.sidebar.title("👤 Talent Wow")
-page = st.sidebar.radio("Go to", ["OVERALL", "EMPLOYEE", "DEPARTMENT"])
+st.sidebar.title("👥 Talent Wow")
+page = st.sidebar.radio("Go to", ["OVERALL", "EMPLOYEE", "DEPARTMENT", "SKILL SEARCH FOR ROTATION"])
 
 # ==============================================================================
 # --- OVERALL PAGE ---
@@ -70,7 +97,7 @@ if page == "OVERALL":
                 st.metric("Predicted to Leave", summary.get("employees_predicted_to_leave", 0), help="In the next 3 months")
         with c4:
             with st.container(border=True):
-                st.metric("Avg. Termination Risk", f"{round(summary.get('average_retention_probability', 0), 2)}", help="Across all employees")
+                st.metric("Avg. Termination Risk", f"{round(summary.get('average_termination_probability', 0), 2)}", help="Across all employees")
 
         # --- Key Metrics for PROMOTION READINESS ---
         c1, c2, c3, _ = st.columns(4)
@@ -126,7 +153,7 @@ if page == "OVERALL":
         col3, col4 = st.columns(2)
         with col3:
             st.markdown("##### Termination Risk Distribution by Department")
-            prob_dist_data = termination_data.get("termination_probability_distribution", {}).get("by_department", [])
+            prob_dist_data = termination_data.get("termination_probability_distribution_by_department", [])
             if prob_dist_data:
                 dept_probs_data = []
                 for dept in prob_dist_data:
@@ -136,12 +163,14 @@ if page == "OVERALL":
                 if dept_probs_data:
                     df_dept_probs = pd.DataFrame(dept_probs_data)
                     fig_dept_dist = px.strip(
-                        df_dept_probs, 
-                        x='Department', 
-                        y='Probability', 
+                        df_dept_probs, x='Department', y='Probability', 
                         color_discrete_sequence=['#a0c4ff'],
                         labels={'Probability': 'Individual Termination Probability'}
                     )
+                    # add reference line
+                    threshold = summary.get('termination_threshold', 0.0)
+                    fig_dept_dist.add_hline(y=threshold, line_dash="dash", line_color="lightgray", annotation_text="Threshold")
+
                     fig_dept_dist.update_layout(xaxis_title=None)
                     st.plotly_chart(style_chart(fig_dept_dist), use_container_width=True)
                 else:
@@ -151,22 +180,24 @@ if page == "OVERALL":
 
         with col4:
             st.markdown("##### Termination Risk Distribution by Job Level")
-            level_prob_data = termination_data.get("termination_probability_distribution", {}).get("by_job_level", [])
+            level_prob_data = termination_data.get("termination_probability_distribution_by_job_level", [])
             if level_prob_data:
                 level_probs_data = []
                 for level in level_prob_data:
                     for prob in level.get('probabilities', []):
-                        level_probs_data.append({'Job Level': level.get('job_level_name', 'N/A'), 'Probability': prob})
+                        level_probs_data.append({'Job Level': level.get('level_name', 'N/A'), 'Probability': prob})
 
                 if level_probs_data:
                     df_level_probs = pd.DataFrame(level_probs_data)
                     fig_level_dist = px.strip(
-                        df_level_probs, 
-                        x='Job Level', 
-                        y='Probability', 
+                        df_level_probs, x='Job Level', y='Probability', 
                         color_discrete_sequence=['#a0c4ff'],
                         labels={'Probability': 'Individual Termination Probability'}
                         )
+                    # add reference line
+                    threshold = summary.get('termination_threshold', 0.0)
+                    fig_level_dist.add_hline(y=threshold, line_dash="dash", line_color="lightgray", annotation_text="Threshold")
+                    
                     fig_level_dist.update_layout(xaxis_title=None)
                     st.plotly_chart(style_chart(fig_level_dist), use_container_width=True)
                 else:
@@ -193,7 +224,7 @@ if page == "OVERALL":
                 st.plotly_chart(style_chart(fig), use_container_width=True)
             with col2:
                 st.markdown("##### Top Recommendation")
-                for index, row in df_reasons.iterrows():
+                for index, row in df_reasons.iloc[::-1].iterrows():
                     st.info(row['recommendation_action'])
 
 
@@ -251,38 +282,36 @@ elif page == "EMPLOYEE":
             # --- Promotion Status ---
             with col2:
                 status = "N/A"
-                if int(selected_emp_id) in promotion_data.get("overlooked_employees", []):
+                if int(selected_emp_id) in promotion_data.get("Overlooked Talent", []):
                     status = "🚨 Overlooked"
-                elif int(selected_emp_id) in promotion_data.get("disengaged_employees", []):
+                elif int(selected_emp_id) in promotion_data.get("Disengaged Employee", []):
                     status = "⚠️ Disengaged"
-                elif int(selected_emp_id) in promotion_data.get("on_track_employees", []):
+                elif int(selected_emp_id) in promotion_data.get("On Track", []):
                     status = "✅ On-Track"
-                elif int(selected_emp_id) in promotion_data.get("new_and_promising_employees", []):
+                elif int(selected_emp_id) in promotion_data.get("New and Promising", []):
                     status = "🌟 New & Promising"
                 st.info(f"**Status:** {status}")
 
                 if selected_emp_id in termination_data.get("termination_reason_by_employee", {}):
                     st.markdown("###### Top Recommendation")
-                    for index, row in df_factors.iterrows():
+                    for index, row in df_factors.iloc[::-1].iterrows():
                         st.info(row['recommendation_action'])
             
             # --- Skill Gap Analysis ---
             st.markdown("##### Skill Gap Analysis")
-
-            pos_gap = emp_info.get("skill_gap_by_position", {})
         
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("###### Skills Acquired")
-                emp_skills = pos_gap.get("employee_skills", [])
+                emp_skills = emp_info.get("employee_skills", [])
                 if emp_skills:
                     df_emp_skills = pd.DataFrame(emp_skills)  # columns: 'skill', 'score'
                     fig = px.bar(
                         df_emp_skills,
-                        x="score",
-                        y="skill",
+                        x="skill_score",
+                        y="skill_name",
                         orientation="h",
-                        color="score",
+                        color="skill_score",
                         color_continuous_scale="Blues"
                     )
                     fig.update_layout(
@@ -293,7 +322,7 @@ elif page == "EMPLOYEE":
 
             with col2:
                 st.markdown("###### Skills Missing for Current Role")
-                missing_skills = pos_gap.get("missing_skills", [])
+                missing_skills = emp_info.get("missing_skills_vs_current_position", [])
                 if missing_skills:
                     st.warning("\n".join([f"- {s}" for s in missing_skills]))
                 else:
@@ -304,21 +333,20 @@ elif page == "EMPLOYEE":
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("###### Gap vs. Peers")
-                peer_gap = emp_info.get("peer_skill_gap", {}).get("missing_skills_vs_peers", {})
+                peer_gap = emp_info.get("missing_skills_vs_peers", {})
                 if isinstance(peer_gap, str):
                     st.info(peer_gap)
-                elif peer_gap:
-                    for skill, details in peer_gap.items():
-                        st.markdown(f"- **{skill}**: Held by {details['peer_count']} peers ({details['percentage']})")
+                elif isinstance(peer_gap, list) and len(peer_gap) > 0:
+                    for skill in peer_gap:
+                        st.warning(f"- **{skill['skill_name']}**: Held by {skill['peer_count']} peers ({skill['percentage_of_peer']}%)")
                 else:
                     st.success("No common skills missing compared to peers.")
 
             with col2:
                 st.markdown("###### Gap vs. Next Level")
-                next_level_gap = emp_info.get("next_level_gap", {})
-                st.markdown(f"**Current:** {next_level_gap.get('current_position', 'N/A')}")
-                st.markdown(f"**Next:** {next_level_gap.get('next_position', 'N/A')}")
-                skills_to_acquire = next_level_gap.get("skills_to_acquire", [])
+                skills_to_acquire = emp_info.get("missing_skills_vs_next_level", [])
+                st.markdown(f"**Current:** {emp_info.get('current_position', 'N/A')}")
+                st.markdown(f"**Next:** {emp_info.get('next_position', 'N/A')}")
                 if skills_to_acquire:
                     st.warning("**Skills to Acquire:**\n\n" + "\n".join([f"- {s}" for s in skills_to_acquire]))
                 else:
@@ -331,21 +359,9 @@ elif page == "DEPARTMENT":
     st.subheader("🏢 Department-Level Analysis")
 
     if department_skill_data and termination_data:
-        # Create a mapping from department name to ID for easier selection
-        dept_names_from_term = {d['department_name']: d['department_name'] for d in termination_data.get("termination_proportion_by_department", [])}
-        dept_ids_from_skill = {f"Department ID {d}": d for d in department_skill_data.keys()}
-        
-        # Let user select by name (more user-friendly)
-        dept_name_map = {
-            "Business Development": "1", "Operations": "2", "Finance": "3", "Software Development": "4",
-            "Human Resources": "5", "Legal": "6", "Marketing": "7", "Sales": "8",
-            "Project Management": "9", "Data Scientist": "10", "Data Engineer": "11", "Data Consultant": "12"
-        }
-
+        dept_name_map = {item['department_name']: item['department_name'] for item in termination_data.get("termination_proportion_by_department", [])}
         selected_dept_name = st.selectbox("Select a Department", options=list(dept_name_map.keys()), index=None)
-        selected_dept_id = dept_name_map.get(selected_dept_name)
 
-        # --- Termination Analysis for Department ---
         if selected_dept_name:
             st.markdown("##### Termination Insights")
             term_dept_info = termination_data.get("termination_reason_by_department", {}).get(selected_dept_name)
@@ -353,15 +369,14 @@ elif page == "DEPARTMENT":
                 c1, c2, c3 = st.columns(3)
                 with c1:
                     with st.container(border=True):
-                        st.metric("Historical Departures", term_dept_info.get("num_emp_left", 0))
+                        st.metric("Historical Departures", term_dept_info.get("number_of_employees_left", 0))
                 with c2:
                     with st.container(border=True):
-                        st.metric("Predicted to Leave", term_dept_info.get("num_emp_predicted_to_leave", 0))
+                        st.metric("Predicted to Leave", term_dept_info.get("number_of_employees_predicted_to_leave", 0))
                 with c3:
                     with st.container(border=True):
                         st.metric("Avg. Termination Risk", f"{round(term_dept_info.get('avg_termination_probability', 0), 2)}")
                 
-                 # --- Termination Reasons and Recommendations ---
                 col1, col2 = st.columns(2)
                 with col1:
                     st.markdown("###### Top Termination Factors for this Department")
@@ -380,27 +395,63 @@ elif page == "DEPARTMENT":
                 
             st.markdown("---")
 
-            # --- Skill Gap Analysis for Department ---
-            if selected_dept_id and selected_dept_id in department_skill_data:
-                skill_dept_info = department_skill_data[selected_dept_id]
+            st.markdown("##### Skill Gap Insights")
+            skill_dept_info = department_skill_data.get(selected_dept_name)
+            if skill_dept_info:
+                c1, c2 = st.columns(2)
+                with c1:
+                    with st.container(border=True):
+                        st.metric("Missing Required Skills", len(skill_dept_info.get("missing_skills_in_dept", [])))
+                with c2:
+                    with st.container(border=True):
+                        st.metric("Skills with Low Scores", len(skill_dept_info.get("skills_with_low_score", [])))
+                
+                st.markdown("###### Score Distribution for Common Skills")
+                common_skills = skill_dept_info.get("common_existing_skills", [])
+                if common_skills:
+                    fig = go.Figure()
+                    for skill in common_skills:
+                        stats = skill.get("statistics", {})
+                        if all(k in stats for k in ['min', 'q1', 'median', 'q3', 'max']):
+                            fig.add_trace(go.Box(y=[stats[k] for k in ['min', 'q1', 'median', 'q3', 'max']], name=skill['skill_name'], boxpoints=False))
+                    fig.update_layout(yaxis_title="Skill Score")
+                    st.plotly_chart(style_chart(fig), use_container_width=True)
 
-                st.markdown("###### Skill Gap Insights")
-                if selected_dept_id and selected_dept_id in department_skill_data:
-                    c1, c2 = st.columns(2)
-                    with c1:
-                        with st.container(border=True):
-                            st.metric("Missing Required Skills", len(skill_dept_info.get("missing_required_skills", [])))
-                    with c2:
-                        with st.container(border=True):
-                            st.metric("Skills with Low Scores", len(skill_dept_info.get("skills_with_low_score", [])))
-                    
-                    st.markdown("###### Score Distribution for Common Skills")
-                    common_skills = skill_dept_info.get("common_existing_skills", {})
-                    if common_skills:
-                        fig = go.Figure()
-                        for skill, details in common_skills.items():
-                            stats = details.get("stats", {})
-                            if all(k in stats for k in ['min', 'q1', 'median', 'q3', 'max']):
-                                fig.add_trace(go.Box(y=[stats[k] for k in ['min', 'q1', 'median', 'q3', 'max']], name=skill, boxpoints=False))
-                        fig.update_layout(yaxis_title="Skill Score")
-                        st.plotly_chart(style_chart(fig), use_container_width=True)
+
+# ==============================================================================
+# --- SKILL SEARCH FOR ROTATION PAGE ---
+# ==============================================================================
+elif page == "SKILL SEARCH FOR ROTATION":
+    st.subheader("🔄 Skill Search for Rotation")
+    st.markdown("Find out what skills are needed for an employee to move to a different department.")
+
+    if rotation_data and employee_skill_data:
+        df_rotation = pd.DataFrame(rotation_data)
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            employee_ids = sorted(df_rotation['employee_id'].unique())
+            selected_employee_id = st.selectbox("Select Employee ID", options=employee_ids, index=None)
+        
+        with col2:
+            if selected_employee_id:
+                available_depts = df_rotation[df_rotation['employee_id'] == selected_employee_id]['target_department_name'].unique()
+                selected_department_name = st.selectbox("Select Target Department", options=sorted(available_depts), index=None)
+
+        st.markdown("---")
+
+        if selected_employee_id and selected_department_name:
+            result = df_rotation[
+                (df_rotation['employee_id'] == selected_employee_id) &
+                (df_rotation['target_department_name'] == selected_department_name)
+            ]
+            
+            if not result.empty:
+                skills_to_acquire = result.iloc[0]['skills_to_acquire']
+                st.markdown("##### Skills to Acquire")
+                if skills_to_acquire:
+                    st.warning("\n".join([f"- {skill}" for skill in skills_to_acquire]))
+                else:
+                    st.success("This employee already possesses all the required skills for this department.")
+            else:
+                st.info("No rotation path data found for this specific selection.")

@@ -4,132 +4,150 @@
         "prediction_end_date": "2025-11-29",
         "total_employees": 18,
         "total_employees_left": 10,
-        "employees_predicted_to_leave": 4,
+        "employees_predicted_to_leave": 2,
         "average_termination_probability": 0.03,
-        "termination_threshold": 0.036000000000000004
+        "termination_threshold": 0.077
     },
-    "termination_proportion_by_department": [
+    "department_proportion": [
         {
+            "department_id": 2,
             "department_name": "Operations",
             "termination_count": 3
         },
         {
-            "department_name": "Data Consultant",
-            "termination_count": 2
-        },
-        {
-            "department_name": "Data Scientist",
-            "termination_count": 2
-        },
-        {
+            "department_id": 7,
             "department_name": "Marketing",
             "termination_count": 2
         },
         {
+            "department_id": 8,
             "department_name": "Sales",
             "termination_count": 2
         },
         {
-            "department_name": "Business Development",
+            "department_id": 10,
+            "department_name": "Data Scientist",
+            "termination_count": 2
+        },
+        {
+            "department_id": 5,
+            "department_name": "Human Resources",
             "termination_count": 1
         },
         {
+            "department_id": 11,
             "department_name": "Data Engineer",
             "termination_count": 1
         },
         {
-            "department_name": "Human Resources",
+            "department_id": 12,
+            "department_name": "Data Consultant",
             "termination_count": 1
         }
     ],
-    "termination_proportion_by_job_level": [
+    "job_level_proportion": [
         {
+            "job_level": 0,
             "level_name": "Junior",
             "termination_count": 6
         },
         {
+            "job_level": 1,
             "level_name": "Mid-level",
-            "termination_count": 5
+            "termination_count": 4
         },
         {
-            "level_name": "Manager",
-            "termination_count": 2
-        },
-        {
+            "job_level": 3,
             "level_name": "Lead",
+            "termination_count": 1
+        },
+        {
+            "job_level": 4,
+            "level_name": "Manager",
             "termination_count": 1
         }
     ],
-    "termination_probability_distribution_by_department": [
+    "department_distribution": [
         {
+            "department_id": "1",
             "department_name": "Business Development",
             "probabilities": [
                 0.0,
                 0.08,
-                0.03
-            ]
-        },
-        {
-            "department_name": "Data Consultant",
-            "probabilities": [
-                0.08
-            ]
-        },
-        {
-            "department_name": "Data Engineer",
-            "probabilities": [
-                0.02,
-                0.0
-            ]
-        },
-        {
-            "department_name": "Data Scientist",
-            "probabilities": [
-                0.01,
-                0.16,
-                0.0,
-                0.0
-            ]
-        },
-        {
-            "department_name": "Human Resources",
-            "probabilities": []
-        },
-        {
-            "department_name": "Marketing",
-            "probabilities": [
-                0.0
-            ]
-        },
-        {
-            "department_name": "Operations",
-            "probabilities": [
-                0.16
-            ]
-        },
-        {
-            "department_name": "Project Management",
-            "probabilities": [
-                0.0,
-                0.01,
-                0.03,
                 0.01
             ]
         },
         {
-            "department_name": "Sales",
-            "probabilities": []
+            "department_id": "12",
+            "department_name": "Data Consultant",
+            "probabilities": [
+                0.05
+            ]
         },
         {
-            "department_name": "Software Development",
+            "department_id": "11",
+            "department_name": "Data Engineer",
             "probabilities": [
                 0.0,
                 0.0
             ]
+        },
+        {
+            "department_id": "10",
+            "department_name": "Data Scientist",
+            "probabilities": [
+                0.01,
+                0.17,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "department_id": "5",
+            "department_name": "Human Resources",
+            "probabilities": []
+        },
+        {
+            "department_id": "7",
+            "department_name": "Marketing",
+            "probabilities": [
+                0.01
+            ]
+        },
+        {
+            "department_id": "2",
+            "department_name": "Operations",
+            "probabilities": [
+                0.18
+            ]
+        },
+        {
+            "department_id": "9",
+            "department_name": "Project Management",
+            "probabilities": [
+                0.0,
+                0.0,
+                0.02,
+                0.07
+            ]
+        },
+        {
+            "department_id": "8",
+            "department_name": "Sales",
+            "probabilities": []
+        },
+        {
+            "department_id": "4",
+            "department_name": "Software Development",
+            "probabilities": [
+                0.01,
+                0.0
+            ]
         }
     ],
-    "termination_probability_distribution_by_job_level": [
+    "job_level_distribution": [
         {
+            "job_level": "7",
             "level_name": "C-Level",
             "probabilities": [
                 0.0,
@@ -137,17 +155,20 @@
             ]
         },
         {
+            "job_level": "0",
             "level_name": "Junior",
             "probabilities": []
         },
         {
+            "job_level": "3",
             "level_name": "Lead",
             "probabilities": [
-                0.16,
-                0.02
+                0.17,
+                0.0
             ]
         },
         {
+            "job_level": "4",
             "level_name": "Manager",
             "probabilities": [
                 0.0,
@@ -155,410 +176,309 @@
             ]
         },
         {
+            "job_level": "1",
             "level_name": "Mid-level",
             "probabilities": [
                 0.0,
-                0.0,
-                0.0,
-                0.03,
-                0.03,
-                0.16,
                 0.01,
-                0.08,
-                0.0
+                0.0,
+                0.01,
+                0.02,
+                0.18,
+                0.07,
+                0.05,
+                0.01
             ]
         },
         {
+            "job_level": "2",
             "level_name": "Senior",
             "probabilities": [
                 0.0,
-                0.01,
+                0.0,
                 0.0
             ]
         }
     ],
-    "top_reasons_for_quitting": [
+    "top_quitting_reason": [
         {
-            "feature_name": "Total Overtime Hours (Last 3 Months)",
-            "impact_percentage": 34.45,
-            "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+            "feature_name": "Performance Score vs Manager\u2019s Team Average",
+            "impact_percentage": 36.97,
+            "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
         },
         {
-            "feature_name": "Years Since Last Salary Adjustment",
-            "impact_percentage": 25.7,
-            "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-        },
-        {
-            "feature_name": NaN,
-            "impact_percentage": 24.64,
-            "recommendation_action": NaN
-        },
-        {
-            "feature_name": "Total Working Years",
-            "impact_percentage": 9.36,
-            "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
+            "feature_name": "Performance Score vs Job Level Average",
+            "impact_percentage": 18.7,
+            "recommendation_action": "Review and address performance differences at the job level."
         },
         {
             "feature_name": "Number of Past Managers",
-            "impact_percentage": 5.85,
+            "impact_percentage": 17.6,
             "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
-        }
-    ],
-    "termination_reason_by_employee": [
-        {
-            "employee_id": "990003",
-            "predicted_termination_probability": 0.16,
-            "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 64.09,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Average Performance Score",
-                    "impact_percentage": 16.2,
-                    "recommendation_action": "Provide constructive feedback and support to improve performance scores."
-                },
-                {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 11.0,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 8.7,
-                    "recommendation_action": NaN
-                }
-            ]
         },
         {
-            "employee_id": "990014",
-            "predicted_termination_probability": 0.08,
+            "feature_name": "Average Performance Score",
+            "impact_percentage": 13.71,
+            "recommendation_action": "Provide constructive feedback and support to improve performance scores."
+        },
+        {
+            "feature_name": "Total Overtime Hours (Last 3 Months)",
+            "impact_percentage": 13.02,
+            "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+        }
+    ],
+    "reason_by_employee": [
+        {
+            "employee_id": "990003",
+            "predicted_probability": 0.17,
             "impact_factors": [
                 {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 24.87,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 19.66,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 14.95,
-                    "recommendation_action": NaN
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 54.64,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
                 },
                 {
                     "feature_name": "Average Performance Score",
-                    "impact_percentage": 14.23,
+                    "impact_percentage": 20.61,
                     "recommendation_action": "Provide constructive feedback and support to improve performance scores."
                 },
                 {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 10.27,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 15.52,
+                    "recommendation_action": NaN
                 },
                 {
-                    "feature_name": "Total Working Years vs Job Level's Average",
-                    "impact_percentage": 8.15,
-                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
-                },
-                {
-                    "feature_name": "Total Working Years",
-                    "impact_percentage": 7.89,
-                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
+                    "feature_name": "Years in Current Position",
+                    "impact_percentage": 9.23,
+                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
                 }
             ]
         },
         {
             "employee_id": "990021",
-            "predicted_termination_probability": 0.16,
+            "predicted_probability": 0.18,
             "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 82.3,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Total Working Years vs Manager\u2019s Team Average",
-                    "impact_percentage": 9.05,
-                    "recommendation_action": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration."
-                },
-                {
-                    "feature_name": "Years in Current Position",
-                    "impact_percentage": 8.65,
-                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
-                }
-            ]
-        },
-        {
-            "employee_id": "990025",
-            "predicted_termination_probability": 0.08,
-            "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 23.11,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 20.4,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
-                },
-                {
-                    "feature_name": "Total Working Years vs Manager\u2019s Team Average",
-                    "impact_percentage": 17.92,
-                    "recommendation_action": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration."
-                },
-                {
-                    "feature_name": "Years in Current Position",
-                    "impact_percentage": 13.76,
-                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
-                },
-                {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 13.46,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
                 {
                     "feature_name": "Performance Score vs Manager\u2019s Team Average",
-                    "impact_percentage": 11.35,
+                    "impact_percentage": 50.88,
                     "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 15.76,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 13.17,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 10.2,
+                    "recommendation_action": NaN
+                },
+                {
+                    "feature_name": "Total Working Years vs Job Level's Average",
+                    "impact_percentage": 10.0,
+                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
                 }
             ]
         }
     ],
-    "termination_reason_by_department": [
+    "reason_by_department": [
         {
+            "department_id": "1",
             "department_name": "Business Development",
-            "number_of_employees_left": 1,
-            "number_of_employees_predicted_to_leave": 1,
+            "total_employee_left": 0,
+            "total_employee_to_leave": 0,
             "avg_termination_probability": 0.03,
             "impact_factors": [
                 {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 28.16,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 28.15,
+                    "recommendation_action": "Review and address performance differences at the job level."
                 },
                 {
-                    "feature_name": NaN,
-                    "impact_percentage": 23.51,
-                    "recommendation_action": NaN
-                },
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 20.35,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 10.53,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
-                },
-                {
-                    "feature_name": "Total Working Years vs Job Level's Average",
-                    "impact_percentage": 8.98,
-                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
-                },
-                {
-                    "feature_name": "Total Working Years",
-                    "impact_percentage": 8.47,
-                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
-                }
-            ]
-        },
-        {
-            "department_name": "Data Consultant",
-            "number_of_employees_left": 2,
-            "number_of_employees_predicted_to_leave": 1,
-            "avg_termination_probability": 0.08,
-            "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 23.11,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 20.4,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
-                },
-                {
-                    "feature_name": "Total Working Years vs Manager\u2019s Team Average",
-                    "impact_percentage": 17.92,
-                    "recommendation_action": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration."
-                },
-                {
-                    "feature_name": "Years in Current Position",
-                    "impact_percentage": 13.76,
-                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
-                },
-                {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 13.46,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
-                {
-                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
-                    "impact_percentage": 11.35,
-                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
-                }
-            ]
-        },
-        {
-            "department_name": "Data Engineer",
-            "number_of_employees_left": 1,
-            "number_of_employees_predicted_to_leave": 0,
-            "avg_termination_probability": 0.01,
-            "impact_factors": [
-                {
-                    "feature_name": "Average Performance Score",
-                    "impact_percentage": 30.29,
-                    "recommendation_action": "Provide constructive feedback and support to improve performance scores."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 16.22,
-                    "recommendation_action": NaN
-                },
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 16.21,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Total Working Years",
-                    "impact_percentage": 15.24,
-                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
-                },
-                {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 14.56,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
-                {
-                    "feature_name": "Total Working Years vs Job Level's Average",
-                    "impact_percentage": 7.48,
-                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
-                }
-            ]
-        },
-        {
-            "department_name": "Data Scientist",
-            "number_of_employees_left": 2,
-            "number_of_employees_predicted_to_leave": 1,
-            "avg_termination_probability": 0.04,
-            "impact_factors": [
-                {
-                    "feature_name": "Average Performance Score",
-                    "impact_percentage": 34.07,
-                    "recommendation_action": "Provide constructive feedback and support to improve performance scores."
-                },
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 33.68,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 18.42,
-                    "recommendation_action": NaN
-                },
-                {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 13.84,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                }
-            ]
-        },
-        {
-            "department_name": "Marketing",
-            "number_of_employees_left": 2,
-            "number_of_employees_predicted_to_leave": 0,
-            "avg_termination_probability": 0.0,
-            "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 41.57,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Number of Past Managers",
-                    "impact_percentage": 26.24,
-                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 18.5,
-                    "recommendation_action": NaN
-                },
-                {
-                    "feature_name": "Years Since Last Promotion",
-                    "impact_percentage": 13.69,
-                    "recommendation_action": "If promotions are long overdue, provide growth discussions or skill-building opportunities."
-                }
-            ]
-        },
-        {
-            "department_name": "Operations",
-            "number_of_employees_left": 3,
-            "number_of_employees_predicted_to_leave": 1,
-            "avg_termination_probability": 0.16,
-            "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 82.3,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Total Working Years vs Manager\u2019s Team Average",
-                    "impact_percentage": 9.05,
-                    "recommendation_action": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration."
-                },
-                {
-                    "feature_name": "Years in Current Position",
-                    "impact_percentage": 8.65,
-                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
-                }
-            ]
-        },
-        {
-            "department_name": "Project Management",
-            "number_of_employees_left": 0,
-            "number_of_employees_predicted_to_leave": 0,
-            "avg_termination_probability": 0.01,
-            "impact_factors": [
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 18.3,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
-                },
-                {
-                    "feature_name": "Number of Past Managers",
-                    "impact_percentage": 15.68,
-                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
-                },
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 13.96,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Performance Score vs Department Average",
-                    "impact_percentage": 11.08,
-                    "recommendation_action": "Identify and solve department-specific performance issues."
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 17.12,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
                 },
                 {
                     "feature_name": "Number of Trainings Attended",
-                    "impact_percentage": 9.9,
+                    "impact_percentage": 16.69,
                     "recommendation_action": "Increase access to relevant training programs for skill and career growth."
                 },
                 {
+                    "feature_name": "Years with Current Manager",
+                    "impact_percentage": 10.55,
+                    "recommendation_action": "Encourage manager-employee relationship building and address possible conflicts through coaching."
+                },
+                {
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 9.92,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                },
+                {
                     "feature_name": "Performance Score vs Manager\u2019s Team Average",
-                    "impact_percentage": 8.45,
+                    "impact_percentage": 9.76,
                     "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Total Working Years",
+                    "impact_percentage": 7.82,
+                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
+                }
+            ]
+        },
+        {
+            "department_id": "12",
+            "department_name": "Data Consultant",
+            "total_employee_left": 1,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.05,
+            "impact_factors": [
+                {
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 38.87,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Total Overtime Hours (Last 3 Months)",
+                    "impact_percentage": 25.88,
+                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                },
+                {
+                    "feature_name": "Total Working Years vs Job Level's Average",
+                    "impact_percentage": 13.56,
+                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
+                },
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 11.01,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Total Working Years",
+                    "impact_percentage": 10.67,
+                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
+                }
+            ]
+        },
+        {
+            "department_id": "11",
+            "department_name": "Data Engineer",
+            "total_employee_left": 1,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.0,
+            "impact_factors": [
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 19.79,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 18.22,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 13.52,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_percentage": 12.28,
+                    "recommendation_action": "Increase access to relevant training programs for skill and career growth."
+                },
+                {
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 10.45,
+                    "recommendation_action": NaN
+                },
+                {
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 10.02,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_percentage": 8.02,
+                    "recommendation_action": "Encourage manager-employee relationship building and address possible conflicts through coaching."
+                },
+                {
+                    "feature_name": "Performance Score vs Department Average",
+                    "impact_percentage": 7.71,
+                    "recommendation_action": "Identify and solve department-specific performance issues."
+                }
+            ]
+        },
+        {
+            "department_id": "10",
+            "department_name": "Data Scientist",
+            "total_employee_left": 2,
+            "total_employee_to_leave": 1,
+            "avg_termination_probability": 0.04,
+            "impact_factors": [
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 41.72,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Average Performance Score",
+                    "impact_percentage": 21.09,
+                    "recommendation_action": "Provide constructive feedback and support to improve performance scores."
+                },
+                {
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 15.38,
+                    "recommendation_action": NaN
+                },
+                {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 13.05,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Years in Current Position",
+                    "impact_percentage": 8.77,
+                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
+                }
+            ]
+        },
+        {
+            "department_id": "7",
+            "department_name": "Marketing",
+            "total_employee_left": 2,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.01,
+            "impact_factors": [
+                {
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 27.65,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                },
+                {
+                    "feature_name": "Total Working Years",
+                    "impact_percentage": 24.12,
+                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
+                },
+                {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 13.77,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Total Overtime Hours (Last 3 Months)",
+                    "impact_percentage": 9.54,
+                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_percentage": 8.78,
+                    "recommendation_action": "Encourage manager-employee relationship building and address possible conflicts through coaching."
                 },
                 {
                     "feature_name": "Average Performance Score",
@@ -566,234 +486,323 @@
                     "recommendation_action": "Provide constructive feedback and support to improve performance scores."
                 },
                 {
-                    "feature_name": "Total Working Years",
-                    "impact_percentage": 7.31,
-                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 7.18,
-                    "recommendation_action": NaN
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 8.01,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
                 }
             ]
         },
         {
-            "department_name": "Software Development",
-            "number_of_employees_left": 0,
-            "number_of_employees_predicted_to_leave": 0,
-            "avg_termination_probability": 0.0,
+            "department_id": "2",
+            "department_name": "Operations",
+            "total_employee_left": 3,
+            "total_employee_to_leave": 1,
+            "avg_termination_probability": 0.18,
             "impact_factors": [
                 {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 37.9,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
                     "feature_name": "Performance Score vs Manager\u2019s Team Average",
-                    "impact_percentage": 18.93,
+                    "impact_percentage": 50.88,
                     "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
                 },
                 {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 15.76,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 13.17,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 10.2,
+                    "recommendation_action": NaN
+                },
+                {
                     "feature_name": "Total Working Years vs Job Level's Average",
-                    "impact_percentage": 12.19,
+                    "impact_percentage": 10.0,
                     "recommendation_action": "Review progression speed and align promotions fairly across job levels."
+                }
+            ]
+        },
+        {
+            "department_id": "9",
+            "department_name": "Project Management",
+            "total_employee_left": 0,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.02,
+            "impact_factors": [
+                {
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 21.0,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                },
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 20.59,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Total Overtime Hours (Last 3 Months)",
+                    "impact_percentage": 19.07,
+                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                },
+                {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 16.27,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_percentage": 8.24,
+                    "recommendation_action": "Encourage manager-employee relationship building and address possible conflicts through coaching."
+                },
+                {
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 7.73,
+                    "recommendation_action": NaN
                 },
                 {
                     "feature_name": "Average Performance Score",
-                    "impact_percentage": 12.19,
+                    "impact_percentage": 7.09,
                     "recommendation_action": "Provide constructive feedback and support to improve performance scores."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 9.93,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
-                },
+                }
+            ]
+        },
+        {
+            "department_id": "4",
+            "department_name": "Software Development",
+            "total_employee_left": 0,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.0,
+            "impact_factors": [
                 {
                     "feature_name": "Performance Score vs Department Average",
-                    "impact_percentage": 8.87,
+                    "impact_percentage": 24.78,
                     "recommendation_action": "Identify and solve department-specific performance issues."
+                },
+                {
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 19.09,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                },
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 17.65,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 17.33,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Total Overtime Hours (Last 3 Months)",
+                    "impact_percentage": 11.75,
+                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                },
+                {
+                    "feature_name": "Years in Current Position",
+                    "impact_percentage": 9.39,
+                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
                 }
             ]
         }
     ],
-    "termination_reason_by_job_level": [
+    "reason_by_job_level": [
         {
+            "job_level": "7",
             "level_name": "C-Level",
-            "number_of_employees_left": 0,
-            "number_of_employees_predicted_to_leave": 0,
+            "total_employee_left": 0,
+            "total_employee_to_leave": 0,
             "avg_termination_probability": 0.0,
             "impact_factors": [
                 {
-                    "feature_name": "Average Performance Score",
-                    "impact_percentage": 41.31,
-                    "recommendation_action": "Provide constructive feedback and support to improve performance scores."
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 38.47,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
                 },
                 {
-                    "feature_name": NaN,
-                    "impact_percentage": 26.1,
-                    "recommendation_action": NaN
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_percentage": 17.55,
+                    "recommendation_action": "Increase access to relevant training programs for skill and career growth."
                 },
                 {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 18.97,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 16.5,
+                    "recommendation_action": "Review and address performance differences at the job level."
                 },
                 {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 13.62,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 16.24,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_percentage": 11.25,
+                    "recommendation_action": "Encourage manager-employee relationship building and address possible conflicts through coaching."
                 }
             ]
         },
         {
+            "job_level": "3",
             "level_name": "Lead",
-            "number_of_employees_left": 1,
-            "number_of_employees_predicted_to_leave": 1,
+            "total_employee_left": 1,
+            "total_employee_to_leave": 1,
             "avg_termination_probability": 0.09,
             "impact_factors": [
                 {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 44.18,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 50.36,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
                 },
                 {
                     "feature_name": "Average Performance Score",
-                    "impact_percentage": 21.98,
+                    "impact_percentage": 19.39,
                     "recommendation_action": "Provide constructive feedback and support to improve performance scores."
                 },
                 {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 13.18,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 12.48,
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 14.38,
                     "recommendation_action": NaN
                 },
                 {
-                    "feature_name": "Total Working Years",
-                    "impact_percentage": 8.18,
-                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
-                }
-            ]
-        },
-        {
-            "level_name": "Manager",
-            "number_of_employees_left": 2,
-            "number_of_employees_predicted_to_leave": 1,
-            "avg_termination_probability": 0.04,
-            "impact_factors": [
-                {
-                    "feature_name": "Years Since Last Salary Adjustment",
-                    "impact_percentage": 28.16,
-                    "recommendation_action": "Review and adjust pay if salary changes have been long overdue."
-                },
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 24.29,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": NaN,
-                    "impact_percentage": 23.88,
-                    "recommendation_action": NaN
-                },
-                {
-                    "feature_name": "Total Working Years",
-                    "impact_percentage": 9.49,
-                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
-                },
-                {
-                    "feature_name": "Total Working Years vs Job Level's Average",
-                    "impact_percentage": 7.18,
-                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 6.99,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
-                }
-            ]
-        },
-        {
-            "level_name": "Mid-level",
-            "number_of_employees_left": 5,
-            "number_of_employees_predicted_to_leave": 2,
-            "avg_termination_probability": 0.03,
-            "impact_factors": [
-                {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 53.44,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
-                },
-                {
-                    "feature_name": "Number of Past Managers",
-                    "impact_percentage": 14.43,
-                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 8.51,
+                    "recommendation_action": "Review and address performance differences at the job level."
                 },
                 {
                     "feature_name": "Years in Current Position",
-                    "impact_percentage": 12.26,
+                    "impact_percentage": 7.37,
                     "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
-                },
-                {
-                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
-                    "impact_percentage": 10.72,
-                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 9.15,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
                 }
             ]
         },
         {
-            "level_name": "Senior",
-            "number_of_employees_left": 0,
-            "number_of_employees_predicted_to_leave": 0,
-            "avg_termination_probability": 0.01,
+            "job_level": "4",
+            "level_name": "Manager",
+            "total_employee_left": 1,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.04,
             "impact_factors": [
                 {
-                    "feature_name": "Total Overtime Hours (Last 3 Months)",
-                    "impact_percentage": 20.42,
-                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 35.81,
+                    "recommendation_action": "Review and address performance differences at the job level."
                 },
                 {
-                    "feature_name": "Performance Score vs Department Average",
-                    "impact_percentage": 17.09,
-                    "recommendation_action": "Identify and solve department-specific performance issues."
-                },
-                {
-                    "feature_name": "Average Time to Promotion (Years)",
-                    "impact_percentage": 16.32,
-                    "recommendation_action": "Evaluate promotion policies to ensure timely career progression."
+                    "feature_name": "Number of Trainings Attended",
+                    "impact_percentage": 28.54,
+                    "recommendation_action": "Increase access to relevant training programs for skill and career growth."
                 },
                 {
                     "feature_name": "Performance Score vs Manager\u2019s Team Average",
-                    "impact_percentage": 13.56,
+                    "impact_percentage": 16.59,
                     "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
                 },
                 {
-                    "feature_name": NaN,
-                    "impact_percentage": 8.67,
-                    "recommendation_action": NaN
+                    "feature_name": "Total Working Years",
+                    "impact_percentage": 10.12,
+                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
+                },
+                {
+                    "feature_name": "Years with Current Manager",
+                    "impact_percentage": 8.94,
+                    "recommendation_action": "Encourage manager-employee relationship building and address possible conflicts through coaching."
+                }
+            ]
+        },
+        {
+            "job_level": "1",
+            "level_name": "Mid-level",
+            "total_employee_left": 4,
+            "total_employee_to_leave": 1,
+            "avg_termination_probability": 0.04,
+            "impact_factors": [
+                {
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 23.07,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
+                },
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 18.68,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 18.41,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Age of Employee",
+                    "impact_percentage": 14.39,
+                    "recommendation_action": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff."
+                },
+                {
+                    "feature_name": "Total Working Years vs Job Level's Average",
+                    "impact_percentage": 9.37,
+                    "recommendation_action": "Review progression speed and align promotions fairly across job levels."
+                },
+                {
+                    "feature_name": "Performance Score vs Department Average",
+                    "impact_percentage": 8.3,
+                    "recommendation_action": "Identify and solve department-specific performance issues."
+                },
+                {
+                    "feature_name": "Total Overtime Hours (Last 3 Months)",
+                    "impact_percentage": 7.78,
+                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                }
+            ]
+        },
+        {
+            "job_level": "2",
+            "level_name": "Senior",
+            "total_employee_left": 0,
+            "total_employee_to_leave": 0,
+            "avg_termination_probability": 0.0,
+            "impact_factors": [
+                {
+                    "feature_name": "Performance Score vs Manager\u2019s Team Average",
+                    "impact_percentage": 19.83,
+                    "recommendation_action": "Align expectations and feedback within manager\u2019s team to ensure fairness."
+                },
+                {
+                    "feature_name": "Years in Current Position",
+                    "impact_percentage": 14.72,
+                    "recommendation_action": "Provide role rotation or upskilling opportunities for employees stuck in the same position for too long."
+                },
+                {
+                    "feature_name": "Total Overtime Hours (Last 3 Months)",
+                    "impact_percentage": 14.4,
+                    "recommendation_action": "Reduce excessive overtime through workload balancing and additional resources."
+                },
+                {
+                    "feature_name": "Total Working Years",
+                    "impact_percentage": 14.12,
+                    "recommendation_action": "Recognize long service with awards, career progression options, and new challenges to maintain motivation."
                 },
                 {
                     "feature_name": "Average Performance Score",
-                    "impact_percentage": 8.65,
+                    "impact_percentage": 10.86,
                     "recommendation_action": "Provide constructive feedback and support to improve performance scores."
                 },
                 {
-                    "feature_name": "Years Since Last Promotion",
-                    "impact_percentage": 7.73,
-                    "recommendation_action": "If promotions are long overdue, provide growth discussions or skill-building opportunities."
+                    "feature_name": "Number of Past Managers",
+                    "impact_percentage": 9.17,
+                    "recommendation_action": "Stabilize management assignments and reduce frequent leadership changes."
                 },
                 {
-                    "feature_name": "Total Working Years vs Manager\u2019s Team Average",
-                    "impact_percentage": 7.56,
-                    "recommendation_action": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration."
+                    "feature_name": "Performance Score vs Job Level Average",
+                    "impact_percentage": 9.13,
+                    "recommendation_action": "Review and address performance differences at the job level."
+                },
+                {
+                    "feature_name": "Department of Employee",
+                    "impact_percentage": 7.77,
+                    "recommendation_action": NaN
                 }
             ]
         }

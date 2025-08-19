@@ -7,6 +7,7 @@ FEARURES_MEANING_MAPPER = {
     'num_spouse': 'Number of Spouses',
     'job_level': 'Job Level of Employee',
     'department_name': 'Department of Employee',
+    'department_name_shap': 'Department of Employee',
     'total_working_year': 'Total Working Years',
     'total_working_year_z_manager': "Total Working Years vs Manager’s Team Average",
     "total_working_year_z_position": "Total Working Years vs Position's Average",

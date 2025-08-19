@@ -43,21 +43,21 @@ def main():
     employee_analysis_result = []
     for emp_id in emp_df['emp_id']:
         current_position_id = emp_pos_df[emp_pos_df['employee_id'] == emp_id]['position_id'].values[0]
-        employee_skill_with_score, missing_skills_vs_current_position = analyze_current_position_gap(
+        employee_skill_with_score, current_missing_skill = analyze_current_position_gap(
             employee_id=emp_id,
             employee_position_id=current_position_id,
             employee_skill_df=emp_skill_df,
             position_skill_df=pos_skill_df,
         )
 
-        missing_skills_vs_peers = analyze_peer_gap(
+        peer_missing_skill = analyze_peer_gap(
             employee_id=emp_id,
             current_position_id=current_position_id,
             employee_position_df=emp_pos_df,
             employee_skill_df=emp_skill_df,
         )
 
-        current_position, next_position, missing_skills_vs_next_level = analyze_next_level_gap(
+        current_position, next_position, next_missing_skill = analyze_next_level_gap(
             employee_id=emp_id,
             current_position_id=current_position_id,
             position_df=position_df,
@@ -83,10 +83,10 @@ def main():
             'employee_id': emp_id,
             'current_position': current_position,
             'next_position': next_position,
-            'employee_skills': employee_skill_with_score,
-            'missing_skills_vs_current_position': missing_skills_vs_current_position,
-            'missing_skills_vs_peers': missing_skills_vs_peers,
-            'missing_skills_vs_next_level': missing_skills_vs_next_level
+            'employee_skill': employee_skill_with_score,
+            'current_missing_skill': current_missing_skill,
+            'peer_missing_skill': peer_missing_skill,
+            'next_missing_skill': next_missing_skill
         })
 
     with open(config.EMPLOYEE_SKILL_GAP_ANALYSIS_OUTPUT, 'w') as f:
@@ -96,7 +96,7 @@ def main():
     # --- 2. Skill Gap by DEPARTMENT ---
     department_analysis_result = []
     for  department_id, department_name in department_df[['id', 'name']].values:
-        total_employee, common_existing_skills, missing_skills_in_dept, skills_with_low_score = analyze_department_skill_gap(
+        total_employee, common_existing_skill, missing_skills_in_dept, skills_with_low_score = analyze_department_skill_gap(
             department_id=department_id,
             position_df=position_df,
             employee_position_df=emp_pos_df,
@@ -105,11 +105,12 @@ def main():
         )
 
         department_analysis_result.append({
+            'department_id': str(department_id),
             'department_name': department_name,
             'total_employee': total_employee,
-            'common_existing_skills': common_existing_skills,
-            'missing_skills_in_dept': missing_skills_in_dept,
-            'skills_with_low_score': skills_with_low_score
+            'common_existing_skill': common_existing_skill,
+            'department_missing_skill': missing_skills_in_dept,
+            'low_score_skill': skills_with_low_score
         })
 
     with open(config.DEPARTMENT_SKILL_GAP_ANALYSIS_OUTPUT, 'w') as f:
@@ -159,7 +160,7 @@ def main():
         promotion_result.append({
             'employee_type': employee_type,
             'total_employee': len(employees),
-            'employee_ids': employees
+            'employee_id': employees
         })
 
     with open(config.PROMOTION_ANALYSIS_OUTPUT, 'w') as f:

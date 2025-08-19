@@ -62,8 +62,9 @@ def generate_all_rotation_gaps(employee_df, position_df, employee_position_df, e
 
             full_rotation_analysis.append({
                 'employee_id': str(emp_id),
+                'target_department_id': str(target_dept_id),
                 'target_department_name': position_df.loc[position_df['department_id'] == target_dept_id, 'department_name'].values[0],
-                'skills_to_acquire': rotation_gap,
+                'skill_to_acquire': rotation_gap,
             })
             
     return full_rotation_analysis

@@ -31,6 +31,7 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     employee_metadata['job_level_name'] = employee_metadata['job_level'].map(config.JOB_LEVEL_MAPPER)
     employee_metadata['position_id'] = employee_metadata['emp_id'].map(_employee_position_df.set_index('employee_id')['position_id'])
     employee_metadata['job_title'] = employee_metadata['position_id'].map(_position_df.set_index('id')['name'])
+    employee_metadata['department_id'] = employee_metadata['position_id'].map(_position_df.set_index('id')['department_id'])
 
     termination_emp = employee_metadata[(employee_metadata['model_predicted_termination'] == True) | (employee_metadata['termination_value'] > 0)]
 
@@ -50,7 +51,7 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     # check if 'department_name' exists as a feature column (containing SHAP values).
     if 'department_name' in all_shap_df.columns:
         all_shap_df.rename(columns={'department_name': 'department_name_shap'}, inplace=True) 
-    metadata_columns = ['emp_id', 'job_title', 'job_level_name', 'department_name']
+    metadata_columns = ['emp_id', 'job_title', 'job_level', 'job_level_name', 'department_name', 'department_id']
     shap_with_metadata = pd.merge(all_shap_df, employee_metadata[metadata_columns], on='emp_id', how='left')
 
 
@@ -70,29 +71,30 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
 
 
     # --- 3. Termination Proportions By DEPARTMENT ---
-    department_count = termination_emp.groupby('department_name')['termination_value'].count().to_frame('termination_count').reset_index()
-    json_result['termination_proportion_by_department'] = department_count.sort_values('termination_count', ascending=False).to_dict(orient='records')
-
+    department_count = termination_emp.groupby(['department_id', 'department_name'])['termination_value'].count().to_frame('termination_count').reset_index()
+    json_result['department_proportion'] = department_count.sort_values('termination_count', ascending=False).to_dict(orient='records')
 
     # --- 4. Termination Proportions By JOB LEVEL ---
     level_count = termination_emp.groupby('job_level')['termination_value'].count().to_frame('termination_count').reset_index()
     level_count['level_name'] = level_count['job_level'].map(config.JOB_LEVEL_MAPPER)
-    json_result['termination_proportion_by_job_level'] = level_count[['level_name', 'termination_count']].sort_values('termination_count', ascending=False).to_dict(orient='records')
+    json_result['job_level_proportion'] = level_count[['job_level', 'level_name', 'termination_count']].sort_values('termination_count', ascending=False).to_dict(orient='records')
 
 
     # --- 5. Termination Probability Distribution by DEPARTMENT ---
-    prob_dist_dept = employee_metadata.groupby('department_name')['model_predicted_termination_probability'].apply(lambda x: [p for p in x if pd.notna(p)])
-    prob_dist_dept = prob_dist_dept.apply(lambda x: [round(p, 2) for p in x])
-    json_result['termination_probability_distribution_by_department'] = [
-        {'department_name': dept, 'probabilities': probs} for dept, probs in prob_dist_dept.items()
+    prob_dist_dept = employee_metadata.groupby(['department_name', 'department_id'])['model_predicted_termination_probability'].apply(lambda x: [p for p in x if pd.notna(p)])
+    prob_dist_dept = prob_dist_dept.apply(lambda x: [round(p, 2) for p in x]).reset_index()
+    json_result['department_distribution'] = [
+        {'department_id': str(row['department_id']), 'department_name': row['department_name'], 'probabilities': row['model_predicted_termination_probability']}
+        for _, row in prob_dist_dept.iterrows()
     ]
 
 
     # --- 6. Termination Probability Distribution by JOB LEVEL ---
-    prob_dist_level = employee_metadata.groupby('job_level_name')['model_predicted_termination_probability'].apply(lambda x: [p for p in x if pd.notna(p)])
-    prob_dist_level = prob_dist_level.apply(lambda x: [round(p, 2) for p in x])
-    json_result['termination_probability_distribution_by_job_level'] = [
-            {'level_name': level, 'probabilities': probs} for level, probs in prob_dist_level.items()
+    prob_dist_level = employee_metadata.groupby(['job_level_name', 'job_level'])['model_predicted_termination_probability'].apply(lambda x: [p for p in x if pd.notna(p)])
+    prob_dist_level = prob_dist_level.apply(lambda x: [round(p, 2) for p in x]).reset_index()
+    json_result['job_level_distribution'] = [
+        {'job_level': str(row['job_level']), 'level_name': row['job_level_name'], 'probabilities': row['model_predicted_termination_probability']}
+        for _, row in prob_dist_level.iterrows()
     ]
     
 
@@ -104,7 +106,7 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     mean_importance['impact_percentage'] = round((mean_importance['impact_value'] / total_impact) * 100, 2)
     mean_importance['feature_name'] = mean_importance['feature'].map(feature_mapper.FEARURES_MEANING_MAPPER)
     mean_importance['recommendation_action'] = mean_importance['feature'].map(feature_mapper.FEATURES_ACTION_MAPPER)
-    json_result['top_reasons_for_quitting'] = mean_importance[['feature_name', 'impact_percentage', 'recommendation_action']].to_dict(orient='records')
+    json_result['top_quitting_reason'] = mean_importance[['feature_name', 'impact_percentage', 'recommendation_action']].to_dict(orient='records')
 
 
     # --- Analysis by Employee, Department, and Job Level ---
@@ -127,10 +129,10 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
 
         termination_reason_by_employee.append({
             'employee_id': str(emp_id),
-            'predicted_termination_probability': round(predicted_termination_probability, 2),
+            'predicted_probability': round(predicted_termination_probability, 2),
             'impact_factors': _emp_shap_t[['feature_name', 'impact_percentage', 'recommendation_action']].sort_values(by='impact_percentage', ascending=False).to_dict(orient='records')
         })
-    json_result["termination_reason_by_employee"] = termination_reason_by_employee
+    json_result["reason_by_employee"] = termination_reason_by_employee
 
     # --- 9. Termination reason by department ---
     department_shap = shap_with_metadata.groupby('department_name')[features].mean().reset_index()
@@ -139,6 +141,7 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
         num_emp_left = termination_emp[termination_emp['department_name'] == department].shape[0]
         num_emp_predicted_to_leave = termination_emp[(termination_emp['department_name'] == department) & (termination_emp['model_predicted_termination'] == True)].shape[0]
         avg_termination_probability = employee_metadata[employee_metadata['department_name'] == department]['model_predicted_termination_probability'].mean()
+        department_id = employee_metadata[employee_metadata['department_name'] == department]['department_id'].iloc[0]
         _dept_shap_t = department_shap[department_shap['department_name'] == department][features].T.reset_index()
         _dept_shap_t.columns = ['feature', 'impact_value']
         abs_mean_shap_value = _dept_shap_t['impact_value'].abs().mean()
@@ -149,13 +152,14 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
         _dept_shap_t['recommendation_action'] = _dept_shap_t['feature'].map(feature_mapper.FEATURES_ACTION_MAPPER)
 
         termination_reason_by_department.append({
+            'department_id': str(department_id),
             'department_name': department,
-            'number_of_employees_left': num_emp_left,
-            'number_of_employees_predicted_to_leave': num_emp_predicted_to_leave,
+            'total_employee_left': num_emp_left,
+            'total_employee_to_leave': num_emp_predicted_to_leave,
             'avg_termination_probability': round(avg_termination_probability, 2),
             'impact_factors': _dept_shap_t[['feature_name', 'impact_percentage', 'recommendation_action']].sort_values(by='impact_percentage', ascending=False).to_dict(orient='records')
         })
-    json_result["termination_reason_by_department"] = termination_reason_by_department
+    json_result["reason_by_department"] = termination_reason_by_department
 
     # --- 10. Termination reason by job level ---
     job_level_shap = shap_with_metadata.groupby('job_level_name')[features].mean().reset_index()
@@ -164,6 +168,7 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
         num_emp_left = termination_emp[termination_emp['job_level_name'] == job_level].shape[0]
         num_emp_predicted_to_leave = termination_emp[(termination_emp['job_level_name'] == job_level) & (termination_emp['model_predicted_termination'] == True)].shape[0]
         avg_termination_probability = employee_metadata[employee_metadata['job_level_name'] == job_level]['model_predicted_termination_probability'].mean()
+        level_id = employee_metadata[employee_metadata['job_level_name'] == job_level]['job_level'].iloc[0]
         _level_shap_t = job_level_shap[job_level_shap['job_level_name'] == job_level][features].T.reset_index()
         _level_shap_t.columns = ['feature', 'impact_value']
         abs_mean_shap_value = _level_shap_t['impact_value'].abs().mean()
@@ -174,12 +179,13 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
         _level_shap_t['recommendation_action'] = _level_shap_t['feature'].map(feature_mapper.FEATURES_ACTION_MAPPER)
 
         termination_reason_by_job_level.append({
-            'level_name': job_level,
-            'number_of_employees_left': num_emp_left,
-            'number_of_employees_predicted_to_leave': num_emp_predicted_to_leave,
+            'job_level': str(level_id),
+            'level_name': str(job_level),
+            'total_employee_left': num_emp_left,
+            'total_employee_to_leave': num_emp_predicted_to_leave,
             'avg_termination_probability': round(avg_termination_probability, 2),
             'impact_factors': _level_shap_t[['feature_name', 'impact_percentage', 'recommendation_action']].sort_values(by='impact_percentage', ascending=False).to_dict(orient='records')
         })
-    json_result["termination_reason_by_job_level"] = termination_reason_by_job_level
+    json_result["reason_by_job_level"] = termination_reason_by_job_level
 
     return json_result

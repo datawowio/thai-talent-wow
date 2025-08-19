@@ -3,7 +3,7 @@
         "employee_id": 990001,
         "current_position": "Chief Business Development",
         "next_position": "No next level position available",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Microsoft Excel / Sheets",
                 "skill_score": 4
@@ -77,15 +77,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990002,
         "current_position": "Chief Data Scientist",
         "next_position": "No next level position available",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Python Programming",
                 "skill_score": 4
@@ -163,15 +163,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990003,
         "current_position": "Lead Data Scientist (L3)",
         "next_position": "Data Scientist Manager (L4)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Data Visualization",
                 "skill_score": 4
@@ -253,15 +253,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990005,
         "current_position": "Lead Data Engineer (L3)",
         "next_position": "Data Engineer Manager (L4)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "ETL Tools",
                 "skill_score": 4
@@ -319,15 +319,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990006,
         "current_position": "Data Scientist Manager (L4)",
         "next_position": "Chief Data Engineer (L7)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "ETL Tools",
                 "skill_score": 4
@@ -409,15 +409,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990009,
         "current_position": "Senior Data Scientist (L2)",
         "next_position": "Lead Data Scientist (L3)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "ETL Tools",
                 "skill_score": 4
@@ -483,12 +483,12 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [
+        "current_missing_skills": [
             "R Programming",
             "Experiment Design"
         ],
-        "peer_missing_skill": [],
-        "next_missing_skill": [
+        "peer_missing_skills": [],
+        "next_missing_skills": [
             "Experiment Design",
             "R Programming",
             "Risk Management",
@@ -499,7 +499,7 @@
         "employee_id": 990011,
         "current_position": "Mid Data Engineer (L1)",
         "next_position": "Senior Data Engineer (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Cloud Computing (AWS)",
                 "skill_score": 4
@@ -545,9 +545,9 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": [
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": [
             "Code Review"
         ]
     },
@@ -555,7 +555,7 @@
         "employee_id": 990013,
         "current_position": "Mid Software Developer (L1)",
         "next_position": "Senior Software Developer (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "JavaScript Programming",
                 "skill_score": 3
@@ -581,9 +581,9 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": [
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": [
             "Code Review"
         ]
     },
@@ -591,7 +591,7 @@
         "employee_id": 990014,
         "current_position": "Business Development Manager (L4)",
         "next_position": "Chief Business Development (L7)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Presentation",
                 "skill_score": 4
@@ -633,15 +633,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [
+        "current_missing_skills": [
             "Microsoft Excel / Sheets",
             "Negotiation",
             "Proposal Creation",
             "Attention to Detail",
             "Concise Writing"
         ],
-        "peer_missing_skill": [],
-        "next_missing_skill": [
+        "peer_missing_skills": [],
+        "next_missing_skills": [
             "Attention to Detail",
             "Concise Writing",
             "Microsoft Excel / Sheets",
@@ -655,7 +655,7 @@
         "employee_id": 990015,
         "current_position": "Mid Project Management (L1)",
         "next_position": "Senior Project Management (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Stakeholder management",
                 "skill_score": 4
@@ -721,15 +721,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990016,
         "current_position": "Senior Project Management (L2)",
         "next_position": "Project Management Manager (L4)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Presentation",
                 "skill_score": 4
@@ -795,15 +795,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990019,
         "current_position": "Mid Business Development (L1)",
         "next_position": "Senior Business Development (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Presentation",
                 "skill_score": 4
@@ -869,15 +869,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990020,
         "current_position": "Mid Project Management (L1)",
         "next_position": "Senior Project Management (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Document Management",
                 "skill_score": 4
@@ -919,7 +919,7 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [
+        "current_missing_skills": [
             "Stakeholder management",
             "Negotiation",
             "Performance Management",
@@ -927,8 +927,8 @@
             "Attention to Detail",
             "Concise Writing"
         ],
-        "peer_missing_skill": [],
-        "next_missing_skill": [
+        "peer_missing_skills": [],
+        "next_missing_skills": [
             "Attention to Detail",
             "Concise Writing",
             "Negotiation",
@@ -941,7 +941,7 @@
         "employee_id": 990021,
         "current_position": "Mid Operations (L1)",
         "next_position": "Senior Operations (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Presentation",
                 "skill_score": 4
@@ -975,7 +975,7 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [
+        "current_missing_skills": [
             "Document Management",
             "Proposal Creation",
             "Emotional Intelligence",
@@ -985,20 +985,20 @@
             "Teamwork",
             "Time Management"
         ],
-        "peer_missing_skill": [
+        "peer_missing_skills": [
             {
                 "skill_name": "Document Management",
                 "percentage_of_peer": "14.29",
                 "peer_count": 2
             }
         ],
-        "next_missing_skill": []
+        "next_missing_skills": []
     },
     {
         "employee_id": 990022,
         "current_position": "Mid Project Management (L1)",
         "next_position": "Senior Project Management (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Time Management",
                 "skill_score": 5
@@ -1048,7 +1048,7 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [
+        "current_missing_skills": [
             "Presentation",
             "Stakeholder management",
             "Negotiation",
@@ -1060,8 +1060,8 @@
             "Strategic Planning",
             "Concise Writing"
         ],
-        "peer_missing_skill": [],
-        "next_missing_skill": [
+        "peer_missing_skills": [],
+        "next_missing_skills": [
             "Agile Methodologies",
             "Budget Tracking",
             "Concise Writing",
@@ -1078,7 +1078,7 @@
         "employee_id": 990025,
         "current_position": "Mid Data Consultant (L1)",
         "next_position": "Senior Data Consultant (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Python Programming",
                 "skill_score": 4
@@ -1152,15 +1152,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990027,
         "current_position": "Senior Software Developer (L2)",
         "next_position": "Lead Software Developer (L3)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "C++ Programming",
                 "skill_score": 4
@@ -1190,15 +1190,15 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     },
     {
         "employee_id": 990028,
         "current_position": "Mid Marketing (L1)",
         "next_position": "Senior Marketing (L2)",
-        "employee_skill": [
+        "employee_skills": [
             {
                 "skill_name": "Business Intelligent",
                 "skill_score": 4
@@ -1228,8 +1228,8 @@
                 "skill_score": 2
             }
         ],
-        "current_missing_skill": [],
-        "peer_missing_skill": [],
-        "next_missing_skill": []
+        "current_missing_skills": [],
+        "peer_missing_skills": [],
+        "next_missing_skills": []
     }
 ]

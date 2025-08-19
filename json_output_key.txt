@@ -17,10 +17,10 @@ reason_by_job_level
 employee_id
 current_position
 next_position
-employee_skill
-current_missing_skill
-peer_missing_skill
-next_missing_skill
+employee_skills
+current_missing_skills
+peer_missing_skills
+next_missing_skills
 }
 
 
@@ -29,18 +29,18 @@ next_missing_skill
 department_id
 department_name
 total_employee
-common_existing_skill
-department_missing_skill
-low_score_skill
+common_existing_skills
+department_missing_skills
+low_score_skills
 }
 
 
 --- 4. EMPLOYEE ROTATION SKILL GAP RESULT ---
 {
 employee_id
-target_department_id
-target_department_name
-skill_to_acquire
+department_id
+department_name
+skills_to_acquire
 }
 
 
@@ -48,5 +48,5 @@ skill_to_acquire
 {
 employee_type
 total_employee
-employee_id
+employee_ids
 }

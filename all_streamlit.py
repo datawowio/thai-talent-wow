@@ -58,10 +58,10 @@ if raw_promotion_data:
     promotion_data = {item['employee_type']: item.get('employee_id', []) for item in raw_promotion_data}
     # For UI display, create a list of dicts for overlooked/disengaged employees
     # Note: This version only has IDs. We'll look up names from the skill data if available.
-    promotion_data["overlooked_employees"] = [{'employee_id': eid} for eid in promotion_data.get("Overlooked Talent", [])]
-    promotion_data["disengaged_employees"] = [{'employee_id': eid} for eid in promotion_data.get("Disengaged Employee", [])]
-    promotion_data["new_and_promising_employees"] = [{'employee_id': eid} for eid in promotion_data.get("New and Promising", [])]
-    promotion_data["on_track_employees"] = [{'employee_id': eid} for eid in promotion_data.get("On Track", [])]
+    promotion_data["overlooked_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("Overlooked Talent", [])]
+    promotion_data["disengaged_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("Disengaged Employee", [])]
+    promotion_data["new_and_promising_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("New and Promising", [])]
+    promotion_data["on_track_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("On Track", [])]
 
 employee_skill_data = {}
 if raw_employee_skill_data:
@@ -304,7 +304,7 @@ elif page == "EMPLOYEE":
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("###### Skills Acquired")
-                emp_skills = emp_info.get("employee_skill", [])
+                emp_skills = emp_info.get("employee_skills", [])
                 if emp_skills:
                     df_emp_skills = pd.DataFrame(emp_skills)  # columns: 'skill', 'score'
                     fig = px.bar(
@@ -323,7 +323,7 @@ elif page == "EMPLOYEE":
 
             with col2:
                 st.markdown("###### Skills Missing for Current Role")
-                missing_skills = emp_info.get("missing_skills_vs_current_position", [])
+                missing_skills = emp_info.get("current_missing_skills", [])
                 if missing_skills:
                     st.warning("\n".join([f"- {s}" for s in missing_skills]))
                 else:
@@ -334,7 +334,7 @@ elif page == "EMPLOYEE":
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("###### Gap vs. Peers")
-                peer_gap = emp_info.get("peer_missing_skill", {})
+                peer_gap = emp_info.get("peer_missing_skills", {})
                 if isinstance(peer_gap, str):
                     st.info(peer_gap)
                 elif isinstance(peer_gap, list) and len(peer_gap) > 0:
@@ -345,7 +345,7 @@ elif page == "EMPLOYEE":
 
             with col2:
                 st.markdown("###### Gap vs. Next Level")
-                skill_to_acquire = emp_info.get("next_missing_skill", [])
+                skill_to_acquire = emp_info.get("next_missing_skills", [])
                 st.markdown(f"**Current:** {emp_info.get('current_position', 'N/A')}")
                 st.markdown(f"**Next:** {emp_info.get('next_position', 'N/A')}")
                 if skill_to_acquire:
@@ -360,7 +360,7 @@ elif page == "DEPARTMENT":
     st.subheader("🏢 Department-Level Analysis")
 
     if department_skill_data and termination_data:
-        dept_name_map = {item['department_name']: item['department_name'] for item in termination_data.get("termination_proportion_by_department", [])}
+        dept_name_map = {item['department_name']: item['department_name'] for item in termination_data.get("department_proportion", [])}
         selected_dept_name = st.selectbox("Select a Department", options=list(dept_name_map.keys()), index=None)
 
         if selected_dept_name:
@@ -402,13 +402,13 @@ elif page == "DEPARTMENT":
                 c1, c2 = st.columns(2)
                 with c1:
                     with st.container(border=True):
-                        st.metric("Missing Required Skills", len(skill_dept_info.get("department_missing_skill", [])))
+                        st.metric("Missing Required Skills", len(skill_dept_info.get("department_missing_skills", [])))
                 with c2:
                     with st.container(border=True):
-                        st.metric("Skills with Low Scores", len(skill_dept_info.get("low_score_skill", [])))
+                        st.metric("Skills with Low Scores", len(skill_dept_info.get("low_score_skills", [])))
                 
                 st.markdown("###### Score Distribution for Common Skills")
-                common_skills = skill_dept_info.get("common_existing_skill", [])
+                common_skills = skill_dept_info.get("common_existing_skills", [])
                 if common_skills:
                     fig = go.Figure()
                     for skill in common_skills:
@@ -436,7 +436,7 @@ elif page == "SKILL SEARCH FOR ROTATION":
         
         with col2:
             if selected_employee_id:
-                available_depts = df_rotation[df_rotation['employee_id'] == selected_employee_id]['target_department_name'].unique()
+                available_depts = df_rotation[df_rotation['employee_id'] == selected_employee_id]['department_name'].unique()
                 selected_department_name = st.selectbox("Select Target Department", options=sorted(available_depts), index=None)
 
         st.markdown("---")
@@ -444,11 +444,11 @@ elif page == "SKILL SEARCH FOR ROTATION":
         if selected_employee_id and selected_department_name:
             result = df_rotation[
                 (df_rotation['employee_id'] == selected_employee_id) &
-                (df_rotation['target_department_name'] == selected_department_name)
+                (df_rotation['department_name'] == selected_department_name)
             ]
             
             if not result.empty:
-                skill_to_acquire = result.iloc[0]['skill_to_acquire']
+                skill_to_acquire = result.iloc[0]['skills_to_acquire']
                 st.markdown("##### Skills to Acquire")
                 if skill_to_acquire:
                     st.warning("\n".join([f"- {skill}" for skill in skill_to_acquire]))

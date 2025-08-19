@@ -57,6 +57,7 @@ FEATURES_ACTION_MAPPER = {
     "num_spouse": "Ensure benefits and insurance plans support family needs and encourage stability.",
     "job_level": "Ensure fair promotion opportunities, role clarity, and workload balance for the job level.",
     "department_name": "Address department-specific workload, culture, or leadership issues through targeted engagement programs.",
+    "department_name_shap": "Address department-specific workload, culture, or leadership issues through targeted engagement programs.",
     "total_working_year": "Recognize long service with awards, career progression options, and new challenges to maintain motivation.",
     "total_working_year_z_manager": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration.",
     "total_working_year_z_position": "Adjust responsibilities or career growth opportunities if tenure in position is unbalanced compared to peers.",

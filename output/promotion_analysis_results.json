@@ -2,12 +2,12 @@
     {
         "employee_type": "Overlooked Talent",
         "total_employee": 0,
-        "employee_id": []
+        "employee_ids": []
     },
     {
         "employee_type": "Disengaged Employee",
         "total_employee": 2,
-        "employee_id": [
+        "employee_ids": [
             990014,
             990020
         ]
@@ -15,12 +15,12 @@
     {
         "employee_type": "New and Promising",
         "total_employee": 0,
-        "employee_id": []
+        "employee_ids": []
     },
     {
         "employee_type": "On Track",
         "total_employee": 16,
-        "employee_id": [
+        "employee_ids": [
             990001,
             990002,
             990003,

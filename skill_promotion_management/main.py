@@ -83,10 +83,10 @@ def main():
             'employee_id': emp_id,
             'current_position': current_position,
             'next_position': next_position,
-            'employee_skill': employee_skill_with_score,
-            'current_missing_skill': current_missing_skill,
-            'peer_missing_skill': peer_missing_skill,
-            'next_missing_skill': next_missing_skill
+            'employee_skills': employee_skill_with_score,
+            'current_missing_skills': current_missing_skill,
+            'peer_missing_skills': peer_missing_skill,
+            'next_missing_skills': next_missing_skill
         })
 
     with open(config.EMPLOYEE_SKILL_GAP_ANALYSIS_OUTPUT, 'w') as f:
@@ -108,9 +108,9 @@ def main():
             'department_id': str(department_id),
             'department_name': department_name,
             'total_employee': total_employee,
-            'common_existing_skill': common_existing_skill,
-            'department_missing_skill': missing_skills_in_dept,
-            'low_score_skill': skills_with_low_score
+            'common_existing_skills': common_existing_skill,
+            'department_missing_skills': missing_skills_in_dept,
+            'low_score_skills': skills_with_low_score
         })
 
     with open(config.DEPARTMENT_SKILL_GAP_ANALYSIS_OUTPUT, 'w') as f:
@@ -160,7 +160,7 @@ def main():
         promotion_result.append({
             'employee_type': employee_type,
             'total_employee': len(employees),
-            'employee_id': employees
+            'employee_ids': employees
         })
 
     with open(config.PROMOTION_ANALYSIS_OUTPUT, 'w') as f:

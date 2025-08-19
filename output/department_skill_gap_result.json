@@ -3,7 +3,7 @@
         "department_id": "1",
         "department_name": "Business Development",
         "total_employee": 3,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Attention to Detail",
                 "percentage_of_employee": "66.67",
@@ -192,8 +192,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "PowerPoint / Slides"
         ]
     },
@@ -201,7 +201,7 @@
         "department_id": "2",
         "department_name": "Operations",
         "total_employee": 3,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Analytical thinking",
                 "percentage_of_employee": "66.67",
@@ -346,12 +346,12 @@
                 }
             }
         ],
-        "department_missing_skill": [
+        "department_missing_skills": [
             "Emotional Intelligence",
             "Organizational Management",
             "Proposal Creation"
         ],
-        "low_score_skill": [
+        "low_score_skills": [
             "Attention to Detail"
         ]
     },
@@ -359,15 +359,15 @@
         "department_id": "3",
         "department_name": "Finance",
         "total_employee": 0,
-        "common_existing_skill": [],
-        "department_missing_skill": [],
-        "low_score_skill": []
+        "common_existing_skills": [],
+        "department_missing_skills": [],
+        "low_score_skills": []
     },
     {
         "department_id": "4",
         "department_name": "Software Development",
         "total_employee": 2,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Agile Methodologies",
                 "percentage_of_employee": "100.0",
@@ -446,14 +446,14 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": []
+        "department_missing_skills": [],
+        "low_score_skills": []
     },
     {
         "department_id": "5",
         "department_name": "Human Resources",
         "total_employee": 1,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Attention to Detail",
                 "percentage_of_employee": "100.0",
@@ -543,8 +543,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "Attention to Detail",
             "Organizational Management"
         ]
@@ -553,15 +553,15 @@
         "department_id": "6",
         "department_name": "Legal",
         "total_employee": 0,
-        "common_existing_skill": [],
-        "department_missing_skill": [],
-        "low_score_skill": []
+        "common_existing_skills": [],
+        "department_missing_skills": [],
+        "low_score_skills": []
     },
     {
         "department_id": "7",
         "department_name": "Marketing",
         "total_employee": 3,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "A/B Testing",
                 "percentage_of_employee": "100.0",
@@ -695,14 +695,14 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": []
+        "department_missing_skills": [],
+        "low_score_skills": []
     },
     {
         "department_id": "8",
         "department_name": "Sales",
         "total_employee": 2,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Attention to Detail",
                 "percentage_of_employee": "50.0",
@@ -814,8 +814,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "Attention to Detail",
             "Business Understanding",
             "Stakeholder management"
@@ -825,7 +825,7 @@
         "department_id": "9",
         "department_name": "Project Management",
         "total_employee": 4,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Agile Methodologies",
                 "percentage_of_employee": "75.0",
@@ -1058,8 +1058,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "Budget Tracking",
             "Strategic Planning"
         ]
@@ -1068,7 +1068,7 @@
         "department_id": "10",
         "department_name": "Data Scientist",
         "total_employee": 5,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Agile Methodologies",
                 "percentage_of_employee": "100.0",
@@ -1290,8 +1290,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "Agile Methodologies"
         ]
     },
@@ -1299,7 +1299,7 @@
         "department_id": "11",
         "department_name": "Data Engineer",
         "total_employee": 3,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Agile Methodologies",
                 "percentage_of_employee": "100.0",
@@ -1455,8 +1455,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "Risk Management",
             "Strategic Planning"
         ]
@@ -1465,7 +1465,7 @@
         "department_id": "12",
         "department_name": "Data Consultant",
         "total_employee": 2,
-        "common_existing_skill": [
+        "common_existing_skills": [
             {
                 "skill_name": "Business Intelligent",
                 "percentage_of_employee": "100.0",
@@ -1665,8 +1665,8 @@
                 }
             }
         ],
-        "department_missing_skill": [],
-        "low_score_skill": [
+        "department_missing_skills": [],
+        "low_score_skills": [
             "Data Visualization",
             "Microsoft Excel / Sheets",
             "Product Understanding",

@@ -1,0 +1,62 @@
+services:
+  # API Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: talent-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./mock_data:/app/mock_data:ro
+      - ./output:/app/output:rw
+      - ./config:/app/config:ro
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - WORKER_ENABLED=true
+    depends_on:
+      - redis
+    networks:
+      - talent-network
+    restart: unless-stopped
+
+  # Inference Worker
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    volumes:
+      - ./mock_data:/app/mock_data:ro
+      - ./output:/app/output:rw
+      - ./config:/app/config:ro
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - WORKER_CONCURRENCY=2
+    depends_on:
+      - redis
+    networks:
+      - talent-network
+    restart: unless-stopped
+    deploy:
+      replicas: 2
+
+  # Redis for message queue
+  redis:
+    image: redis:7-alpine
+    container_name: talent-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - talent-network
+    restart: unless-stopped
+
+networks:
+  talent-network:
+    driver: bridge
+
+volumes:
+  redis-data:

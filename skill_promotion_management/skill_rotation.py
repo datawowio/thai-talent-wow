@@ -36,7 +36,7 @@ def generate_all_rotation_gaps(employee_df, position_df, employee_position_df, e
         dict: A nested dictionary containing the skill gaps for all possible rotations.
               Structure: {employee_id: {target_department_id: {analysis_data}}}
     """    
-    all_employees = employee_df['emp_id'].unique()
+    all_employees = employee_df['id'].unique()
     all_departments = position_df['department_id'].unique() # use department_id instead; since position_id contains too various possible position (e.g. Junior,Mid,Senior,Lead,Chief xxxx)
     
     # Create a quick lookup for an employee's current department

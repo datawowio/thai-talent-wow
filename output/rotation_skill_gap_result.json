@@ -1,55 +1,55 @@
 [
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": []
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
+            "Emotional Intelligence",
+            "Time Management",
+            "Teamwork",
             "Project Management",
             "Analytical thinking",
-            "Teamwork",
-            "Time Management",
             "Organizational Management",
-            "Problem Solving",
-            "Emotional Intelligence"
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
-            "Project Management",
+            "Emotional Intelligence",
             "Budget Tracking",
+            "Project Management",
             "Agile Methodologies",
-            "Performance Management",
-            "Emotional Intelligence"
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
@@ -59,228 +59,228 @@
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
             "Database Management",
             "Python Programming",
-            "Prototyping",
             "Data Visualization",
+            "Prototyping",
             "R Programming"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "11",
         "department_name": "Data Engineer",
         "skills_to_acquire": [
             "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
             "Schema Design",
-            "Git Version Control",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
             "Cloud Computing (AWS)",
+            "Git Version Control",
             "Code Review",
             "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
+            "Python Programming",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "10",
         "department_name": "Data Scientist",
         "skills_to_acquire": [
-            "Statistics",
             "Database Management",
-            "Data Pipeline",
+            "Data Analytics",
+            "Data Visualization",
+            "ETL Tools",
             "Big Data",
+            "Data Pipeline",
             "Docker",
-            "Python Programming",
-            "Agile Methodologies",
+            "Cloud Computing (AWS)",
             "Git Version Control",
             "Code Review",
-            "Data Visualization",
-            "Experiment Design",
-            "Cloud Computing (AWS)",
-            "Data Analytics",
-            "R Programming",
-            "SQL Programming",
             "Machine Learning",
-            "ETL Tools"
+            "Python Programming",
+            "Experiment Design",
+            "Statistics",
+            "R Programming",
+            "Agile Methodologies",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "4",
         "department_name": "Software Development",
         "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
+            "RESTful services",
             "C++ Programming",
+            "Docker",
+            "Code Review",
             "Agile Methodologies",
             "Git Version Control",
-            "Code Review",
-            "RESTful services"
+            "JavaScript Programming"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
+            "Emotional Intelligence",
             "Basics Law",
-            "Organizational Management",
-            "Performance Management",
             "Recruitment",
-            "Emotional Intelligence"
+            "Organizational Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990001",
+        "employee_id": "1",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
+            "Compliance Frameworks",
             "Basics Law",
-            "Contract Review & Drafting",
-            "Compliance Frameworks"
+            "Contract Review & Drafting"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "1",
         "department_name": "Business Development",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
             "Negotiation",
             "PowerPoint / Slides",
-            "Proposal Creation",
-            "Document Management",
             "Microsoft Excel / Sheets",
+            "Creativity",
+            "Presentation",
+            "Proposal Creation",
             "Attention to Detail",
-            "Stakeholder management"
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
             "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
+            "Creativity",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
             "Negotiation",
             "PowerPoint / Slides",
-            "Document Management",
+            "Presentation",
             "Attention to Detail",
-            "Stakeholder management"
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
             "PowerPoint / Slides",
-            "Teamwork",
+            "Presentation",
+            "Emotional Intelligence",
             "Time Management",
             "Proposal Creation",
-            "Document Management",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
             "Organizational Management",
             "Problem Solving",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
-            "Product Understanding",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
             "Negotiation",
             "PowerPoint / Slides",
-            "Budget Tracking",
-            "Document Management",
-            "Performance Management",
+            "Presentation",
+            "Emotional Intelligence",
             "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
             "Stakeholder management",
-            "Emotional Intelligence"
+            "Performance Management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
             "Financial Report",
-            "Tax Compliance & Auditing"
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
             "Negotiation",
             "PowerPoint / Slides",
-            "Prototyping",
-            "Proposal Creation",
-            "Document Management",
             "Microsoft Excel / Sheets",
-            "Stakeholder management"
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "11",
         "department_name": "Data Engineer",
         "skills_to_acquire": [
@@ -289,176 +289,176 @@
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "4",
         "department_name": "Software Development",
         "skills_to_acquire": [
-            "C++ Programming",
-            "Code Review",
             "RESTful services",
+            "Code Review",
+            "C++ Programming",
             "JavaScript Programming"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
             "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
             "Basics Law",
-            "Document Management",
+            "Recruitment",
             "Organizational Management",
             "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990002",
+        "employee_id": "2",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Document Management",
             "Compliance Frameworks",
-            "Attention to Detail"
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "1",
         "department_name": "Business Development",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
             "Negotiation",
             "PowerPoint / Slides",
-            "Proposal Creation",
-            "Document Management",
             "Microsoft Excel / Sheets",
+            "Creativity",
+            "Presentation",
+            "Proposal Creation",
             "Attention to Detail",
-            "Stakeholder management"
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
             "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
+            "Creativity",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
             "Negotiation",
             "PowerPoint / Slides",
-            "Document Management",
+            "Presentation",
             "Attention to Detail",
-            "Stakeholder management"
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
             "PowerPoint / Slides",
-            "Teamwork",
+            "Presentation",
+            "Emotional Intelligence",
             "Time Management",
             "Proposal Creation",
-            "Document Management",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
             "Organizational Management",
             "Problem Solving",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
-            "Product Understanding",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
             "Negotiation",
             "PowerPoint / Slides",
-            "Budget Tracking",
-            "Document Management",
-            "Performance Management",
+            "Presentation",
+            "Emotional Intelligence",
             "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
             "Stakeholder management",
-            "Emotional Intelligence"
+            "Performance Management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
             "Financial Report",
-            "Tax Compliance & Auditing"
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
             "Negotiation",
             "PowerPoint / Slides",
-            "Prototyping",
-            "Proposal Creation",
-            "Document Management",
             "Microsoft Excel / Sheets",
-            "Stakeholder management"
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "11",
         "department_name": "Data Engineer",
         "skills_to_acquire": [
@@ -466,1019 +466,1019 @@
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "4",
         "department_name": "Software Development",
         "skills_to_acquire": [
-            "C++ Programming",
             "RESTful services",
+            "C++ Programming",
             "JavaScript Programming"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
             "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
             "Basics Law",
-            "Document Management",
+            "Recruitment",
             "Organizational Management",
             "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990003",
+        "employee_id": "3",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Document Management",
             "Compliance Frameworks",
-            "Attention to Detail"
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "1",
         "department_name": "Business Development",
         "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Creativity",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
             "CRM systems",
             "Product Understanding",
-            "Concise Writing",
-            "Presentation",
             "Business Understanding",
-            "Market Research",
-            "Creativity",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Stakeholder management"
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
             "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
+            "Creativity",
+            "Business Intelligent",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
             "Negotiation",
             "PowerPoint / Slides",
-            "Document Management",
+            "Presentation",
             "Attention to Detail",
-            "Stakeholder management"
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
+            "Business Intelligent",
             "PowerPoint / Slides",
-            "Teamwork",
+            "Presentation",
+            "Emotional Intelligence",
             "Time Management",
             "Proposal Creation",
-            "Document Management",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
             "Organizational Management",
             "Problem Solving",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
-            "Product Understanding",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
             "Negotiation",
             "PowerPoint / Slides",
-            "Budget Tracking",
-            "Document Management",
-            "Performance Management",
+            "Presentation",
+            "Emotional Intelligence",
             "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
             "Stakeholder management",
-            "Emotional Intelligence"
+            "Performance Management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
             "Financial Report",
-            "Tax Compliance & Auditing"
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
             "CRM systems",
             "Product Understanding",
-            "Concise Writing",
-            "Presentation",
             "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Prototyping",
             "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
+            "Prototyping",
+            "Stakeholder management",
             "Document Management",
-            "Business Intelligent",
-            "Stakeholder management"
+            "R Programming"
         ]
     },
     {
-        "employee_id": "990005",
+        "employee_id": "5",
         "department_id": "10",
         "department_name": "Data Scientist",
         "skills_to_acquire": [
-            "Statistics",
-            "Data Visualization",
-            "R Programming",
-            "Experiment Design",
+            "Business Intelligent",
             "Data Analytics",
-            "Business Intelligent",
-            "Machine Learning"
-        ]
-    },
-    {
-        "employee_id": "990005",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "C++ Programming",
-            "RESTful services",
-            "JavaScript Programming"
-        ]
-    },
-    {
-        "employee_id": "990005",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990005",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Document Management",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
-            "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
-            "PowerPoint / Slides",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Document Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Product Understanding",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Budget Tracking",
-            "Document Management",
-            "Performance Management",
-            "Attention to Detail",
-            "Stakeholder management",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Financial Report",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Prototyping",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Schema Design"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "C++ Programming",
-            "RESTful services",
-            "JavaScript Programming"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990006",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Document Management",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Risk Management",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
-            "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
-            "PowerPoint / Slides",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Document Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Product Understanding",
-            "Strategic Planning",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Budget Tracking",
-            "Risk Management",
-            "Document Management",
-            "Performance Management",
-            "Attention to Detail",
-            "Stakeholder management",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Financial Report",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Prototyping",
-            "Proposal Creation",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Document Management",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Risk Management",
-            "Strategic Planning",
-            "Schema Design"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "C++ Programming",
-            "RESTful services",
-            "JavaScript Programming"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990009",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Risk Management",
-            "Document Management",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Risk Management",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
-            "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
-            "PowerPoint / Slides",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Document Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Product Understanding",
-            "Strategic Planning",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Budget Tracking",
-            "Risk Management",
-            "Document Management",
-            "Performance Management",
-            "Attention to Detail",
-            "Stakeholder management",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Financial Report",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Document Management",
-            "Business Intelligent",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Statistics",
-            "Strategic Planning",
-            "Risk Management",
-            "Data Visualization",
-            "Code Review",
-            "R Programming",
-            "Experiment Design",
-            "Data Analytics",
-            "Business Intelligent",
-            "Machine Learning"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "C++ Programming",
-            "Code Review",
-            "RESTful services",
-            "JavaScript Programming"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990011",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Risk Management",
-            "Document Management",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Risk Management",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
-            "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
-            "PowerPoint / Slides",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Document Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Product Understanding",
-            "Strategic Planning",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Budget Tracking",
-            "Risk Management",
-            "Document Management",
-            "Performance Management",
-            "Attention to Detail",
-            "Stakeholder management",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Financial Report",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Database Management",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Python Programming",
-            "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Document Management",
-            "Business Intelligent",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Python Programming",
-            "Risk Management",
-            "Schema Design",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990013",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Statistics",
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Python Programming",
-            "Risk Management",
-            "Data Visualization",
-            "Code Review",
-            "Cloud Computing (AWS)",
-            "Experiment Design",
-            "R Programming",
-            "Data Analytics",
-            "Business Intelligent",
-            "SQL Programming",
             "Machine Learning",
-            "ETL Tools"
+            "Data Visualization",
+            "Experiment Design",
+            "Statistics",
+            "R Programming"
         ]
     },
     {
-        "employee_id": "990013",
+        "employee_id": "5",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "5",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
             "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
             "Basics Law",
-            "Document Management",
+            "Recruitment",
             "Organizational Management",
             "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990013",
+        "employee_id": "5",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Risk Management",
-            "Document Management",
             "Compliance Frameworks",
-            "Attention to Detail"
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "6",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Microsoft Excel / Sheets",
+            "Creativity",
+            "Presentation",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
+            "PowerPoint / Slides",
+            "Creativity",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "6",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Emotional Intelligence",
+            "Time Management",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
+            "Stakeholder management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Microsoft Excel / Sheets",
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Schema Design"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "6",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Microsoft Excel / Sheets",
+            "Creativity",
+            "Presentation",
+            "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Risk Management",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "PowerPoint / Slides",
+            "Creativity",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Emotional Intelligence",
+            "Time Management",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Strategic Planning",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
+            "Risk Management",
+            "Stakeholder management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Microsoft Excel / Sheets",
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Schema Design",
+            "Risk Management",
+            "Strategic Planning"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "9",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Risk Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Creativity",
+            "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Risk Management",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "PowerPoint / Slides",
+            "Creativity",
+            "Business Intelligent",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "Business Intelligent",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Emotional Intelligence",
+            "Time Management",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Strategic Planning",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
+            "Risk Management",
+            "Stakeholder management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Data Visualization",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Business Intelligent",
+            "Data Analytics",
+            "Strategic Planning",
+            "Code Review",
+            "Machine Learning",
+            "Data Visualization",
+            "Experiment Design",
+            "Statistics",
+            "Risk Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "Code Review",
+            "C++ Programming",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "11",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Risk Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Creativity",
+            "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Risk Management",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "PowerPoint / Slides",
+            "Creativity",
+            "Business Intelligent",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "Business Intelligent",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Emotional Intelligence",
+            "Time Management",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Strategic Planning",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
+            "Risk Management",
+            "Stakeholder management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Negotiation",
+            "Presentation",
+            "PowerPoint / Slides",
+            "Data Visualization",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Python Programming",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Code Review",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Data Analytics",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Big Data",
+            "SQL Programming",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Code Review",
+            "Machine Learning",
+            "Python Programming",
+            "Experiment Design",
+            "Statistics",
+            "Risk Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "13",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Risk Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "14",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "14",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
@@ -1488,190 +1488,350 @@
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "14",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
-            "Project Management",
-            "Concise Writing",
-            "Analytical thinking",
-            "Teamwork",
-            "Time Management",
+            "Emotional Intelligence",
             "Proposal Creation",
-            "Organizational Management",
-            "Problem Solving",
             "Attention to Detail",
-            "Emotional Intelligence"
+            "Time Management",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Organizational Management",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "14",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
-            "Strategic Planning",
-            "Project Management",
-            "Concise Writing",
             "Negotiation",
-            "Budget Tracking",
-            "Risk Management",
-            "Agile Methodologies",
-            "Performance Management",
+            "Strategic Planning",
+            "Emotional Intelligence",
             "Attention to Detail",
-            "Emotional Intelligence"
+            "Concise Writing",
+            "Budget Tracking",
+            "Project Management",
+            "Agile Methodologies",
+            "Risk Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "14",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
-            "Budget Tracking",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
             "Financial Report",
-            "Tax Compliance & Auditing"
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "14",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
-            "Concise Writing",
             "Database Management",
             "Negotiation",
+            "Microsoft Excel / Sheets",
+            "Data Visualization",
+            "Proposal Creation",
+            "Concise Writing",
             "Python Programming",
             "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation"
-        ]
-    },
-    {
-        "employee_id": "990014",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Risk Management",
-            "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990014",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Risk Management",
-            "ETL Tools",
-            "Docker",
-            "Code Review",
-            "Experiment Design",
-            "Data Analytics",
-            "SQL Programming",
-            "Machine Learning",
-            "Statistics",
-            "Python Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Data Visualization",
-            "Cloud Computing (AWS)",
             "R Programming"
         ]
     },
     {
-        "employee_id": "990014",
-        "department_id": "4",
-        "department_name": "Software Development",
+        "employee_id": "14",
+        "department_id": "11",
+        "department_name": "Data Engineer",
         "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
             "Docker",
-            "JavaScript Programming",
-            "C++ Programming",
-            "Agile Methodologies",
+            "Cloud Computing (AWS)",
             "Git Version Control",
             "Code Review",
-            "RESTful services"
+            "Agile Methodologies",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "14",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Machine Learning",
+            "Big Data",
+            "Python Programming",
+            "Risk Management",
+            "R Programming",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Git Version Control",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Experiment Design",
+            "SQL Programming",
+            "Data Analytics",
+            "Docker",
+            "Code Review",
+            "Statistics",
+            "Agile Methodologies"
+        ]
+    },
+    {
+        "employee_id": "14",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "Docker",
+            "Code Review",
+            "Agile Methodologies",
+            "Git Version Control",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "14",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
             "Negotiation",
-            "Basics Law",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
+            "Emotional Intelligence",
             "Attention to Detail",
-            "Emotional Intelligence"
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990014",
+        "employee_id": "14",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
-            "Contract Review & Drafting",
+            "Compliance Frameworks",
+            "Attention to Detail",
             "Concise Writing",
             "Basics Law",
             "Risk Management",
+            "Contract Review & Drafting"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Creativity",
+            "Proposal Creation",
+            "Market Research",
+            "CRM systems",
+            "Business Understanding"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "Business Intelligent",
+            "Creativity",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "CRM systems",
+            "Business Understanding"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "Business Intelligent",
+            "Proposal Creation",
+            "Time Management",
+            "Teamwork",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Data Visualization",
+            "Proposal Creation",
+            "Market Research",
+            "CRM systems",
+            "Business Understanding",
+            "Python Programming",
+            "Prototyping",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
+            "Cloud Computing (AWS)",
+            "Git Version Control",
+            "Code Review",
+            "Python Programming",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Data Analytics",
+            "Data Visualization",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
+            "Cloud Computing (AWS)",
+            "Git Version Control",
+            "Code Review",
+            "Machine Learning",
+            "Python Programming",
+            "Experiment Design",
+            "Statistics",
+            "R Programming",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "Docker",
+            "Code Review",
+            "Git Version Control",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management"
+        ]
+    },
+    {
+        "employee_id": "15",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
             "Compliance Frameworks",
-            "Attention to Detail"
+            "Basics Law",
+            "Contract Review & Drafting"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "1",
         "department_name": "Business Development",
         "skills_to_acquire": [
-            "CRM systems",
-            "Creativity",
-            "Market Research",
-            "Business Understanding",
-            "Proposal Creation",
+            "Business Intelligent",
             "Microsoft Excel / Sheets",
-            "Business Intelligent"
+            "Creativity",
+            "Proposal Creation",
+            "Market Research",
+            "CRM systems",
+            "Business Understanding"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
+            "Business Intelligent",
             "Creativity",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
@@ -1680,23 +1840,23 @@
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
+            "Business Intelligent",
+            "Proposal Creation",
+            "Time Management",
+            "Teamwork",
             "Analytical thinking",
             "Business Understanding",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
             "Organizational Management",
-            "Problem Solving",
-            "Business Intelligent"
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
@@ -1706,80 +1866,80 @@
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
-            "CRM systems",
             "Database Management",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Data Visualization",
+            "Proposal Creation",
             "Market Research",
+            "CRM systems",
             "Business Understanding",
             "Python Programming",
             "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Business Intelligent"
+            "R Programming"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "11",
         "department_name": "Data Engineer",
         "skills_to_acquire": [
             "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
             "Schema Design",
-            "Git Version Control",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
             "Cloud Computing (AWS)",
+            "Git Version Control",
             "Code Review",
-            "SQL Programming",
-            "ETL Tools"
+            "Python Programming",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "10",
         "department_name": "Data Scientist",
         "skills_to_acquire": [
-            "Statistics",
             "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Git Version Control",
-            "Data Visualization",
-            "Code Review",
-            "Cloud Computing (AWS)",
-            "Experiment Design",
-            "R Programming",
-            "Data Analytics",
             "Business Intelligent",
-            "SQL Programming",
+            "Data Analytics",
+            "Data Visualization",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
+            "Cloud Computing (AWS)",
+            "Git Version Control",
+            "Code Review",
             "Machine Learning",
-            "ETL Tools"
+            "Python Programming",
+            "Experiment Design",
+            "Statistics",
+            "R Programming",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "4",
         "department_name": "Software Development",
         "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
+            "RESTful services",
             "C++ Programming",
-            "Git Version Control",
+            "Docker",
             "Code Review",
-            "RESTful services"
+            "Git Version Control",
+            "JavaScript Programming"
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
@@ -1789,228 +1949,68 @@
         ]
     },
     {
-        "employee_id": "990015",
+        "employee_id": "16",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
+            "Compliance Frameworks",
             "Basics Law",
-            "Contract Review & Drafting",
-            "Compliance Frameworks"
+            "Contract Review & Drafting"
         ]
     },
     {
-        "employee_id": "990016",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Creativity",
-            "Market Research",
-            "Business Understanding",
-            "Proposal Creation",
-            "Microsoft Excel / Sheets",
-            "Business Intelligent"
-        ]
-    },
-    {
-        "employee_id": "990016",
+        "employee_id": "19",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Business Understanding"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Business Understanding",
+            "Content Creation",
             "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Organizational Management",
-            "Problem Solving",
-            "Business Intelligent"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Financial Report",
-            "Microsoft Excel / Sheets",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Database Management",
-            "Market Research",
-            "Business Understanding",
-            "Python Programming",
-            "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Business Intelligent"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Statistics",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Git Version Control",
-            "Data Visualization",
-            "Code Review",
-            "Cloud Computing (AWS)",
-            "Experiment Design",
-            "R Programming",
-            "Data Analytics",
-            "Business Intelligent",
-            "SQL Programming",
-            "Machine Learning",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
-            "C++ Programming",
-            "Git Version Control",
-            "Code Review",
-            "RESTful services"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Basics Law",
-            "Recruitment",
-            "Organizational Management"
-        ]
-    },
-    {
-        "employee_id": "990016",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Basics Law",
-            "Contract Review & Drafting",
-            "Compliance Frameworks"
-        ]
-    },
-    {
-        "employee_id": "990019",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Social Media Management",
             "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Content Creation"
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": []
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
+            "Emotional Intelligence",
+            "Time Management",
+            "Teamwork",
             "Project Management",
             "Analytical thinking",
-            "Teamwork",
-            "Time Management",
             "Organizational Management",
-            "Problem Solving",
-            "Emotional Intelligence"
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
             "Strategic Planning",
-            "Project Management",
+            "Emotional Intelligence",
             "Budget Tracking",
-            "Risk Management",
+            "Project Management",
             "Agile Methodologies",
-            "Performance Management",
-            "Emotional Intelligence"
+            "Risk Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
@@ -2020,171 +2020,171 @@
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
             "Database Management",
             "Python Programming",
-            "Prototyping",
             "Data Visualization",
+            "Prototyping",
             "R Programming"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "11",
         "department_name": "Data Engineer",
         "skills_to_acquire": [
-            "Strategic Planning",
             "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Risk Management",
             "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990019",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
             "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Risk Management",
             "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
             "Docker",
-            "Code Review",
-            "Experiment Design",
-            "Data Analytics",
-            "SQL Programming",
-            "Machine Learning",
-            "Statistics",
-            "Python Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Data Visualization",
             "Cloud Computing (AWS)",
-            "R Programming"
+            "Git Version Control",
+            "Code Review",
+            "Agile Methodologies",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Machine Learning",
+            "Big Data",
+            "Python Programming",
+            "Risk Management",
+            "R Programming",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Git Version Control",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Experiment Design",
+            "SQL Programming",
+            "Data Analytics",
+            "Docker",
+            "Code Review",
+            "Statistics",
+            "Agile Methodologies"
+        ]
+    },
+    {
+        "employee_id": "19",
         "department_id": "4",
         "department_name": "Software Development",
         "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
+            "RESTful services",
             "C++ Programming",
+            "Docker",
+            "Code Review",
             "Agile Methodologies",
             "Git Version Control",
-            "Code Review",
-            "RESTful services"
+            "JavaScript Programming"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
+            "Emotional Intelligence",
             "Basics Law",
-            "Organizational Management",
-            "Performance Management",
             "Recruitment",
-            "Emotional Intelligence"
+            "Organizational Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990019",
+        "employee_id": "19",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
+            "Compliance Frameworks",
             "Basics Law",
-            "Contract Review & Drafting",
             "Risk Management",
-            "Compliance Frameworks"
+            "Contract Review & Drafting"
         ]
     },
     {
-        "employee_id": "990020",
+        "employee_id": "20",
         "department_id": "1",
         "department_name": "Business Development",
         "skills_to_acquire": [
-            "CRM systems",
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Creativity",
             "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
             "Concise Writing",
             "Market Research",
+            "CRM systems",
             "Business Understanding",
-            "Creativity",
-            "Negotiation",
-            "Proposal Creation",
-            "Microsoft Excel / Sheets",
-            "Business Intelligent",
-            "Attention to Detail",
             "Stakeholder management"
         ]
     },
     {
-        "employee_id": "990020",
+        "employee_id": "20",
         "department_id": "7",
         "department_name": "Marketing",
         "skills_to_acquire": [
             "Communication",
-            "Analytical thinking",
+            "Business Intelligent",
             "Creativity",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
             "Search Engine Optimization",
             "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990020",
+        "employee_id": "20",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
-            "CRM systems",
-            "Concise Writing",
-            "Business Understanding",
             "Negotiation",
             "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Business Understanding",
             "Stakeholder management"
         ]
     },
     {
-        "employee_id": "990020",
+        "employee_id": "20",
         "department_id": "2",
         "department_name": "Operations",
         "skills_to_acquire": [
             "Communication",
+            "Business Intelligent",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Time Management",
             "Concise Writing",
+            "Teamwork",
             "Analytical thinking",
             "Business Understanding",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
             "Organizational Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Attention to Detail"
+            "Problem Solving"
         ]
     },
     {
-        "employee_id": "990020",
+        "employee_id": "20",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
@@ -2195,1044 +2195,1044 @@
         ]
     },
     {
-        "employee_id": "990020",
+        "employee_id": "20",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
-            "CRM systems",
-            "Concise Writing",
             "Database Management",
-            "Market Research",
-            "Business Understanding",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
             "Negotiation",
+            "Data Visualization",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Business Understanding",
             "Python Programming",
             "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Business Intelligent",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990020",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990020",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Statistics",
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Git Version Control",
-            "Data Visualization",
-            "Code Review",
-            "Cloud Computing (AWS)",
-            "Experiment Design",
-            "R Programming",
-            "Data Analytics",
-            "Business Intelligent",
-            "SQL Programming",
-            "Machine Learning",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990020",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
-            "C++ Programming",
-            "Git Version Control",
-            "Code Review",
-            "RESTful services"
-        ]
-    },
-    {
-        "employee_id": "990020",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990020",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Creativity",
-            "Market Research",
-            "Negotiation",
-            "Risk Management",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Creativity",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Negotiation",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Product Understanding",
-            "Strategic Planning",
-            "Negotiation",
-            "Budget Tracking",
-            "Risk Management",
-            "Agile Methodologies",
-            "Document Management",
-            "Performance Management",
-            "Attention to Detail",
             "Stakeholder management",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Financial Report",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Database Management",
-            "Market Research",
-            "Negotiation",
-            "Python Programming",
-            "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Document Management",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Risk Management",
-            "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Risk Management",
-            "ETL Tools",
-            "Docker",
-            "Code Review",
-            "Experiment Design",
-            "Data Analytics",
-            "SQL Programming",
-            "Machine Learning",
-            "Statistics",
-            "Python Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Data Visualization",
-            "Cloud Computing (AWS)",
             "R Programming"
         ]
     },
     {
-        "employee_id": "990021",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
-            "C++ Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Code Review",
-            "RESTful services"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990021",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Basics Law",
-            "Risk Management",
-            "Document Management",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Market Research",
-            "Creativity",
-            "Negotiation",
-            "Risk Management",
-            "Proposal Creation",
-            "Microsoft Excel / Sheets",
-            "Business Intelligent",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Creativity",
-            "Social Media Management",
-            "A/B Testing",
-            "Search Engine Optimization",
-            "Business Intelligent",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Negotiation",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Concise Writing",
-            "Presentation",
-            "Proposal Creation",
-            "Organizational Management",
-            "Business Intelligent"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Financial Report",
-            "Microsoft Excel / Sheets",
-            "Budget Tracking",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Database Management",
-            "Market Research",
-            "Negotiation",
-            "Python Programming",
-            "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Business Intelligent",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990022",
+        "employee_id": "20",
         "department_id": "11",
         "department_name": "Data Engineer",
         "skills_to_acquire": [
-            "Strategic Planning",
             "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Risk Management",
             "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
             "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Risk Management",
-            "Business Intelligent",
             "ETL Tools",
-            "Docker",
-            "Code Review",
-            "Experiment Design",
-            "Data Analytics",
-            "SQL Programming",
-            "Machine Learning",
-            "Statistics",
-            "Python Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Data Visualization",
-            "Cloud Computing (AWS)",
-            "R Programming"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "4",
-        "department_name": "Software Development",
-        "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
-            "C++ Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Code Review",
-            "RESTful services"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment"
-        ]
-    },
-    {
-        "employee_id": "990022",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Risk Management",
-            "Compliance Frameworks"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "Risk Management",
-            "Strategic Planning",
-            "Attention to Detail",
-            "Creativity"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
-            "Creativity",
-            "Social Media Management",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Teamwork",
-            "Time Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Project Management",
-            "Budget Tracking",
-            "Risk Management",
-            "Agile Methodologies",
-            "Performance Management",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "3",
-        "department_name": "Finance",
-        "skills_to_acquire": [
-            "Attention to Detail",
-            "Financial Report",
-            "Budget Tracking",
-            "Tax Compliance & Auditing"
-        ]
-    },
-    {
-        "employee_id": "990025",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Data Pipeline",
             "Big Data",
+            "Data Pipeline",
             "Docker",
-            "Risk Management",
-            "Schema Design",
-            "Git Version Control",
             "Cloud Computing (AWS)",
+            "Git Version Control",
             "Code Review",
-            "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
+            "Python Programming",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990025",
+        "employee_id": "20",
         "department_id": "10",
         "department_name": "Data Scientist",
         "skills_to_acquire": [
-            "Statistics",
+            "Database Management",
+            "Business Intelligent",
+            "Data Analytics",
             "Strategic Planning",
-            "Data Pipeline",
+            "ETL Tools",
+            "Data Visualization",
             "Big Data",
+            "Data Pipeline",
             "Docker",
-            "Risk Management",
-            "Agile Methodologies",
+            "Cloud Computing (AWS)",
             "Git Version Control",
             "Code Review",
-            "Cloud Computing (AWS)",
-            "Experiment Design",
-            "Data Analytics",
-            "SQL Programming",
             "Machine Learning",
-            "ETL Tools"
+            "Python Programming",
+            "Experiment Design",
+            "Statistics",
+            "R Programming",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990025",
+        "employee_id": "20",
         "department_id": "4",
         "department_name": "Software Development",
         "skills_to_acquire": [
-            "Docker",
-            "JavaScript Programming",
+            "RESTful services",
             "C++ Programming",
-            "Agile Methodologies",
-            "Git Version Control",
+            "Docker",
             "Code Review",
-            "RESTful services"
+            "Git Version Control",
+            "JavaScript Programming"
         ]
     },
     {
-        "employee_id": "990025",
+        "employee_id": "20",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
-            "Basics Law",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
+            "Negotiation",
             "Attention to Detail",
-            "Emotional Intelligence"
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990025",
+        "employee_id": "20",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Basics Law",
-            "Risk Management",
             "Compliance Frameworks",
-            "Attention to Detail"
+            "Attention to Detail",
+            "Concise Writing",
+            "Basics Law",
+            "Contract Review & Drafting"
         ]
     },
     {
-        "employee_id": "990027",
+        "employee_id": "21",
         "department_id": "1",
         "department_name": "Business Development",
         "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Creativity",
             "Negotiation",
-            "PowerPoint / Slides",
-            "Risk Management",
-            "Proposal Creation",
-            "Document Management",
             "Microsoft Excel / Sheets",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "7",
-        "department_name": "Marketing",
-        "skills_to_acquire": [
-            "Communication",
-            "Analytical thinking",
             "Creativity",
-            "Social Media Management",
-            "PowerPoint / Slides",
-            "A/B Testing",
-            "Teamwork",
-            "Search Engine Optimization",
-            "Time Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Content Creation"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "8",
-        "department_name": "Sales",
-        "skills_to_acquire": [
+            "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Market Research",
             "CRM systems",
             "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
-            "PowerPoint / Slides",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Document Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Business Intelligent",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "9",
-        "department_name": "Project Management",
-        "skills_to_acquire": [
-            "Product Understanding",
-            "Strategic Planning",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Budget Tracking",
             "Risk Management",
-            "Document Management",
-            "Performance Management",
-            "Attention to Detail",
             "Stakeholder management",
-            "Emotional Intelligence"
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990027",
-        "department_id": "3",
-        "department_name": "Finance",
+        "employee_id": "21",
+        "department_id": "7",
+        "department_name": "Marketing",
         "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Financial Report",
-            "Tax Compliance & Auditing"
+            "Communication",
+            "Creativity",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management"
         ]
     },
     {
-        "employee_id": "990027",
-        "department_id": "12",
-        "department_name": "Data Consultant",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Database Management",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "PowerPoint / Slides",
-            "Python Programming",
-            "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
-            "Document Management",
-            "Business Intelligent",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Python Programming",
-            "Risk Management",
-            "Schema Design",
-            "Cloud Computing (AWS)",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Statistics",
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Python Programming",
-            "Risk Management",
-            "Data Visualization",
-            "Cloud Computing (AWS)",
-            "R Programming",
-            "Experiment Design",
-            "Data Analytics",
-            "Business Intelligent",
-            "SQL Programming",
-            "Machine Learning",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "5",
-        "department_name": "Human Resources",
-        "skills_to_acquire": [
-            "Negotiation",
-            "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
-            "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990027",
-        "department_id": "6",
-        "department_name": "Legal",
-        "skills_to_acquire": [
-            "Contract Review & Drafting",
-            "Concise Writing",
-            "Basics Law",
-            "Risk Management",
-            "Document Management",
-            "Compliance Frameworks",
-            "Attention to Detail"
-        ]
-    },
-    {
-        "employee_id": "990028",
-        "department_id": "1",
-        "department_name": "Business Development",
-        "skills_to_acquire": [
-            "CRM systems",
-            "Strategic Planning",
-            "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
-            "Risk Management",
-            "Proposal Creation",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990028",
+        "employee_id": "21",
         "department_id": "8",
         "department_name": "Sales",
         "skills_to_acquire": [
+            "Negotiation",
+            "Attention to Detail",
             "CRM systems",
             "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Business Understanding",
-            "Negotiation",
-            "Document Management",
-            "Attention to Detail",
-            "Stakeholder management"
+            "Stakeholder management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990028",
-        "department_id": "2",
-        "department_name": "Operations",
-        "skills_to_acquire": [
-            "Communication",
-            "Project Management",
-            "Analytical thinking",
-            "Presentation",
-            "Business Understanding",
-            "Concise Writing",
-            "Teamwork",
-            "Time Management",
-            "Proposal Creation",
-            "Document Management",
-            "Organizational Management",
-            "Problem Solving",
-            "Attention to Detail",
-            "Emotional Intelligence"
-        ]
-    },
-    {
-        "employee_id": "990028",
+        "employee_id": "21",
         "department_id": "9",
         "department_name": "Project Management",
         "skills_to_acquire": [
-            "Product Understanding",
-            "Strategic Planning",
-            "Project Management",
-            "Concise Writing",
-            "Presentation",
             "Negotiation",
-            "Budget Tracking",
-            "Risk Management",
-            "Agile Methodologies",
-            "Document Management",
-            "Performance Management",
+            "Strategic Planning",
+            "Emotional Intelligence",
             "Attention to Detail",
+            "Product Understanding",
+            "Budget Tracking",
+            "Agile Methodologies",
+            "Risk Management",
             "Stakeholder management",
-            "Emotional Intelligence"
+            "Performance Management",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990028",
+        "employee_id": "21",
         "department_id": "3",
         "department_name": "Finance",
         "skills_to_acquire": [
-            "Budget Tracking",
-            "Document Management",
-            "Microsoft Excel / Sheets",
-            "Attention to Detail",
             "Financial Report",
-            "Tax Compliance & Auditing"
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
         ]
     },
     {
-        "employee_id": "990028",
+        "employee_id": "21",
         "department_id": "12",
         "department_name": "Data Consultant",
         "skills_to_acquire": [
+            "Database Management",
+            "Negotiation",
+            "Microsoft Excel / Sheets",
+            "Data Visualization",
+            "Proposal Creation",
+            "Market Research",
             "CRM systems",
             "Product Understanding",
-            "Concise Writing",
-            "Presentation",
-            "Database Management",
-            "Business Understanding",
-            "Market Research",
-            "Negotiation",
             "Python Programming",
             "Prototyping",
-            "Data Visualization",
-            "R Programming",
-            "Microsoft Excel / Sheets",
-            "Proposal Creation",
+            "Stakeholder management",
             "Document Management",
-            "Stakeholder management"
-        ]
-    },
-    {
-        "employee_id": "990028",
-        "department_id": "11",
-        "department_name": "Data Engineer",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Docker",
-            "Python Programming",
-            "Risk Management",
-            "Schema Design",
-            "Git Version Control",
-            "Cloud Computing (AWS)",
-            "Code Review",
-            "Agile Methodologies",
-            "SQL Programming",
-            "ETL Tools"
-        ]
-    },
-    {
-        "employee_id": "990028",
-        "department_id": "10",
-        "department_name": "Data Scientist",
-        "skills_to_acquire": [
-            "Strategic Planning",
-            "Database Management",
-            "Data Pipeline",
-            "Big Data",
-            "Risk Management",
-            "ETL Tools",
-            "Docker",
-            "Code Review",
-            "Experiment Design",
-            "Data Analytics",
-            "SQL Programming",
-            "Machine Learning",
-            "Statistics",
-            "Python Programming",
-            "Agile Methodologies",
-            "Git Version Control",
-            "Data Visualization",
-            "Cloud Computing (AWS)",
             "R Programming"
         ]
     },
     {
-        "employee_id": "990028",
-        "department_id": "4",
-        "department_name": "Software Development",
+        "employee_id": "21",
+        "department_id": "11",
+        "department_name": "Data Engineer",
         "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
             "Docker",
-            "JavaScript Programming",
-            "C++ Programming",
-            "Agile Methodologies",
+            "Cloud Computing (AWS)",
             "Git Version Control",
             "Code Review",
-            "RESTful services"
+            "Agile Methodologies",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
         ]
     },
     {
-        "employee_id": "990028",
+        "employee_id": "21",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Machine Learning",
+            "Big Data",
+            "Python Programming",
+            "Risk Management",
+            "R Programming",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Git Version Control",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Experiment Design",
+            "SQL Programming",
+            "Data Analytics",
+            "Docker",
+            "Code Review",
+            "Statistics",
+            "Agile Methodologies"
+        ]
+    },
+    {
+        "employee_id": "21",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "Docker",
+            "Code Review",
+            "Agile Methodologies",
+            "Git Version Control",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "21",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "21",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Risk Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Creativity",
+            "Presentation",
+            "Strategic Planning",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Risk Management",
+            "Stakeholder management"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Business Intelligent",
+            "Creativity",
+            "Search Engine Optimization",
+            "Content Creation",
+            "A/B Testing",
+            "Social Media Management"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Presentation",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Stakeholder management"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Business Intelligent",
+            "Presentation",
+            "Proposal Creation",
+            "Concise Writing",
+            "Organizational Management"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Budget Tracking",
+            "Tax Compliance & Auditing"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Negotiation",
+            "Presentation",
+            "Data Visualization",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Python Programming",
+            "Prototyping",
+            "Stakeholder management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
+            "Cloud Computing (AWS)",
+            "Git Version Control",
+            "Code Review",
+            "Agile Methodologies",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Machine Learning",
+            "Big Data",
+            "Python Programming",
+            "Risk Management",
+            "R Programming",
+            "Business Intelligent",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Git Version Control",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Experiment Design",
+            "SQL Programming",
+            "Data Analytics",
+            "Docker",
+            "Code Review",
+            "Statistics",
+            "Agile Methodologies"
+        ]
+    },
+    {
+        "employee_id": "22",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "Docker",
+            "Code Review",
+            "Agile Methodologies",
+            "Git Version Control",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "22",
         "department_id": "5",
         "department_name": "Human Resources",
         "skills_to_acquire": [
             "Negotiation",
             "Basics Law",
-            "Document Management",
-            "Organizational Management",
-            "Performance Management",
             "Recruitment",
-            "Attention to Detail",
-            "Emotional Intelligence"
+            "Organizational Management",
+            "Performance Management"
         ]
     },
     {
-        "employee_id": "990028",
+        "employee_id": "22",
         "department_id": "6",
         "department_name": "Legal",
         "skills_to_acquire": [
-            "Contract Review & Drafting",
+            "Compliance Frameworks",
             "Concise Writing",
             "Basics Law",
             "Risk Management",
-            "Document Management",
-            "Compliance Frameworks",
+            "Contract Review & Drafting"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Attention to Detail",
+            "Creativity",
+            "Strategic Planning",
+            "Risk Management"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "Creativity",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
             "Attention to Detail"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "Emotional Intelligence",
+            "Time Management",
+            "Attention to Detail",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Organizational Management",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Strategic Planning",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Project Management",
+            "Agile Methodologies",
+            "Risk Management",
+            "Performance Management"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Attention to Detail",
+            "Financial Report",
+            "Budget Tracking",
+            "Tax Compliance & Auditing"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Docker",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Code Review",
+            "Agile Methodologies",
+            "Git Version Control",
+            "Risk Management",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Data Analytics",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Pipeline",
+            "Docker",
+            "Cloud Computing (AWS)",
+            "Git Version Control",
+            "Code Review",
+            "Machine Learning",
+            "Big Data",
+            "Experiment Design",
+            "Statistics",
+            "Risk Management",
+            "Agile Methodologies",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "Docker",
+            "Code Review",
+            "Agile Methodologies",
+            "Git Version Control",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management"
+        ]
+    },
+    {
+        "employee_id": "25",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Basics Law",
+            "Risk Management",
+            "Contract Review & Drafting"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Creativity",
+            "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Risk Management",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "7",
+        "department_name": "Marketing",
+        "skills_to_acquire": [
+            "Communication",
+            "PowerPoint / Slides",
+            "Creativity",
+            "Business Intelligent",
+            "Search Engine Optimization",
+            "Time Management",
+            "Content Creation",
+            "Teamwork",
+            "A/B Testing",
+            "Social Media Management",
+            "Analytical thinking",
+            "Problem Solving"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "Business Intelligent",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Emotional Intelligence",
+            "Time Management",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Negotiation",
+            "PowerPoint / Slides",
+            "Presentation",
+            "Strategic Planning",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
+            "Risk Management",
+            "Stakeholder management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Microsoft Excel / Sheets",
+            "Negotiation",
+            "Presentation",
+            "PowerPoint / Slides",
+            "Data Visualization",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Python Programming",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Business Intelligent",
+            "Data Analytics",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Big Data",
+            "SQL Programming",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Machine Learning",
+            "Python Programming",
+            "Experiment Design",
+            "Statistics",
+            "Risk Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "27",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Risk Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "1",
+        "department_name": "Business Development",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Microsoft Excel / Sheets",
+            "Presentation",
+            "Strategic Planning",
+            "Proposal Creation",
+            "Attention to Detail",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Risk Management",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "8",
+        "department_name": "Sales",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Presentation",
+            "Attention to Detail",
+            "Concise Writing",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Stakeholder management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "2",
+        "department_name": "Operations",
+        "skills_to_acquire": [
+            "Communication",
+            "Presentation",
+            "Emotional Intelligence",
+            "Proposal Creation",
+            "Time Management",
+            "Attention to Detail",
+            "Concise Writing",
+            "Teamwork",
+            "Project Management",
+            "Analytical thinking",
+            "Business Understanding",
+            "Organizational Management",
+            "Problem Solving",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "9",
+        "department_name": "Project Management",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Presentation",
+            "Strategic Planning",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Concise Writing",
+            "Product Understanding",
+            "Budget Tracking",
+            "Project Management",
+            "Agile Methodologies",
+            "Risk Management",
+            "Stakeholder management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "3",
+        "department_name": "Finance",
+        "skills_to_acquire": [
+            "Financial Report",
+            "Microsoft Excel / Sheets",
+            "Tax Compliance & Auditing",
+            "Attention to Detail",
+            "Budget Tracking",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "12",
+        "department_name": "Data Consultant",
+        "skills_to_acquire": [
+            "Database Management",
+            "Negotiation",
+            "Microsoft Excel / Sheets",
+            "Presentation",
+            "Data Visualization",
+            "Proposal Creation",
+            "Concise Writing",
+            "Market Research",
+            "CRM systems",
+            "Product Understanding",
+            "Business Understanding",
+            "Python Programming",
+            "Prototyping",
+            "Stakeholder management",
+            "Document Management",
+            "R Programming"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "11",
+        "department_name": "Data Engineer",
+        "skills_to_acquire": [
+            "Database Management",
+            "Schema Design",
+            "Strategic Planning",
+            "ETL Tools",
+            "Big Data",
+            "Data Pipeline",
+            "Docker",
+            "Cloud Computing (AWS)",
+            "Git Version Control",
+            "Code Review",
+            "Agile Methodologies",
+            "Python Programming",
+            "Risk Management",
+            "SQL Programming"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "10",
+        "department_name": "Data Scientist",
+        "skills_to_acquire": [
+            "Database Management",
+            "Machine Learning",
+            "Big Data",
+            "Python Programming",
+            "Risk Management",
+            "R Programming",
+            "Strategic Planning",
+            "ETL Tools",
+            "Data Visualization",
+            "Git Version Control",
+            "Data Pipeline",
+            "Cloud Computing (AWS)",
+            "Experiment Design",
+            "SQL Programming",
+            "Data Analytics",
+            "Docker",
+            "Code Review",
+            "Statistics",
+            "Agile Methodologies"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "4",
+        "department_name": "Software Development",
+        "skills_to_acquire": [
+            "RESTful services",
+            "C++ Programming",
+            "Docker",
+            "Code Review",
+            "Agile Methodologies",
+            "Git Version Control",
+            "JavaScript Programming"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "5",
+        "department_name": "Human Resources",
+        "skills_to_acquire": [
+            "Negotiation",
+            "Emotional Intelligence",
+            "Attention to Detail",
+            "Basics Law",
+            "Recruitment",
+            "Organizational Management",
+            "Performance Management",
+            "Document Management"
+        ]
+    },
+    {
+        "employee_id": "28",
+        "department_id": "6",
+        "department_name": "Legal",
+        "skills_to_acquire": [
+            "Compliance Frameworks",
+            "Attention to Detail",
+            "Concise Writing",
+            "Contract Review & Drafting",
+            "Basics Law",
+            "Risk Management",
+            "Document Management"
         ]
     }
 ]

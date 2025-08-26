@@ -20,8 +20,8 @@ def main():
     emp_df = pd.read_csv(config.EMPLOYEE_DATA)
     movement_df = pd.read_csv(config.EMPLOYEE_MOVEMENT_DATA)
     # filter out employees who have left the company
-    emp_df = emp_df.drop_duplicates(subset=['id'], keep='last')
-    emp_df = emp_df[~emp_df['emp_id'].isin(movement_df[movement_df['movement_type'].isin([1, 2])]['employee_id'])] # movement_type 1 == voluntary termination, movement_type 2 == involuntary termination
+    emp_df = emp_df.drop_duplicates(subset=['emp_id'], keep='last')
+    emp_df = emp_df[~emp_df['id'].isin(movement_df[movement_df['movement_type'].isin([1, 2])]['employee_id'])] # movement_type 1 == voluntary termination, movement_type 2 == involuntary termination
 
     emp_skill_df = pd.read_csv(config.EMPLOYEE_SKILL_DATA)
     emp_skill_df = emp_skill_df.sort_values(by=['employee_id', 'skill_id', 'created_at'], ascending=[True, True, True])
@@ -41,7 +41,7 @@ def main():
 
     # --- 1. Skill Gap by EMPLOYEE ---
     employee_analysis_result = []
-    for emp_id in emp_df['emp_id']:
+    for emp_id in emp_df['id']:
         current_position_id = emp_pos_df[emp_pos_df['employee_id'] == emp_id]['position_id'].values[0]
         employee_skill_with_score, current_missing_skill = analyze_current_position_gap(
             employee_id=emp_id,

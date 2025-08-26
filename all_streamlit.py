@@ -55,13 +55,7 @@ if raw_termination_data:
 
 promotion_data = {}
 if raw_promotion_data:
-    promotion_data = {item['employee_type']: item.get('employee_id', []) for item in raw_promotion_data}
-    # For UI display, create a list of dicts for overlooked/disengaged employees
-    # Note: This version only has IDs. We'll look up names from the skill data if available.
-    promotion_data["overlooked_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("Overlooked Talent", [])]
-    promotion_data["disengaged_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("Disengaged Employee", [])]
-    promotion_data["new_and_promising_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("New and Promising", [])]
-    promotion_data["on_track_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("On Track", [])]
+    promotion_data = {item['employee_type']: item.get('employee_ids', []) for item in raw_promotion_data}
 
 employee_skill_data = {}
 if raw_employee_skill_data:
@@ -104,13 +98,13 @@ if page == "OVERALL":
         c1, c2, c3, _ = st.columns(4)
         with c1:
             with st.container(border=True):
-                st.metric("Overlooked Talent", len(promotion_data.get("overlooked_employees", [])))
+                st.metric("Overlooked Talent", len(promotion_data.get("Overlooked Talent", [])))
         with c2:
             with st.container(border=True):
-                st.metric("Disengaged Employees", len(promotion_data.get("disengaged_employees", [])))
+                st.metric("Disengaged Employees", len(promotion_data.get("Disengaged Employee", [])))
         with c3:
             with st.container(border=True):
-                st.metric("New & Promising Employees", len(promotion_data.get("new_and_promising_employees", [])))
+                st.metric("New & Promising Employees", len(promotion_data.get("New and Promising", [])))
         
         st.markdown("---")
 
@@ -239,16 +233,16 @@ elif page == "EMPLOYEE":
     c1, c2, c3, c4 = st.columns(4)
     with c1:
         with st.container(border=True):
-            st.metric("🚨 Overlooked Talent", len(promotion_data.get("overlooked_employees", [])))
+            st.metric("🚨 Overlooked Talent", len(promotion_data.get("Overlooked Talent", [])))
     with c2:
         with st.container(border=True):
-            st.metric("⚠️ Disengaged Employees", len(promotion_data.get("disengaged_employees", [])))
+            st.metric("⚠️ Disengaged Employees", len(promotion_data.get("Disengaged Employee", [])))
     with c3:
         with st.container(border=True):
-            st.metric("🌟 New & Promising Employees", len(promotion_data.get("new_and_promising_employees", [])))
+            st.metric("🌟 New & Promising Employees", len(promotion_data.get("New and Promising", [])))
     with c4:
         with st.container(border=True):
-            st.metric("✅ On-Track Employees", len(promotion_data.get("on_track_employees", [])))
+            st.metric("✅ On-Track Employees", len(promotion_data.get("On Track", [])))
 
     st.markdown("---")
     

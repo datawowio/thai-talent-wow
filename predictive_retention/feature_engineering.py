@@ -66,8 +66,9 @@ def feature_engineering():
     final_df = pd.DataFrame()
     for execution_date in date_range[1:]:
         execution_date = pd.to_datetime(execution_date)
-        execution_emp_df = emp_df[['emp_id', 'birth_date', 'education_level', 'parent', 'child', 'sibling', 'spouse', 'hire_date', 'created_at']].copy()
-        execution_emp_df = execution_emp_df[(emp_df['hire_date'] <= execution_date) & (emp_df['created_at'] <= execution_date)].drop_duplicates(subset=['emp_id'], keep='last')
+        execution_emp_df = emp_df[['id', 'birth_date', 'education_level', 'parent', 'child', 'sibling', 'spouse', 'hire_date', 'created_at']].copy()
+        execution_emp_df.rename(columns={'id': 'emp_id'}, inplace=True)
+        execution_emp_df = execution_emp_df[emp_df['hire_date'] <= execution_date].drop_duplicates(subset=['emp_id'], keep='last')
         execution_manager_df = manager_df[manager_df['created_at'] <= execution_date]
         execution_salary_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date][['employee_id', 'salary', 'effective_date']]
         execution_movement_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date]

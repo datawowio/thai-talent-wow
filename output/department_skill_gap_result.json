@@ -5,17 +5,6 @@
         "total_employee": 3,
         "common_existing_skills": [
             {
-                "skill_name": "Attention to Detail",
-                "percentage_of_employee": "66.67",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
                 "skill_name": "Business Intelligent",
                 "percentage_of_employee": "100.0",
                 "statistics": {
@@ -45,17 +34,6 @@
                     "q1": 2.5,
                     "median": 3.0,
                     "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Concise Writing",
-                "percentage_of_employee": "66.67",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -93,28 +71,6 @@
                 }
             },
             {
-                "skill_name": "Microsoft Excel / Sheets",
-                "percentage_of_employee": "66.67",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Negotiation",
-                "percentage_of_employee": "66.67",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
                 "skill_name": "PowerPoint / Slides",
                 "percentage_of_employee": "100.0",
                 "statistics": {
@@ -148,6 +104,61 @@
                 }
             },
             {
+                "skill_name": "Stakeholder management",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 3.0,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Attention to Detail",
+                "percentage_of_employee": "66.67",
+                "statistics": {
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
+                }
+            },
+            {
+                "skill_name": "Concise Writing",
+                "percentage_of_employee": "66.67",
+                "statistics": {
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Microsoft Excel / Sheets",
+                "percentage_of_employee": "66.67",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.5,
+                    "median": 3.0,
+                    "q3": 3.5,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Negotiation",
+                "percentage_of_employee": "66.67",
+                "statistics": {
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
+                }
+            },
+            {
                 "skill_name": "Proposal Creation",
                 "percentage_of_employee": "66.67",
                 "statistics": {
@@ -170,17 +181,6 @@
                 }
             },
             {
-                "skill_name": "Stakeholder management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 3.0,
-                    "max": 4
-                }
-            },
-            {
                 "skill_name": "Strategic Planning",
                 "percentage_of_employee": "33.33",
                 "statistics": {
@@ -195,41 +195,72 @@
         "department_missing_skills": [],
         "low_score_skills": [
             "PowerPoint / Slides"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2020-12",
+                "average_score": 4.0
+            },
+            {
+                "year_month": "2021-06",
+                "average_score": 3.8
+            },
+            {
+                "year_month": "2021-12",
+                "average_score": 3.9
+            },
+            {
+                "year_month": "2022-06",
+                "average_score": 4.6
+            },
+            {
+                "year_month": "2022-12",
+                "average_score": 3.6999999999999997
+            },
+            {
+                "year_month": "2023-06",
+                "average_score": 3.4
+            },
+            {
+                "year_month": "2023-12",
+                "average_score": 3.45
+            },
+            {
+                "year_month": "2024-06",
+                "average_score": 3.6999999999999997
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 2.766666666666667
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 3.1666666666666665
+            }
         ]
     },
     {
         "department_id": "2",
         "department_name": "Operations",
-        "total_employee": 3,
+        "total_employee": 1,
         "common_existing_skills": [
             {
                 "skill_name": "Analytical thinking",
-                "percentage_of_employee": "66.67",
+                "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Attention to Detail",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
                 }
             },
             {
                 "skill_name": "Business Intelligent",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
+                    "min": 3,
+                    "q1": 3.0,
                     "median": 3.0,
                     "q3": 3.0,
                     "max": 3
@@ -247,36 +278,14 @@
                 }
             },
             {
-                "skill_name": "Communication",
-                "percentage_of_employee": "66.67",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.25,
-                    "median": 2.5,
-                    "q3": 2.75,
-                    "max": 3
-                }
-            },
-            {
                 "skill_name": "Concise Writing",
-                "percentage_of_employee": "66.67",
+                "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Document Management",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
                 }
             },
             {
@@ -294,8 +303,8 @@
                 "skill_name": "Presentation",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.5,
+                    "min": 4,
+                    "q1": 4.0,
                     "median": 4.0,
                     "q3": 4.0,
                     "max": 4
@@ -306,53 +315,54 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 2.0,
+                    "max": 2
                 }
             },
             {
                 "skill_name": "Project Management",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
+                    "min": 3,
+                    "q1": 3.0,
                     "median": 3.0,
                     "q3": 3.0,
                     "max": 3
                 }
-            },
-            {
-                "skill_name": "Teamwork",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Time Management",
-                "percentage_of_employee": "66.67",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
             }
         ],
         "department_missing_skills": [
+            "Attention to Detail",
+            "Communication",
+            "Document Management",
             "Emotional Intelligence",
             "Organizational Management",
-            "Proposal Creation"
+            "Proposal Creation",
+            "Teamwork",
+            "Time Management"
         ],
         "low_score_skills": [
-            "Attention to Detail"
+            "Problem Solving"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2021-12",
+                "average_score": 4.8
+            },
+            {
+                "year_month": "2022-06",
+                "average_score": 4.9
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 2.7
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 2.45
+            }
         ]
     },
     {
@@ -361,7 +371,8 @@
         "total_employee": 0,
         "common_existing_skills": [],
         "department_missing_skills": [],
-        "low_score_skills": []
+        "low_score_skills": [],
+        "performance_trends": []
     },
     {
         "department_id": "4",
@@ -387,17 +398,6 @@
                     "q1": 2.5,
                     "median": 3.0,
                     "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Code Review",
-                "percentage_of_employee": "50.0",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -444,109 +444,60 @@
                     "q3": 2.75,
                     "max": 3
                 }
+            },
+            {
+                "skill_name": "Code Review",
+                "percentage_of_employee": "50.0",
+                "statistics": {
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
+                    "max": 4
+                }
             }
         ],
         "department_missing_skills": [],
-        "low_score_skills": []
+        "low_score_skills": [],
+        "performance_trends": [
+            {
+                "year_month": "2023-06",
+                "average_score": 4.2
+            },
+            {
+                "year_month": "2023-12",
+                "average_score": 3.4
+            },
+            {
+                "year_month": "2024-06",
+                "average_score": 3.3
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 4.0
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 4.15
+            }
+        ]
     },
     {
         "department_id": "5",
         "department_name": "Human Resources",
-        "total_employee": 1,
-        "common_existing_skills": [
-            {
-                "skill_name": "Attention to Detail",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
-                }
-            },
-            {
-                "skill_name": "Basics Law",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Document Management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Emotional Intelligence",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Negotiation",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Organizational Management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
-                }
-            },
-            {
-                "skill_name": "Performance Management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Recruitment",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            }
-        ],
+        "total_employee": 0,
+        "common_existing_skills": [],
         "department_missing_skills": [],
-        "low_score_skills": [
-            "Attention to Detail",
-            "Organizational Management"
+        "low_score_skills": [],
+        "performance_trends": [
+            {
+                "year_month": "2024-12",
+                "average_score": 2.9
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 3.8
+            }
         ]
     },
     {
@@ -555,27 +506,17 @@
         "total_employee": 0,
         "common_existing_skills": [],
         "department_missing_skills": [],
-        "low_score_skills": []
+        "low_score_skills": [],
+        "performance_trends": []
     },
     {
         "department_id": "7",
         "department_name": "Marketing",
-        "total_employee": 3,
+        "total_employee": 1,
         "common_existing_skills": [
             {
                 "skill_name": "A/B Testing",
                 "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 3.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Analytical thinking",
-                "percentage_of_employee": "33.33",
                 "statistics": {
                     "min": 4,
                     "q1": 4.0,
@@ -588,17 +529,6 @@
                 "skill_name": "Business Intelligent",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Communication",
-                "percentage_of_employee": "33.33",
-                "statistics": {
                     "min": 4,
                     "q1": 4.0,
                     "median": 4.0,
@@ -610,8 +540,8 @@
                 "skill_name": "Content Creation",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.5,
+                    "min": 4,
+                    "q1": 4.0,
                     "median": 4.0,
                     "q3": 4.0,
                     "max": 4
@@ -622,26 +552,15 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 2.0,
+                    "max": 2
                 }
             },
             {
                 "skill_name": "PowerPoint / Slides",
                 "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 3.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Problem Solving",
-                "percentage_of_employee": "33.33",
                 "statistics": {
                     "min": 4,
                     "q1": 4.0,
@@ -655,170 +574,86 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 2.0,
+                    "max": 2
                 }
             },
             {
                 "skill_name": "Social Media Management",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
+                    "min": 3,
+                    "q1": 3.0,
                     "median": 3.0,
                     "q3": 3.0,
                     "max": 3
                 }
-            },
-            {
-                "skill_name": "Teamwork",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Time Management",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
             }
         ],
-        "department_missing_skills": [],
-        "low_score_skills": []
+        "department_missing_skills": [
+            "Analytical thinking",
+            "Communication",
+            "Problem Solving",
+            "Teamwork",
+            "Time Management"
+        ],
+        "low_score_skills": [
+            "Creativity",
+            "Search Engine Optimization"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2022-06",
+                "average_score": 3.3
+            },
+            {
+                "year_month": "2022-12",
+                "average_score": 2.8
+            },
+            {
+                "year_month": "2023-06",
+                "average_score": 3.3
+            },
+            {
+                "year_month": "2023-12",
+                "average_score": 2.6
+            },
+            {
+                "year_month": "2024-06",
+                "average_score": 3.2
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 3.7
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 3.4
+            }
+        ]
     },
     {
         "department_id": "8",
         "department_name": "Sales",
-        "total_employee": 2,
-        "common_existing_skills": [
-            {
-                "skill_name": "Attention to Detail",
-                "percentage_of_employee": "50.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
-                }
-            },
-            {
-                "skill_name": "Business Understanding",
-                "percentage_of_employee": "50.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
-                }
-            },
-            {
-                "skill_name": "CRM systems",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Concise Writing",
-                "percentage_of_employee": "50.0",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Document Management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Negotiation",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "PowerPoint / Slides",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Presentation",
-                "percentage_of_employee": "50.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Product Understanding",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Stakeholder management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
-                }
-            }
-        ],
+        "total_employee": 0,
+        "common_existing_skills": [],
         "department_missing_skills": [],
-        "low_score_skills": [
-            "Attention to Detail",
-            "Business Understanding",
-            "Stakeholder management"
+        "low_score_skills": [],
+        "performance_trends": [
+            {
+                "year_month": "2022-06",
+                "average_score": 1.6
+            },
+            {
+                "year_month": "2022-12",
+                "average_score": 1.9
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 3.2
+            }
         ]
     },
     {
@@ -827,22 +662,55 @@
         "total_employee": 4,
         "common_existing_skills": [
             {
+                "skill_name": "Document Management",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.75,
+                    "median": 3.0,
+                    "q3": 3.25,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Emotional Intelligence",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.75,
+                    "median": 3.0,
+                    "q3": 3.5,
+                    "max": 5
+                }
+            },
+            {
+                "skill_name": "PowerPoint / Slides",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 2.5,
+                    "q3": 3.25,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Project Management",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 3.0,
+                    "q3": 4.25,
+                    "max": 5
+                }
+            },
+            {
                 "skill_name": "Agile Methodologies",
                 "percentage_of_employee": "75.0",
                 "statistics": {
                     "min": 2,
                     "q1": 3.0,
-                    "median": 4.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Analytical thinking",
-                "percentage_of_employee": "25.0",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
                     "median": 4.0,
                     "q3": 4.0,
                     "max": 4
@@ -871,24 +739,35 @@
                 }
             },
             {
-                "skill_name": "Business Understanding",
-                "percentage_of_employee": "25.0",
+                "skill_name": "Presentation",
+                "percentage_of_employee": "75.0",
                 "statistics": {
                     "min": 3,
                     "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.5,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Product Understanding",
+                "percentage_of_employee": "75.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.5,
                     "median": 3.0,
                     "q3": 3.0,
                     "max": 3
                 }
             },
             {
-                "skill_name": "Communication",
-                "percentage_of_employee": "25.0",
+                "skill_name": "Risk Management",
+                "percentage_of_employee": "75.0",
                 "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 3.0,
                     "max": 4
                 }
             },
@@ -901,28 +780,6 @@
                     "median": 4.0,
                     "q3": 4.0,
                     "max": 4
-                }
-            },
-            {
-                "skill_name": "Document Management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.75,
-                    "median": 3.0,
-                    "q3": 3.25,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Emotional Intelligence",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.75,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 5
                 }
             },
             {
@@ -948,72 +805,6 @@
                 }
             },
             {
-                "skill_name": "PowerPoint / Slides",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.5,
-                    "q3": 3.25,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Presentation",
-                "percentage_of_employee": "75.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Problem Solving",
-                "percentage_of_employee": "25.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Product Understanding",
-                "percentage_of_employee": "75.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 3
-                }
-            },
-            {
-                "skill_name": "Project Management",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 3.0,
-                    "q3": 4.25,
-                    "max": 5
-                }
-            },
-            {
-                "skill_name": "Risk Management",
-                "percentage_of_employee": "75.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 3.0,
-                    "max": 4
-                }
-            },
-            {
                 "skill_name": "Stakeholder management",
                 "percentage_of_employee": "50.0",
                 "statistics": {
@@ -1033,6 +824,50 @@
                     "median": 2.0,
                     "q3": 2.0,
                     "max": 2
+                }
+            },
+            {
+                "skill_name": "Analytical thinking",
+                "percentage_of_employee": "25.0",
+                "statistics": {
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Business Understanding",
+                "percentage_of_employee": "25.0",
+                "statistics": {
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
+                }
+            },
+            {
+                "skill_name": "Communication",
+                "percentage_of_employee": "25.0",
+                "statistics": {
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Problem Solving",
+                "percentage_of_employee": "25.0",
+                "statistics": {
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
                 }
             },
             {
@@ -1062,12 +897,34 @@
         "low_score_skills": [
             "Budget Tracking",
             "Strategic Planning"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2023-06",
+                "average_score": 3.9
+            },
+            {
+                "year_month": "2023-12",
+                "average_score": 3.6
+            },
+            {
+                "year_month": "2024-06",
+                "average_score": 4.050000000000001
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 3.525
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 3.7
+            }
         ]
     },
     {
         "department_id": "10",
         "department_name": "Data Scientist",
-        "total_employee": 5,
+        "total_employee": 4,
         "common_existing_skills": [
             {
                 "skill_name": "Agile Methodologies",
@@ -1076,7 +933,7 @@
                     "min": 2,
                     "q1": 2.0,
                     "median": 2.0,
-                    "q3": 3.0,
+                    "q3": 2.25,
                     "max": 3
                 }
             },
@@ -1085,15 +942,15 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 3.0,
+                    "q1": 2.75,
                     "median": 3.0,
-                    "q3": 4.0,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
             {
                 "skill_name": "Business Intelligent",
-                "percentage_of_employee": "80.0",
+                "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
                     "q1": 3.5,
@@ -1107,20 +964,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.0,
+                    "q1": 2.75,
                     "median": 3.0,
-                    "q3": 3.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Code Review",
-                "percentage_of_employee": "60.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
@@ -1129,9 +975,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 3.0,
+                    "q1": 2.75,
                     "median": 3.0,
-                    "q3": 3.0,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
@@ -1140,9 +986,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.0,
+                    "q1": 2.75,
                     "median": 3.0,
-                    "q3": 3.0,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
@@ -1152,8 +998,8 @@
                 "statistics": {
                     "min": 2,
                     "q1": 2.0,
-                    "median": 3.0,
-                    "q3": 3.0,
+                    "median": 2.5,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
@@ -1162,7 +1008,7 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.0,
+                    "q1": 2.75,
                     "median": 3.0,
                     "q3": 3.0,
                     "max": 3
@@ -1175,7 +1021,7 @@
                     "min": 3,
                     "q1": 3.0,
                     "median": 3.0,
-                    "q3": 4.0,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
@@ -1184,20 +1030,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.0,
-                    "median": 3.0,
+                    "q1": 2.75,
+                    "median": 3.5,
                     "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Experiment Design",
-                "percentage_of_employee": "60.0",
-                "statistics": {
-                    "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.5,
                     "max": 4
                 }
             },
@@ -1217,9 +1052,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 3.0,
+                    "q1": 2.75,
                     "median": 3.0,
-                    "q3": 3.0,
+                    "q3": 3.25,
                     "max": 4
                 }
             },
@@ -1228,15 +1063,59 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.0,
+                    "q1": 2.75,
                     "median": 3.0,
-                    "q3": 3.0,
+                    "q3": 3.25,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "SQL Programming",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 2.5,
+                    "q3": 3.25,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Statistics",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 2.5,
+                    "q3": 3.25,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Code Review",
+                "percentage_of_employee": "75.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.5,
+                    "median": 3.0,
+                    "q3": 3.5,
+                    "max": 4
+                }
+            },
+            {
+                "skill_name": "Experiment Design",
+                "percentage_of_employee": "75.0",
+                "statistics": {
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.5,
                     "max": 4
                 }
             },
             {
                 "skill_name": "R Programming",
-                "percentage_of_employee": "60.0",
+                "percentage_of_employee": "75.0",
                 "statistics": {
                     "min": 2,
                     "q1": 2.0,
@@ -1247,7 +1126,7 @@
             },
             {
                 "skill_name": "Risk Management",
-                "percentage_of_employee": "60.0",
+                "percentage_of_employee": "75.0",
                 "statistics": {
                     "min": 3,
                     "q1": 3.0,
@@ -1257,30 +1136,8 @@
                 }
             },
             {
-                "skill_name": "SQL Programming",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 3.0,
-                    "q3": 4.0,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Statistics",
-                "percentage_of_employee": "100.0",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 3.0,
-                    "q3": 3.0,
-                    "max": 4
-                }
-            },
-            {
                 "skill_name": "Strategic Planning",
-                "percentage_of_employee": "60.0",
+                "percentage_of_employee": "75.0",
                 "statistics": {
                     "min": 2,
                     "q1": 2.5,
@@ -1293,21 +1150,63 @@
         "department_missing_skills": [],
         "low_score_skills": [
             "Agile Methodologies"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2020-12",
+                "average_score": 3.9
+            },
+            {
+                "year_month": "2021-06",
+                "average_score": 4.35
+            },
+            {
+                "year_month": "2021-12",
+                "average_score": 4.433333333333334
+            },
+            {
+                "year_month": "2022-06",
+                "average_score": 4.275
+            },
+            {
+                "year_month": "2022-12",
+                "average_score": 4.3
+            },
+            {
+                "year_month": "2023-06",
+                "average_score": 4.24
+            },
+            {
+                "year_month": "2023-12",
+                "average_score": 4.3
+            },
+            {
+                "year_month": "2024-06",
+                "average_score": 4.15
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 4.425
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 4.1
+            }
         ]
     },
     {
         "department_id": "11",
         "department_name": "Data Engineer",
-        "total_employee": 3,
+        "total_employee": 2,
         "common_existing_skills": [
             {
                 "skill_name": "Agile Methodologies",
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.0,
+                    "q1": 2.25,
+                    "median": 2.5,
+                    "q3": 2.75,
                     "max": 3
                 }
             },
@@ -1327,20 +1226,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 3,
-                    "q1": 3.0,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Code Review",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 4,
-                    "q1": 4.0,
-                    "median": 4.0,
-                    "q3": 4.0,
+                    "q1": 3.25,
+                    "median": 3.5,
+                    "q3": 3.75,
                     "max": 4
                 }
             },
@@ -1371,9 +1259,9 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 3.0,
+                    "q1": 2.5,
+                    "median": 3.0,
+                    "q3": 3.5,
                     "max": 4
                 }
             },
@@ -1393,10 +1281,10 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
+                    "q1": 2.25,
+                    "median": 2.5,
+                    "q3": 2.75,
+                    "max": 3
                 }
             },
             {
@@ -1406,23 +1294,23 @@
                     "min": 3,
                     "q1": 3.0,
                     "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
-                }
-            },
-            {
-                "skill_name": "Risk Management",
-                "percentage_of_employee": "33.33",
-                "statistics": {
-                    "min": 2,
-                    "q1": 2.0,
-                    "median": 2.0,
-                    "q3": 2.0,
-                    "max": 2
+                    "q3": 3.0,
+                    "max": 3
                 }
             },
             {
                 "skill_name": "SQL Programming",
+                "percentage_of_employee": "100.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.25,
+                    "median": 2.5,
+                    "q3": 2.75,
+                    "max": 3
+                }
+            },
+            {
+                "skill_name": "Schema Design",
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
@@ -1433,19 +1321,30 @@
                 }
             },
             {
-                "skill_name": "Schema Design",
-                "percentage_of_employee": "66.67",
+                "skill_name": "Code Review",
+                "percentage_of_employee": "50.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             },
             {
+                "skill_name": "Risk Management",
+                "percentage_of_employee": "50.0",
+                "statistics": {
+                    "min": 2,
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 2.0,
+                    "max": 2
+                }
+            },
+            {
                 "skill_name": "Strategic Planning",
-                "percentage_of_employee": "33.33",
+                "percentage_of_employee": "50.0",
                 "statistics": {
                     "min": 2,
                     "q1": 2.0,
@@ -1459,21 +1358,55 @@
         "low_score_skills": [
             "Risk Management",
             "Strategic Planning"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2021-12",
+                "average_score": 4.4
+            },
+            {
+                "year_month": "2022-06",
+                "average_score": 3.3
+            },
+            {
+                "year_month": "2022-12",
+                "average_score": 3.733333333333333
+            },
+            {
+                "year_month": "2023-06",
+                "average_score": 4.6
+            },
+            {
+                "year_month": "2023-12",
+                "average_score": 4.5
+            },
+            {
+                "year_month": "2024-06",
+                "average_score": 4.3
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 4.05
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 4.25
+            }
         ]
     },
     {
         "department_id": "12",
         "department_name": "Data Consultant",
-        "total_employee": 2,
+        "total_employee": 1,
         "common_existing_skills": [
             {
                 "skill_name": "Business Intelligent",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.25,
-                    "median": 2.5,
-                    "q3": 2.75,
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
                     "max": 3
                 }
             },
@@ -1481,10 +1414,10 @@
                 "skill_name": "Business Understanding",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -1493,10 +1426,10 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
-                    "max": 4
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 2.0,
+                    "max": 2
                 }
             },
             {
@@ -1526,10 +1459,10 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
-                    "max": 4
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
                 }
             },
             {
@@ -1547,10 +1480,10 @@
                 "skill_name": "Market Research",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -1570,20 +1503,20 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 2,
-                    "q1": 2.25,
-                    "median": 2.5,
-                    "q3": 2.75,
-                    "max": 3
+                    "q1": 2.0,
+                    "median": 2.0,
+                    "q3": 2.0,
+                    "max": 2
                 }
             },
             {
                 "skill_name": "PowerPoint / Slides",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -1591,10 +1524,10 @@
                 "skill_name": "Presentation",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -1613,10 +1546,10 @@
                 "skill_name": "Proposal Creation",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.25,
-                    "median": 2.5,
-                    "q3": 2.75,
+                    "min": 3,
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
                     "max": 3
                 }
             },
@@ -1625,20 +1558,20 @@
                 "percentage_of_employee": "100.0",
                 "statistics": {
                     "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
-                    "max": 4
+                    "q1": 3.0,
+                    "median": 3.0,
+                    "q3": 3.0,
+                    "max": 3
                 }
             },
             {
                 "skill_name": "Python Programming",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 3,
-                    "q1": 3.25,
-                    "median": 3.5,
-                    "q3": 3.75,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             },
@@ -1657,20 +1590,36 @@
                 "skill_name": "Stakeholder management",
                 "percentage_of_employee": "100.0",
                 "statistics": {
-                    "min": 2,
-                    "q1": 2.5,
-                    "median": 3.0,
-                    "q3": 3.5,
+                    "min": 4,
+                    "q1": 4.0,
+                    "median": 4.0,
+                    "q3": 4.0,
                     "max": 4
                 }
             }
         ],
         "department_missing_skills": [],
         "low_score_skills": [
+            "CRM systems",
             "Data Visualization",
             "Microsoft Excel / Sheets",
+            "Negotiation",
             "Product Understanding",
             "R Programming"
+        ],
+        "performance_trends": [
+            {
+                "year_month": "2023-12",
+                "average_score": 3.0
+            },
+            {
+                "year_month": "2024-12",
+                "average_score": 4.7
+            },
+            {
+                "year_month": "2025-06",
+                "average_score": 4.1
+            }
         ]
     }
 ]

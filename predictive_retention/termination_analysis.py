@@ -33,7 +33,7 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     employee_metadata['job_title'] = employee_metadata['position_id'].map(_position_df.set_index('id')['name'])
     employee_metadata['department_id'] = employee_metadata['position_id'].map(_position_df.set_index('id')['department_id'])
 
-    termination_emp = employee_metadata[(employee_metadata['model_predicted_termination'] == True) | (employee_metadata['termination_value'] > 0)]
+    # termination_emp = employee_metadata[(employee_metadata['model_predicted_termination'] == True) | (employee_metadata['termination_value'] > 0)]
 
     features = model_config['features']
     if 'department_name' in features:
@@ -71,11 +71,11 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
 
 
     # --- 3. Termination Proportions By DEPARTMENT ---
-    department_count = termination_emp.groupby(['department_id', 'department_name'])['termination_value'].count().to_frame('termination_count').reset_index()
+    department_count = employee_metadata[employee_metadata['termination_value'] > 0].groupby(['department_name', 'department_id'])['termination_value'].count().to_frame('termination_count').reset_index()
     json_result['department_proportion'] = department_count.sort_values('termination_count', ascending=False).to_dict(orient='records')
 
     # --- 4. Termination Proportions By JOB LEVEL ---
-    level_count = termination_emp.groupby('job_level')['termination_value'].count().to_frame('termination_count').reset_index()
+    level_count = employee_metadata[employee_metadata['termination_value'] > 0].groupby(['job_level', 'job_level_name'])['termination_value'].count().to_frame('termination_count').reset_index()
     level_count['level_name'] = level_count['job_level'].map(config.JOB_LEVEL_MAPPER)
     json_result['job_level_proportion'] = level_count[['job_level', 'level_name', 'termination_count']].sort_values('termination_count', ascending=False).to_dict(orient='records')
 
@@ -138,8 +138,8 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     department_shap = shap_with_metadata.groupby('department_name')[features].mean().reset_index()
     termination_reason_by_department = []
     for department in department_shap['department_name'].unique():
-        num_emp_left = termination_emp[termination_emp['department_name'] == department].shape[0]
-        num_emp_predicted_to_leave = termination_emp[(termination_emp['department_name'] == department) & (termination_emp['model_predicted_termination'] == True)].shape[0]
+        num_emp_left = employee_metadata[employee_metadata['department_name'] == department][employee_metadata['termination_value'] > 0].shape[0]
+        num_emp_predicted_to_leave = employee_metadata[(employee_metadata['department_name'] == department) & (employee_metadata['model_predicted_termination'] == True)].shape[0]
         avg_termination_probability = employee_metadata[employee_metadata['department_name'] == department]['model_predicted_termination_probability'].mean()
         department_id = employee_metadata[employee_metadata['department_name'] == department]['department_id'].iloc[0]
         _dept_shap_t = department_shap[department_shap['department_name'] == department][features].T.reset_index()
@@ -165,8 +165,8 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     job_level_shap = shap_with_metadata.groupby('job_level_name')[features].mean().reset_index()
     termination_reason_by_job_level = []
     for job_level in job_level_shap['job_level_name'].unique():
-        num_emp_left = termination_emp[termination_emp['job_level_name'] == job_level].shape[0]
-        num_emp_predicted_to_leave = termination_emp[(termination_emp['job_level_name'] == job_level) & (termination_emp['model_predicted_termination'] == True)].shape[0]
+        num_emp_left = employee_metadata[employee_metadata['job_level_name'] == job_level][employee_metadata['termination_value'] > 0].shape[0]
+        num_emp_predicted_to_leave = employee_metadata[(employee_metadata['job_level_name'] == job_level) & (employee_metadata['model_predicted_termination'] == True)].shape[0]
         avg_termination_probability = employee_metadata[employee_metadata['job_level_name'] == job_level]['model_predicted_termination_probability'].mean()
         level_id = employee_metadata[employee_metadata['job_level_name'] == job_level]['job_level'].iloc[0]
         _level_shap_t = job_level_shap[job_level_shap['job_level_name'] == job_level][features].T.reset_index()

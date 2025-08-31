@@ -1,23 +1,23 @@
 {
     "features": [
-        "num_past_manager",
-        "total_ot_hours_3_months",
-        "performance_score_z_department",
-        "time_since_last_promotion",
-        "year_in_current_position",
-        "num_activity",
-        "total_working_year",
-        "performance_score_z_job_level",
-        "total_working_year_z_job_level",
-        "total_working_year_z_manager",
-        "department_name",
-        "performance_score_z_manager",
-        "year_with_current_manager",
         "year_since_last_salary_adjustment",
+        "total_working_year_z_department",
+        "performance_score_z_manager",
+        "num_past_manager",
+        "year_with_current_manager",
+        "department_name",
+        "performance_score_z_job_level",
+        "num_activity",
         "avg_performance_score",
-        "total_working_year_z_department"
+        "total_working_year",
+        "total_working_year_z_manager",
+        "performance_score_z_department",
+        "year_in_current_position",
+        "total_working_year_z_job_level",
+        "total_ot_hours_3_months",
+        "time_since_last_promotion"
     ],
-    "optimal_threshold": 0.005,
+    "optimal_threshold": 0.108,
     "training_period": [
         "2020-06-30",
         "2020-07-31",
@@ -79,9 +79,9 @@
         "2025-04-30"
     ],
     "metrics": {
-        "f1": 0.36363636363636365,
-        "recall": 1.0,
-        "precision": 0.2222222222222222,
-        "macro_f1": 0.5521885521885521
+        "f1": 0.3333333333333333,
+        "recall": 0.5,
+        "precision": 0.25,
+        "macro_f1": 0.6041666666666666
     }
 }

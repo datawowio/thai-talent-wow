@@ -10,8 +10,7 @@ def normalize_skill(skill_dataframe, threshold=0.66):
     Normalizes skill names by clustering and adds 'canonical_id' and 'canonical_name' columns directly to the input DataFrame.
 
     Returns:
-        pd.DataFrame: The original DataFrame with two new columns added:
-                      'canonical_id' and 'canonical_name'.
+        pd.DataFrame: The original DataFrame with two new columns added: 'canonical_id' and 'canonical_name'.
     """
     
     model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -55,15 +54,14 @@ def normalize_skill(skill_dataframe, threshold=0.66):
     return skill_dataframe
 
 
-### ANALYSIS PER EMPLOYEE
+### --- ANALYSIS PER EMPLOYEE ---
 def analyze_current_position_gap(employee_id, employee_position_id, employee_skill_df, position_skill_df):
     """
-    Analyzes the skill gap for a given employee based on their current position and position_skills.
+    Analyzes the skill gap for a given employee based on their current position and skills required for that position.
 
     Returns:
-        dict: A dictionary containing:
-              - employee_skills: List of dictionaries with 'skill_name' and 'skill_score' for each skill the employee has
-              - missing_skills_vs_current_position: List of skills required for the position that the employee is missing
+        - employee_skills (list): A list of dictionaries with skill_name and skill_score for the employee
+        - missing_skills (list): A list of skill names that are required for the position but not possessed by the employee
     """
     # get skill for the employee
     indiv_skill_df = employee_skill_df.loc[employee_skill_df['employee_id'] == employee_id]
@@ -88,8 +86,10 @@ def analyze_peer_gap(employee_id, current_position_id, employee_position_df, emp
     Analyzes the skill gap of an employee compared to their peers in the same position.
     
     Returns:
-        dict: A dictionary containing:
-              - missing_skills_vs_peers: A dictionary with skill names, percentage_of_peer, peer_count as keys
+        list: A list of dictionaries containing:
+            - skill_name: Name of the skill
+            - percentage_of_peer: Percentage of peers having this skill
+            - peer_count: Absolute count of peers having this skill
     """
     # get peer IDs in the same position
     peer_ids = employee_position_df.loc[(employee_position_df['position_id'] == current_position_id) & (employee_position_df['employee_id'] != employee_id), 'employee_id']
@@ -100,6 +100,7 @@ def analyze_peer_gap(employee_id, current_position_id, employee_position_df, emp
     # get skills for the peers
     peer_skills = employee_skill_df[employee_skill_df['employee_id'].isin(peer_ids)]
     employee_skills_id = set(employee_skill_df.loc[employee_skill_df['employee_id'] == employee_id, 'canonical_skill_id'])
+
     # calculate both percentage and absolute counts of employee having each skill
     peer_skill_freq = peer_skills['canonical_skill_id'].value_counts(normalize=True)
     peer_skill_abs_counts = peer_skills['canonical_skill_id'].value_counts(normalize=False)
@@ -121,10 +122,9 @@ def analyze_next_level_gap(employee_id, current_position_id, position_df, positi
     Analyzes the next level position and the skills required for promotion for a specific employee.
 
     Returns:
-        dict: A dictionary containing:
-            - current_position: Current position of the employee
-            - next_position: Next level position available for the employee
-            - skills_to_acquire: List of skills required for the next level position that the employee does not have
+        - current_position_name (str): The name of the current position with level.
+        - next_position_name (str): The name of the next level position with level.
+        - missing_skills (list): A sorted list of skill names that are required for the next level position but not possessed by the employee.
     """
     # get the current position details
     current_position_details = position_df.loc[position_df['id'] == current_position_id]
@@ -197,12 +197,25 @@ def recommend_roles_for_skills(employee_id: int, missing_skill_names: list, emp_
     return recommendations
 
 
-### ANALYSIS PER DEPARTMENT
-def analyze_department_skill_gap(department_id, position_df, employee_position_df, employee_skill_df, position_skill_df, common_threshold=0.1):
+### --- ANALYSIS PER DEPARTMENT ---
+def analyze_department_skill_gap(department_id, employee_df, position_df, employee_position_df, employee_skill_df, position_skill_df, common_threshold=0.2):
+    """
+    Analyzes the skill gap for a specific department.
+    
+    Returns:
+        - total_employee_in_dept (int): Total number of employees in the department.
+        - common_existing_skills (list): A list of dictionaries containing:
+            - skill_name: Name of the skill
+            - percentage_of_employee: Percentage of employees having this skill
+            - statistics: A dictionary with min, q1, median, q3, max scores for the skill
+        - missing_skills (list): A sorted list of skill names that are required for positions in the department but not possessed by any employee in the department.
+        - skill_with_low_score (list): A list of skill names that have an average score below 2.5 among employees in the department.
+    """
    
     # get available positions/employee in the department
     position_id_in_dept = position_df[position_df['department_id'] == department_id]['id'].unique()
     employee_id_in_dept = employee_position_df[employee_position_df['position_id'].isin(position_id_in_dept)]
+    employee_id_in_dept = employee_id_in_dept[employee_id_in_dept['employee_id'].isin(employee_df['id'])]
     employee_id_in_dept = employee_id_in_dept['employee_id'].unique()
 
     if len(employee_id_in_dept) == 0:
@@ -244,14 +257,15 @@ def analyze_department_skill_gap(department_id, position_df, employee_position_d
                         'max': int(stats['max'])
                     }
                 })
+    # sort common_existing_skills by percentage_of_employee
+    common_existing_skills = sorted(common_existing_skills, key=lambda x: float(x['percentage_of_employee']), reverse=True)
 
     # --- 2. Missing Required Skills in DEPARTMENT ---
     # gather all required skills for the department
     required_skill = position_skill_df[position_skill_df['position_id'].isin(position_id_in_dept)]
     required_skill = set(required_skill['canonical_skill_name'].dropna())
     
-    # calculate the skill gap
-    existing_skill = set(existing_skill_df['canonical_skill_name'].dropna())
-    missing_skills = required_skill - existing_skill
+    # calculate the skill gap by only considering skills that are common; not possessed by any employee in the department
+    missing_skills = required_skill - set([skill['skill_name'] for skill in common_existing_skills])
 
     return total_employee_in_dept, common_existing_skills, sorted(list(missing_skills)), skill_with_low_score

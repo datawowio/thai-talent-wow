@@ -166,7 +166,7 @@ def main():
             'employee_ids': employees
         })
 
-    promotion_analysis_result = {"employees_type": promotion_result}
+    promotion_analysis_result = {"employee_data": promotion_result}
     
     # --- 4. Average Time Taken for Promotion per Department, Job Level ---
     avg_time_by_department, avg_time_by_job_level = calculate_avg_promotion_time(

@@ -55,7 +55,7 @@ if raw_termination_data:
 
 promotion_data = {}
 if raw_promotion_data:
-    promotion_data = {item['employee_type']: item.get('employee_ids', []) for item in raw_promotion_data['employees_type']}
+    promotion_data = {item['employee_type']: item.get('employee_ids', []) for item in raw_promotion_data['employee_data']}
     promotion_data['avg_promotion_time_by_department'] = raw_promotion_data.get('avg_promotion_time_by_department', [])
     promotion_data['avg_promotion_time_by_job_level'] = raw_promotion_data.get('avg_promotion_time_by_job_level', [])
     promotion_data['department_promotion_rate'] = raw_promotion_data.get('department_promotion_rate', [])

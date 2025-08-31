@@ -47,7 +47,7 @@ skills_to_acquire
 
 --- 5. PROMOTION ANALYSIS RESULT ---
 {
-employees_type
+employee_data
 avg_promotion_time_by_department
 avg_promotion_time_by_job_level
 department_promotion_rate

@@ -1,0 +1,33 @@
+apiVersion: run.googleapis.com/v1
+kind: Job
+metadata:
+  name: skill-analytics-job
+spec:
+  spec:
+    template:
+      spec:
+        template:
+          metadata:
+            annotations:
+              run.googleapis.com/memory: "4Gi"
+              run.googleapis.com/cpu: "2"
+              run.googleapis.com/task-timeout: "3600s"
+          spec:
+            restartPolicy: OnFailure
+            containers:
+            - name: skill-analytics
+              image: gcr.io/PROJECT_ID/skill-analytics:latest
+              env:
+              - name: GOOGLE_CLOUD_PROJECT
+                value: "PROJECT_ID"
+              - name: GCS_BUCKET_NAME
+                value: "th-ai-talent-data"
+              - name: PYTHONUNBUFFERED
+                value: "1"
+              resources:
+                limits:
+                  cpu: "2"
+                  memory: "4Gi"
+            serviceAccountName: skill-analytics-sa
+        parallelism: 1
+        completions: 1

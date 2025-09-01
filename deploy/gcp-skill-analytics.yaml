@@ -1,0 +1,37 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: skill-analytics
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/execution-environment: gen2
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/memory: "2Gi"
+        run.googleapis.com/cpu: "2"
+        run.googleapis.com/timeout: "3600s"
+        autoscaling.knative.dev/maxScale: "1"
+    spec:
+      containerConcurrency: 1
+      containers:
+      - image: gcr.io/PROJECT_ID/skill-analytics:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: GOOGLE_CLOUD_PROJECT
+          value: "PROJECT_ID"
+        - name: GCS_BUCKET_NAME  
+          value: "th-ai-talent-data"
+        resources:
+          limits:
+            cpu: "2"
+            memory: "2Gi"
+        volumeMounts:
+        - name: output-storage
+          mountPath: /app/output
+      volumes:
+      - name: output-storage
+        emptyDir: {}
+      serviceAccountName: skill-analytics-sa

@@ -1,0 +1,57 @@
+steps:
+  # Build the secure container image for linux/amd64
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      - 'build'
+      - '--platform'
+      - 'linux/amd64'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/talent-api-secure:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/talent-api-secure:latest'
+      - '-f'
+      - 'vertex_ai/Dockerfile.secure'
+      - '.'
+    
+  # Push the container images to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/talent-api-secure:$COMMIT_SHA']
+    
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/talent-api-secure:latest']
+
+  # Deploy container image to Cloud Run with authentication
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'talent-analytics-secure'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/talent-api-secure:$COMMIT_SHA'
+      - '--region'
+      - 'asia-southeast1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'  # Public endpoints like /health and /request-api-key
+      - '--port'
+      - '8080'
+      - '--memory'
+      - '1Gi'
+      - '--cpu'
+      - '1'
+      - '--max-instances'
+      - '10'
+      - '--min-instances'
+      - '1'
+      - '--set-env-vars'
+      - 'API_SECRET_KEY=th-ai-talent-wow-prod-2024'
+
+# Store images in Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/talent-api-secure:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/talent-api-secure:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'

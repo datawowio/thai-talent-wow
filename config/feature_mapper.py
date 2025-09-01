@@ -49,15 +49,15 @@ FEARURES_MEANING_MAPPER = {
 
 
 FEATURES_ACTION_MAPPER = {
-    "age": "Offer career development plans suited for different age groups, such as leadership tracks for older employees or skill-building for younger staff.",
+    "age": "Offer career development plans suited for different age groups (leadership tracks for older employees or skill-building for younger staff).",
     "education_level": "Provide learning opportunities or advanced roles matching the employee's educational qualifications to increase engagement.",
     "num_parent": "Offer flexible work arrangements or family support benefits to ease work-life balance pressures.",
     "num_children": "Provide childcare assistance, parental leave flexibility, or family-friendly scheduling.",
     "num_siblings": "Promote work-life balance policies to support extended family responsibilities.",
     "num_spouse": "Ensure benefits and insurance plans support family needs and encourage stability.",
     "job_level": "Ensure fair promotion opportunities, role clarity, and workload balance for the job level.",
-    "department_name": "Address department-specific workload, culture, or leadership issues through targeted engagement programs.",
-    "department_name_shap": "Address department-specific workload, culture, or leadership issues through targeted engagement programs.",
+    "department_name": "Address department-specific workload, culture, or leadership issues.",
+    "department_name_shap": "Address department-specific workload, culture, or leadership issues.",
     "total_working_year": "Recognize long service with awards, career progression options, and new challenges to maintain motivation.",
     "total_working_year_z_manager": "If employee tenure is higher than peers, explore leadership opportunities; if lower, enhance onboarding and integration.",
     "total_working_year_z_position": "Adjust responsibilities or career growth opportunities if tenure in position is unbalanced compared to peers.",

@@ -1,24 +1,23 @@
 {
     "features": [
-        "total_working_year_z_job_level",
-        "total_working_year",
         "year_since_last_salary_adjustment",
-        "age",
+        "total_working_year_z_department",
+        "performance_score_z_manager",
+        "num_past_manager",
         "year_with_current_manager",
-        "time_since_last_promotion",
-        "avg_time_to_promotion",
-        "num_training",
         "department_name",
         "performance_score_z_job_level",
-        "performance_score_z_department",
-        "total_working_year_z_manager",
-        "num_past_manager",
-        "performance_score_z_manager",
-        "year_in_current_position",
+        "num_activity",
         "avg_performance_score",
-        "total_ot_hours_3_months"
+        "total_working_year",
+        "total_working_year_z_manager",
+        "performance_score_z_department",
+        "year_in_current_position",
+        "total_working_year_z_job_level",
+        "total_ot_hours_3_months",
+        "time_since_last_promotion"
     ],
-    "optimal_threshold": 0.17600000000000002,
+    "optimal_threshold": 0.108,
     "training_period": [
         "2020-06-30",
         "2020-07-31",
@@ -80,9 +79,9 @@
         "2025-04-30"
     ],
     "metrics": {
-        "f1": 0.5,
+        "f1": 0.3333333333333333,
         "recall": 0.5,
-        "precision": 0.5,
-        "macro_f1": 0.7205882352941176
+        "precision": 0.25,
+        "macro_f1": 0.6041666666666666
     }
 }

@@ -32,6 +32,7 @@ total_employee
 common_existing_skills
 department_missing_skills
 low_score_skills
+performance_trends
 }
 
 
@@ -46,7 +47,8 @@ skills_to_acquire
 
 --- 5. PROMOTION ANALYSIS RESULT ---
 {
-employee_type
-total_employee
-employee_ids
+employee_data
+avg_promotion_time_by_department
+avg_promotion_time_by_job_level
+department_promotion_rate
 }

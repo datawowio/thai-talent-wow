@@ -8,8 +8,8 @@ from config import config
 
 # --- Page Configuration ---
 st.set_page_config(
-    page_title="Talent Wow",
-    page_icon="👥",
+    page_title="TalentWow",
+    page_icon="🧑‍🧑‍🧒‍🧒",
     layout="wide"
 )
 
@@ -55,13 +55,10 @@ if raw_termination_data:
 
 promotion_data = {}
 if raw_promotion_data:
-    promotion_data = {item['employee_type']: item.get('employee_id', []) for item in raw_promotion_data}
-    # For UI display, create a list of dicts for overlooked/disengaged employees
-    # Note: This version only has IDs. We'll look up names from the skill data if available.
-    promotion_data["overlooked_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("Overlooked Talent", [])]
-    promotion_data["disengaged_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("Disengaged Employee", [])]
-    promotion_data["new_and_promising_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("New and Promising", [])]
-    promotion_data["on_track_employees"] = [{'employee_ids': eid} for eid in promotion_data.get("On Track", [])]
+    promotion_data = {item['employee_type']: item.get('employee_ids', []) for item in raw_promotion_data['employee_data']}
+    promotion_data['avg_promotion_time_by_department'] = raw_promotion_data.get('avg_promotion_time_by_department', [])
+    promotion_data['avg_promotion_time_by_job_level'] = raw_promotion_data.get('avg_promotion_time_by_job_level', [])
+    promotion_data['department_promotion_rate'] = raw_promotion_data.get('department_promotion_rate', [])
 
 employee_skill_data = {}
 if raw_employee_skill_data:
@@ -71,145 +68,161 @@ department_skill_data = {}
 if raw_department_skill_data:
     department_skill_data = {dept['department_name']: dept for dept in raw_department_skill_data}
 
+emp_df = pd.read_csv(config.EMPLOYEE_DATA)
+emp_position_df = pd.read_csv(config.EMPLOYEE_MOVEMENT_DATA)
+position_df = pd.read_csv(config.POSITION_DATA)
+department_df = pd.read_csv(config.DEPARTMENT_DATA)
+emp_df = emp_df.drop_duplicates(subset=['emp_id'], keep='last')
+emp_df.drop(columns=['emp_id'], inplace=True)
+emp_df.rename(columns={'id': 'emp_id'}, inplace=True)
+emp_position_df = emp_position_df.sort_values(by=['employee_id', 'effective_date'], ascending=[True, True]).drop_duplicates(subset=['employee_id'], keep='last')[['employee_id', 'position_id']]
+emp_df = emp_df.merge(emp_position_df, left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
+emp_df = emp_df.merge(position_df[['id', 'name', 'department_id']], left_on='position_id', right_on='id', how='left').drop(columns=['id'])
+emp_df = emp_df.merge(department_df[['id', 'name']], left_on='department_id', right_on='id', how='left', suffixes=('', '_department')).drop(columns=['id', 'department_id'])
+emp_df.rename(columns={'name': 'position_name', 'name_department': 'department_name'}, inplace=True)
 
 # --- Sidebar Navigation ---
-st.sidebar.title("👥 Talent Wow")
-page = st.sidebar.radio("Go to", ["OVERALL", "EMPLOYEE", "DEPARTMENT", "SKILL SEARCH FOR ROTATION"])
+st.sidebar.title("🧑‍🧑‍🧒‍🧒 TalentWow")
+page = st.sidebar.radio('', ["Termination Insights", "Department Insights", "Career & Promotion Insights", "Employee Insights", "Skills for Rotation"])
 
 # ==============================================================================
 # --- OVERALL PAGE ---
 # ==============================================================================
-if page == "OVERALL":
-    st.subheader("📊 Overall Company Insights")
+if page == "Termination Insights":
+    st.subheader("Employee Retention Analysis Insights")
 
     if termination_data and promotion_data:
         # --- High-Level Conclusion ---
         summary = termination_data.get("overall_summary", {})
-        # --- Key Metrics for RETENTION ANALYSIS ---
         c1, c2, c3, c4 = st.columns(4)
         with c1:
             with st.container(border=True):
-                st.metric("Total Employees", summary.get("total_employees", 0))
+                st.metric("Company Headcount", summary.get("total_employees", 0))
         with c2:
             with st.container(border=True):
-                st.metric("Total Left (Historical)", summary.get("total_employees_left", 0))
+                st.metric("Past Departures", summary.get("total_employees_left", 0))
         with c3:
             with st.container(border=True):
-                st.metric("Predicted to Leave", summary.get("employees_predicted_to_leave", 0), help="In the next 3 months")
+                st.metric("At-Risk Talent", summary.get("employees_predicted_to_leave", 0), help=f"Prediction period {summary.get('prediction_start_date')} ~ {summary.get('prediction_end_date')}")
         with c4:
             with st.container(border=True):
-                st.metric("Avg. Termination Risk", f"{round(summary.get('average_termination_probability', 0), 2)}", help="Across all employees")
+                st.metric("Company Risk Score", f"{round(summary.get('average_termination_probability', 0), 2)}", help="Average retention probability across all employees")        
 
-        # --- Key Metrics for PROMOTION READINESS ---
-        c1, c2, c3, _ = st.columns(4)
-        with c1:
-            with st.container(border=True):
-                st.metric("Overlooked Talent", len(promotion_data.get("overlooked_employees", [])))
-        with c2:
-            with st.container(border=True):
-                st.metric("Disengaged Employees", len(promotion_data.get("disengaged_employees", [])))
-        with c3:
-            with st.container(border=True):
-                st.metric("New & Promising Employees", len(promotion_data.get("new_and_promising_employees", [])))
-        
+        # --- Table of Employees Predicted to Leave ---
+        st.markdown("##### At-Risk Employee Watchlist")
+        st.caption(f"Prediction Period: {summary.get('prediction_start_date')} ~ {summary.get('prediction_end_date')}")
+        emp_to_leave = pd.DataFrame(termination_data.get("reason_by_employee", []).keys(), columns=['employee_id'])
+        emp_to_leave['predicted_probability'] = emp_to_leave['employee_id'].map(lambda x: termination_data.get("reason_by_employee", {}).get(str(x), {}).get("predicted_termination_probability", 0))
+        emp_to_leave['employee_id'] = emp_to_leave['employee_id'].astype(int)
+        emp_to_leave = emp_to_leave.merge(emp_df[['emp_id', 'first_name', 'last_name', 'birth_date', 'hire_date', 'position_name', 'department_name']], left_on='employee_id', right_on='emp_id', how='left').drop(columns=['emp_id'])
+        emp_to_leave['age'] = pd.to_datetime('today').year - pd.to_datetime(emp_to_leave['birth_date'], errors='coerce').dt.year
+        emp_to_leave['total_working_year'] = (pd.to_datetime('today') - pd.to_datetime(emp_to_leave['hire_date'], errors='coerce')).dt.days / 365
+
+        with st.container():
+            col1, col2, col3, col4, col5, col6 = st.columns([1, 0.3, 1, 1, 0.5, 0.75], vertical_alignment='top')
+            col1.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Name</div>", unsafe_allow_html=True)
+            col1.markdown('---')
+            col2.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Age</div>", unsafe_allow_html=True)
+            col2.markdown('---')
+            col3.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Position</div>", unsafe_allow_html=True)
+            col3.markdown('---')
+            col4.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Department</div>", unsafe_allow_html=True)
+            col4.markdown('---')
+            col5.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Working Year</div>", unsafe_allow_html=True)
+            col5.markdown('---')
+            col6.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Predicted Probability</div>", unsafe_allow_html=True)
+            col6.markdown('---')
+
+            for i, row in emp_to_leave.iterrows():
+                col1, col2, col3, col4, col5, col6 = st.columns([1, 0.3, 1, 1, 0.5, 0.75], vertical_alignment='top')
+                col1.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{row['first_name']} {row['last_name']}</div>", unsafe_allow_html=True)
+                col2.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{int(row['age']) if pd.notnull(row['age']) else 'N/A'}</div>", unsafe_allow_html=True)
+                col3.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{row['position_name'] if pd.notnull(row['position_name']) else 'N/A'}</div>", unsafe_allow_html=True)
+                col4.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{row['department_name'] if pd.notnull(row['department_name']) else 'N/A'}</div>", unsafe_allow_html=True)
+                col5.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{round(row['total_working_year'], 1) if pd.notnull(row['total_working_year']) else 'N/A'}</div>", unsafe_allow_html=True)
+                col6.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{round(row['predicted_probability'], 2)}</div>", unsafe_allow_html=True)
         st.markdown("---")
+
 
         # --- Termination by Department ---
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("##### Historical Terminations per Department")
+            st.markdown("##### Which Departments Have the Highest Turnover?")
             dept_data = termination_data.get("department_proportion", [])
-            if dept_data:
-                df_dept = pd.DataFrame(dept_data)
-                fig_dept = px.bar(
-                    df_dept, 
-                    x="department_name", 
-                    y="termination_count",
-                    color_discrete_sequence=['#a0c4ff'],
-                    labels={'department_name': 'Department', 'termination_count': 'Number of Terminations'}
-                )
-                fig_dept.update_layout(xaxis_title=None)
-                st.plotly_chart(style_chart(fig_dept), use_container_width=True)
-            else:
-                st.warning("No department termination data available.")
+            df_dept = pd.DataFrame(dept_data)
+            fig_dept = px.bar(
+                df_dept, 
+                x="department_name", 
+                y="termination_count",
+                color_discrete_sequence=['#a0c4ff'],
+                labels={'department_name': 'Department', 'termination_count': 'Employee Departures'}
+            )
+            fig_dept.update_layout(xaxis_title=None)
+            st.plotly_chart(style_chart(fig_dept), use_container_width=True)
 
         with col2:
-            st.markdown("##### Historical Terminations per Job Level")
+            st.markdown("##### Turnover Trends by Seniority Level")
             level_data = termination_data.get("job_level_proportion", [])
-            if level_data:
-                df_level = pd.DataFrame(level_data)
-                fig_level = px.bar(
-                    df_level, 
-                    x="level_name", 
-                    y="termination_count",
-                    color_discrete_sequence=['#a0c4ff'],
-                    labels={'level_name': 'Job Level', 'termination_count': 'Number of Terminations'}
-                )
-                fig_level.update_layout(xaxis_title=None)
-                st.plotly_chart(style_chart(fig_level), use_container_width=True)
-            else:
-                st.warning("No job level termination data available.")
+            df_level = pd.DataFrame(level_data)
+            fig_level = px.bar(
+                df_level, 
+                x="level_name", 
+                y="termination_count",
+                color_discrete_sequence=['#a0c4ff'],
+                labels={'level_name': 'Job Level', 'termination_count': 'Employee Departures'}
+            )
+            fig_level.update_layout(xaxis_title=None)
+            st.plotly_chart(style_chart(fig_level), use_container_width=True)
+
 
         # --- Termination Probability Distribution ---
         col3, col4 = st.columns(2)
         with col3:
             st.markdown("##### Termination Risk Distribution by Department")
             prob_dist_data = termination_data.get("department_distribution", [])
-            if prob_dist_data:
-                dept_probs_data = []
-                for dept in prob_dist_data:
-                    for prob in dept.get('probabilities', []):
-                        dept_probs_data.append({'Department': dept.get('department_name', 'N/A'), 'Probability': prob})
-                
-                if dept_probs_data:
-                    df_dept_probs = pd.DataFrame(dept_probs_data)
-                    fig_dept_dist = px.strip(
-                        df_dept_probs, x='Department', y='Probability', 
-                        color_discrete_sequence=['#a0c4ff'],
-                        labels={'Probability': 'Individual Termination Probability'}
-                    )
-                    # add reference line
-                    threshold = summary.get('termination_threshold', 0.0)
-                    fig_dept_dist.add_hline(y=threshold, line_dash="dash", line_color="lightgray", annotation_text="Threshold")
+            dept_probs_data = []
+            for dept in prob_dist_data:
+                for prob in dept.get('probabilities', []):
+                    dept_probs_data.append({'Department': dept.get('department_name', 'N/A'), 'Probability': prob})
+            
+            df_dept_probs = pd.DataFrame(dept_probs_data)
+            fig_dept_dist = px.strip(
+                df_dept_probs, x='Department', y='Probability', 
+                color_discrete_sequence=['#a0c4ff'],
+                labels={'Probability': 'Individual Termination Probability'}
+            )
+            # add reference line
+            threshold = summary.get('termination_threshold', 0.0)
+            fig_dept_dist.add_hline(y=threshold, line_dash="dash", line_color="lightgray", annotation_text="Threshold")
 
-                    fig_dept_dist.update_layout(xaxis_title=None)
-                    st.plotly_chart(style_chart(fig_dept_dist), use_container_width=True)
-                else:
-                    st.info("No probability data available for departments.")
-            else:
-                st.warning("No department probability distribution data available.")
+            fig_dept_dist.update_layout(xaxis_title=None)
+            st.plotly_chart(style_chart(fig_dept_dist), use_container_width=True)
 
         with col4:
             st.markdown("##### Termination Risk Distribution by Job Level")
             level_prob_data = termination_data.get("job_level_distribution", [])
-            if level_prob_data:
-                level_probs_data = []
-                for level in level_prob_data:
-                    for prob in level.get('probabilities', []):
-                        level_probs_data.append({'Job Level': level.get('level_name', 'N/A'), 'Probability': prob})
+            level_probs_data = []
+            for level in level_prob_data:
+                for prob in level.get('probabilities', []):
+                    level_probs_data.append({'Job Level': level.get('level_name', 'N/A'), 'Probability': prob})
 
-                if level_probs_data:
-                    df_level_probs = pd.DataFrame(level_probs_data)
-                    fig_level_dist = px.strip(
-                        df_level_probs, x='Job Level', y='Probability', 
-                        color_discrete_sequence=['#a0c4ff'],
-                        labels={'Probability': 'Individual Termination Probability'}
-                        )
-                    # add reference line
-                    threshold = summary.get('termination_threshold', 0.0)
-                    fig_level_dist.add_hline(y=threshold, line_dash="dash", line_color="lightgray", annotation_text="Threshold")
-                    
-                    fig_level_dist.update_layout(xaxis_title=None)
-                    st.plotly_chart(style_chart(fig_level_dist), use_container_width=True)
-                else:
-                    st.info("No probability data available for job levels.")
-            else:
-                st.warning("No job level probability distribution data available.")
+            df_level_probs = pd.DataFrame(level_probs_data)
+            fig_level_dist = px.strip(
+                df_level_probs, x='Job Level', y='Probability', 
+                color_discrete_sequence=['#a0c4ff'],
+                labels={'Probability': 'Individual Termination Probability'}
+                )
+            # add reference line
+            threshold = summary.get('termination_threshold', 0.0)
+            fig_level_dist.add_hline(y=threshold, line_dash="dash", line_color="lightgray", annotation_text="Threshold")
+            
+            fig_level_dist.update_layout(xaxis_title=None)
+            st.plotly_chart(style_chart(fig_level_dist), use_container_width=True)
 
         st.markdown("---")
 
 
-    # --- Top Reasons for Quitting & Recommendations ---
+        # --- Top Reasons for Quitting & Recommendations ---
         top_reasons = termination_data.get("top_quitting_reason", [])
         if top_reasons:
             df_reasons = pd.DataFrame(top_reasons).dropna()
@@ -217,41 +230,124 @@ if page == "OVERALL":
             
             col1, col2 = st.columns([1.5, 1])
             with col1:
-                st.markdown("##### Top Factors Driving Termination Risk (Company-Wide)")
+                st.markdown("##### Key Risk Factors -  What's Driving Attrition?")
                 fig = px.bar(df_reasons, x='impact_percentage', y='feature_name', orientation='h', 
                              labels={'impact_percentage': 'How Much This Factor Matters (%)'})
                 fig.update_layout(yaxis_title=None)
                 fig.update_traces(marker_color='#e88989')
                 st.plotly_chart(style_chart(fig), use_container_width=True)
             with col2:
-                st.markdown("##### Top Recommendation")
+                st.markdown("##### Actionable Insights - How to Respond?")
                 for index, row in df_reasons.iloc[::-1].iterrows():
                     st.info(row['recommendation_action'])
 
-
 # ==============================================================================
-# --- EMPLOYEE PAGE ---
+# --- CAREER & PROMOTION PAGE ---
 # ==============================================================================
-elif page == "EMPLOYEE":
-    st.subheader("👤 Employee Analysis")
+elif page == "Career & Promotion Insights":
+    st.subheader("Career Velocity & Performance Pulse")
 
-    # --- Key Metrics ---
     c1, c2, c3, c4 = st.columns(4)
     with c1:
         with st.container(border=True):
-            st.metric("🚨 Overlooked Talent", len(promotion_data.get("overlooked_employees", [])))
+            overlooked_talent = promotion_data.get("Overlooked Talent", [])
+            st.metric("💎 Overlooked Talent", len(overlooked_talent), help='Hidden Gems: High-Performers Awaiting Promotion')
+
     with c2:
         with st.container(border=True):
-            st.metric("⚠️ Disengaged Employees", len(promotion_data.get("disengaged_employees", [])))
+            disengaged_employee = promotion_data.get("Disengaged Employee", [])
+            st.metric("⚠️ Disengaged Employees", len(disengaged_employee), help='Engagement Alert: At-Risk of Stagnation')
     with c3:
         with st.container(border=True):
-            st.metric("🌟 New & Promising Employees", len(promotion_data.get("new_and_promising_employees", [])))
+            new_and_promising = promotion_data.get("New and Promising", [])
+            st.metric("🌟 New & Promising Employees", len(new_and_promising), help='Rising Stars: Early High-Potential')
     with c4:
         with st.container(border=True):
-            st.metric("✅ On-Track Employees", len(promotion_data.get("on_track_employees", [])))
-
-    st.markdown("---")
+            on_track = promotion_data.get("On Track", [])
+            st.metric("✅ On-Track Employees", len(on_track), help='Steady Progress: On a Healthy Career Path')
     
+    # --- Table of Employees in Overlooked, Disengaged, New & Promising ---
+    emp_performance = pd.DataFrame(columns=['employee_id', 'performance_type'])
+    emp_performance['employee_id'] = overlooked_talent + disengaged_employee + new_and_promising
+    emp_performance['performance_type'] = (['Overlooked Talent'] * len(overlooked_talent) +
+                                          ['Disengaged Employee'] * len(disengaged_employee) +
+                                          ['New and Promising'] * len(new_and_promising))
+    emp_performance['employee_id'] = emp_performance['employee_id'].astype(int)
+    emp_performance = emp_performance.merge(emp_df[['emp_id', 'first_name', 'last_name', 'position_name', 'department_name']], left_on='employee_id', right_on='emp_id', how='left').drop(columns=['emp_id'])
+    st.markdown("##### Employees in Need of Attention")
+    with st.container():
+        col1, col2, col3, col4 = st.columns([0.75, 1, 1, 1], vertical_alignment='top')
+        col1.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Performance Type</div>", unsafe_allow_html=True)
+        col1.markdown('---')
+        col2.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Name</div>", unsafe_allow_html=True)
+        col2.markdown('---')
+        col3.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Position</div>", unsafe_allow_html=True)
+        col3.markdown('---')
+        col4.markdown("<div style='margin-top:0px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>Department</div>", unsafe_allow_html=True)
+        col4.markdown('---')
+
+        for i, row in emp_performance.iterrows():
+            col1, col2, col3, col4 = st.columns([0.75, 1, 1, 1], vertical_alignment='top')
+            with col1:
+                st.badge(row['performance_type'], color='red', width='stretch')
+            col2.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{row['first_name']} {row['last_name']}</div>", unsafe_allow_html=True)
+            col3.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{row['position_name'] if pd.notnull(row['position_name']) else 'N/A'}</div>", unsafe_allow_html=True)
+            col4.markdown(f"<div style='margin-top:10px; margin-bottom:0px; padding-bottom:0px; padding-top:0px; text-align:center;'>{row['department_name'] if pd.notnull(row['department_name']) else 'N/A'}</div>", unsafe_allow_html=True)
+    
+    st.markdown("---")
+
+    # --- Avg. Year Taken for Promotion ---
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("##### Department Velocity - Which Teams Promote Fastest?")
+        promo_dept_data = promotion_data.get("avg_promotion_time_by_department", [])
+        df_promo_dept = pd.DataFrame(promo_dept_data)
+        df_promo_dept = df_promo_dept.sort_values(by="years_to_promotion", ascending=False)
+        fig_promo_dept = px.bar(
+            df_promo_dept, 
+            x="department_name", 
+            y="years_to_promotion",
+            color_discrete_sequence=['#a0c4ff'],
+            labels={'department_name': 'Department', 'years_to_promotion': 'Average Time Between Promotions (Years)'}
+        )
+        fig_promo_dept.update_layout(xaxis_title=None)
+        st.plotly_chart(style_chart(fig_promo_dept), use_container_width=True)
+    
+    with col2:
+        st.markdown("##### The Corporate Ladder - How Long at Each Rung?")
+        promo_level_data = promotion_data.get("avg_promotion_time_by_job_level", [])
+        df_promo_level = pd.DataFrame(promo_level_data)
+        df_promo_level = df_promo_level.sort_values(by="years_to_promotion", ascending=False)
+        fig_promo_level = px.bar(
+            df_promo_level, 
+            x="level_name", 
+            y="years_to_promotion",
+            color_discrete_sequence=['#a0c4ff'],
+            labels={'level_name': 'Job Level', 'years_to_promotion': 'Average Time at Level Before Promotion (Years)'}
+        )
+        fig_promo_level.update_layout(xaxis_title=None)
+        st.plotly_chart(style_chart(fig_promo_level), use_container_width=True)
+    
+    # --- Department Promotion Rate ---
+    st.markdown("##### Which Departments Offer the Most Growth?")
+    promo_rate_data = promotion_data.get("department_promotion_rate", [])
+    df_promo_rate = pd.DataFrame(promo_rate_data)
+    df_promo_rate = df_promo_rate.sort_values(by="promotion_rate_percent", ascending=False)
+    fig_promo_rate = px.bar(
+        df_promo_rate, 
+        x="department_name", 
+        y="promotion_rate_percent",
+        color_discrete_sequence=['#a0c4ff'],
+        labels={'department_name': 'Department', 'promotion_rate_percent': 'Promotion Rate (%)'}
+    )
+    fig_promo_rate.update_layout(xaxis_title=None)
+    st.plotly_chart(style_chart(fig_promo_rate), use_container_width=True)
+    
+# ==============================================================================
+# --- EMPLOYEE PAGE ---
+# ==============================================================================
+elif page == "Employee Insights":
+
     st.subheader("Individual Employee Analysis")
     if employee_skill_data and promotion_data and termination_data:
         emp_ids = list(employee_skill_data.keys())
@@ -356,25 +452,73 @@ elif page == "EMPLOYEE":
 # ==============================================================================
 # --- DEPARTMENT PAGE ---
 # ==============================================================================
-elif page == "DEPARTMENT":
-    st.subheader("🏢 Department-Level Analysis")
+elif page == "Department Insights":
+    st.subheader("Department Insight")
 
+    col1, col2 = st.columns([1, 1])
+    # --- Employee Headcount per Department ---
+    with col1:
+        st.markdown("##### Employee Headcount per Department")
+        dept_headcount = [
+            {'Department': dept_name, 'Employees': dept_data.get('total_employee', 0)}
+            for dept_name, dept_data in department_skill_data.items()
+        ]
+        df_headcount = pd.DataFrame(dept_headcount).sort_values('Employees', ascending=False)
+        fig_headcount = px.bar(df_headcount, x='Department', y='Employees',
+                                labels={'Employees': 'Number of Employees'},
+                                color_discrete_sequence=['#a0c4ff'])
+        fig_headcount.update_layout(xaxis_title=None)  # Hide the x-axis label
+        st.plotly_chart(style_chart(fig_headcount), use_container_width=True)
+        
+    # --- Department Performance Trend (All Departments)---
+    with col2:
+        st.markdown("##### Department Performance Trends")
+        perf_records = []
+        for dept_name, dept_data in department_skill_data.items():
+            for perf in dept_data.get("performance_trends", []):
+                perf_records.append({
+                    "department": dept_name,
+                    "year_month": perf["year_month"],
+                    "average_score": perf["average_score"]
+                })
+        
+        perf_df = pd.DataFrame(perf_records)
+        perf_df['year_month'] = pd.to_datetime(perf_df['year_month'])
+        perf_df = perf_df.sort_values('year_month')
+        
+        fig_perf_trend = px.line(
+            perf_df, 
+            x='year_month', 
+            y='average_score', 
+            color='department',
+            labels={'average_score': 'Average Performance Score'},
+            markers=True
+        )
+        fig_perf_trend.update_yaxes(rangemode="tozero")  # Ensure the y-axis starts from 0
+        fig_perf_trend.update_layout(xaxis_title=None)  # Hide the x-axis label
+        st.plotly_chart(style_chart(fig_perf_trend), use_container_width=True)
+
+
+    # --- Dropdown for Each Department Analysis ---
     if department_skill_data and termination_data:
         dept_name_map = {item['department_name']: item['department_name'] for item in termination_data.get("department_proportion", [])}
         selected_dept_name = st.selectbox("Select a Department", options=list(dept_name_map.keys()), index=None)
 
-        if selected_dept_name:
-            st.markdown("##### Termination Insights")
+        if selected_dept_name:            
+            st.markdown(f"##### {selected_dept_name} Termination Insights")
             term_dept_info = termination_data.get("reason_by_department", {}).get(selected_dept_name)
             if term_dept_info:
-                c1, c2, c3 = st.columns(3)
+                c1, c2, c3, c4 = st.columns(4)
                 with c1:
                     with st.container(border=True):
-                        st.metric("Historical Departures", term_dept_info.get("total_employee_left", 0))
+                        st.metric("Current Employees", department_skill_data.get(selected_dept_name, {}).get("total_employee", 0))
                 with c2:
                     with st.container(border=True):
-                        st.metric("Predicted to Leave", term_dept_info.get("total_employee_to_leave", 0))
+                        st.metric("Historical Departures", term_dept_info.get("total_employee_left", 0))
                 with c3:
+                    with st.container(border=True):
+                        st.metric("Predicted to Leave", term_dept_info.get("total_employee_to_leave", 0))
+                with c4:
                     with st.container(border=True):
                         st.metric("Avg. Termination Risk", f"{round(term_dept_info.get('avg_termination_probability', 0), 2)}")
                 
@@ -392,12 +536,35 @@ elif page == "DEPARTMENT":
                     for index, row in df_factors.iterrows():
                         st.info(row['recommendation_action'])
             else:
-                st.info("No specific termination data available for this department.")
-                
+                st.info("No specific termination data available for this department.")    
             st.markdown("---")
 
-            st.markdown("##### Skill Gap Insights")
+
+            st.markdown("##### Performance Trends")
             skill_dept_info = department_skill_data.get(selected_dept_name)
+            perf_records = []
+            for perf in skill_dept_info.get("performance_trends", []):
+                perf_records.append({
+                    "year_month": perf["year_month"],
+                    "average_score": perf["average_score"]
+                })
+            perf_df = pd.DataFrame(perf_records)
+            perf_df['year_month'] = pd.to_datetime(perf_df['year_month'])
+            perf_df = perf_df.sort_values('year_month')
+            fig_perf_trend = px.line(
+                perf_df, 
+                x='year_month', 
+                y='average_score', 
+                labels={'average_score': 'Average Performance Score'},
+                markers=True
+            )
+            fig_perf_trend.update_yaxes(range=[0, 5])  # Set y-axis range from 0 to 5
+            fig_perf_trend.update_layout(xaxis_title=None)  # Hide the x-axis label
+            st.plotly_chart(style_chart(fig_perf_trend), use_container_width=True)
+            st.markdown("---")
+
+
+            st.markdown("##### Skill Gap Insights")
             if skill_dept_info:
                 c1, c2 = st.columns(2)
                 with c1:
@@ -415,14 +582,18 @@ elif page == "DEPARTMENT":
                         stats = skill.get("statistics", {})
                         if all(k in stats for k in ['min', 'q1', 'median', 'q3', 'max']):
                             fig.add_trace(go.Box(y=[stats[k] for k in ['min', 'q1', 'median', 'q3', 'max']], name=skill['skill_name'], boxpoints=False))
-                    fig.update_layout(yaxis_title="Skill Score")
+                    fig.update_layout(
+                        yaxis_title="Skill Score",
+                        yaxis=dict(range=[0, 5])  # Set y-axis range from 0 to 5
+                    )
                     st.plotly_chart(style_chart(fig), use_container_width=True)
+            st.markdown("---")
 
 
 # ==============================================================================
 # --- SKILL SEARCH FOR ROTATION PAGE ---
 # ==============================================================================
-elif page == "SKILL SEARCH FOR ROTATION":
+elif page == "Skills for Rotation":
     st.subheader("🔄 Skill Search for Rotation")
     st.markdown("Find out what skills are needed for an employee to move to a different department.")
 

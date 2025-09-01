@@ -9,6 +9,9 @@ from config import config
 def analyze_rotation_skill_gap(employee_id, target_department_id, employee_skill_df, position_skill_df, position_df):
     """
     Analyzes the skill gap for an employee wanting to rotate to a new department (a larger group of positions).
+
+    Returns:
+        list: A list of skills the employee needs to acquire to be qualified for roles in the target department.
     """
     # employee skills
     employee_skill_name = set(
@@ -36,8 +39,9 @@ def generate_all_rotation_gaps(employee_df, position_df, employee_position_df, e
         dict: A nested dictionary containing the skill gaps for all possible rotations.
               Structure: {employee_id: {target_department_id: {analysis_data}}}
     """    
-    all_employees = employee_df['emp_id'].unique()
+    all_employees = employee_df['id'].unique()
     all_departments = position_df['department_id'].unique() # use department_id instead; since position_id contains too various possible position (e.g. Junior,Mid,Senior,Lead,Chief xxxx)
+    all_departments = sorted(all_departments)
     
     # Create a quick lookup for an employee's current department
     employee_position_df = employee_position_df.merge(position_df[['id', 'department_id', 'department_name']], left_on='position_id', right_on='id', how='left')

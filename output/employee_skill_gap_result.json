@@ -1,6 +1,6 @@
 [
     {
-        "employee_id": 990001,
+        "employee_id": 1,
         "current_position": "Chief Business Development",
         "next_position": "No next level position available",
         "employee_skills": [
@@ -82,7 +82,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990002,
+        "employee_id": 2,
         "current_position": "Chief Data Scientist",
         "next_position": "No next level position available",
         "employee_skills": [
@@ -168,7 +168,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990003,
+        "employee_id": 3,
         "current_position": "Lead Data Scientist (L3)",
         "next_position": "Data Scientist Manager (L4)",
         "employee_skills": [
@@ -258,7 +258,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990005,
+        "employee_id": 5,
         "current_position": "Lead Data Engineer (L3)",
         "next_position": "Data Engineer Manager (L4)",
         "employee_skills": [
@@ -324,7 +324,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990006,
+        "employee_id": 6,
         "current_position": "Data Scientist Manager (L4)",
         "next_position": "Chief Data Engineer (L7)",
         "employee_skills": [
@@ -414,7 +414,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990009,
+        "employee_id": 9,
         "current_position": "Senior Data Scientist (L2)",
         "next_position": "Lead Data Scientist (L3)",
         "employee_skills": [
@@ -496,7 +496,7 @@
         ]
     },
     {
-        "employee_id": 990011,
+        "employee_id": 11,
         "current_position": "Mid Data Engineer (L1)",
         "next_position": "Senior Data Engineer (L2)",
         "employee_skills": [
@@ -552,7 +552,7 @@
         ]
     },
     {
-        "employee_id": 990013,
+        "employee_id": 13,
         "current_position": "Mid Software Developer (L1)",
         "next_position": "Senior Software Developer (L2)",
         "employee_skills": [
@@ -588,7 +588,7 @@
         ]
     },
     {
-        "employee_id": 990014,
+        "employee_id": 14,
         "current_position": "Business Development Manager (L4)",
         "next_position": "Chief Business Development (L7)",
         "employee_skills": [
@@ -652,7 +652,7 @@
         ]
     },
     {
-        "employee_id": 990015,
+        "employee_id": 15,
         "current_position": "Mid Project Management (L1)",
         "next_position": "Senior Project Management (L2)",
         "employee_skills": [
@@ -726,7 +726,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990016,
+        "employee_id": 16,
         "current_position": "Senior Project Management (L2)",
         "next_position": "Project Management Manager (L4)",
         "employee_skills": [
@@ -800,7 +800,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990019,
+        "employee_id": 19,
         "current_position": "Mid Business Development (L1)",
         "next_position": "Senior Business Development (L2)",
         "employee_skills": [
@@ -874,7 +874,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990020,
+        "employee_id": 20,
         "current_position": "Mid Project Management (L1)",
         "next_position": "Senior Project Management (L2)",
         "employee_skills": [
@@ -938,7 +938,7 @@
         ]
     },
     {
-        "employee_id": 990021,
+        "employee_id": 21,
         "current_position": "Mid Operations (L1)",
         "next_position": "Senior Operations (L2)",
         "employee_skills": [
@@ -995,7 +995,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990022,
+        "employee_id": 22,
         "current_position": "Mid Project Management (L1)",
         "next_position": "Senior Project Management (L2)",
         "employee_skills": [
@@ -1075,7 +1075,7 @@
         ]
     },
     {
-        "employee_id": 990025,
+        "employee_id": 25,
         "current_position": "Mid Data Consultant (L1)",
         "next_position": "Senior Data Consultant (L2)",
         "employee_skills": [
@@ -1157,7 +1157,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990027,
+        "employee_id": 27,
         "current_position": "Senior Software Developer (L2)",
         "next_position": "Lead Software Developer (L3)",
         "employee_skills": [
@@ -1195,7 +1195,7 @@
         "next_missing_skills": []
     },
     {
-        "employee_id": 990028,
+        "employee_id": 28,
         "current_position": "Mid Marketing (L1)",
         "next_position": "Senior Marketing (L2)",
         "employee_skills": [

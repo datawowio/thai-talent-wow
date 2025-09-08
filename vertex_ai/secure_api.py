@@ -8,8 +8,9 @@ import random
 import secrets
 from typing import List, Dict, Optional
 from datetime import datetime, timedelta
-from fastapi import FastAPI, HTTPException, Depends, status
+from fastapi import FastAPI, HTTPException, Depends, status, Header
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from typing import Optional
 from pydantic import BaseModel
 import hashlib
 import hmac
@@ -21,24 +22,55 @@ app = FastAPI(
     version="2.0.0-secure"
 )
 
-# Security
-security = HTTPBearer()
+# Security - removed HTTPBearer since we're using X-API-Key header
 
-# Configuration - In production, use environment variables or Secret Manager
-API_KEYS = {
-    "demo-key-2024": {
-        "name": "Demo User",
-        "created": "2024-01-01",
-        "permissions": ["read", "predict"],
-        "rate_limit": 100
-    },
-    "th-talent-prod-key": {
-        "name": "Production User",
-        "created": "2024-01-01", 
-        "permissions": ["read", "predict", "admin"],
-        "rate_limit": 1000
-    }
-}
+# Configuration - Load API keys from environment variables
+def load_api_keys() -> Dict:
+    """Load API keys from environment variables"""
+    api_keys = {}
+    
+    # Load from environment variables in format: API_KEY_NAME=key_value:user_name:permissions:rate_limit
+    for key, value in os.environ.items():
+        if key.startswith("API_KEY_"):
+            try:
+                parts = value.split(":")
+                if len(parts) >= 4:
+                    api_key = parts[0]
+                    user_name = parts[1]
+                    permissions = parts[2].split(",")
+                    rate_limit = int(parts[3])
+                    
+                    api_keys[api_key] = {
+                        "name": user_name,
+                        "created": datetime.now().strftime("%Y-%m-%d"),
+                        "permissions": permissions,
+                        "rate_limit": rate_limit
+                    }
+            except (IndexError, ValueError) as e:
+                print(f"Warning: Invalid API key format for {key}: {e}")
+                continue
+    
+    # Fallback to hardcoded keys if no environment keys found
+    if not api_keys:
+        print("Warning: No API keys found in environment variables, using hardcoded fallback")
+        api_keys = {
+            "demo-key-2024": {
+                "name": "Demo User",
+                "created": "2024-01-01",
+                "permissions": ["read", "predict"],
+                "rate_limit": 100
+            },
+            "th-talent-prod-key": {
+                "name": "Production User",
+                "created": "2024-01-01", 
+                "permissions": ["read", "predict", "admin"],
+                "rate_limit": 1000
+            }
+        }
+    
+    return api_keys
+
+API_KEYS = load_api_keys()
 
 # In production, use environment variable
 SECRET_KEY = os.getenv("API_SECRET_KEY", "th-ai-talent-wow-secret-2024")
@@ -69,24 +101,27 @@ class APIKeyRequest(BaseModel):
     purpose: str
 
 # Authentication functions
-def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)) -> Dict:
+def verify_api_key(x_api_key: Optional[str] = Header(None)) -> Dict:
     """Verify API key and return user info"""
-    api_key = credentials.credentials
-    
-    # Check if API key exists
-    if api_key not in API_KEYS:
+    if not x_api_key:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid API key",
-            headers={"WWW-Authenticate": "Bearer"},
+            detail="Missing X-API-Key header"
         )
     
-    user_info = API_KEYS[api_key]
+    # Check if API key exists
+    if x_api_key not in API_KEYS:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid API key"
+        )
+    
+    user_info = API_KEYS[x_api_key]
     
     # Check rate limiting
     current_time = datetime.now()
     time_window = current_time.strftime("%Y-%m-%d-%H")
-    rate_limit_key = f"{api_key}:{time_window}"
+    rate_limit_key = f"{x_api_key}:{time_window}"
     
     if rate_limit_key not in request_counts:
         request_counts[rate_limit_key] = 0
@@ -207,7 +242,7 @@ async def root():
         "message": "TH.AI Talent Analytics Secure API",
         "version": "2.0.0-secure",
         "status": "healthy",
-        "authentication": "Required for prediction endpoints",
+        "authentication": "Required for prediction endpoints (X-API-Key header)",
         "docs": "/docs",
         "get_api_key": "Contact admin or use /request-api-key endpoint"
     }
@@ -241,9 +276,9 @@ async def request_api_key(request: APIKeyRequest):
         "message": "Demo API key generated (valid for testing)",
         "api_key": demo_key,
         "usage": {
-            "header": "Authorization",
-            "value": f"Bearer {demo_key}",
-            "example_curl": f"curl -H 'Authorization: Bearer {demo_key}' https://api-url/predict/retention"
+            "header": "X-API-Key",
+            "value": demo_key,
+            "example_curl": f"curl -H 'X-API-Key: {demo_key}' https://api-url/predict/retention"
         },
         "rate_limit": "100 requests per hour",
         "note": "For production access, contact admin@th-ai-talent.com"

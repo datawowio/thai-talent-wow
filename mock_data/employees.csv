@@ -1,4 +1,4 @@
-﻿id,emp_id,email,first_name,last_name,birth_date,age,gender,education_level,parent,child,sibling,spouse,hire_date,probation_date,status,region,country,nationality,manager_email,residence_postal_code,created_at
+﻿id,emp_id,email,first_name,last_name,birth_date,age,gender,education_level,parent,child,sibling,spouse,hire_date,probation_date,status,region,country,nationality,manager_email,residence_post_code,created_at
 1,990001,tommy.s@mockcorp.co.th,Tommy,Sussy,1987-03-06,38,Male,2,2,0,0,1,2020-05-18,2020-08-18,active,Central,Thailand,Thai,jason.k@mockcorp.co.th,10110,2020-05-18
 2,990002,jason.k@mockcorp.co.th,Jason,Kim,1987-06-18,38,Male,2,1,0,4,0,2020-05-18,2020-08-18,active,Northern,Thailand,Thai,tommy.s@mockcorp.co.th,10200,2020-05-18
 3,990003,sophie.n@mockcorp.co.th,Sophie,Neal,1993-01-15,32,Male,2,2,0,1,1,2021-02-25,2021-05-25,active,Northern,Thailand,Thai,jason.k@mockcorp.co.th,50200,2021-02-25

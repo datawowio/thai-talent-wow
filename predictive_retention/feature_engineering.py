@@ -87,7 +87,9 @@ def feature_engineering():
     ### convert data to proper datetime format
     for df in [emp_df, manager_df, emp_skill_df, position_df, position_skill_df, event_df, emp_movement_df, engagement_df, leave_df, evaluation_record_df, clock_in_out_df, department_df]:
         if 'created_at' in df.columns:
-            df['created_at'] = pd.to_datetime(df['created_at'], format='%Y-%m-%d')
+            df['created_at'] = pd.to_datetime(df['created_at'], format='%Y-%m-%d', errors='coerce')
+        if 'updated_at' in df.columns:
+            df['updated_at'] = pd.to_datetime(df['updated_at'], format='%Y-%m-%d', errors='coerce')
         for col in df.columns:
             if 'date' in col.lower():
                 df[col] = pd.to_datetime(df[col], format='%Y-%m-%d', errors='coerce')
@@ -112,8 +114,8 @@ def feature_engineering():
     company_postal_code = config.COMPANY_POSTAL_CODE
     company_coords = get_coordinates(company_postal_code)
 
-    _distance_df = emp_df.drop_duplicates(subset=['emp_id', 'residence_postal_code'], keep='last')[['emp_id', 'residence_postal_code']].copy()
-    _distance_df['residence_coordinates'] = _distance_df['residence_postal_code'].apply(get_coordinates)
+    _distance_df = emp_df.drop_duplicates(subset=['emp_id', 'residence_post_code'], keep='last')[['emp_id', 'residence_post_code']].copy()
+    _distance_df['residence_coordinates'] = _distance_df['residence_post_code'].apply(get_coordinates)
     _distance_df['distance_from_home_to_office'] = _distance_df['residence_coordinates'].apply(lambda x: calculate_distance(x, company_coords))
     
     final_df = pd.DataFrame()
@@ -125,7 +127,7 @@ def feature_engineering():
         execution_manager_df = manager_df[manager_df['created_at'] <= execution_date]
         execution_salary_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date][['employee_id', 'salary', 'effective_date']]
         execution_movement_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date]
-        execution_emp_skill_df = emp_skill_df[emp_skill_df['created_at'] <= execution_date]
+        execution_emp_skill_df = emp_skill_df[emp_skill_df['updated_at'] <= execution_date]
         execution_evaluation_record_df = evaluation_record_df[evaluation_record_df['evaluation_date'] <= execution_date]
 
         ### filter out employee who has left the company

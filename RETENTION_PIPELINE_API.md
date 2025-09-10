@@ -113,6 +113,12 @@ X-API-Key: demo-key-2024
 
 List all retention pipeline jobs.
 
+**Example Request:**
+```bash
+curl https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/retention-jobs \
+    -H "X-API-Key: demo-key-2024"
+```
+
 **Response:**
 ```json
 {
@@ -140,7 +146,7 @@ List all retention pipeline jobs.
 
 ### Trigger Pipeline
 ```bash
-curl -X POST https://talent-analytics-689036726654.asia-southeast1.run.app/trigger-retention-pipeline \
+curl -X POST https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/trigger-retention-pipeline \
     -H "Content-Type: application/json" \
     -H "X-API-Key: demo-key-2024" \
     -d '{"task_id": "task_55555_from_backend", "gcs_bucket": "th-ai-talent-data/2025-09-05"}'
@@ -148,13 +154,13 @@ curl -X POST https://talent-analytics-689036726654.asia-southeast1.run.app/trigg
 
 ### Check Job Status
 ```bash
-curl https://talent-analytics-689036726654.asia-southeast1.run.app/retention-job-status/task_55555_from_backend \
+curl https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/retention-job-status/task_55555_from_backend \
     -H "X-API-Key: demo-key-2024"
 ```
 
 ### List All Jobs
 ```bash
-curl https://talent-analytics-689036726654.asia-southeast1.run.app/retention-jobs \
+curl https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/retention-jobs \
     -H "X-API-Key: demo-key-2024"
 ```
 
@@ -185,7 +191,7 @@ require 'net/http'
 require 'json'
 
 # Trigger pipeline
-uri = URI('https://talent-analytics-689036726654.asia-southeast1.run.app/trigger-retention-pipeline')
+uri = URI('https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/trigger-retention-pipeline')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 
@@ -202,7 +208,7 @@ result = JSON.parse(response.body)
 job_id = result['job_id']
 
 # Check status
-status_uri = URI("https://talent-analytics-689036726654.asia-southeast1.run.app/retention-job-status/#{job_id}")
+status_uri = URI("https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/retention-job-status/#{job_id}")
 status_request = Net::HTTP::Get.new(status_uri)
 status_request['X-API-Key'] = 'th-talent-prod-key'
 

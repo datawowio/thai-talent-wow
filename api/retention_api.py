@@ -13,6 +13,9 @@ import sys
 import threading
 import time
 import traceback
+import json
+import pandas as pd
+from database import db
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -112,6 +115,35 @@ def validate_output_files():
     
     return validation_results
 
+def save_results_to_database(job_id: str):
+    """Save pipeline results to PostgreSQL database"""
+    try:
+        # Read termination results
+        termination_file = os.path.join(os.path.dirname(__file__), '..', 'output', 'termination_result.json')
+        if os.path.exists(termination_file):
+            with open(termination_file, 'r') as f:
+                termination_data = json.load(f)
+            
+            # Save to termination_results table
+            if db.save_termination_results(job_id, termination_data):
+                logger.info(f"Job {job_id}: Termination results saved to database")
+            else:
+                logger.warning(f"Job {job_id}: Failed to save termination results to database")
+        
+        # Read individual predictions
+        predictions_file = os.path.join(os.path.dirname(__file__), '..', 'output', 'model', 'model_result.parquet')
+        if os.path.exists(predictions_file):
+            predictions_df = pd.read_parquet(predictions_file)
+            
+            # Save to employee predictions table (if it exists)
+            if db.save_employee_predictions(job_id, predictions_df):
+                logger.info(f"Job {job_id}: Employee predictions saved to database")
+            else:
+                logger.warning(f"Job {job_id}: Failed to save employee predictions to database")
+                
+    except Exception as e:
+        logger.error(f"Job {job_id}: Error saving results to database: {str(e)}")
+
 def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
     """Execute the retention ML pipeline"""
     def execute_pipeline():
@@ -160,6 +192,11 @@ def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
                 
                 retention_jobs[job_id]["progress"] = "Validating output files..."
                 output_validation = validate_output_files()
+                
+                # Save results to database if output files exist
+                if output_validation.get('output/termination_result.json', False):
+                    retention_jobs[job_id]["progress"] = "Saving results to database..."
+                    save_results_to_database(job_id)
                 
                 retention_jobs[job_id]["status"] = "completed"
                 retention_jobs[job_id]["completed_at"] = datetime.now().isoformat()

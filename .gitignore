@@ -1,3 +1,9 @@
 talentwow/
 
 __pycache__/
+
+# ML Output Directory
+output/
+
+# CatBoost Info Directory
+catboost_info/

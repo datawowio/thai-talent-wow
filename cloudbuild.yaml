@@ -1,34 +1,43 @@
 steps:
-  # Build the container image for linux/amd64
+  # Build the secure API container image for linux/amd64
   - name: 'gcr.io/cloud-builders/docker'
     args: 
       - 'build'
       - '--platform'
       - 'linux/amd64'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/talent-api:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/talent-secure-api:$BUILD_ID'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/talent-api:latest'
+      - 'gcr.io/$PROJECT_ID/talent-secure-api:latest'
       - '-f'
-      - 'vertex_ai/Dockerfile.demo'
+      - 'vertex_ai/Dockerfile.secure'
       - '.'
+    timeout: 1800s
     
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/talent-api:$COMMIT_SHA']
+    args: ['push', 'gcr.io/$PROJECT_ID/talent-secure-api:$BUILD_ID']
     
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/talent-api:latest']
+    args: ['push', 'gcr.io/$PROJECT_ID/talent-secure-api:latest']
 
-  # Deploy container image to Cloud Run
+  # Grant GCS access to Cloud Run service account
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gsutil iam ch serviceAccount:689036726654-compute@developer.gserviceaccount.com:objectViewer gs://th-ai-talent-data || true
+
+  # Deploy container image to Cloud Run with ML configuration
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
       - 'run'
       - 'deploy'
-      - 'talent-analytics-api'
+      - 'talent-analytics'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/talent-api:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/talent-secure-api:$BUILD_ID'
       - '--region'
       - 'asia-southeast1'
       - '--platform'
@@ -37,18 +46,24 @@ steps:
       - '--port'
       - '8080'
       - '--memory'
-      - '1Gi'
+      - '4Gi'
       - '--cpu'
+      - '2'
+      - '--timeout'
+      - '1800'
+      - '--concurrency'
       - '1'
       - '--max-instances'
-      - '10'
+      - '5'
       - '--min-instances'
-      - '1'
+      - '0'
+      - '--service-account'
+      - '689036726654-compute@developer.gserviceaccount.com'
 
 # Store images in Container Registry
 images:
-  - 'gcr.io/$PROJECT_ID/talent-api:$COMMIT_SHA'
-  - 'gcr.io/$PROJECT_ID/talent-api:latest'
+  - 'gcr.io/$PROJECT_ID/talent-secure-api:$BUILD_ID'
+  - 'gcr.io/$PROJECT_ID/talent-secure-api:latest'
 
 options:
   logging: CLOUD_LOGGING_ONLY

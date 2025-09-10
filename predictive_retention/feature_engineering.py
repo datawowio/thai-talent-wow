@@ -10,25 +10,78 @@ warnings.filterwarnings('ignore')
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
+from config.gcs_data_loader import GCSDataLoader
 
 def calculate_z_score(dataframe, group_column, value_column):
     return dataframe.groupby(group_column)[value_column].transform(lambda x: (x - x.mean()) / x.std()).fillna(0).tolist()
 
+def load_data_source(use_gcs=False, date_partition=None):
+    """Load data from either local files or GCS based on configuration"""
+    if use_gcs and date_partition:
+        print(f"Loading data from GCS for date partition: {date_partition}")
+        loader = GCSDataLoader(date_partition=date_partition)
+        
+        # Load all required datasets from GCS
+        data = {
+            'employees': loader.read_csv_from_gcs('employees.csv'),
+            'manager_log': loader.read_csv_from_gcs('managerLog.csv'),
+            'employee_skill': loader.read_csv_from_gcs('employeeSkill.csv'),
+            'positions': loader.read_csv_from_gcs('positions.csv'),
+            'position_skill': loader.read_csv_from_gcs('positionSkill.csv'),
+            'employee_movement': loader.read_csv_from_gcs('employeeMovement.csv'),
+            'engagement': loader.read_csv_from_gcs('engagement.csv'),
+            'events': loader.read_csv_from_gcs('event.csv'),
+            'leave': loader.read_csv_from_gcs('leave.csv'),
+            'evaluation_record': loader.read_csv_from_gcs('evaluationRecord.csv'),
+            'clock_in_out': loader.read_csv_from_gcs('clockInOut.csv'),
+            'departments': loader.read_csv_from_gcs('departments.csv'),
+            'skills': loader.read_csv_from_gcs('skills.csv')
+        }
+        print(f"Successfully loaded {len(data)} datasets from GCS")
+        return data
+    else:
+        print("Loading data from local files")
+        # Load from local files (existing behavior)
+        return {
+            'employees': pd.read_csv(config.EMPLOYEE_DATA),
+            'manager_log': pd.read_csv(config.MANAGER_LOG_DATA),
+            'employee_skill': pd.read_csv(config.EMPLOYEE_SKILL_DATA),
+            'positions': pd.read_csv(config.POSITION_DATA),
+            'position_skill': pd.read_csv(config.POSITION_SKILL_DATA),
+            'employee_movement': pd.read_csv(config.EMPLOYEE_MOVEMENT_DATA),
+            'engagement': pd.read_csv(config.ENGAGEMENT_DATA),
+            'events': pd.read_csv(config.EVENT_DATA),
+            'leave': pd.read_csv(config.LEAVE_DATA),
+            'evaluation_record': pd.read_csv(config.EVALUATION_RECORD_DATA),
+            'clock_in_out': pd.read_csv(config.CLOCK_IN_OUT_DATA),
+            'departments': pd.read_csv(config.DEPARTMENT_DATA),
+            'skills': pd.read_csv(config.SKILL_DATA)
+        }
 
 def feature_engineering():
     ### assuming that all of the data already validated the type and column_name
-    emp_df = pd.read_csv(config.EMPLOYEE_DATA)
-    manager_df = pd.read_csv(config.MANAGER_LOG_DATA)
-    emp_skill_df = pd.read_csv(config.EMPLOYEE_SKILL_DATA)
-    position_df = pd.read_csv(config.POSITION_DATA)
-    position_skill_df = pd.read_csv(config.POSITION_SKILL_DATA)
-    emp_movement_df = pd.read_csv(config.EMPLOYEE_MOVEMENT_DATA)
-    engagement_df = pd.read_csv(config.ENGAGEMENT_DATA)
-    event_df = pd.read_csv(config.EVENT_DATA)
-    leave_df = pd.read_csv(config.LEAVE_DATA)
-    evaluation_record_df = pd.read_csv(config.EVALUATION_RECORD_DATA)
-    clock_in_out_df = pd.read_csv(config.CLOCK_IN_OUT_DATA)
-    department_df = pd.read_csv(config.DEPARTMENT_DATA)
+    
+    # Check if GCS date partition is provided via environment variable
+    gcs_date_partition = os.getenv('GCS_DATE_PARTITION')
+    use_gcs = gcs_date_partition is not None
+    
+    # Load data from appropriate source
+    data = load_data_source(use_gcs=use_gcs, date_partition=gcs_date_partition)
+    
+    # Assign to individual dataframes
+    emp_df = data['employees']
+    manager_df = data['manager_log']
+    emp_skill_df = data['employee_skill']
+    position_df = data['positions']
+    position_skill_df = data['position_skill']
+    emp_movement_df = data['employee_movement']
+    engagement_df = data['engagement']
+    event_df = data['events']
+    leave_df = data['leave']
+    evaluation_record_df = data['evaluation_record']
+    clock_in_out_df = data['clock_in_out']
+    department_df = data['departments']
+    skill_df = data['skills']
     engagement_df = engagement_df.merge(event_df[['id', 'event_type', 'start_date']], left_on='event_id', right_on='id', how='left')
 
     ### convert data to proper datetime format

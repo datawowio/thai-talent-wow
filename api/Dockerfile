@@ -9,13 +9,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy and install requirements
-COPY vertex_ai/requirements-secure.txt .
-RUN pip install --no-cache-dir -r requirements-secure.txt
+COPY api/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy secure API and dependencies
-COPY vertex_ai/secure_api.py ./
+# Copy ML API and dependencies
+COPY api/retention_api.py ./
 COPY config/ ./config/
 COPY predictive_retention/ ./predictive_retention/
+COPY mock_data/ ./mock_data/
+
+# Create output directory
+RUN mkdir -p output
 
 # Set environment variables
 ENV API_SECRET_KEY=${API_SECRET_KEY:-th-ai-talent-wow-secret-2024}
@@ -23,5 +27,5 @@ ENV API_SECRET_KEY=${API_SECRET_KEY:-th-ai-talent-wow-secret-2024}
 # Expose port
 EXPOSE 8080
 
-# Run the secure API
-CMD ["python", "secure_api.py"]
+# Run the ML retention API
+CMD ["python", "retention_api.py"]

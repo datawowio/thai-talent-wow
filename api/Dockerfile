@@ -8,10 +8,13 @@ RUN apt-get update && apt-get install -y \
     g++ \
     curl \
     gnupg \
-    && echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
-    && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - \
-    && apt-get update && apt-get install -y google-cloud-cli \
-    && rm -rf /var/lib/apt/lists/*
+    lsb-release \
+    && curl -sSL https://sdk.cloud.google.com > /tmp/gcl \
+    && bash /tmp/gcl --install-dir=/usr/local --disable-prompts \
+    && rm -rf /var/lib/apt/lists/* /tmp/gcl
+
+# Add gcloud to PATH
+ENV PATH="/usr/local/google-cloud-sdk/bin:${PATH}"
 
 # Copy and install requirements
 COPY api/requirements.txt .

@@ -100,6 +100,19 @@ class APIKeyRequest(BaseModel):
     user_email: str
     purpose: str
 
+class RetentionPipelineRequest(BaseModel):
+    job_name: Optional[str] = None
+    gcs_date_partition: Optional[str] = None
+
+class RetentionPipelineResponse(BaseModel):
+    job_id: str
+    status: str
+    message: str
+    started_at: str
+
+# Track running retention jobs
+retention_jobs = {}
+
 # Authentication functions
 def verify_api_key(x_api_key: Optional[str] = Header(None)) -> Dict:
     """Verify API key and return user info"""
@@ -139,6 +152,24 @@ def verify_api_key(x_api_key: Optional[str] = Header(None)) -> Dict:
 def generate_api_key() -> str:
     """Generate a secure API key"""
     return f"tk_{secrets.token_urlsafe(32)}"
+
+def run_retention_pipeline(job_id: str, date_partition: Optional[str] = None):
+    """Placeholder for retention pipeline - will be implemented later"""
+    import time
+    import threading
+    
+    def simulate_pipeline():
+        time.sleep(2)  # Simulate processing time
+        retention_jobs[job_id]["status"] = "completed"
+        retention_jobs[job_id]["completed_at"] = datetime.now().isoformat()
+        retention_jobs[job_id]["output"] = f"Retention pipeline completed for date partition: {date_partition or 'latest'}"
+    
+    retention_jobs[job_id]["status"] = "running"
+    retention_jobs[job_id]["started_at"] = datetime.now().isoformat()
+    
+    # Run in background thread
+    thread = threading.Thread(target=simulate_pipeline)
+    thread.start()
 
 # Demo prediction functions (same as before)
 def predict_retention_demo(employee: EmployeeData) -> Dict:
@@ -393,6 +424,102 @@ async def list_api_keys(user_info: Dict = Depends(verify_api_key)):
         })
     
     return {"api_keys": keys_info}
+
+# Retention Pipeline Endpoints
+@app.post("/trigger-retention-pipeline", response_model=RetentionPipelineResponse, dependencies=[Depends(verify_api_key)])
+async def trigger_retention_pipeline(
+    request: RetentionPipelineRequest,
+    user_info: Dict = Depends(verify_api_key)
+):
+    """
+    Trigger the complete retention prediction pipeline.
+    This runs the full workflow:
+    1. Feature Engineering from CSV/GCS data
+    2. Model Training
+    3. Model Saving
+    4. Predictions Generation
+    5. Results Saving
+    6. Visualization JSON Generation
+    """
+    # Generate job ID
+    job_id = f"retention_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    if request.job_name:
+        job_id = f"{request.job_name}_{job_id}"
+    
+    # Check if a job is already running
+    for job in retention_jobs.values():
+        if job["status"] == "running":
+            raise HTTPException(
+                status_code=400,
+                detail="A retention pipeline is already running. Please wait for it to complete."
+            )
+    
+    # Initialize job tracking
+    retention_jobs[job_id] = {
+        "job_id": job_id,
+        "status": "queued",
+        "created_at": datetime.now().isoformat(),
+        "date_partition": request.gcs_date_partition,
+        "api_user": user_info["name"]
+    }
+    
+    # Start pipeline 
+    run_retention_pipeline(job_id, request.gcs_date_partition)
+    
+    return RetentionPipelineResponse(
+        job_id=job_id,
+        status="queued",
+        message=f"Retention pipeline triggered. Use /retention-job-status/{job_id} to check progress.",
+        started_at=datetime.now().isoformat()
+    )
+
+@app.get("/retention-job-status/{job_id}", dependencies=[Depends(verify_api_key)])
+async def get_retention_job_status(job_id: str, user_info: Dict = Depends(verify_api_key)):
+    """Get the status of a retention pipeline job"""
+    if job_id not in retention_jobs:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Retention job {job_id} not found"
+        )
+    
+    job = retention_jobs[job_id]
+    response = {
+        "job_id": job_id,
+        "status": job["status"],
+        "created_at": job["created_at"],
+        "api_user": job.get("api_user")
+    }
+    
+    if "started_at" in job:
+        response["started_at"] = job["started_at"]
+    if "completed_at" in job:
+        response["completed_at"] = job["completed_at"]
+    if "date_partition" in job and job["date_partition"]:
+        response["date_partition"] = job["date_partition"]
+    if job["status"] == "failed" and "error" in job:
+        response["error"] = job["error"]
+    if job["status"] == "completed" and "output" in job:
+        response["output_preview"] = job["output"][:500] if len(job["output"]) > 500 else job["output"]
+    
+    return response
+
+@app.get("/retention-jobs", dependencies=[Depends(verify_api_key)])
+async def list_retention_jobs(user_info: Dict = Depends(verify_api_key)):
+    """List all retention pipeline jobs"""
+    jobs_summary = []
+    for job_id, job in retention_jobs.items():
+        jobs_summary.append({
+            "job_id": job_id,
+            "status": job["status"],
+            "created_at": job["created_at"],
+            "date_partition": job.get("date_partition"),
+            "api_user": job.get("api_user")
+        })
+    
+    return {
+        "total": len(jobs_summary),
+        "jobs": jobs_summary
+    }
 
 # Run the app
 if __name__ == "__main__":

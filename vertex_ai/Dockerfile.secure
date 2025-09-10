@@ -2,11 +2,20 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install dependencies
-RUN pip install --no-cache-dir fastapi uvicorn pydantic python-multipart
+# Install system dependencies for Python packages
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy secure API
+# Copy and install requirements
+COPY vertex_ai/requirements-secure.txt .
+RUN pip install --no-cache-dir -r requirements-secure.txt
+
+# Copy secure API and dependencies
 COPY vertex_ai/secure_api.py ./
+COPY config/ ./config/
+COPY predictive_retention/ ./predictive_retention/
 
 # Set environment variables
 ENV API_SECRET_KEY=${API_SECRET_KEY:-th-ai-talent-wow-secret-2024}

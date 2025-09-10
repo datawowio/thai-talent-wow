@@ -101,8 +101,9 @@ class APIKeyRequest(BaseModel):
     purpose: str
 
 class RetentionPipelineRequest(BaseModel):
-    job_name: Optional[str] = None
+    task_id: str
     gcs_date_partition: Optional[str] = None
+    job_name: Optional[str] = None
 
 class RetentionPipelineResponse(BaseModel):
     job_id: str
@@ -441,10 +442,15 @@ async def trigger_retention_pipeline(
     5. Results Saving
     6. Visualization JSON Generation
     """
-    # Generate job ID
-    job_id = f"retention_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    if request.job_name:
-        job_id = f"{request.job_name}_{job_id}"
+    # Use provided task_id as job_id
+    job_id = request.task_id
+    
+    # Check if task_id already exists
+    if job_id in retention_jobs:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Task ID '{job_id}' already exists. Please use a unique task ID."
+        )
     
     # Check if a job is already running
     for job in retention_jobs.values():

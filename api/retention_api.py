@@ -189,7 +189,7 @@ def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
             stderr=subprocess.STDOUT,
             text=True,
             env=env,
-            cwd=os.path.join(os.path.dirname(__file__), '..'),
+            cwd='/app',
             bufsize=1,  # Line buffered
             universal_newlines=True
             )

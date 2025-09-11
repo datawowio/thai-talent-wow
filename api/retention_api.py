@@ -118,31 +118,60 @@ def validate_output_files():
 def save_results_to_database(job_id: str):
     """Save pipeline results to PostgreSQL database"""
     try:
-        # Read termination results
-        termination_file = os.path.join(os.path.dirname(__file__), '..', 'output', 'termination_result.json')
+        # Use /app paths since we're in container
+        termination_file = '/app/output/termination_result.json'
+        logger.info(f"Job {job_id}: Checking for termination file at {termination_file}")
+        
         if os.path.exists(termination_file):
+            logger.info(f"Job {job_id}: Found termination file, loading data...")
             with open(termination_file, 'r') as f:
                 termination_data = json.load(f)
             
+            logger.info(f"Job {job_id}: Loaded termination data with {len(termination_data)} entries")
+            
             # Save to termination_results table
             if db.save_termination_results(job_id, termination_data):
-                logger.info(f"Job {job_id}: Termination results saved to database")
+                logger.info(f"Job {job_id}: Termination results saved to database successfully")
             else:
-                logger.warning(f"Job {job_id}: Failed to save termination results to database")
+                logger.error(f"Job {job_id}: Failed to save termination results to database")
+        else:
+            logger.error(f"Job {job_id}: Termination results file not found at {termination_file}")
+            # List files in output directory for debugging
+            output_dir = '/app/output'
+            if os.path.exists(output_dir):
+                files = os.listdir(output_dir)
+                logger.info(f"Job {job_id}: Files in {output_dir}: {files}")
+            else:
+                logger.error(f"Job {job_id}: Output directory {output_dir} does not exist")
         
         # Read individual predictions
-        predictions_file = os.path.join(os.path.dirname(__file__), '..', 'output', 'model', 'model_result.parquet')
+        predictions_file = '/app/output/model/model_result.parquet'
+        logger.info(f"Job {job_id}: Checking for predictions file at {predictions_file}")
+        
         if os.path.exists(predictions_file):
+            logger.info(f"Job {job_id}: Found predictions file, loading data...")
             predictions_df = pd.read_parquet(predictions_file)
+            logger.info(f"Job {job_id}: Loaded predictions with shape {predictions_df.shape}")
             
             # Save to employee predictions table (if it exists)
             if db.save_employee_predictions(job_id, predictions_df):
-                logger.info(f"Job {job_id}: Employee predictions saved to database")
+                logger.info(f"Job {job_id}: Employee predictions saved to database successfully")
             else:
-                logger.warning(f"Job {job_id}: Failed to save employee predictions to database")
+                logger.error(f"Job {job_id}: Failed to save employee predictions to database")
+        else:
+            logger.error(f"Job {job_id}: Predictions file not found at {predictions_file}")
+            # List files in model directory for debugging
+            model_dir = '/app/output/model'
+            if os.path.exists(model_dir):
+                files = os.listdir(model_dir)
+                logger.info(f"Job {job_id}: Files in {model_dir}: {files}")
+            else:
+                logger.error(f"Job {job_id}: Model directory {model_dir} does not exist")
                 
     except Exception as e:
         logger.error(f"Job {job_id}: Error saving results to database: {str(e)}")
+        import traceback
+        logger.error(f"Job {job_id}: Full traceback: {traceback.format_exc()}")
 
 def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
     """Execute the retention ML pipeline"""

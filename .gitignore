@@ -6,4 +6,4 @@ __pycache__/
 output/
 
 # CatBoost Info Directory
-catboost_info/
+catboost_info/.env

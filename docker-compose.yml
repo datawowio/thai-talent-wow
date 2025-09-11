@@ -7,15 +7,9 @@ services:
     container_name: thai-talent-ml-api
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     environment:
-      # Cloud SQL Database Connection
-      DB_HOST: 34.124.186.102  # Your Cloud SQL IP
-      DB_NAME: thai_talent_wow_production
-      DB_USERNAME: app_user
-      DB_PASSWORD: TalentWow2024!
-      DB_PORT: 5432
-      API_SECRET_KEY: demo-key-2024
-      
       # Python unbuffered output for real-time logs
       PYTHONUNBUFFERED: 1
     volumes:

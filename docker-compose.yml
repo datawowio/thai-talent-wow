@@ -1,7 +1,9 @@
 services:
   # ML API Service
   ml-api:
-    build: .
+    build:
+      context: .
+      dockerfile: api/Dockerfile
     container_name: thai-talent-ml-api
     ports:
       - "8080:8080"

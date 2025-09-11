@@ -166,22 +166,45 @@ def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
             retention_jobs[job_id]["progress"] = "Executing ML pipeline..."
             
             # Execute the ML pipeline
-            pipeline_script = os.path.join('/app', 'predictive_retention', 'main.py')
+            # Try Docker path first, then local development path
+            docker_script = os.path.join('/app', 'predictive_retention', 'main.py')
+            local_script = os.path.join(os.path.dirname(__file__), '..', 'predictive_retention', 'main.py')
             
-            if not os.path.exists(pipeline_script):
-                raise FileNotFoundError(f"Pipeline script not found: {pipeline_script}")
+            if os.path.exists(docker_script):
+                pipeline_script = docker_script
+            elif os.path.exists(local_script):
+                pipeline_script = local_script
+            else:
+                raise FileNotFoundError(f"Pipeline script not found in Docker path ({docker_script}) or local path ({local_script})")
             
             logger.info(f"Job {job_id}: Executing pipeline script: {pipeline_script}")
             
-            result = subprocess.run([
+            # Run pipeline with real-time output streaming
+            process = subprocess.Popen([
                 sys.executable, 
                 pipeline_script
             ], 
-            capture_output=True, 
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
             text=True,
-            timeout=1800,  # 30 minutes timeout
             env=env,
             cwd=os.path.join(os.path.dirname(__file__), '..')
+            )
+            
+            # Stream output in real-time
+            output_lines = []
+            for line in iter(process.stdout.readline, ''):
+                if line:
+                    line = line.rstrip()
+                    output_lines.append(line)
+                    logger.info(f"Job {job_id} pipeline: {line}")
+            
+            # Wait for process to complete
+            process.wait()
+            result = subprocess.CompletedProcess(
+                args=[sys.executable, pipeline_script],
+                returncode=process.returncode,
+                stdout='\n'.join(output_lines)
             )
             
             execution_time = time.time() - start_time

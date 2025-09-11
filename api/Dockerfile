@@ -2,21 +2,24 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies for Python packages and gcloud CLI
+# Install system dependencies (cached layer)
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     curl \
     gnupg \
     lsb-release \
-    && curl -sSL https://sdk.cloud.google.com > /tmp/gcl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install gcloud CLI (cached layer)
+RUN curl -sSL https://sdk.cloud.google.com > /tmp/gcl \
     && bash /tmp/gcl --install-dir=/usr/local --disable-prompts \
-    && rm -rf /var/lib/apt/lists/* /tmp/gcl
+    && rm -f /tmp/gcl
 
 # Add gcloud to PATH
 ENV PATH="/usr/local/google-cloud-sdk/bin:${PATH}"
 
-# Copy and install requirements
+# Copy and install requirements (cached if requirements.txt unchanged)
 COPY api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

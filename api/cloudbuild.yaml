@@ -32,17 +32,6 @@ steps:
       - '--concurrency=10'
       - '--set-env-vars=GCS_DATE_PARTITION=2025-09-05'
 
-  # Allow public access to the service
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-      - 'run'
-      - 'services'
-      - 'add-iam-policy-binding'
-      - 'thai-talent-ml-api'
-      - '--region=asia-southeast1'
-      - '--member=allUsers'
-      - '--role=roles/run.invoker'
-
 substitutions:
   _SERVICE_ACCOUNT: 'storage-sa@th-ai-talent-wow.iam.gserviceaccount.com'
 

@@ -19,6 +19,9 @@ services:
       # Python unbuffered output for real-time logs
       PYTHONUNBUFFERED: 1
     volumes:
+      # Mount code for development (hot-reload)
+      - ./api:/app/api
+      - ./predictive_retention:/app/predictive_retention
       # Mount output directory for ML pipeline results
       - ./output:/app/output
       - ./data:/app/data

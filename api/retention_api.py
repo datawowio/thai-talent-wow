@@ -182,13 +182,16 @@ def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
             # Run pipeline with real-time output streaming
             process = subprocess.Popen([
                 sys.executable, 
+                '-u',  # Unbuffered output
                 pipeline_script
             ], 
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,
             env=env,
-            cwd=os.path.join(os.path.dirname(__file__), '..')
+            cwd=os.path.join(os.path.dirname(__file__), '..'),
+            bufsize=1,  # Line buffered
+            universal_newlines=True
             )
             
             # Stream output in real-time

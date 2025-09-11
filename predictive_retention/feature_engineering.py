@@ -6,11 +6,16 @@ from dateutil.relativedelta import relativedelta
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import warnings
+import logging
+
 warnings.filterwarnings('ignore')
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
 from config.gcs_data_loader import GCSDataLoader
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 def calculate_z_score(dataframe, group_column, value_column):
     return dataframe.groupby(group_column)[value_column].transform(lambda x: (x - x.mean()) / x.std()).fillna(0).tolist()
@@ -18,7 +23,7 @@ def calculate_z_score(dataframe, group_column, value_column):
 def load_data_source(use_gcs=False, date_partition=None):
     """Load data from either local files or GCS based on configuration"""
     if use_gcs and date_partition:
-        print(f"Loading data from GCS for date partition: {date_partition}")
+        logger.info(f"Loading data from GCS for date partition: {date_partition}")
         loader = GCSDataLoader(date_partition=date_partition)
         
         # Load all required datasets from GCS
@@ -60,15 +65,24 @@ def load_data_source(use_gcs=False, date_partition=None):
 
 def feature_engineering():
     ### assuming that all of the data already validated the type and column_name
+    logger.info("Starting feature engineering process...")
     
     # Check if GCS date partition is provided via environment variable
     gcs_date_partition = os.getenv('GCS_DATE_PARTITION')
     use_gcs = gcs_date_partition is not None
     
+    if use_gcs:
+        logger.info(f"Using GCS data source with partition: {gcs_date_partition}")
+    else:
+        logger.info("Using local data files")
+    
     # Load data from appropriate source
+    logger.info("Loading data from source...")
     data = load_data_source(use_gcs=use_gcs, date_partition=gcs_date_partition)
+    logger.info("Data loading completed successfully")
     
     # Assign to individual dataframes
+    logger.info("Processing datasets...")
     emp_df = data['employees']
     manager_df = data['manager_log']
     emp_skill_df = data['employee_skill']

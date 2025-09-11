@@ -26,10 +26,10 @@ steps:
       - '--platform=managed'
       - '--region=asia-southeast1'
       - '--allow-unauthenticated'
-      - '--memory=4Gi'
-      - '--cpu=2'
-      - '--timeout=1800'
-      - '--concurrency=10'
+      - '--memory=8Gi'
+      - '--cpu=4'
+      - '--timeout=3600'
+      - '--concurrency=5'
       - '--set-env-vars=GCS_DATE_PARTITION=2025-09-05'
 
 substitutions:

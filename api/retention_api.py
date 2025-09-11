@@ -159,7 +159,13 @@ def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
             env = os.environ.copy()
             if gcs_bucket:
                 env['GCS_BUCKET_PATH'] = gcs_bucket
-                logger.info(f"Job {job_id}: Using GCS bucket: {gcs_bucket}")
+                # Extract date partition from gcs_bucket (e.g., "th-ai-talent-data/2025-09-05" -> "2025-09-05")
+                if '/' in gcs_bucket:
+                    date_partition = gcs_bucket.split('/')[-1]
+                    env['GCS_DATE_PARTITION'] = date_partition
+                    logger.info(f"Job {job_id}: Using GCS bucket: {gcs_bucket}, date partition: {date_partition}")
+                else:
+                    logger.info(f"Job {job_id}: Using GCS bucket: {gcs_bucket}")
             else:
                 logger.info(f"Job {job_id}: Using local data files")
             

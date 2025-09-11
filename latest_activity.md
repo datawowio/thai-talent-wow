@@ -1,5 +1,67 @@
 # Latest Activity - Thai Talent WOW ML Model
 
+## 2025-09-10
+
+### Major Update: Database Integration Complete
+- ✅ **Database Integration**: Successfully implemented PostgreSQL database integration for retention ML API
+- ✅ **Secret Manager**: Configured GCP Secret Manager integration for database credentials  
+- ✅ **Auto-Save Results**: ML pipeline results now automatically saved to shared database
+- ✅ **Column Fixes**: Fixed column name typos in feature engineering that were causing pipeline failures
+- ✅ **Docker Updates**: Updated Docker configuration for production deployment with database access
+
+### Database Integration Details
+**Database Connection**:
+- Host: 34.124.186.102 (GCP Cloud SQL)
+- Database: thai_talent_wow_production
+- User: app_user (from Secret Manager)
+- Authentication: GCP Secret Manager for credentials
+
+**Data Flow**: 
+- `output/termination_result.json` → `termination_results` table (PostgreSQL JSONB)
+- `output/model/model_result.parquet` → Ready for future employee predictions table
+- Results now accessible to Ruby backend application
+
+### ML Pipeline Fixes
+- **Fixed Column Names**: 
+  - `residence_post_code` → `residence_postal_code`
+  - `updated_at` → `created_at` for employee_skill filtering
+- **Pipeline Now Works**: Successfully executes without column errors
+
+### New/Updated Files  
+- 🆕 `api/database.py` - Database connection and save functions
+- 📝 `api/retention_api.py` - Added automatic database saving after pipeline completion
+- 📝 `api/Dockerfile` - Added gcloud CLI and database dependencies
+- 📝 `predictive_retention/feature_engineering.py` - Fixed column name issues
+- 📝 `.gitignore` - Added output/ and catboost_info/ directories
+
+### Deployment Status
+- **Service**: New dedicated retention API service
+- **URL**: https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/ 
+- **Status**: 🔄 Currently deploying with database integration
+- **Build ID**: 8c597998-c9cf-4ae7-8a1c-6f155984f2ac
+
+### API Endpoints (Updated Service)
+```bash
+# Trigger retention pipeline (with database save)
+curl -X POST https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/trigger-retention-pipeline \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: demo-key-2024" \
+  -d '{"task_id": "task_123", "gcs_bucket": "th-ai-talent-data/2025-09-05"}'
+
+# Check job status
+curl https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/retention-job-status/task_123 \
+  -H "X-API-Key: demo-key-2024"
+
+# List all jobs  
+curl https://thai-talent-ml-api-689036726654.asia-southeast1.run.app/retention-jobs \
+  -H "X-API-Key: demo-key-2024"
+```
+
+### Key Achievement
+**Complete ML → Database Integration**: The retention ML pipeline now automatically saves results to the shared PostgreSQL database, making predictions accessible to the Ruby backend for display and analysis. This completes the full-stack integration.
+
+---
+
 ## 2025-09-09
 
 ### Cleaned Up Misunderstood Work

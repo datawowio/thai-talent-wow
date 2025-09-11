@@ -288,7 +288,7 @@ async def root():
             "status": "GET /retention-job-status/{job_id}",
             "list": "GET /retention-jobs"
         },
-        "demo_api_key": "demo-key-2024"
+        "documentation": "/docs"
     }
 
 @app.get("/health")

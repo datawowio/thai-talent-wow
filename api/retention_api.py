@@ -100,18 +100,19 @@ def verify_api_key(x_api_key: Optional[str] = Header(None)) -> Dict:
 def validate_output_files():
     """Validate that expected output files were created"""
     expected_files = [
-        'output/feature_engineered_data.csv',
-        'output/model/model.pkl',
-        'output/model/model_config.json',
-        'output/model/model_interpretation.pkl',
-        'output/model_result.parquet',
-        'output/termination_result.json'
+        '/app/output/feature_engineered_data.csv',
+        '/app/output/model/model.pkl',
+        '/app/output/model/model_config.json',
+        '/app/output/model/model_interpretation.pkl',
+        '/app/output/model/model_result.parquet',
+        '/app/output/termination_result.json'
     ]
     
     validation_results = {}
     for file_path in expected_files:
-        full_path = os.path.join(os.path.dirname(__file__), '..', file_path)
-        validation_results[file_path] = os.path.exists(full_path)
+        # Use just the relative path for the key to maintain compatibility
+        relative_path = file_path.replace('/app/', '')
+        validation_results[relative_path] = os.path.exists(file_path)
     
     return validation_results
 

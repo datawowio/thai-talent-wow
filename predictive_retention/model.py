@@ -6,7 +6,6 @@ import pickle
 import optuna
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
 from datetime import datetime
 from catboost import CatBoostRegressor, Pool
 from sklearn.feature_selection import SelectFromModel
@@ -228,7 +227,7 @@ def predict_result(feature_engineered_df):
     # get the model interpretation using SHAP values
     explainer = shap.TreeExplainer(model)
     model_interpretation = {}
-    for i in tqdm(range(len(feature_engineered_df))):
+    for i in range(len(feature_engineered_df)):
         emp_id = feature_engineered_df.iloc[i]['emp_id']
         shap_value = explainer(feature_engineered_df.iloc[i: i+1][model_config['features']])[0]
         model_interpretation[emp_id] = shap_value

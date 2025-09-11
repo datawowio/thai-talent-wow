@@ -16,6 +16,8 @@ services:
       # Mount code for development (hot-reload)
       - ./api:/app/api
       - ./predictive_retention:/app/predictive_retention
+      - ./mock_data:/app/mock_data
+      - ./config:/app/config
       # Mount output directory for ML pipeline results
       - ./output:/app/output
       - ./data:/app/data

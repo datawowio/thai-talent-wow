@@ -1,0 +1,28 @@
+services:
+  # ML API Service
+  ml-api:
+    build: .
+    container_name: thai-talent-ml-api
+    ports:
+      - "8080:8080"
+    environment:
+      # Cloud SQL Database Connection
+      DB_HOST: 34.124.186.102  # Your Cloud SQL IP
+      DB_NAME: thai_talent_wow_production
+      DB_USERNAME: app_user
+      DB_PASSWORD: TalentWow2024!
+      DB_PORT: 5432
+      API_SECRET_KEY: demo-key-2024
+      
+      # Python unbuffered output for real-time logs
+      PYTHONUNBUFFERED: 1
+    volumes:
+      # Mount output directory for ML pipeline results
+      - ./output:/app/output
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

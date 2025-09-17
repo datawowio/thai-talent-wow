@@ -1,9 +1,15 @@
+import os
+import sys
 import json
 import pandas as pd
 import joblib
+from google import genai
 from dateutil.relativedelta import relativedelta
 
 from config import config, feature_mapper
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import config
 
 def generate_termination_analysis(model_config, model_interpretation, model_result):
     """
@@ -105,7 +111,77 @@ def generate_termination_analysis(model_config, model_interpretation, model_resu
     total_impact = mean_importance['impact_value'].sum()
     mean_importance['impact_percentage'] = round((mean_importance['impact_value'] / total_impact) * 100, 2)
     mean_importance['feature_name'] = mean_importance['feature'].map(feature_mapper.FEARURES_MEANING_MAPPER)
-    mean_importance['recommendation_action'] = mean_importance['feature'].map(feature_mapper.FEATURES_ACTION_MAPPER)
+
+    # call generative ai for tailored recommendation action based on feature
+    prompt = f"""You are an HR analytics expert. After built a predictive retention model, you will receive the top features contributing to employee termination risk, along with their impact values and percentages.
+Your task is to generate concise, practical recommendations or actions based on these features to help reduce employee attrition.
+The recommendations should be specific and actually actionable. Limit your response to 2-5 key recommendations, if the features are similar, group them into one recommendation. Each recommendation should be only one sentence long.
+
+Top {num_features} features contributing to employee termination risk:
+{mean_importance[['feature', 'impact_value', 'impact_percentage']].to_string(index=False)}
+
+Return the result in the defined JSON schema.
+"""
+    
+    response_schema = {
+        "type": "object",
+        "properties": {
+            "recommendation": {
+                "type": "array",
+                "description": "List of concise, practical, and actionable recommendations derived from model features.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "feature": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "List of feature this recommendation is linked to. Group similar features together. Separate multiple features with comma.",
+                        },
+                        "recommendation_action": {
+                            "type": "string",
+                            "description": "A single actionable recommendation."
+                        }
+                    },
+                    "required": ["feature", "recommendation_action"]
+                },
+                "minItems": 2,
+                "maxItems": 5
+            }
+        },
+        "required": ["recommendation"]
+    }
+
+    client = genai.Client(
+    project=config.PROJECT_NAME, location=config.LOCATION, vertexai=True,
+    )
+    
+    response = client.models.generate_content(
+    model='gemini-2.5-flash', 
+    contents=prompt,
+    config={
+        "response_mime_type": "application/json",
+        "response_schema": response_schema,
+    })
+
+    try:
+        recommendations = json.loads(response.text)
+        recommendations = recommendations['recommendation']
+    except:
+        recommendations = []
+    
+    # map back the recommendation to the feature
+    if isinstance(recommendations, list):
+        df_recommendations = pd.DataFrame(recommendations)
+        df_recommendations = df_recommendations.explode("feature")
+        mean_importance = mean_importance.merge(df_recommendations, on="feature", how="left")
+
+        # remove duplicated recommendations
+        mean_importance['recommendation_action'] = mean_importance['recommendation_action'].where(
+            ~mean_importance.duplicated(subset=['recommendation_action']), ''
+        )
+    else:
+        mean_importance['recommendation_action'] = ''
+
     json_result['top_quitting_reason'] = mean_importance[['feature_name', 'impact_percentage', 'recommendation_action']].to_dict(orient='records')
 
 

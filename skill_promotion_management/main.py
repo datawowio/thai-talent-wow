@@ -7,7 +7,7 @@ warnings.filterwarnings("ignore")
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
-from skill_gap_analysis import normalize_skill, analyze_current_position_gap, analyze_peer_gap, analyze_next_level_gap, recommend_roles_for_skills, analyze_department_skill_gap
+from skill_gap_analysis import normalize_skill, analyze_current_position_gap, analyze_peer_gap, analyze_next_level_gap, analyze_department_skill_gap, recommend_future_skills_for_department
 from skill_rotation import generate_all_rotation_gaps
 from promotion_analysis import categorize_employee_type, calculate_avg_promotion_time, calculate_promotion_rate_by_department
 from performance_analysis import analyze_performance_trends
@@ -123,9 +123,21 @@ def main():
             'performance_trends': dept_performance_trend[['year_month', 'average_score']].to_dict(orient='records')
         })
     
-    with open(config.DEPARTMENT_SKILL_GAP_ANALYSIS_OUTPUT, 'w') as f:
-        json.dump(department_analysis_result, f, indent=4)
+    # --- 2. Recommend Future / Essential skills based on department skill gap ---
+    department_analysis_df = pd.DataFrame(department_analysis_result)
+    future_skills_recommendation = recommend_future_skills_for_department(
+        department_analysis_df=department_analysis_df,
+    )
 
+    if isinstance(future_skills_recommendation, list):
+        new_skills_df = pd.DataFrame(future_skills_recommendation)
+        department_analysis_df = department_analysis_df.merge(new_skills_df, left_on='department_name', right_on='department_name', how='left')
+        department_analysis_df['recommended_skills'] = department_analysis_df['recommended_skills'].apply(lambda x: x if isinstance(x, list) else [])
+    else:
+        department_analysis_df['recommended_skills'] = []
+    
+    with open(config.DEPARTMENT_SKILL_GAP_ANALYSIS_OUTPUT, 'w') as f:
+        json.dump(department_analysis_df.to_dict(orient='records'), f, indent=4)
 
     # --- 3. Employee Rotation Skill Gap ---
     full_rotation_analysis = generate_all_rotation_gaps(

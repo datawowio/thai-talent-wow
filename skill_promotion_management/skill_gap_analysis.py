@@ -1,9 +1,14 @@
+import os
+import sys
 import json
 import numpy as np
 import pandas as pd
+from google import genai
 from collections import defaultdict
 from sentence_transformers import SentenceTransformer, util
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import config
 
 def normalize_skill(skill_dataframe, threshold=0.66):
     """
@@ -269,3 +274,72 @@ def analyze_department_skill_gap(department_id, employee_df, position_df, employ
     missing_skills = required_skill - set([skill['skill_name'] for skill in common_existing_skills])
 
     return total_employee_in_dept, common_existing_skills, sorted(list(missing_skills)), skill_with_low_score
+
+
+def recommend_future_skills_for_department(department_analysis_df):
+    department_analysis_df = department_analysis_df.copy()
+    department_analysis_df['current_skills'] = department_analysis_df['common_existing_skills'].apply(lambda x: [skill['skill_name'] for skill in x] if isinstance(x, list) else [])
+    department_analysis_df['current_skills'] = department_analysis_df['current_skills'].apply(lambda x: list(set(x)))
+    department_analysis_df['missing_skills'] = department_analysis_df['department_missing_skills'] + department_analysis_df['low_score_skills']
+    department_analysis_df['missing_skills'] = department_analysis_df['missing_skills'].apply(lambda x: list(set(x)))
+    department_analysis_df = department_analysis_df[department_analysis_df['total_employee'] > 0]
+
+    # initialize prompt and response schema
+    prompt = f"""You are an HR analytics expert. You will receive a dataframe of departments that includes their currently having skills and missing skills.
+Based on this data, identify new, emerging, or globally important skills that are likely to become critical in the near future for each role.
+Recommend areas for upskilling so that the company can proactively prepare employees for future demands and maintain a competitive advantage.
+
+The output should highlight trends, emerging technologies, and soft or technical skills that are not yet included in the current dataset but will be valuable for employee growth and organizational success.
+List only the practical and importance skills. Limit the number of recommendations to 3–5 unique skills per each department.
+Return the result in the defined JSON schema.
+
+Department skill gap data:
+{department_analysis_df.to_string(index=False)}
+"""
+
+    response_schema = {
+        "type": "object",
+        "properties": {
+            "upskilling_recommendations": {
+                "type": "array",
+                "description": "List of recommended upskilling areas or skills to prepare for future demands.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "department_name": {
+                            "type": "string",
+                            "description": "The department name."
+                        },
+                        "recommended_skills": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "List of practical skills that are likely to become critical in the near future for the department. Separate skills by commas. Limit to 2-5 skills.",
+                        },
+                    },
+                    "required": ["department_name", "recommended_skills"]
+                },
+                "minItems": 1,
+                "maxItems": len(department_analysis_df)
+            }
+        },
+        "required": ["upskilling_recommendations"]
+    }
+
+    ### --- call the vertex AI ---
+    client = genai.Client(
+    project=config.PROJECT_NAME, location=config.LOCATION, vertexai=True,
+    )
+
+    response = client.models.generate_content(
+    model='gemini-2.5-flash', 
+    contents=prompt,
+    config={
+        "response_mime_type": "application/json",
+        "response_schema": response_schema,
+    })
+
+    try:
+        result = json.loads(response.text)
+        return result['upskilling_recommendations']
+    except:
+        return {"upskilling_recommendations": []}

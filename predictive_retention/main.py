@@ -20,7 +20,7 @@ def main():
     start_time = datetime.now()
     logger.info("=== TH.AI Retention ML Pipeline Started ===")
     logger.info(f"Pipeline start time: {start_time}")
-    
+
     try:
         # 1. Feature Engineering
         logger.info("Step 1/6: Starting feature engineering...")
@@ -55,18 +55,18 @@ def main():
         with open(config.TERMINATION_ANALYSIS_OUTPUT, 'w') as f:
             json.dump(visualization_json, f, indent=4)
         logger.info(f"Termination analysis saved to {config.TERMINATION_ANALYSIS_OUTPUT}")
-        
+
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         logger.info("=== TH.AI Retention ML Pipeline Completed Successfully ===")
         logger.info(f"Total pipeline execution time: {duration:.2f} seconds")
-        
+
     except Exception as e:
         logger.error(f"Pipeline failed with error: {str(e)}")
         import traceback
         logger.error(f"Full traceback: {traceback.format_exc()}")
         raise
-    
+
 
 if __name__ == "__main__":
     main()

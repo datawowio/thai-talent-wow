@@ -153,7 +153,15 @@ def save_results_to_database(job_id: str):
                 logger.error(f"Job {job_id}: Failed to save skill management results to database")
         else:
             logger.debug(f"Job {job_id}: No skill management result files found")
-        else:
+
+    except Exception as e:
+        logger.error(f"Job {job_id}: Error saving results to database: {str(e)}")
+
+def save_results_to_database_fallback(job_id: str):
+    """Fallback function if main save fails"""
+    try:
+        termination_file = '/app/output/termination_result.json'
+        if not os.path.exists(termination_file):
             logger.error(f"Job {job_id}: Termination results file not found at {termination_file}")
             # List files in output directory for debugging
             output_dir = '/app/output'

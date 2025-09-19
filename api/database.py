@@ -202,5 +202,213 @@ class DatabaseConnection:
                 self.connection.rollback()
             return False
 
+    def save_skill_management_results(self, job_id: str) -> bool:
+        """
+        Save all skill management pipeline results to database tables
+        Following the same pattern as save_termination_results
+
+        Args:
+            job_id: The job ID from the API
+
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        try:
+            if not self.connection:
+                if not self.connect():
+                    return False
+
+            all_success = True
+
+            # 1. Save Employee Skill Results
+            employee_skill_file = '/app/output/employee_skill_gap_result.json'
+            if os.path.exists(employee_skill_file):
+                try:
+                    with open(employee_skill_file, 'r') as f:
+                        employee_skill_data = json.load(f)
+
+                    # Clear existing data first
+                    self.cursor.execute("DELETE FROM employee_skill_results")
+
+                    for emp_data in employee_skill_data:
+                        query = """
+                            INSERT INTO employee_skill_results (
+                                employee_id,
+                                current_position,
+                                next_position,
+                                employee_skills,
+                                current_missing_skills,
+                                peer_missing_skills,
+                                next_missing_skills,
+                                created_at,
+                                updated_at
+                            ) VALUES (
+                                %s, %s, %s, %s, %s, %s, %s, %s, %s
+                            )
+                        """
+
+                        self.cursor.execute(query, (
+                            emp_data['employee_id'],
+                            emp_data.get('current_position'),
+                            emp_data.get('next_position'),
+                            Json(emp_data.get('employee_skills', [])),
+                            Json(emp_data.get('current_missing_skills', [])),
+                            Json(emp_data.get('peer_missing_skills', [])),
+                            Json(emp_data.get('next_missing_skills', [])),
+                            datetime.now(),
+                            datetime.now()
+                        ))
+
+                    logger.info(f"Saved {len(employee_skill_data)} employee skill results")
+                except Exception as e:
+                    logger.error(f"Failed to save employee skill results: {str(e)}")
+                    all_success = False
+
+            # 2. Save Department Skill Results
+            department_skill_file = '/app/output/department_skill_gap_result.json'
+            if os.path.exists(department_skill_file):
+                try:
+                    with open(department_skill_file, 'r') as f:
+                        department_skill_data = json.load(f)
+
+                    # Clear existing data first
+                    self.cursor.execute("DELETE FROM department_skill_results")
+
+                    for dept_data in department_skill_data:
+                        # Check if performance_trends column exists (it was renamed from performance_trend)
+                        query = """
+                            INSERT INTO department_skill_results (
+                                department_id,
+                                department_name,
+                                total_employee,
+                                common_existing_skills,
+                                department_missing_skills,
+                                low_score_skills,
+                                performance_trends,
+                                created_at,
+                                updated_at
+                            ) VALUES (
+                                %s, %s, %s, %s, %s, %s, %s, %s, %s
+                            )
+                        """
+
+                        self.cursor.execute(query, (
+                            int(dept_data['department_id']),
+                            dept_data['department_name'],
+                            dept_data['total_employee'],
+                            Json(dept_data.get('common_existing_skills', [])),
+                            Json(dept_data.get('department_missing_skills', [])),
+                            Json(dept_data.get('low_score_skills', [])),
+                            Json(dept_data.get('performance_trends', [])),
+                            datetime.now(),
+                            datetime.now()
+                        ))
+
+                    logger.info(f"Saved {len(department_skill_data)} department skill results")
+                except Exception as e:
+                    logger.error(f"Failed to save department skill results: {str(e)}")
+                    all_success = False
+
+            # 3. Save Promotion Results
+            promotion_file = '/app/output/promotion_analysis_results.json'
+            if os.path.exists(promotion_file):
+                try:
+                    with open(promotion_file, 'r') as f:
+                        promotion_data = json.load(f)
+
+                    # Clear existing data first
+                    self.cursor.execute("DELETE FROM promotion_results")
+
+                    # Save each employee type category
+                    for emp_type_data in promotion_data.get('employee_data', []):
+                        query = """
+                            INSERT INTO promotion_results (
+                                employee_type,
+                                total_employee,
+                                employee_ids,
+                                avg_promotion_time_by_department,
+                                avg_promotion_time_by_job_level,
+                                department_promotion_rate,
+                                created_at,
+                                updated_at
+                            ) VALUES (
+                                %s, %s, %s, %s, %s, %s, %s, %s
+                            )
+                        """
+
+                        self.cursor.execute(query, (
+                            emp_type_data['employee_type'],
+                            emp_type_data['total_employee'],
+                            Json(emp_type_data.get('employee_ids', [])),
+                            Json(promotion_data.get('avg_promotion_time_by_department', [])),
+                            Json(promotion_data.get('avg_promotion_time_by_job_level', [])),
+                            Json(promotion_data.get('department_promotion_rate', [])),
+                            datetime.now(),
+                            datetime.now()
+                        ))
+
+                    logger.info(f"Saved promotion analysis results")
+                except Exception as e:
+                    logger.error(f"Failed to save promotion results: {str(e)}")
+                    all_success = False
+
+            # 4. Save Rotation Results
+            rotation_file = '/app/output/rotation_skill_gap_result.json'
+            if os.path.exists(rotation_file):
+                try:
+                    with open(rotation_file, 'r') as f:
+                        rotation_data = json.load(f)
+
+                    # Clear existing data first
+                    self.cursor.execute("DELETE FROM rotation_results")
+
+                    for rotation in rotation_data:
+                        query = """
+                            INSERT INTO rotation_results (
+                                employee_id,
+                                from_position,
+                                to_position,
+                                skill_gaps,
+                                skill_overlaps,
+                                rotation_score,
+                                created_at,
+                                updated_at
+                            ) VALUES (
+                                %s, %s, %s, %s, %s, %s, %s, %s
+                            )
+                        """
+
+                        self.cursor.execute(query, (
+                            rotation.get('employee_id'),
+                            rotation.get('from_position'),
+                            rotation.get('to_position'),
+                            Json(rotation.get('skill_gaps', [])),
+                            Json(rotation.get('skill_overlaps', [])),
+                            float(rotation.get('rotation_score', 0.0)),
+                            datetime.now(),
+                            datetime.now()
+                        ))
+
+                    logger.info(f"Saved {len(rotation_data)} rotation results")
+                except Exception as e:
+                    logger.error(f"Failed to save rotation results: {str(e)}")
+                    all_success = False
+
+            # Commit all changes if successful
+            if all_success:
+                self.connection.commit()
+                logger.info("All skill management results saved successfully")
+            else:
+                self.connection.rollback()
+                logger.warning("Some skill management results failed to save")
+
+            return all_success
+
+        except Exception as e:
+            logger.error(f"Failed to save skill management results: {str(e)}")
+            if self.connection:
+                self.connection.rollback()
+            return False
+
 # Singleton instance
 db = DatabaseConnection()

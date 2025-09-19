@@ -122,19 +122,37 @@ def save_results_to_database(job_id: str):
         # Use /app paths since we're in container
         termination_file = '/app/output/termination_result.json'
         logger.info(f"Job {job_id}: Checking for termination file at {termination_file}")
-        
+
         if os.path.exists(termination_file):
             logger.info(f"Job {job_id}: Found termination file, loading data...")
             with open(termination_file, 'r') as f:
                 termination_data = json.load(f)
-            
+
             logger.info(f"Job {job_id}: Loaded termination data with {len(termination_data)} entries")
-            
+
             # Save to termination_results table
             if db.save_termination_results(job_id, termination_data):
                 logger.info(f"Job {job_id}: Termination results saved to database successfully")
             else:
                 logger.error(f"Job {job_id}: Failed to save termination results to database")
+
+        # Save skill management results if they exist
+        skill_management_files = {
+            'employee_skill_gap': '/app/output/employee_skill_gap_result.json',
+            'department_skill_gap': '/app/output/department_skill_gap_result.json',
+            'promotion_analysis': '/app/output/promotion_analysis_results.json',
+            'rotation_skill_gap': '/app/output/rotation_skill_gap_result.json'
+        }
+
+        has_skill_results = any(os.path.exists(file_path) for file_path in skill_management_files.values())
+        if has_skill_results:
+            logger.info(f"Job {job_id}: Found skill management results, saving to database...")
+            if db.save_skill_management_results(job_id):
+                logger.info(f"Job {job_id}: Skill management results saved to database successfully")
+            else:
+                logger.error(f"Job {job_id}: Failed to save skill management results to database")
+        else:
+            logger.debug(f"Job {job_id}: No skill management result files found")
         else:
             logger.error(f"Job {job_id}: Termination results file not found at {termination_file}")
             # List files in output directory for debugging
@@ -250,8 +268,61 @@ def run_retention_pipeline(job_id: str, gcs_bucket: Optional[str] = None):
             retention_jobs[job_id]["execution_time_seconds"] = round(execution_time, 2)
             
             if result.returncode == 0:
-                logger.info(f"Job {job_id}: Pipeline completed successfully in {execution_time:.2f} seconds")
-                
+                logger.info(f"Job {job_id}: Retention pipeline completed successfully in {execution_time:.2f} seconds")
+
+                # Run skill_promotion_management pipeline since we have the data
+                retention_jobs[job_id]["progress"] = "Running skill/promotion analysis..."
+                logger.info(f"Job {job_id}: Starting skill_promotion_management pipeline...")
+
+                # Find skill_promotion_management script
+                skill_script_paths = [
+                    '/app/skill_promotion_management/main.py',
+                    os.path.join(os.path.dirname(__file__), '..', 'skill_promotion_management', 'main.py')
+                ]
+
+                skill_pipeline_script = None
+                for path in skill_script_paths:
+                    if os.path.exists(path):
+                        skill_pipeline_script = path
+                        break
+
+                if skill_pipeline_script:
+                    try:
+                        logger.info(f"Job {job_id}: Executing skill pipeline: {skill_pipeline_script}")
+                        skill_process = subprocess.Popen([
+                            sys.executable,
+                            '-u',
+                            skill_pipeline_script
+                        ],
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.STDOUT,
+                        text=True,
+                        env=env,
+                        cwd='/app' if os.path.exists('/app') else os.path.dirname(__file__),
+                        bufsize=1,
+                        universal_newlines=True
+                        )
+
+                        # Stream output
+                        for line in iter(skill_process.stdout.readline, ''):
+                            if line:
+                                logger.info(f"Job {job_id} skill: {line.rstrip()}")
+
+                        skill_process.wait()
+
+                        if skill_process.returncode == 0:
+                            logger.info(f"Job {job_id}: Skill/promotion pipeline completed successfully")
+                            retention_jobs[job_id]["skill_pipeline_success"] = True
+                        else:
+                            logger.warning(f"Job {job_id}: Skill/promotion pipeline failed with code {skill_process.returncode}")
+                            retention_jobs[job_id]["skill_pipeline_success"] = False
+                    except Exception as e:
+                        logger.error(f"Job {job_id}: Error running skill/promotion pipeline: {str(e)}")
+                        retention_jobs[job_id]["skill_pipeline_success"] = False
+                else:
+                    logger.info(f"Job {job_id}: Skill pipeline script not found, skipping")
+                    retention_jobs[job_id]["skill_pipeline_success"] = None
+
                 retention_jobs[job_id]["progress"] = "Validating output files..."
                 output_validation = validate_output_files()
                 

@@ -28,6 +28,7 @@ COPY api/retention_api.py ./
 COPY api/database.py ./
 COPY config/ ./config/
 COPY predictive_retention/ ./predictive_retention/
+COPY skill_promotion_management/ ./skill_promotion_management/
 COPY mock_data/ ./mock_data/
 
 # Create output directory

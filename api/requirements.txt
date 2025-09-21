@@ -15,3 +15,4 @@ sentence-transformers==2.6.1
 fastparquet==2024.5.0
 pyarrow==18.0.0
 psycopg2-binary==2.9.9
+google-genai==0.5.1

@@ -1,5 +1,59 @@
 # Latest Activity - Thai Talent WOW ML Model
 
+## 2025-09-21 (Today)
+
+### Major Update: Integrated Skill/Promotion Management with Retention Pipeline
+
+#### Infrastructure Setup
+- ✅ **GCP Load Balancer**: Created HTTPS load balancer for Rails backend (35.190.81.134)
+- ✅ **Domain Configuration**: Configured talent-wow.datawow.io with managed SSL certificates
+- ✅ **Backend VM Updates**: Fixed SSL configuration and Rails environment settings
+- ✅ **Database Access**: Both VMs now properly configured with database access
+
+#### ML Pipeline Integration
+- ✅ **Dual Pipeline Execution**: Retention API now automatically runs skill_promotion_management pipeline
+- ✅ **Shared Data Loading**: Both pipelines use same downloaded data for efficiency
+- ✅ **Database Saves**: All results saved to PostgreSQL tables:
+  - `termination_results` - Retention predictions
+  - `employee_skill_results` - Employee skill gaps
+  - `department_skill_results` - Department skill analysis
+  - `promotion_results` - Promotion categorization
+  - `rotation_results` - Job rotation possibilities
+
+#### API Enhancements
+- **New Features**:
+  - Auto-trigger skill/promotion analysis after retention pipeline
+  - Save all results to existing Rails backend database tables
+  - Track skill_pipeline_success in job status
+
+- **Files Modified**:
+  - `api/retention_api.py` - Added skill pipeline execution
+  - `api/database.py` - Added save_skill_management_results()
+  - `api/Dockerfile` - Added skill_promotion_management directory
+  - `api/requirements.txt` - Added google-genai dependency
+
+#### Deployment Details
+- **Rails Backend**: https://talent-wow.datawow.io (Production)
+- **ML API**: http://34.143.179.159:8080 (Thai Talent ML VM)
+- **Status**: Container rebuilt with all dependencies
+
+#### Test Command
+```bash
+curl -X POST http://34.143.179.159:8080/trigger-retention-pipeline \
+    -H "Content-Type: application/json" \
+    -H "X-API-Key: demo-key-2024" \
+    -d '{
+      "task_id": "test-'$(date +%s)'",
+      "gcs_bucket": "th-ai-talent-data/2025-09-11",
+      "job_name": "Integrated Pipeline Test"
+    }'
+```
+
+### Key Achievement
+**Complete ML Integration**: The retention API now runs both retention and skill/promotion pipelines in sequence, saving all results to the Rails backend database. This provides comprehensive talent analytics in one API call.
+
+---
+
 ## 2025-09-10
 
 ### Major Update: Database Integration Complete

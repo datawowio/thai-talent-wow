@@ -8,3 +8,7 @@ output/
 # CatBoost Info Directory
 catboost_info/.env
 .vscode/settings.json
+
+# Google Service Account Credentials
+*service-account*.json
+th-ai-talent-wow-*.json

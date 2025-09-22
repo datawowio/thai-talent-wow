@@ -230,7 +230,18 @@ class DatabaseConnection:
                     # Clear existing data first
                     self.cursor.execute("DELETE FROM employee_skill_results")
 
+                    # Get existing employee IDs to validate against
+                    self.cursor.execute("SELECT id FROM employees")
+                    existing_employee_ids = {row[0] for row in self.cursor.fetchall()}
+
+                    valid_employee_data = []
                     for emp_data in employee_skill_data:
+                        if emp_data['employee_id'] in existing_employee_ids:
+                            valid_employee_data.append(emp_data)
+                        else:
+                            logger.warning(f"Skipping employee_id {emp_data['employee_id']} - not found in employees table")
+
+                    for emp_data in valid_employee_data:
                         query = """
                             INSERT INTO employee_skill_results (
                                 employee_id,
@@ -259,7 +270,7 @@ class DatabaseConnection:
                             datetime.now()
                         ))
 
-                    logger.info(f"Saved {len(employee_skill_data)} employee skill results")
+                    logger.info(f"Saved {len(valid_employee_data)} valid employee skill results (filtered from {len(employee_skill_data)} total)")
                 except Exception as e:
                     logger.error(f"Failed to save employee skill results: {str(e)}")
                     all_success = False

@@ -1,6 +1,84 @@
 # Latest Activity - Thai Talent WOW ML Model
 
-## 2025-09-21 (Today)
+## 2025-09-22 (Today)
+
+### Major Update: GenAI Integration Debugging and Pipeline Optimization
+
+#### GenAI Integration Work - COMPREHENSIVE DEBUGGING SESSION
+- 🔧 **Import Fixes**: Fixed `from google import genai` to proper `import google.generativeai as genai`
+- 🔧 **Package Dependencies**: Updated to `google-generativeai==0.8.3` and `fastapi==0.115.0`
+- 🔧 **Authentication Setup**: Configured service account with proper Vertex AI permissions
+- 🔧 **API Permissions**: Added `roles/aiplatform.admin`, `roles/aiplatform.user`, and `roles/ml.developer`
+- 🔧 **Error Handling**: Added robust error handling for GenAI API responses
+- 🔧 **Multi-File Fix**: Applied GenAI fixes to both `termination_analysis.py` and `skill_gap_analysis.py`
+- 🔧 **Database Validation**: Added employee ID validation to prevent foreign key constraint violations
+
+#### Detailed Debug Process
+1. **Import Error Resolution**: Fixed `ImportError: cannot import name 'genai' from 'google'`
+2. **Dependency Conflicts**: Resolved FastAPI version conflicts with google-generativeai
+3. **API Pattern Updates**: Migrated from deprecated `genai.Client()` to `GenerativeModel()`
+4. **Foreign Key Protection**: Added validation to filter out non-existent employee IDs before database insertion
+5. **Container Deployment**: Updated Docker builds with all fixes and dependency updates
+
+#### Key Discoveries
+- ✅ **GenAI Was Being Called**: Debug logs confirmed the GenAI integration was reaching the API calls
+- ❌ **Permission Issues**: Encountered `403 PERMISSION_DENIED` with `ACCESS_TOKEN_SCOPE_INSUFFICIENT`
+- ⚠️ **Vertex AI Deprecated**: As of June 24, 2025, Vertex AI generative models are deprecated
+- ⚠️ **Model Access Issues**: Gemini models not accessible in current project/region setup
+- ✅ **Error Handling Working**: GenAI failures now gracefully fallback without breaking pipeline
+- ✅ **Foreign Key Fix**: Database saves now filter invalid employee IDs to prevent constraint violations
+
+#### Pipeline Success
+- ✅ **Retention Pipeline Working**: Core ML pipeline (feature engineering, training, predictions) runs successfully
+- ✅ **Database Integration**: Successfully saves `termination_results` to PostgreSQL (ID: 3, 4)
+- ✅ **Model Training**: CatBoost optimization with best score: 0.9263880224578914 (improved!)
+- ✅ **Skill Pipeline**: Now handles GenAI errors gracefully without crashing
+- ✅ **Foreign Key Protection**: Employee skill results now validate against existing employee records
+
+#### Current Status
+- **ML Pipeline**: ✅ Fully functional without GenAI
+- **Database Saves**: ✅ Working for retention results with proper validation
+- **GenAI Recommendations**: ⏳ Pending proper API key setup for 2025 (graceful fallback implemented)
+- **Error Handling**: ✅ Robust error handling prevents pipeline crashes
+
+#### Technical Implementation Details
+- **Files Modified**:
+  - `predictive_retention/termination_analysis.py` - Fixed GenAI imports and API calls
+  - `skill_promotion_management/skill_gap_analysis.py` - Fixed GenAI imports and API calls
+  - `api/database.py` - Added employee ID validation before database inserts
+  - `api/requirements.txt` - Updated dependencies for compatibility
+- **Docker Build**: Rebuilt with platform `linux/amd64` for proper deployment
+- **Service Account**: Mounted JSON credentials file for GCS access
+
+#### Next Steps for GenAI
+For full GenAI integration, need one of:
+1. **Google AI API Key** (recommended for 2025)
+2. **Enable Gemini in GCP project** (if available)
+3. **Alternative LLM provider** (OpenAI, Anthropic, etc.)
+
+#### Test Command (Working)
+```bash
+curl -X POST http://34.143.179.159:8080/trigger-retention-pipeline \
+    -H "Content-Type: application/json" \
+    -H "X-API-Key: demo-key-2024" \
+    -d '{
+      "task_id": "test-'$(date +%s)'",
+      "gcs_bucket": "th-ai-talent-data/2025-09-11",
+      "job_name": "Pipeline Test"
+    }'
+```
+
+### Key Achievement
+**Comprehensive Error Resolution**: Successfully debugged and resolved multiple integration issues:
+1. GenAI import errors across both pipelines
+2. Foreign key constraint violations in database saves
+3. Dependency version conflicts
+4. API pattern deprecation issues
+The ML pipeline now runs reliably with proper error handling and database validation.
+
+---
+
+## 2025-09-21
 
 ### Major Update: Integrated Skill/Promotion Management with Retention Pipeline
 

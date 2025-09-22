@@ -330,33 +330,28 @@ class DatabaseConnection:
                     # Clear existing data first
                     self.cursor.execute("DELETE FROM promotion_results")
 
-                    # Save each employee type category
-                    for emp_type_data in promotion_data.get('employee_data', []):
-                        query = """
-                            INSERT INTO promotion_results (
-                                employee_type,
-                                total_employee,
-                                employee_ids,
-                                avg_promotion_time_by_department,
-                                avg_promotion_time_by_job_level,
-                                department_promotion_rate,
-                                created_at,
-                                updated_at
-                            ) VALUES (
-                                %s, %s, %s, %s, %s, %s, %s, %s
-                            )
-                        """
+                    # Save the promotion results with the correct column structure
+                    query = """
+                        INSERT INTO promotion_results (
+                            employee_data,
+                            avg_promotion_time_by_department,
+                            avg_promotion_time_by_job_level,
+                            department_promotion_rate,
+                            created_at,
+                            updated_at
+                        ) VALUES (
+                            %s, %s, %s, %s, %s, %s
+                        )
+                    """
 
-                        self.cursor.execute(query, (
-                            emp_type_data['employee_type'],
-                            emp_type_data['total_employee'],
-                            Json(emp_type_data.get('employee_ids', [])),
-                            Json(promotion_data.get('avg_promotion_time_by_department', [])),
-                            Json(promotion_data.get('avg_promotion_time_by_job_level', [])),
-                            Json(promotion_data.get('department_promotion_rate', [])),
-                            datetime.now(),
-                            datetime.now()
-                        ))
+                    self.cursor.execute(query, (
+                        Json(promotion_data.get('employee_data', [])),
+                        Json(promotion_data.get('avg_promotion_time_by_department', [])),
+                        Json(promotion_data.get('avg_promotion_time_by_job_level', [])),
+                        Json(promotion_data.get('department_promotion_rate', [])),
+                        datetime.now(),
+                        datetime.now()
+                    ))
 
                     logger.info(f"Saved promotion analysis results")
                 except Exception as e:

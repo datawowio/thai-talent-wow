@@ -5,10 +5,16 @@ __pycache__/
 # ML Output Directory
 output/
 
+# Environment files
+.env
+.env.local
+.env.*.local
+
 # CatBoost Info Directory
-catboost_info/.env
+catboost_info/
 .vscode/settings.json
 
 # Google Service Account Credentials
 *service-account*.json
 th-ai-talent-wow-*.json
+service-account.json

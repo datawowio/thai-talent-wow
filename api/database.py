@@ -392,25 +392,21 @@ class DatabaseConnection:
                         query = """
                             INSERT INTO rotation_results (
                                 employee_id,
-                                from_position,
-                                to_position,
-                                skill_gaps,
-                                skill_overlaps,
-                                rotation_score,
+                                department_id,
+                                department_name,
+                                skills_to_acquire,
                                 created_at,
                                 updated_at
                             ) VALUES (
-                                %s, %s, %s, %s, %s, %s, %s, %s
+                                %s, %s, %s, %s, %s, %s
                             )
                         """
 
                         self.cursor.execute(query, (
                             rotation.get('employee_id'),
-                            rotation.get('from_position'),
-                            rotation.get('to_position'),
-                            Json(rotation.get('skill_gaps', [])),
-                            Json(rotation.get('skill_overlaps', [])),
-                            float(rotation.get('rotation_score', 0.0)),
+                            rotation.get('department_id'),
+                            rotation.get('department_name'),
+                            Json(rotation.get('skills_to_acquire', [])),
                             datetime.now(),
                             datetime.now()
                         ))

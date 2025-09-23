@@ -252,7 +252,7 @@ class DatabaseConnection:
 
                     # Get existing employee IDs to validate against
                     self.cursor.execute("SELECT id FROM employees")
-                    existing_employee_ids = {row[0] for row in self.cursor.fetchall()}
+                    existing_employee_ids = {row['id'] for row in self.cursor.fetchall()}
 
                     valid_employee_data = []
                     for emp_data in employee_skill_data:

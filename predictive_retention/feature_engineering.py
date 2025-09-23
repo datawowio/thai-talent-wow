@@ -115,22 +115,26 @@ def feature_engineering():
     date_range = pd.date_range(start=first_month, end=current_month, freq='ME')
 
     ### calculate distance from home to office at first (since it takes time to calculate)
-    geolocator = Nominatim(user_agent="thailand_distance_calc")
-    def get_coordinates(postal_code, country='Thailand'):
-        location = geolocator.geocode(f"{postal_code}, {country}")
-        if location:
-            return (location.latitude, location.longitude)  
-        return None
-    def calculate_distance(coord1, coord2):
-        if coord1 and coord2:
-            return geodesic(coord1, coord2).km
-        return None
-    company_postal_code = config.COMPANY_POSTAL_CODE
-    company_coords = get_coordinates(company_postal_code)
+    try:
+        geolocator = Nominatim(user_agent="thailand_distance_calc", timeout=5)
+        def get_coordinates(postal_code, country='Thailand'):
+            location = geolocator.geocode(f"{postal_code}, {country}")
+            if location:
+                return (location.latitude, location.longitude)  
+            return None
+        def calculate_distance(coord1, coord2):
+            if coord1 and coord2:
+                return geodesic(coord1, coord2).km
+            return None
+        company_postal_code = config.COMPANY_POSTAL_CODE
+        company_coords = get_coordinates(company_postal_code)
 
-    _distance_df = emp_df.drop_duplicates(subset=['emp_id', 'residence_post_code'], keep='last')[['emp_id', 'residence_post_code']].copy()
-    _distance_df['residence_coordinates'] = _distance_df['residence_post_code'].apply(get_coordinates)
-    _distance_df['distance_from_home_to_office'] = _distance_df['residence_coordinates'].apply(lambda x: calculate_distance(x, company_coords))
+        _distance_df = emp_df.drop_duplicates(subset=['emp_id', 'residence_post_code'], keep='last')[['emp_id', 'residence_post_code']].copy()
+        _distance_df['residence_coordinates'] = _distance_df['residence_post_code'].apply(get_coordinates)
+        _distance_df['distance_from_home_to_office'] = _distance_df['residence_coordinates'].apply(lambda x: calculate_distance(x, company_coords))
+    except:
+        _distance_df = emp_df.drop_duplicates(subset=['emp_id'], keep='last')[['emp_id']].copy()
+        _distance_df['distance_from_home_to_office'] = None
     
     final_df = pd.DataFrame()
     for execution_date in date_range[1:]:

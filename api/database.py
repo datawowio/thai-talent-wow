@@ -67,14 +67,31 @@ class DatabaseConnection:
             self.connection.close()
         logger.info("Database connection closed")
     
+    def _clean_json_data(self, data: Any) -> Any:
+        """
+        Clean data for JSON serialization by replacing NaN/Infinity with None
+        """
+        import math
+
+        if isinstance(data, dict):
+            return {k: self._clean_json_data(v) for k, v in data.items()}
+        elif isinstance(data, list):
+            return [self._clean_json_data(item) for item in data]
+        elif isinstance(data, float):
+            if math.isnan(data) or math.isinf(data):
+                return None
+            return data
+        else:
+            return data
+
     def save_termination_results(self, job_id: str, termination_data: Dict[str, Any]) -> bool:
         """
         Save termination results to the termination_results table
-        
+
         Args:
             job_id: The job ID from the API
             termination_data: The termination result JSON data
-        
+
         Returns:
             bool: True if successful, False otherwise
         """
@@ -82,7 +99,10 @@ class DatabaseConnection:
             if not self.connection:
                 if not self.connect():
                     return False
-            
+
+            # Clean the data to remove NaN values
+            termination_data = self._clean_json_data(termination_data)
+
             # Prepare the INSERT query
             query = """
                 INSERT INTO termination_results (
@@ -102,11 +122,11 @@ class DatabaseConnection:
                 )
                 RETURNING id;
             """
-            
+
             # Add job_id to overall_summary
             if 'overall_summary' in termination_data:
                 termination_data['overall_summary']['job_id'] = job_id
-            
+
             # Execute the query
             self.cursor.execute(query, (
                 Json(termination_data.get('overall_summary', {})),

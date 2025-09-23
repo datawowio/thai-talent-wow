@@ -261,34 +261,40 @@ class DatabaseConnection:
                         else:
                             logger.warning(f"Skipping employee_id {emp_data['employee_id']} - not found in employees table")
 
-                    for emp_data in valid_employee_data:
-                        query = """
-                            INSERT INTO employee_skill_results (
-                                employee_id,
-                                current_position,
-                                next_position,
-                                employee_skills,
-                                current_missing_skills,
-                                peer_missing_skills,
-                                next_missing_skills,
-                                created_at,
-                                updated_at
-                            ) VALUES (
-                                %s, %s, %s, %s, %s, %s, %s, %s, %s
-                            )
-                        """
+                    logger.info(f"Starting to insert {len(valid_employee_data)} valid employee skill results")
+                    for i, emp_data in enumerate(valid_employee_data):
+                        try:
+                            query = """
+                                INSERT INTO employee_skill_results (
+                                    employee_id,
+                                    current_position,
+                                    next_position,
+                                    employee_skills,
+                                    current_missing_skills,
+                                    peer_missing_skills,
+                                    next_missing_skills,
+                                    created_at,
+                                    updated_at
+                                ) VALUES (
+                                    %s, %s, %s, %s, %s, %s, %s, %s, %s
+                                )
+                            """
 
-                        self.cursor.execute(query, (
-                            emp_data['employee_id'],
-                            emp_data.get('current_position'),
-                            emp_data.get('next_position'),
-                            Json(emp_data.get('employee_skills', [])),
-                            Json(emp_data.get('current_missing_skills', [])),
-                            Json(emp_data.get('peer_missing_skills', [])),
-                            Json(emp_data.get('next_missing_skills', [])),
-                            datetime.now(),
-                            datetime.now()
-                        ))
+                            self.cursor.execute(query, (
+                                emp_data['employee_id'],
+                                emp_data.get('current_position'),
+                                emp_data.get('next_position'),
+                                Json(emp_data.get('employee_skills', [])),
+                                Json(emp_data.get('current_missing_skills', [])),
+                                Json(emp_data.get('peer_missing_skills', [])),
+                                Json(emp_data.get('next_missing_skills', [])),
+                                datetime.now(),
+                                datetime.now()
+                            ))
+                            logger.debug(f"Successfully inserted employee {emp_data['employee_id']} ({i+1}/{len(valid_employee_data)})")
+                        except Exception as insert_error:
+                            logger.error(f"Failed to insert employee {emp_data['employee_id']}: {str(insert_error)}")
+                            raise  # Re-raise to trigger outer exception handling
 
                     logger.info(f"Saved {len(valid_employee_data)} valid employee skill results (filtered from {len(employee_skill_data)} total)")
                 except Exception as e:

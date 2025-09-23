@@ -142,7 +142,8 @@ def feature_engineering():
         execution_emp_df = emp_df[['id', 'birth_date', 'education_level', 'parent', 'child', 'sibling', 'spouse', 'hire_date', 'created_at']].copy()
         execution_emp_df.rename(columns={'id': 'emp_id'}, inplace=True)
         execution_emp_df = execution_emp_df[emp_df['hire_date'] <= execution_date].drop_duplicates(subset=['emp_id'], keep='last')
-        execution_manager_df = manager_df[manager_df['created_at'] <= execution_date]
+        _manager_before_df = manager_df[manager_df['created_at'] <= execution_date]
+        _manager_after_df = manager_df[manager_df['created_at'] > execution_date]
         execution_salary_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date][['employee_id', 'salary', 'effective_date']]
         execution_movement_df = emp_movement_df[emp_movement_df['effective_date'] <= execution_date]
         execution_emp_skill_df = emp_skill_df[emp_skill_df['updated_at'] <= execution_date]
@@ -160,7 +161,10 @@ def feature_engineering():
         latest_salary = execution_salary_df.sort_values(by=['employee_id', 'effective_date'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
         execution_emp_df = execution_emp_df.merge(latest_salary[['employee_id', 'salary']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
 
-        latest_manager = execution_manager_df.sort_values(by=['employee_id', 'created_at'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
+        _manager_before_df = (_manager_before_df.sort_values(by=["employee_id", "created_at"], ascending=[True, False]).drop_duplicates(subset=["employee_id"], keep="first"))
+        _manager_after_df = (_manager_after_df.sort_values(by=["employee_id", "created_at"], ascending=[True, True]).drop_duplicates(subset=["employee_id"], keep="first"))
+        latest_manager = pd.concat([_manager_before_df, _manager_after_df])
+        latest_manager = latest_manager.sort_values(by=['employee_id', 'created_at'], ascending=[True, False]).drop_duplicates(subset=['employee_id'], keep='first')
         latest_manager.rename(columns={'created_at': 'start_date_with_manager'}, inplace=True)
         execution_emp_df = execution_emp_df.merge(latest_manager[['employee_id', 'manager_id', 'start_date_with_manager']], left_on='emp_id', right_on='employee_id', how='left').drop(columns=['employee_id'])
 
@@ -194,7 +198,7 @@ def feature_engineering():
         manager_feature = execution_emp_df.copy()
         manager_feature['num_employee_under_manager'] = manager_feature.groupby('manager_id')['emp_id'].transform('count')
         manager_feature['year_with_current_manager'] = pd.to_timedelta((execution_date.date() - manager_feature['start_date_with_manager'].dt.date)).dt.days / 365
-        manager_feature['num_past_manager'] = execution_manager_df.groupby('employee_id')['manager_id'].transform('nunique')
+        manager_feature['num_past_manager'] = _manager_before_df.groupby('employee_id')['manager_id'].transform('nunique')
         manager_feature['num_employee_under_position'] = manager_feature.groupby('position_id')['emp_id'].transform('count')
         manager_feature['num_employee_under_job_level'] = manager_feature.groupby('job_level')['emp_id'].transform('count')
         manager_feature['num_employee_under_department'] = manager_feature.groupby('department_id')['emp_id'].transform('count')
